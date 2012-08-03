@@ -1,0 +1,333 @@
+/**
+ * jQuery FlexSlider v1.8
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+ 
+/* Resets
+------------------------------------------------------------ */
+
+.flex-container a:active,
+.flexslider a:active {
+	outline: none !important;
+}
+
+.flexslider .slides,
+.flexslider .slides li,
+.flexslider .flex-control-nav,
+.flexslider .flex-control-nav li,
+.flexslider .flex-direction-nav,
+.flexslider .flex-direction-nav li {
+	list-style: none;
+	margin: 0; 
+	padding: 0; 
+}
+ 
+
+/* FlexSlider necessary styles
+------------------------------------------------------------ */ 
+
+.flex-container {
+	margin: 0;
+	position: relative;
+	width: 100%;
+	zoom: 1; 
+}
+
+.flexslider { 
+	margin: 0; 
+	padding: 0;
+	position: relative;
+	width: 100%;
+	zoom: 1;
+}
+
+.flexslider .slides > li {
+	display: none;
+}
+
+.flexslider .slides img {
+	display: block;
+	max-width: 100%;
+}
+
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+
+
+/* Clearfix for slides
+------------------------------------------------------------ */
+
+.slides:after {
+	clear: both;
+	content: "."; 
+	display: block; 
+	height: 0;
+	line-height: 0; 
+	visibility: hidden; 
+} 
+
+html[xmlns] .slides {
+	display: block;
+} 
+
+* html .slides {
+	height: 1%;
+}
+
+
+/* No JS fallback
+------------------------------------------------------------ */
+
+.no-js .slides > li:first-child {
+	display: block;
+}
+
+
+/* FlexSlider image styling
+------------------------------------------------------------ */
+
+.flexslider .slides {
+	zoom: 1;
+}
+
+.flexslider .slides > li {
+	position: relative;
+}
+
+.flexslider .slides > li a {
+	display: block;
+}
+
+.flex-caption {
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+	background: rgba(0, 0, 0, .5);
+	bottom: 0;
+	color: #fff;
+	display: block;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+	font-size: 14px; 
+	left: 0;
+	line-height: 18px;
+	margin: 0;
+	padding: 1.4% 2.1%; 
+	position: absolute;
+	text-align: center;  
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .3); 
+	width: 96%;
+	zoom: 1;
+}
+
+
+/* FlexSlider directional navigation
+------------------------------------------------------------ */
+
+.flex-direction-nav {
+	display: none;
+	height: 0;
+}
+
+.flex-container:hover .flex-direction-nav {
+	display: block;
+}
+
+.flex-direction-nav li a { 
+	border: 0 none;
+	display: block;
+}
+
+.flex-container.slide-horizontal .flex-direction-nav li .next,
+.flex-direction-nav li .next {
+	background: url('images/slider-arrows-horizontal.png') no-repeat scroll 0 -18px;
+	height: 18px;
+	right: 10px;
+	position: absolute;
+	text-indent: -9999px;
+	top: 49%;
+	width: 13px;
+	z-index: 30;
+}
+
+.flex-container.slide-horizontal .flex-direction-nav li .prev,
+.flex-direction-nav li .prev {
+	background: url('images/slider-arrows-horizontal.png') no-repeat scroll 0 0;
+	height: 18px; 
+	left: 10px; 
+	position: absolute;
+	text-indent: -9999px;
+	top: 49%;
+	width: 13px;
+	z-index: 30;
+}
+
+.flex-container.slide-vertical .flex-direction-nav li .next {
+	background: url('images/slider-arrows-vertical.png') no-repeat scroll -18px 0;
+	height: 13px;
+	right: 10px;
+	position: absolute;
+	text-indent: -9999px;
+	top: 49%;
+	width: 18px;
+	z-index: 30;
+}
+
+.flex-container.slide-vertical .flex-direction-nav li .prev {
+	background: url('images/slider-arrows-vertical.png') no-repeat scroll 0 0;
+	height: 13px; 
+	left: 10px; 
+	position: absolute;
+	text-indent: -9999px;
+	top: 49%;
+	width: 18px;
+	z-index: 30;
+}
+
+.flex-direction-nav li .disabled {
+	cursor: default;
+	filter: alpha(opacity=30);
+	opacity: .3;  
+}
+
+
+/* FlexSlider control navigation
+------------------------------------------------------------ */
+
+.flexslider .flex-control-nav {
+	bottom: 10px;
+	line-height: 0;
+	margin-left: 5px;
+	position: absolute;
+	z-index: 30;
+}
+
+.flexslider .flex-control-nav li { 
+	display: inline-block; 
+	*display: inline;
+	margin: 0 0 0 5px;
+	zoom: 1; 
+}
+
+.flex-control-nav li a {
+	background: url('images/slider-dots.png') no-repeat scroll 0 0;
+	cursor: pointer;
+	display: block; 
+	float: left;
+	height: 14px;
+	text-indent: -9999px;
+	width: 14px;
+	z-index: 50;
+}
+
+.flex-control-nav li a:hover,
+.flex-control-nav li a.active {
+	background-position: 0 -14px;
+}
+
+
+/* FlexSlider pauseplay
+------------------------------------------------------------ */
+
+.flex-pauseplay {
+	bottom: 10px;
+	line-height: 0;
+	position: absolute;
+	right: 0;
+	z-index: 15;
+}
+
+.flex-pauseplay span {
+	display: block;
+}
+
+.flex-pauseplay .pause {
+	background: url(images/pause.png) no-repeat scroll 0 0;
+	cursor: pointer;
+	float: right;
+	height: 14px;
+	margin-right: 10px;
+	text-indent: -9999px;
+	width: 13px;
+}
+
+.flex-pauseplay .play {
+	background: url(images/play.png) no-repeat scroll 0 0;
+	cursor: pointer;
+	float: right;
+	margin-right: 10px;
+	height: 14px;
+	text-indent: -9999px;
+	width: 11px;
+}
+
+
+/* Responsive Design
+------------------------------------------------------------ */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+	.flex-container.slide-horizontal .flex-direction-nav li .next,
+	.flex-direction-nav li .next {
+		background: url('images/slider-arrows-horizontal@2x.png') no-repeat scroll 0 -20px;
+		background-size: 100%;
+	}
+
+	.flex-container.slide-horizontal .flex-direction-nav li .prev,
+	.flex-direction-nav li .prev {
+		background: url('images/slider-arrows-horizontal@2x.png') no-repeat scroll 0 0;
+		background-size: 100%;
+	}
+
+	.flex-container.slide-vertical .flex-direction-nav li .next {
+		background: url('images/slider-arrows-vertical@2x.png') no-repeat scroll -18px 0;
+		background-size: 200%;
+	}
+
+	.flex-container.slide-vertical .flex-direction-nav li .prev {
+		background: url('images/slider-arrows-vertical@2x.png') no-repeat scroll 0 0;
+		background-size: 200%;
+	}
+	
+	.flex-control-nav li a {
+		background: url('images/slider-dots@2x.png') no-repeat scroll 0 0;
+		background-size: 100%;
+		height: 15px;
+	}
+	
+	.flex-control-nav li a:hover,
+	.flex-control-nav li a.active {
+		background-position: 0 -15px;
+	}
+	
+	.flex-pauseplay .pause {
+		background: url(images/pause@2x.png) no-repeat scroll 0 0;
+		background-size: 100%;
+	}
+	
+	.flex-pauseplay .play {
+		background: url(images/play@2x.png) no-repeat scroll 0 0;
+		background-size: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+	.flex-caption {
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+	.flex-caption {
+		bottom: auto;
+		top: 0;
+	}
+
+}
