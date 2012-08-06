@@ -10,9 +10,9 @@ The best responsive WordPress slider plugin. Period. Made lite and free.
 
 == Description ==
 
-**NOTE: This is the lite version. Want even more features, including complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons? [Click here to purchase the fully supported version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
-
 [Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite) is by far the best responsive WordPress slider plugin on the market. Soliloquy is audited by Mark Jaquith, lead developer of WordPress, for security and features the easiest to use and most performance optimized code for a slider plugin. By utilizing custom post types, Soliloquy allows you to create an infinite number of sliders with an infinite number of images in each slider with a few clicks of the mouse.
+
+**Note: This is the lite version. Want even more features, including complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons? [Click here to purchase the fully supported version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 = Features =
 
@@ -25,7 +25,7 @@ The best responsive WordPress slider plugin. Period. Made lite and free.
 * Smart JS/CSS loading so that assets only load on pages where a slider is present.
 * Media uploader button to easily insert your slider into your posts/pages from the WYSIWYG editor.
 
-**Note: This plugin is provided as-is. Only critical bug fixes, future compatibility with WordPress versions and routine maintainance will be addressed in plugin updates. If you want support or access to more features, [consider purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
+**Note: This plugin is provided as-is. Only critical bug fixes, future compatibility with WordPress versions and routine maintainence will be addressed in plugin updates. If you want support or access to more features, [consider purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 == Installation ==
 
