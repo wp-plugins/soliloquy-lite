@@ -12,31 +12,31 @@ The best responsive image slider plugin for WordPress. Made lite and free.
 
 [Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite) is by far the best responsive WordPress image slider plugin on the market. Soliloquy is audited by Mark Jaquith, lead developer of WordPress, for security and features the easiest to use and most performance optimized code for an image slider plugin. By utilizing custom post types, Soliloquy allows you to create an infinite number of image sliders with an infinite number of images in each slider with a few clicks of the mouse.
 
-**Note: This is the lite version. Want even more features, including complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? [Click here to purchase the fully supported version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
+**Note: This is the lite version of the image slider. Want even more slider features, including complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? [Click here to purchase the fully supported version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 = Features =
 
-* Usage of custom post types to create an unlimited number of sliders.
-* Drag-and-drop image uploading, sorting and saving.
-* Completely SEO optimized with the ability to specify alt and title tags for your images.
+* Usage of custom post types to create an unlimited number of image sliders.
+* Drag-and-drop image uploading, sorting and saving for your slider.
+* Completely SEO optimized with the ability to specify alt and title tags for your images within the slider.
 * Completely responsive (with touch enabled swiping).
-* Shortcode and template tags handy so that you can insert your slider anywhere in your theme.
+* Shortcode and template tags handy so that you can insert your image slider anywhere in your theme.
 * Metadata editing for each image, including image titles, alt tags and full HTML captions.
 * Smart JS/CSS loading so that assets only load on pages where a slider is present.
-* Media uploader button to easily insert your slider into your posts/pages from the WYSIWYG editor.
+* Media uploader button to easily insert your image slider into your posts/pages from the WYSIWYG editor.
 
-**Note: This plugin is provided as-is. Only critical bug fixes, future compatibility with WordPress versions and routine maintenance will be addressed in plugin updates. If you want support or access to more features, [consider purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
+**Note: This image slider plugin is provided as-is. Only critical bug fixes, future compatibility with WordPress versions and routine maintenance will be addressed in plugin updates. If you want support or access to more slider features, [consider purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 == Installation ==
 
 1. Install Soliloquy Lite either via the WordPress.org plugin directory, or by uploading the files to your server.
 2. Activate Soliloquy Lite.
 3. Navigate to the Soliloquy tab at the bottom of your admin menu and click "Add New" to begin creating your new slider.
-4. Salivate for new features and [purchase the full version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite)!
+4. Salivate for new slider features and [purchase the full version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite)!
 
 == Frequently Asked Questions ==
 
-= I'd like access to more features. How can I get them? =
+= I'd like access to more image slider features. How can I get them? =
 
 You can get access to more features, Addons and support by [visiting the Soliloquy website and purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite). Purchasing a support license gets you access to the full version of Soliloquy, automatic updates and support. Purchasing a developer support license gets you all the aforementioned plus exclusive access to Soliloquy Addons.
 
