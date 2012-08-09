@@ -48,7 +48,7 @@ class Tgmsp_Lite_Editor {
 
 		/** Only run in post/page creation and edit screens */
 		if ( in_array( $pagenow, array( 'post.php', 'page.php', 'post-new.php', 'post-edit.php' ) ) ) {
-			$img 	= '<img src="' . plugins_url( 'css/images/title-icon.png', dirname( dirname( __FILE__ ) ) ) . '" width="16px" height="16px" alt="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '" />';
+			$img 	= '<img src="' . plugins_url( 'css/images/menu-icon.png', dirname( dirname( __FILE__ ) ) ) . '" width="16px" height="16px" alt="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '" />';
 			$output = '<a href="#TB_inline?width=640&inlineId=choose-soliloquy-slider" class="thickbox" title="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '">' . $img . '</a>';
 		}
 
@@ -166,7 +166,7 @@ class Tgmsp_Lite_Editor {
 
 			<div id="choose-soliloquy-slider" style="display: none;">
 				<div class="wrap" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-					<div id="icon-soliloquy" class="icon32" style="background: url(<?php echo plugins_url( 'css/images/title-icon.png', dirname( dirname( __FILE__ ) ) ); ?>) no-repeat scroll 0 50%; width: 16px;"><br></div>
+					<div id="icon-soliloquy" class="icon32" style="background: url(<?php echo plugins_url( 'css/images/title-icon.png', dirname( dirname( __FILE__ ) ) ); ?>) no-repeat scroll 0 50%; height: 36px; width: 36px;"><br></div>
 					<h2><?php echo Tgmsp_Lite_Strings::get_instance()->strings['slider_choose']; ?></h2>
 					<?php do_action( 'tgmsp_before_slider_insertion', $sliders ); ?>
 					<p style="font-weight: bold; padding-bottom: 10px;"><?php echo Tgmsp_Lite_Strings::get_instance()->strings['slider_select_desc']; ?></p>
