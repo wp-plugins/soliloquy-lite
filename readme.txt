@@ -51,5 +51,8 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 == Changelog ==
 
+= 1.1.0 =
+* Updated icons and such to reflect new branding
+
 = 1.0.0 =
 * Initial release
