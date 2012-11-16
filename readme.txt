@@ -51,6 +51,10 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 == Changelog ==
 
+= 1.2.0 =
+* Updated to fix some MS issues
+* General bug fixes and enhancements
+
 = 1.1.0 =
 * Updated icons and such to reflect new branding
 

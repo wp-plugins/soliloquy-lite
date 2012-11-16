@@ -213,7 +213,7 @@ class Tgmsp_Lite_Admin {
 						<div id="soliloquy-default-sizes">
 							<input id="soliloquy-width" type="text" name="_soliloquy_settings[width]" value="<?php echo esc_attr( $this->get_custom_field( '_soliloquy_settings', 'width' ) ); ?>" /> &#215; <input id="soliloquy-height" type="text" name="_soliloquy_settings[height]" value="<?php echo esc_attr( $this->get_custom_field( '_soliloquy_settings', 'height' ) ); ?>" />
 							<p class="description"><?php printf( '%s <a class="soliloquy-size-more" href="#">%s</a>', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_desc'], Tgmsp_Lite_Strings::get_instance()->strings['slider_size_more'] ); ?></p>
-							<p id="soliloquy-explain-size" class="description" style="display: none;"><?php printf( '%s <a href="%s" target="_blank">%s</a>.', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_explain'], 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_upgrade'] ); ?></p>
+							<p id="soliloquy-explain-size" class="description" style="display: none;"><?php printf( '%s <a href="%s" target="_blank">%s</a>.', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_explain'], apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ), Tgmsp_Lite_Strings::get_instance()->strings['slider_size_upgrade'] ); ?></p>
 						</div>
 					</td>
 				</tr>
@@ -254,7 +254,7 @@ class Tgmsp_Lite_Admin {
 		<?php do_action( 'tgmsp_after_settings_table', $post ); ?>
 
 		<div class="soliloquy-advanced">
-			<p><strong><?php echo sprintf( Tgmsp_Lite_Strings::get_instance()->strings['slider_cb'], sprintf( '<a href="http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['slider_cb_up'] ) ); ?></strong></p>
+			<p><strong><?php echo sprintf( Tgmsp_Lite_Strings::get_instance()->strings['slider_cb'], sprintf( '<a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['slider_cb_up'] ) ); ?></strong></p>
 		</div>
 		<?php
 
@@ -272,7 +272,7 @@ class Tgmsp_Lite_Admin {
 	public function soliloquy_upgrade( $post ) {
 
 		$upgrade = '<p><strong>' . Tgmsp_Lite_Strings::get_instance()->strings['upgrade'] . '</strong></p>';
-		$upgrade .= sprintf( '<p><a href="http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite" title="%1$s" target="_blank"><strong>%1$s</strong></a></p>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_now'] );
+		$upgrade .= sprintf( '<p><a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank"><strong>%1$s</strong></a></p>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_now'] );
 		
 		echo $upgrade;
 
@@ -306,7 +306,7 @@ class Tgmsp_Lite_Admin {
 		if ( Tgmsp_Lite::is_soliloquy_screen() && current_user_can( 'manage_options' ) ) {
 			/** If a user hasn't dismissed the notice yet, output it for them to upgrade */
 			if ( ! get_user_meta( get_current_user_id(), 'soliloquy_dismissed_notice', true ) )
-				add_settings_error( 'tgmsp', 'tgmsp-upgrade-soliloquy', sprintf( Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag'], sprintf( '<a href="http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_link'] ), sprintf( '<a id="soliloquy-dismiss-notice" href="#" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_dismiss'] ) ), 'updated' );
+				add_settings_error( 'tgmsp', 'tgmsp-upgrade-soliloquy', sprintf( Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag'], sprintf( '<a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_link'] ), sprintf( '<a id="soliloquy-dismiss-notice" href="#" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_dismiss'] ) ), 'updated' );
 			
 			/** Allow settings notices to be filtered */
 			apply_filters( 'tgmsp_output_notices', settings_errors( 'tgmsp' ) );
