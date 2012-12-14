@@ -41,9 +41,41 @@ class Tgmsp_Lite_Admin {
 	 */
 	public function admin_init() {
 	
-		/** If the main Soliloquy plugin exists, deactivate ourself in favor of the full version */
-		if ( class_exists( 'Tgmsp', false ) )
+		/** If the main Soliloquy plugin exists, update default post meta fields and deactivate ourself in favor of the full version */
+		if ( class_exists( 'Tgmsp', false ) ) {
+			/** Get current sliders and update default post meta fields */
+			$sliders = get_posts( array( 'post_type' => 'soliloquy', 'posts_per_page' => -1 ) );
+			if ( $sliders ) {
+				foreach ( (array) $sliders as $slider ) {
+					/** Grab Soliloquy meta from the slider */
+					$meta = get_post_meta( $slider->ID, '_soliloquy_settings', true );
+					
+					/** Set default post meta fields */
+					if ( empty( $meta['default'] ) ) 	$meta['default'] 	= 'default';
+					if ( empty( $meta['custom'] ) ) 	$meta['custom'] 	= false;
+					if ( empty( $meta['animate'] ) ) 	$meta['animate'] 	= 1;
+					if ( empty( $meta['video'] ) ) 		$meta['video'] 		= 1;
+					if ( empty( $meta['navigation'] ) ) $meta['navigation'] = 1;
+					if ( empty( $meta['control'] ) ) 	$meta['control'] 	= 1;
+					if ( empty( $meta['keyboard'] ) ) 	$meta['keyboard'] 	= 1;	
+					if ( empty( $meta['number'] ) ) 	$meta['number'] 	= 0;
+					if ( empty( $meta['loop'] ) ) 		$meta['loop'] 		= 1;
+					if ( empty( $meta['action'] ) ) 	$meta['action'] 	= 1;
+					if ( empty( $meta['css'] ) ) 		$meta['css'] 		= 1;
+					if ( empty( $meta['animate'] ) ) 	$meta['animate'] 	= 1;
+					if ( empty( $meta['smooth'] ) ) 	$meta['smooth'] 	= 1;
+					if ( empty( $meta['touch'] ) ) 		$meta['touch'] 		= 1;
+					if ( empty( $meta['delay'] ) ) 		$meta['delay'] 		= 0;
+					if ( empty( $meta['type'] ) ) 		$meta['type'] 		= 'default';
+					
+					/** Update post meta for the slider */
+					update_post_meta( $slider->ID, '_soliloquy_settings', $meta );
+				}
+			}
+			
+			/** Deactive the plugin */
 			deactivate_plugins( Tgmsp_Lite::get_file() );
+		}
 	
 	}
 	

@@ -2,10 +2,10 @@
 /*
 Plugin Name: Soliloquy Lite
 Plugin URI: http://soliloquywp.com/
-Description: Soliloquy is the best responsive jQuery slider plugin for WordPress. This is the lite version.
+Description: Soliloquy is the best responsive WordPress slider plugin. Period. This is the lite version.
 Author: Thomas Griffin
 Author URI: http://thomasgriffinmedia.com/
-Version: 1.2.0
+Version: 1.3.0
 License: GNU General Public License v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
@@ -119,7 +119,7 @@ class Tgmsp_Lite {
 	public function init() {
 	
 		/** Load the plugin textdomain for internationalizing strings */
-		load_plugin_textdomain( 'soliloquy-lite', false, plugin_dir_path( __FILE__ ) . '/languages/' );
+		load_plugin_textdomain( 'soliloquy', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		
 		/** Instantiate all the necessary components of the plugin */
 		$tgmsp_lite_admin		= new Tgmsp_Lite_Admin;
@@ -186,6 +186,9 @@ class Tgmsp_Lite {
 	
 		$current_screen = get_current_screen();
 		
+		if ( ! $current_screen )
+			return false;
+		
 		if ( 'soliloquy' == $current_screen->post_type )
 			return true;
 			
@@ -203,6 +206,9 @@ class Tgmsp_Lite {
 	public static function is_soliloquy_add_edit_screen() {
 	
 		$current_screen = get_current_screen();
+		
+		if ( ! $current_screen )
+			return false;
 		
 		if ( 'soliloquy' == $current_screen->post_type && 'post' == $current_screen->base )
 			return true;

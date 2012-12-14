@@ -29,9 +29,9 @@ class Tgmsp_Lite_Assets {
 	
 		/** Register scripts and styles */
 		wp_register_script( 'soliloquy-admin', plugins_url( 'js/admin.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
-		wp_register_script( 'soliloquy-script', plugins_url( 'js/flexslider.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
+		wp_register_script( 'soliloquy-script', plugins_url( 'js/soliloquy.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
 		wp_register_style( 'soliloquy-admin', plugins_url( 'css/admin.css', dirname( dirname( __FILE__ ) ) ) );
-		wp_register_style( 'soliloquy-style', plugins_url( 'css/flexslider.css', dirname( dirname( __FILE__ ) ) ) );
+		wp_register_style( 'soliloquy-style', plugins_url( 'css/soliloquy.css', dirname( dirname( __FILE__ ) ) ) );
 		
 		/** Load assets */
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
@@ -86,7 +86,7 @@ class Tgmsp_Lite_Assets {
 				'saving'		=> Tgmsp_Lite_Strings::get_instance()->strings['saving'],
 				'sortnonce'		=> wp_create_nonce( 'soliloquy_sortable' ),
 				'speed'			=> 7000,
-				'spinner'		=> admin_url( 'images/loading.gif' ),
+				'spinner'		=> plugins_url( 'css/images/loading.gif', dirname( dirname( __FILE__ ) ) ),
 				'savemeta'		=> Tgmsp_Lite_Strings::get_instance()->strings['save_meta'],
 				'upload'		=> Tgmsp_Lite_Strings::get_instance()->strings['upload_images_tb'],
 				'tab'			=> Tgmsp_Lite_Strings::get_instance()->strings['new_tab'],

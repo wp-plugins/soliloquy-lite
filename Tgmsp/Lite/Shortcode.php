@@ -28,6 +28,7 @@ class Tgmsp_Lite_Shortcode {
 		self::$instance = $this;
 	
 		add_shortcode( 'soliloquy', array( $this, 'shortcode' ) );
+		add_filter( 'tgmsp_caption_output', 'do_shortcode' );
 	
 	}
 	
@@ -66,11 +67,11 @@ class Tgmsp_Lite_Shortcode {
 		}
 
 		/** Ok, we have a valid slider ID - store all data in one variable and get started */
-		$soliloquy_data[$soliloquy_count]['id'] 		= $id;
-		$soliloquy_data[$soliloquy_count]['meta'] 		= get_post_meta( $id, '_soliloquy_settings', true );
-		$slider 										= '';
-		$images 										= $this->get_images( $id, $soliloquy_data[$soliloquy_count]['meta'] );
-		$i 												= 1;
+		$soliloquy_data[absint( $soliloquy_count )]['id'] 			= $id;
+		$soliloquy_data[absint( $soliloquy_count )]['meta'] 		= get_post_meta( $id, '_soliloquy_settings', true );
+		$slider 													= '';
+		$images 													= $this->get_images( $id, $soliloquy_data[absint( $soliloquy_count )]['meta'] );
+		$i 															= 1;
 
 		/** Only proceed if we have images to output */
 		if ( $images ) {
@@ -87,40 +88,43 @@ class Tgmsp_Lite_Shortcode {
 			do_action( 'tgmsp_before_slider_output', $id, $images, $soliloquy_data, $soliloquy_count, $slider );
 
 			/** If a custom size is chosen, all image sizes will be cropped the same, so grab width/height from first image */
-			$width 	= $soliloquy_data[$soliloquy_count]['meta']['width'] ? $soliloquy_data[$soliloquy_count]['meta']['width'] : $images[0]['width'];
+			$width 	= $soliloquy_data[absint( $soliloquy_count )]['meta']['width'] ? $soliloquy_data[absint( $soliloquy_count )]['meta']['width'] : $images[0]['width'];
 			$width	= apply_filters( 'tgmsp_slider_width', $width, $id );
-			$height = $soliloquy_data[$soliloquy_count]['meta']['height'] ? $soliloquy_data[$soliloquy_count]['meta']['height'] : $images[0]['height'];
+			$width	= preg_match( '|%$|', trim( $width ) ) ? trim( $width ) . ';' : absint( $width ) . 'px;';
+			$height = $soliloquy_data[absint( $soliloquy_count )]['meta']['height'] ? $soliloquy_data[absint( $soliloquy_count )]['meta']['height'] : $images[0]['height'];
 			$height	= apply_filters( 'tgmsp_slider_height', $height, $id );
+			$height	= preg_match( '|%$|', trim( $height ) ) ? trim( $height ) . ';' : absint( $height ) . 'px;';
 
 			/** Output the slider info */
-			$slider = apply_filters( 'tgmsp_before_slider', $slider, $id, $images, $soliloquy_data, $soliloquy_count );
-			$slider .= '<div id="flex-container-' . esc_attr( $id ) . '" class="flex-container ' . sanitize_html_class( strtolower( $soliloquy_data[$soliloquy_count]['meta']['transition'] ), '' ) . '" style="max-width: ' . absint( $width ) . 'px; max-height: ' . absint( $height ) . 'px;">';
-				$slider .= '<div id="flexslider-' . esc_attr( $id ) . '" class="flexslider">';
-					$slider .= '<ul id="flexslider-list-' . esc_attr( $id ) . '" class="slides">';
+			$slider = apply_filters( 'tgmsp_before_slider', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
+			$slider .= '<div id="soliloquy-container-' . esc_attr( $id ) . '" ' . $this->get_custom_slider_classes() . ' style="' . apply_filters( 'tgmsp_slider_width_output', 'max-width: ' . $width, $width, $id ) . ' ' . apply_filters( 'tgmsp_slider_height_output', 'max-height: ' . $height, $height, $id ) . ' ' . apply_filters( 'tgmsp_slider_container_style', '', $id ) . '">';
+				$slider .= '<div id="soliloquy-' . esc_attr( $id ) . '" class="soliloquy">';
+					$slider .= '<ul id="soliloquy-list-' . esc_attr( $id ) . '" class="soliloquy-slides">';
 						foreach ( $images as $image ) {
-							$alt 			= empty( $image['alt'] ) ? apply_filters( 'tgmsp_no_alt', '' ) : $image['alt'];
-							$title 			= empty( $image['title'] ) ? apply_filters( 'tgmsp_no_title', '' ) : $image['title'];
-							$link_title 	= empty( $image['linktitle'] ) ? apply_filters( 'tgmsp_no_link_title', '' ) : $image['linktitle'];
-							$link_target 	= empty( $image['linktab'] ) ? apply_filters( 'tgmsp_no_link_target', '' ) : 'target="_blank"';
+							$alt 			= empty( $image['alt'] ) ? apply_filters( 'tgmsp_no_alt', '', $id, $image ) : $image['alt'];
+							$title 			= empty( $image['title'] ) ? apply_filters( 'tgmsp_no_title', '', $id, $image ) : $image['title'];
+							$link_title 	= empty( $image['linktitle'] ) ? apply_filters( 'tgmsp_no_link_title', '', $id, $image ) : $image['linktitle'];
+							$link_target 	= empty( $image['linktab'] ) ? apply_filters( 'tgmsp_no_link_target', '', $id, $image ) : 'target="_blank"';
 
-							$slide = '<li id="flexslider-' . esc_attr( $id ) . '-item-' . $i . '" class="flexslider-item" style="display: none;">';
+							$slide = '<li id="soliloquy-' . esc_attr( $id ) . '-item-' . $i . '" class="soliloquy-item" style="' . apply_filters( 'tgmsp_slider_item_style', 'display: none;', $id, $image, $i ) . '" ' . apply_filters( 'tgmsp_slider_item_attr', '', $id, $image, $i ) . '>';
 								if ( ! empty( $image['link'] ) )
 									$slide .= apply_filters( 'tgmsp_link_output', '<a href="' . esc_url( $image['link'] ) . '" title="' . esc_attr( $link_title ) . '" ' . $link_target . '>', $id, $image, $link_title, $link_target );
-								$slide .= apply_filters( 'tgmsp_image_output', '<img src="' . esc_url( $image['src'] ) . '" alt="' . esc_attr( $alt ) . '" title="' . esc_attr( $title ) . '" />', $id, $image, $alt, $title );
+								$slide .= apply_filters( 'tgmsp_image_output', '<img class="soliloquy-item-image" src="' . esc_url( $image['src'] ) . '" alt="' . esc_attr( $alt ) . '" title="' . esc_attr( $title ) . '" />', $id, $image, $alt, $title );
 								if ( ! empty( $image['link'] ) )
 									$slide .= '</a>';
 								if ( ! empty( $image['caption'] ) )
-									$slide .= apply_filters( 'tgmsp_caption_output', '<div class="flex-caption">' . $image['caption'] . '</div>', $id, $image );
+									$slide .= apply_filters( 'tgmsp_caption_output', '<div class="soliloquy-caption"><div class="soliloquy-caption-inside">' . $image['caption'] . '</div></div>', $id, $image );
 							$slide .= '</li>';
 							$slider .= apply_filters( 'tgmsp_individual_slide', $slide, $id, $image, $i );
 							$i++;
 						}
 					$slider .= '</ul>';
-					$slider = apply_filters( 'tgmsp_inside_slider', $slider, $id, $images, $soliloquy_data, $soliloquy_count );
+					$slider = apply_filters( 'tgmsp_inside_slider', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
 				$slider .= '</div>';
+				$slider = apply_filters( 'tgmsp_inside_slider_container', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
 			$slider .= '</div>';
 
-			$slider = apply_filters( 'tgmsp_after_slider', $slider, $id, $images, $soliloquy_data, $soliloquy_count );
+			$slider = apply_filters( 'tgmsp_after_slider', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
 		}
 
 		/** Increment the counter in case there are multiple slider instances on the same page */
@@ -153,7 +157,7 @@ class Tgmsp_Lite_Shortcode {
 				$animation 			= isset( $slider['meta']['transition'] ) && 'fade' == $slider['meta']['transition'] ? 'fade' : 'slide';
 
 				?>
-				<script type="text/javascript">jQuery(window).load(function(){jQuery('#flexslider-<?php echo absint( $slider['id'] ); ?>').flexslider({animation:'<?php echo $animation; ?>',slideshowSpeed:<?php echo isset( $slider['meta']['speed'] ) ? absint( $slider['meta']['speed'] ) : '7000'; ?>,animationDuration:<?php echo isset( $slider['meta']['duration'] ) ? absint( $slider['meta']['duration'] ) : '600'; ?>,controlsContainer:'<?php echo apply_filters( 'tgmsp_slider_controls', '#flexslider-' . absint( $slider['id'] ), $slider['id'] ); ?>'});});</script>
+				<script type="text/javascript">jQuery(window).load(function(){jQuery('#soliloquy-<?php echo absint( $slider['id'] ); ?>').flexslider({animation:'<?php echo $animation; ?>',slideshowSpeed:<?php echo isset( $slider['meta']['speed'] ) ? absint( $slider['meta']['speed'] ) : '7000'; ?>,animationDuration:<?php echo isset( $slider['meta']['duration'] ) ? absint( $slider['meta']['duration'] ) : '600'; ?>,controlsContainer:'<?php echo apply_filters( 'tgmsp_slider_controls', '#soliloquy-container-' . absint( $slider['id'] ), $slider['id'] ); ?>',namespace:'soliloquy-',selector:'.soliloquy-slides > li',useCSS:false});});</script>
 				<?php
 			}
 		}
@@ -166,7 +170,6 @@ class Tgmsp_Lite_Shortcode {
 	 * @since 1.0.0
 	 *
 	 * @param int $id The ID of the post for retrieving attachments
-	 
 	 * @return null|array Return early if no ID set, array of images on success
 	 */
 	public function get_images( $id, $meta = '' ) {
@@ -193,10 +196,10 @@ class Tgmsp_Lite_Shortcode {
 			'post_mime_type' 	=> 'image',
 			'post_status' 		=> null,
 			'posts_per_page' 	=> -1
-		) );
+		), $id );
 
 		/** Get all of the image attachments to the Soliloquy */
-		$attachments = get_posts( $args );
+		$attachments = apply_filters( 'tgmsp_get_slider_images', get_posts( $args ), $args, $id );
 
 		/** Loop through the attachments and store the data */
 		if ( $attachments ) {
@@ -205,24 +208,50 @@ class Tgmsp_Lite_Shortcode {
 				$image = apply_filters( 'tgmsp_get_image_data', wp_get_attachment_image_src( $attachment->ID, $size ), $id, $attachment, $size );
 
 				/** Store data in an array to send back to the shortcode */
-				$images[] = apply_filters( 'tgmsp_image_data', array(
-					'id' 		=> $attachment->ID,
-					'src' 		=> $image[0],
-					'width' 	=> $image[1],
-					'height' 	=> $image[2],
-					'title'		=> $attachment->post_title,
-					'alt' 		=> get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-					'link' 		=> get_post_meta( $attachment->ID, '_soliloquy_image_link', true ),
-					'linktitle' => get_post_meta( $attachment->ID, '_soliloquy_image_link_title', true ),
-					'linktab' 	=> get_post_meta( $attachment->ID, '_soliloquy_image_link_tab', true ),
-					'caption' 	=> $attachment->post_excerpt
-				), $attachment );
+				if ( $image ) {
+					$images[] = apply_filters( 'tgmsp_image_data', array(
+						'id' 		=> $attachment->ID,
+						'src' 		=> $image[0],
+						'width' 	=> $image[1],
+						'height' 	=> $image[2],
+						'title'		=> isset( $attachment->post_title ) ? $attachment->post_title : '',
+						'alt' 		=> get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+						'link' 		=> get_post_meta( $attachment->ID, '_soliloquy_image_link', true ),
+						'linktitle' => get_post_meta( $attachment->ID, '_soliloquy_image_link_title', true ),
+						'linktab' 	=> get_post_meta( $attachment->ID, '_soliloquy_image_link_tab', true ),
+						'caption' 	=> isset( $attachment->post_excerpt ) ? $attachment->post_excerpt : ''
+					), $attachment, $id );
+				}
 			}
 		}
 
 		/** Return array of images */
 		return apply_filters( 'tgmsp_slider_images', $images, $meta, $attachments );
 
+	}
+	
+	/**
+	 * Getter method for retrieving custom slider classes.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @global array $soliloquy_data Array of data for the current slider
+	 * @global int $soliloquy_count The current Soliloquy instance on the page
+	 */
+	public function get_custom_slider_classes() {
+	
+		global $soliloquy_data, $soliloquy_count;
+		$classes = array();
+		
+		/** Set the default soliloquy-container */
+		$classes[] = 'soliloquy-container';
+		
+		/** Set a class for the type of transition being used */
+		$classes[] = sanitize_html_class( 'soliloquy-' . strtolower( $soliloquy_data[absint( $soliloquy_count )]['meta']['transition'] ), '' );
+		
+		/** Now add a filter to addons can access and add custom classes */
+		return 'class="' . implode( ' ', apply_filters( 'tgmsp_slider_classes', $classes, $soliloquy_data[absint( $soliloquy_count )]['id'] ) ) . '"';
+	
 	}
 	
 	/**

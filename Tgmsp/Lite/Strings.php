@@ -39,6 +39,7 @@ class Tgmsp_Lite_Strings {
 		$this->strings = apply_filters( 'tgmsp_strings', array(
 			'add_edit_help'			=> __( 'Create and manage your slider from this screen. Click on the Upload Images button to begin uploading your images, and once uploaded, you can drag-and-drop sort them, add image meta and set slider options.', 'soliloquy-lite' ),
 			'add_slider'			=> esc_attr__( 'Add Soliloquy Slider', 'soliloquy-lite' ),
+			'add_slider_editor'		=> esc_attr__( 'Add Slider', 'soliloquy-lite' ),
 			'advanced_help'			=> __( 'Soliloquy Advanced', 'soliloquy-lite' ),
 			'advanced_help_desc'	=> __( 'Want even more advanced features for Soliloquy? How about ajax preloading, embedded video support for YouTube and Vimeo, easy internal linking, full support for available FlexSlider options and APIs, custom sizes, and even Addons?', 'soliloquy-lite' ),
 			'advanced_help_demo'	=> __( 'Or go ahead and test a live demo of the full version yourself.', 'soliloquy-lite' ),

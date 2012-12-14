@@ -43,13 +43,18 @@ class Tgmsp_Lite_Editor {
 	 */
 	public function tinymce( $context ) {
 
-		global $pagenow;
+		global $pagenow, $wp_version;
 		$output = '';
 
 		/** Only run in post/page creation and edit screens */
 		if ( in_array( $pagenow, array( 'post.php', 'page.php', 'post-new.php', 'post-edit.php' ) ) ) {
-			$img 	= '<img src="' . plugins_url( 'css/images/menu-icon.png', dirname( dirname( __FILE__ ) ) ) . '" width="16px" height="16px" alt="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '" />';
-			$output = '<a href="#TB_inline?width=640&inlineId=choose-soliloquy-slider" class="thickbox" title="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '">' . $img . '</a>';
+			if ( version_compare( $wp_version, '3.5', '<' ) ) {
+				$img 	= '<img src="' . plugins_url( 'css/images/menu-icon.png', dirname( dirname( __FILE__ ) ) ) . '" width="16px" height="16px" alt="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '" />';
+				$output = '<a href="#TB_inline?width=640&inlineId=choose-soliloquy-slider" class="thickbox" title="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '">' . $img . '</a>';
+			} else {
+				$img 	= '<span class="wp-media-buttons-icon" style="background-image: url(' . plugins_url( 'css/images/menu-icon.png', dirname( dirname( __FILE__ ) ) ) . '); margin-top: -1px;"></span>';
+				$output = '<a href="#TB_inline?width=640&inlineId=choose-soliloquy-slider" class="thickbox button" title="' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider'] . '" style="padding-left: .4em;">' . $img . ' ' . Tgmsp_Lite_Strings::get_instance()->strings['add_slider_editor'] . '</a>';
+			}
 		}
 
 		return $context . $output;

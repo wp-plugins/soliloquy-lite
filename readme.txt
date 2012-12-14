@@ -2,7 +2,7 @@
 Contributors: griffinjt
 Tags: slider, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag
 Requires at least: 3.3.1
-Tested up to: 3.5-alpha
+Tested up to: 3.5
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
 
@@ -49,7 +49,41 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 5. Easily select a slider to insert into your post or page.
 6. The final result.
 
+== Notes ==
+
+As of v1.3.0, Soliloquy Lite has been brought to parity with Soliloquy in terms of HTML and class/ID structure. Parity has also been brought when updating default post meta fields that will be available once an upgrade is made. In light of this, namespacing is now implemented in Soliloquy Lite. **This means that any CSS customizations made to Soliloquy Lite will be lost when you upgrade to v1.3.0.** I've included a conversion chart below so that you can see what classes/IDs have changed so that you can update your CSS styles accordingly. I'm available to help in the transition, so please feel free to submit a support thread regarding this and I will help you out. Again, take note of the conversion chart below and utilize it before upgrading.
+
+**Note** Any instances on {slider_id} refer to the numeric slider ID, e.g. #soliloquy-container-922 where 922 is the ID of the slider. Any instances of {$i} refer to the current slide number in the slide, e.g. #soliloquy-287-item-2, where 2 is slide #2 in the slider.
+
+#flex-container-{slider_id} > #soliloquy-container-{slider_id}
+.flex-container > .soliloquy-container
+.flex-viewport > .soliloquy-viewport
+#flexslider-{slider_id} > #soliloquy-{slider_id}
+.flexslider > .soliloquy
+#flexslider-list-{slider_id} > #soliloquy-list-{slider_id}
+.slides > .soliloquy-slides (this change was made to prevent errant instantiation from other scripts)
+#flexslider-{slider_id}-item-{$i} > #soliloquy-{slider_id}-item-{$i}
+.flexslider-item > .soliloquy-item
+.flex-active-slide > .soliloquy-active-slide
+.flex-caption > .soliloquy-caption-inside
+.flex-control-nav > .soliloquy-control-nav
+.flex-control-paging > .soliloquy-control-paging
+.flex-active > .soliloquy-active
+.flex-direction-nav > .soliloquy-direction-nav
+.flex-prev > .soliloquy-prev
+.flex-next > .soliloquy-next.flex-disabled > .soliloquy-disabled
+.flex-pauseplay > .soliloquy-pauseplay
+.flex-pause > .soliloquy-pause
+.flex-play > .soliloquy-play
+
 == Changelog ==
+
+= 1.3.0 =
+* Compatibility updates with WP 3.5
+* Updates to bring parity between Soliloquy Lite and Soliloquy
+* Shiny new media button that integrates seamlessly with the new Add Media button
+* Default post meta fields are now set when upgrading from Soliloquy Lite to Soliloquy
+* Bug fixes and enhancements
 
 = 1.2.0 =
 * Updated to fix some MS issues
