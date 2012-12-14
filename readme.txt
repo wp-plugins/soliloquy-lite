@@ -55,26 +55,26 @@ As of v1.3.0, Soliloquy Lite has been brought to parity with Soliloquy in terms 
 
 **Note** Any instances on {slider_id} refer to the numeric slider ID, e.g. #soliloquy-container-922 where 922 is the ID of the slider. Any instances of {$i} refer to the current slide number in the slide, e.g. #soliloquy-287-item-2, where 2 is slide #2 in the slider.
 
-#flex-container-{slider_id} > #soliloquy-container-{slider_id}
-.flex-container > .soliloquy-container
-.flex-viewport > .soliloquy-viewport
-#flexslider-{slider_id} > #soliloquy-{slider_id}
-.flexslider > .soliloquy
-#flexslider-list-{slider_id} > #soliloquy-list-{slider_id}
-.slides > .soliloquy-slides (this change was made to prevent errant instantiation from other scripts)
-#flexslider-{slider_id}-item-{$i} > #soliloquy-{slider_id}-item-{$i}
-.flexslider-item > .soliloquy-item
-.flex-active-slide > .soliloquy-active-slide
-.flex-caption > .soliloquy-caption-inside
-.flex-control-nav > .soliloquy-control-nav
-.flex-control-paging > .soliloquy-control-paging
-.flex-active > .soliloquy-active
-.flex-direction-nav > .soliloquy-direction-nav
-.flex-prev > .soliloquy-prev
-.flex-next > .soliloquy-next.flex-disabled > .soliloquy-disabled
-.flex-pauseplay > .soliloquy-pauseplay
-.flex-pause > .soliloquy-pause
-.flex-play > .soliloquy-play
+* #flex-container-{slider_id} > #soliloquy-container-{slider_id}
+* .flex-container > .soliloquy-container
+* .flex-viewport > .soliloquy-viewport
+* #flexslider-{slider_id} > #soliloquy-{slider_id}
+* .flexslider > .soliloquy
+* #flexslider-list-{slider_id} > #soliloquy-list-{slider_id}
+* .slides > .soliloquy-slides (this change was made to prevent errant instantiation from other scripts)
+* #flexslider-{slider_id}-item-{$i} > #soliloquy-{slider_id}-item-{$i}
+* .flexslider-item > .soliloquy-item
+* .flex-active-slide > .soliloquy-active-slide
+* .flex-caption > .soliloquy-caption-inside
+* .flex-control-nav > .soliloquy-control-nav
+* .flex-control-paging > .soliloquy-control-paging
+* .flex-active > .soliloquy-active
+* .flex-direction-nav > .soliloquy-direction-nav
+* .flex-prev > .soliloquy-prev
+* .flex-next > .soliloquy-next.flex-disabled > .soliloquy-disabled
+* .flex-pauseplay > .soliloquy-pauseplay
+* .flex-pause > .soliloquy-pause
+* .flex-play > .soliloquy-play
 
 == Changelog ==
 
