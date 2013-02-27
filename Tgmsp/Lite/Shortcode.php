@@ -75,6 +75,14 @@ class Tgmsp_Lite_Shortcode {
 
 		/** Only proceed if we have images to output */
 		if ( $images ) {
+			// If the user wants a preloader image, store the aspect ratio for dynamic height calculation.
+			if ( isset( $soliloquy_data[absint( $soliloquy_count )]['meta']['preloader'] ) && $soliloquy_data[absint( $soliloquy_count )]['meta']['preloader'] ) {
+				$preloader = true;
+				$soliloquy_data[absint( $soliloquy_count )]['ratio'] = ( $images[0]['width'] / $images[0]['height'] );
+				add_action( 'tgmsp_callback_start_' . $id, array( $this, 'preloader' ) );
+				add_filter( 'tgmsp_slider_classes', array( $this, 'preloader_class' ) );
+			}
+			
 			/** Make sure jQuery is loaded and load script and slider */
 			wp_enqueue_script( 'soliloquy-script' );
 			wp_enqueue_style( 'soliloquy-style' );
@@ -125,6 +133,11 @@ class Tgmsp_Lite_Shortcode {
 			$slider .= '</div>';
 
 			$slider = apply_filters( 'tgmsp_after_slider', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
+			
+			// If we are adding a preloading icon, do it now.
+			if ( $preloader ) {
+				$slider .= '<style type="text/css">.soliloquy-container.soliloquy-preloader{background: url("' . plugins_url( "css/images/preloader.gif", dirname( dirname( __FILE__ ) ) ) . '") no-repeat scroll 50% 50%;}@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min--moz-device-pixel-ratio: 1.5),only screen and (min-device-pixel-ratio: 1.5){.soliloquy-container.soliloquy-preloader{background-image: url("' . plugins_url( "css/images/preloader@2x.gif", dirname( dirname( __FILE__ ) ) ) . '");background-size: 16px 16px;}}</style>';
+			}
 		}
 
 		/** Increment the counter in case there are multiple slider instances on the same page */
@@ -252,6 +265,32 @@ class Tgmsp_Lite_Shortcode {
 		/** Now add a filter to addons can access and add custom classes */
 		return 'class="' . implode( ' ', apply_filters( 'tgmsp_slider_classes', $classes, $soliloquy_data[absint( $soliloquy_count )]['id'] ) ) . '"';
 	
+	}
+	
+	/**
+	 * Removes the fixed height and preloader image once the slider has initialized.
+	 *
+	 * @since 1.4.0
+	 */
+	public function preloader( $id ) {
+		
+		echo 'jQuery("#soliloquy-container-' . absint( $id ) . '").css({ "background" : "transparent", "height" : "auto" });';
+		
+	}
+	
+	/**
+	 * Adds the preloader class to the slider to signify use of a preloading image.
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param array $classes Array of slider classes
+	 * @return array $classes Amended array of slider classes
+	 */
+	public function preloader_class( $classes ) {
+		
+		$classes[] = 'soliloquy-preloader';
+		return array_unique( $classes );
+		
 	}
 	
 	/**

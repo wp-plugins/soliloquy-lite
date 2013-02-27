@@ -67,6 +67,7 @@ class Tgmsp_Lite_Admin {
 					if ( empty( $meta['touch'] ) ) 		$meta['touch'] 		= 1;
 					if ( empty( $meta['delay'] ) ) 		$meta['delay'] 		= 0;
 					if ( empty( $meta['type'] ) ) 		$meta['type'] 		= 'default';
+					if ( empty( $meta['preloader'] ) )  $meta['preloader']  = 0;
 					
 					/** Update post meta for the slider */
 					update_post_meta( $slider->ID, '_soliloquy_settings', $meta );
@@ -277,6 +278,14 @@ class Tgmsp_Lite_Admin {
 					<td>
 						<input id="soliloquy-duration" type="text" name="_soliloquy_settings[duration]" value="<?php echo esc_attr( $this->get_custom_field( '_soliloquy_settings', 'duration' ) ); ?>" />
 						<span class="description"><?php echo Tgmsp_Lite_Strings::get_instance()->strings['slider_milliseconds']; ?></span>
+					</td>
+				</tr>
+				<?php do_action( 'tgmsp_before_setting_preloader', $post ); ?>
+				<tr id="soliloquy-preloader-box" valign="middle">
+					<th scope="row"><label for="soliloquy-preloader"><?php echo Tgmsp_Lite_Strings::get_instance()->strings['slider_preloader']; ?></label></th>
+					<td>
+						<input id="soliloquy-preloader" type="checkbox" name="_soliloquy_settings[preloader]" value="<?php echo esc_attr( $this->get_custom_field( '_soliloquy_settings', 'preloader' ) ); ?>" <?php checked( $this->get_custom_field( '_soliloquy_settings', 'preloader' ), 1 ); ?> />
+						<span class="description"><?php echo Tgmsp_Lite_Strings::get_instance()->strings['slider_preloader_desc']; ?></span>
 					</td>
 				</tr>
 				<?php do_action( 'tgmsp_end_of_settings', $post ); ?>

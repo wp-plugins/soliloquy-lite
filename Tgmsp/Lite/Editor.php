@@ -96,6 +96,7 @@ class Tgmsp_Lite_Editor {
 		$settings['transition']	= preg_replace( '#[^a-z0-9-_]#', '', $_POST['_soliloquy_settings']['transition'] );
 		$settings['speed']		= absint( $_POST['_soliloquy_settings']['speed'] ) ? absint( $_POST['_soliloquy_settings']['speed'] ) : 7000;
 		$settings['duration']	= absint( $_POST['_soliloquy_settings']['duration'] ) ? absint( $_POST['_soliloquy_settings']['duration'] ) : 600;
+		$settings['preloader']	= isset( $_POST['_soliloquy_settings']['preloader'] ) ? 1 : 0;
 
 		do_action( 'tgmsp_save_slider_settings', $settings, $post_id, $post );
 

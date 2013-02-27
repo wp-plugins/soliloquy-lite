@@ -100,6 +100,8 @@ class Tgmsp_Lite_Strings {
 			'slider_choose'			=> __( 'Choose Your Slider', 'soliloquy-lite' ),
 			'slider_insert_tb'		=> __( 'Insert into Slider', 'soliloquy-lite' ),
 			'slider_milliseconds'	=> __( 'Value is calculated using milliseconds.', 'soliloquy-lite' ),
+			'slider_preloader'		=> __( 'Use Loading Icon?', 'soliloquy-lite' ),
+			'slider_preloader_desc'	=> __( 'Outputs a loading icon while your slider loads to prevent content shifting.', 'soliloquy-lite' ),
 			'slider_select'			=> __( 'Please select a slider.', 'soliloquy-lite' ),
 			'slider_select_desc'	=> __( 'Select a slider below from the list of available sliders and then click \'Insert\' to place the slider into the editor.', 'soliloquy-lite' ),
 			'slider_select_insert'	=> esc_attr__( 'Insert Slider', 'soliloquy-lite' ),

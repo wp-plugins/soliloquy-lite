@@ -78,6 +78,10 @@ As of v1.3.0, Soliloquy Lite has been brought to parity with Soliloquy in terms 
 
 == Changelog ==
 
+= 1.4.0 =
+* Added ability to display a loading icon to fix content jumping on slider loading (retina ready too!)
+* Bug fixes and enhancements
+
 = 1.3.0 =
 * Compatibility updates with WP 3.5
 * Updates to bring parity between Soliloquy Lite and Soliloquy
