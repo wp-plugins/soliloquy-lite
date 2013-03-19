@@ -24,14 +24,14 @@ class Tgmsp_Lite_Shortcode {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
+
 		add_shortcode( 'soliloquy', array( $this, 'shortcode' ) );
 		add_filter( 'tgmsp_caption_output', 'do_shortcode' );
-	
+
 	}
-	
+
 	/**
 	 * Outputs slider data in a shortcode called 'soliloquy'.
 	 *
@@ -75,21 +75,13 @@ class Tgmsp_Lite_Shortcode {
 
 		/** Only proceed if we have images to output */
 		if ( $images ) {
-			// If the user wants a preloader image, store the aspect ratio for dynamic height calculation.
-			if ( isset( $soliloquy_data[absint( $soliloquy_count )]['meta']['preloader'] ) && $soliloquy_data[absint( $soliloquy_count )]['meta']['preloader'] ) {
-				$preloader = true;
-				$soliloquy_data[absint( $soliloquy_count )]['ratio'] = ( $images[0]['width'] / $images[0]['height'] );
-				add_action( 'tgmsp_callback_start_' . $id, array( $this, 'preloader' ) );
-				add_filter( 'tgmsp_slider_classes', array( $this, 'preloader_class' ) );
-			}
-			
 			/** Make sure jQuery is loaded and load script and slider */
 			wp_enqueue_script( 'soliloquy-script' );
 			wp_enqueue_style( 'soliloquy-style' );
 			add_action( 'wp_footer', array( $this, 'slider_script' ), 99 );
-			
+
 			/** Allow devs to circumvent the entire slider if necessary - beware, this filter is powerful - use with caution */
-			$pre = apply_filters( 'tgmsp_pre_load_slider', false, $id, $images, $soliloquy_data, $soliloquy_count, $slider ); 
+			$pre = apply_filters( 'tgmsp_pre_load_slider', false, $id, $images, $soliloquy_data, $soliloquy_count, $slider );
 			if ( $pre )
 				return $pre;
 
@@ -97,11 +89,21 @@ class Tgmsp_Lite_Shortcode {
 
 			/** If a custom size is chosen, all image sizes will be cropped the same, so grab width/height from first image */
 			$width 	= $soliloquy_data[absint( $soliloquy_count )]['meta']['width'] ? $soliloquy_data[absint( $soliloquy_count )]['meta']['width'] : $images[0]['width'];
-			$width	= apply_filters( 'tgmsp_slider_width', $width, $id );
+			$width	= $ratio_width = apply_filters( 'tgmsp_slider_width', $width, $id );
 			$width	= preg_match( '|%$|', trim( $width ) ) ? trim( $width ) . ';' : absint( $width ) . 'px;';
 			$height = $soliloquy_data[absint( $soliloquy_count )]['meta']['height'] ? $soliloquy_data[absint( $soliloquy_count )]['meta']['height'] : $images[0]['height'];
-			$height	= apply_filters( 'tgmsp_slider_height', $height, $id );
+			$height	= $ratio_height = apply_filters( 'tgmsp_slider_height', $height, $id );
 			$height	= preg_match( '|%$|', trim( $height ) ) ? trim( $height ) . ';' : absint( $height ) . 'px;';
+
+			// If the user wants a preloader image, store the aspect ratio for dynamic height calculation.
+			if ( isset( $soliloquy_data[absint( $soliloquy_count )]['meta']['preloader'] ) && $soliloquy_data[absint( $soliloquy_count )]['meta']['preloader'] ) {
+				$preloader = true;
+				$ratio_width  = preg_match( '|%$|', trim( $ratio_width ) ) ? str_replace( '%', '', $ratio_width ) : absint( $ratio_width );
+				$ratio_height = preg_match( '|%$|', trim( $ratio_height ) ) ? str_replace( '%', '', $ratio_height ) : absint( $ratio_height );
+				$soliloquy_data[absint( $soliloquy_count )]['ratio'] = ( $ratio_width / $ratio_height );
+				add_action( 'tgmsp_callback_start_' . $id, array( $this, 'preloader' ) );
+				add_filter( 'tgmsp_slider_classes', array( $this, 'preloader_class' ) );
+			}
 
 			/** Output the slider info */
 			$slider = apply_filters( 'tgmsp_before_slider', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
@@ -133,7 +135,7 @@ class Tgmsp_Lite_Shortcode {
 			$slider .= '</div>';
 
 			$slider = apply_filters( 'tgmsp_after_slider', $slider, $id, $images, $soliloquy_data, absint( $soliloquy_count ) );
-			
+
 			// If we are adding a preloading icon, do it now.
 			if ( $preloader ) {
 				$slider .= '<style type="text/css">.soliloquy-container.soliloquy-preloader{background: url("' . plugins_url( "css/images/preloader.gif", dirname( dirname( __FILE__ ) ) ) . '") no-repeat scroll 50% 50%;}@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min--moz-device-pixel-ratio: 1.5),only screen and (min-device-pixel-ratio: 1.5){.soliloquy-container.soliloquy-preloader{background-image: url("' . plugins_url( "css/images/preloader@2x.gif", dirname( dirname( __FILE__ ) ) ) . '");background-size: 16px 16px;}}</style>';
@@ -193,13 +195,13 @@ class Tgmsp_Lite_Shortcode {
 
 		/** Store images in an array and grab all attachments from the slider */
 		$images = array();
-		
+
 		/** Get the slider size */
 		if ( isset( $meta['custom'] ) && $meta['custom'] )
 			$size = $meta['custom'];
 		else
 			$size = 'full';
-				
+
 		/** Prepare args for getting image attachments */
 		$args = apply_filters( 'tgmsp_get_slider_images_args', array(
 			'orderby' 			=> 'menu_order',
@@ -216,7 +218,7 @@ class Tgmsp_Lite_Shortcode {
 
 		/** Loop through the attachments and store the data */
 		if ( $attachments ) {
-			foreach ( $attachments as $attachment ) {
+			foreach ( (array) $attachments as $attachment ) {
 				/** Get attachment metadata for each attachment */
 				$image = apply_filters( 'tgmsp_get_image_data', wp_get_attachment_image_src( $attachment->ID, $size ), $id, $attachment, $size );
 
@@ -242,7 +244,7 @@ class Tgmsp_Lite_Shortcode {
 		return apply_filters( 'tgmsp_slider_images', $images, $meta, $attachments );
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving custom slider classes.
 	 *
@@ -252,32 +254,32 @@ class Tgmsp_Lite_Shortcode {
 	 * @global int $soliloquy_count The current Soliloquy instance on the page
 	 */
 	public function get_custom_slider_classes() {
-	
+
 		global $soliloquy_data, $soliloquy_count;
 		$classes = array();
-		
+
 		/** Set the default soliloquy-container */
 		$classes[] = 'soliloquy-container';
-		
+
 		/** Set a class for the type of transition being used */
 		$classes[] = sanitize_html_class( 'soliloquy-' . strtolower( $soliloquy_data[absint( $soliloquy_count )]['meta']['transition'] ), '' );
-		
+
 		/** Now add a filter to addons can access and add custom classes */
 		return 'class="' . implode( ' ', apply_filters( 'tgmsp_slider_classes', $classes, $soliloquy_data[absint( $soliloquy_count )]['id'] ) ) . '"';
-	
+
 	}
-	
+
 	/**
 	 * Removes the fixed height and preloader image once the slider has initialized.
 	 *
 	 * @since 1.4.0
 	 */
 	public function preloader( $id ) {
-		
+
 		echo 'jQuery("#soliloquy-container-' . absint( $id ) . '").css({ "background" : "transparent", "height" : "auto" });';
-		
+
 	}
-	
+
 	/**
 	 * Adds the preloader class to the slider to signify use of a preloading image.
 	 *
@@ -287,21 +289,21 @@ class Tgmsp_Lite_Shortcode {
 	 * @return array $classes Amended array of slider classes
 	 */
 	public function preloader_class( $classes ) {
-		
+
 		$classes[] = 'soliloquy-preloader';
 		return array_unique( $classes );
-		
+
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 }

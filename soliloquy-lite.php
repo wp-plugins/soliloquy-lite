@@ -5,7 +5,7 @@ Plugin URI: http://soliloquywp.com/
 Description: Soliloquy is the best responsive WordPress slider plugin. Period. This is the lite version.
 Author: Thomas Griffin
 Author URI: http://thomasgriffinmedia.com/
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
@@ -50,7 +50,7 @@ class Tgmsp_Lite {
 	 * @var object
 	 */
 	private static $instance;
-	
+
 	/**
 	 * Holds a copy of the main plugin filepath.
 	 *
@@ -75,16 +75,16 @@ class Tgmsp_Lite {
 
 		/** Run activation hook and make sure the WordPress version supports the plugin */
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
-		
+
 		/** Add theme support for post thumbnails if it doesn't exist */
 		if ( ! current_theme_supports( 'post-thumbnails' ) )
 			add_theme_support( 'post-thumbnails' );
-			
+
 		/** Load the plugin */
 		add_action( 'init', array( $this, 'init' ) );
 
 	}
-	
+
 	/**
  	 * Registers a plugin activation hook to make sure the current WordPress
  	 * version is suitable (>= 3.3.1) for use and that the full version of
@@ -95,32 +95,32 @@ class Tgmsp_Lite {
  	 * @global int $wp_version The current version of this particular WP instance
  	 */
 	public function activation() {
-	
+
 		global $wp_version;
-		
+
 		if ( class_exists( 'Tgmsp', false ) ) {
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 			wp_die( 'The main Soliloquy plugin is active on this site.' );
 		}
-		
+
 		if ( version_compare( $wp_version, '3.3.1', '<' ) ) {
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 			wp_die( printf( __( 'Sorry, but your version of WordPress, <strong>%s</strong>, does not meet Soliloquy\'s required version of <strong>3.3.1</strong> to run properly. The plugin has been deactivated. <a href="%s">Click here to return to the Dashboard</a>', 'soliloquy-lite' ), $wp_version, admin_url() ) );
 		}
-             
+
 	}
-		
+
 	/**
-	 * Registers the post type and loads all the actions and 
+	 * Registers the post type and loads all the actions and
 	 * filters for the class.
 	 *
 	 * @since 1.0.0
 	 */
 	public function init() {
-	
+
 		/** Load the plugin textdomain for internationalizing strings */
 		load_plugin_textdomain( 'soliloquy', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-		
+
 		/** Instantiate all the necessary components of the plugin */
 		$tgmsp_lite_admin		= new Tgmsp_Lite_Admin;
 		$tgmsp_lite_ajax		= new Tgmsp_Lite_Ajax;
@@ -133,7 +133,7 @@ class Tgmsp_Lite {
 		$tgmsp_lite_strings		= new Tgmsp_Lite_Strings;
 
 	}
-	
+
 	/**
 	 * PSR-0 compliant autoloader to load classes as needed.
 	 *
@@ -143,38 +143,38 @@ class Tgmsp_Lite {
 	 * @return null Return early if the class name does not start with the correct prefix
 	 */
 	public static function autoload( $classname ) {
-	
+
 		if ( 'Tgmsp_Lite' !== mb_substr( $classname, 0, 10 ) )
 			return;
-			
+
 		$filename = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . str_replace( '_', DIRECTORY_SEPARATOR, $classname ) . '.php';
 		if ( file_exists( $filename ) )
 			require $filename;
-	
+
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 	/**
 	 * Getter method for retrieving the main plugin filepath.
 	 *
 	 * @since 1.2.0
 	 */
 	public static function get_file() {
-	
+
 		return self::$file;
-	
+
 	}
-	
+
 	/**
 	 * Helper flag method for any Soliloquy screen.
 	 *
@@ -183,19 +183,19 @@ class Tgmsp_Lite {
 	 * @return bool True if on a Soliloquy screen, false if not
 	 */
 	public static function is_soliloquy_screen() {
-	
+
 		$current_screen = get_current_screen();
-		
+
 		if ( ! $current_screen )
 			return false;
-		
+
 		if ( 'soliloquy' == $current_screen->post_type )
 			return true;
-			
+
 		return false;
-	
+
 	}
-	
+
 	/**
 	 * Helper flag method for the Add/Edit Soliloquy screens.
 	 *
@@ -204,17 +204,17 @@ class Tgmsp_Lite {
 	 * @return bool True if on a Soliloquy Add/Edit screen, false if not
 	 */
 	public static function is_soliloquy_add_edit_screen() {
-	
+
 		$current_screen = get_current_screen();
-		
+
 		if ( ! $current_screen )
 			return false;
-		
+
 		if ( 'soliloquy' == $current_screen->post_type && 'post' == $current_screen->base )
 			return true;
-			
+
 		return false;
-	
+
 	}
 
 }
