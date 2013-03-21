@@ -24,23 +24,23 @@ class Tgmsp_Lite_Admin {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
+
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'add_meta_boxes', array( $this, 'remove_seo_support' ), 99 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
-	
+
 	}
-	
+
 	/**
 	 * Deactivate Soliloquy Lite if the full version is installed and active.
 	 *
 	 * @since 1.0.0
 	 */
 	public function admin_init() {
-	
+
 		/** If the main Soliloquy plugin exists, update default post meta fields and deactivate ourself in favor of the full version */
 		if ( class_exists( 'Tgmsp', false ) ) {
 			/** Get current sliders and update default post meta fields */
@@ -49,7 +49,7 @@ class Tgmsp_Lite_Admin {
 				foreach ( (array) $sliders as $slider ) {
 					/** Grab Soliloquy meta from the slider */
 					$meta = get_post_meta( $slider->ID, '_soliloquy_settings', true );
-					
+
 					/** Set default post meta fields */
 					if ( empty( $meta['default'] ) ) 	$meta['default'] 	= 'default';
 					if ( empty( $meta['custom'] ) ) 	$meta['custom'] 	= false;
@@ -57,7 +57,7 @@ class Tgmsp_Lite_Admin {
 					if ( empty( $meta['video'] ) ) 		$meta['video'] 		= 1;
 					if ( empty( $meta['navigation'] ) ) $meta['navigation'] = 1;
 					if ( empty( $meta['control'] ) ) 	$meta['control'] 	= 1;
-					if ( empty( $meta['keyboard'] ) ) 	$meta['keyboard'] 	= 1;	
+					if ( empty( $meta['keyboard'] ) ) 	$meta['keyboard'] 	= 1;
 					if ( empty( $meta['number'] ) ) 	$meta['number'] 	= 0;
 					if ( empty( $meta['loop'] ) ) 		$meta['loop'] 		= 1;
 					if ( empty( $meta['action'] ) ) 	$meta['action'] 	= 1;
@@ -68,20 +68,20 @@ class Tgmsp_Lite_Admin {
 					if ( empty( $meta['delay'] ) ) 		$meta['delay'] 		= 0;
 					if ( empty( $meta['type'] ) ) 		$meta['type'] 		= 'default';
 					if ( empty( $meta['preloader'] ) )  $meta['preloader']  = 0;
-					
+
 					/** Update post meta for the slider */
 					update_post_meta( $slider->ID, '_soliloquy_settings', $meta );
 				}
 			}
-			
+
 			/** Deactive the plugin */
 			deactivate_plugins( Tgmsp_Lite::get_file() );
 		}
-	
+
 	}
-	
+
 	/**
-	 * There is no need to apply SEO to the Soliloquy post type, so we check to 
+	 * There is no need to apply SEO to the Soliloquy post type, so we check to
 	 * see if some popular SEO plugins are installed, and if so, remove the inpost
 	 * meta boxes from view.
 	 *
@@ -116,6 +116,7 @@ class Tgmsp_Lite_Admin {
 
 		add_meta_box( 'soliloquy_uploads', Tgmsp_Lite_Strings::get_instance()->strings['meta_uploads'], array( $this, 'soliloquy_uploads' ), 'soliloquy', 'normal', 'high' );
 		add_meta_box( 'soliloquy_settings', Tgmsp_Lite_Strings::get_instance()->strings['meta_settings'], array( $this, 'soliloquy_settings' ), 'soliloquy', 'normal', 'high' );
+		add_meta_box( 'soliloquy_email', Tgmsp_Lite_Strings::get_instance()->strings['email_instructions'], array( $this, 'soliloquy_email' ), 'soliloquy', 'side', 'high' );
 		add_meta_box( 'soliloquy_upgrade', Tgmsp_Lite_Strings::get_instance()->strings['meta_upgrade'], array( $this, 'soliloquy_upgrade' ), 'soliloquy', 'side', 'core' );
 		add_meta_box( 'soliloquy_instructions', Tgmsp_Lite_Strings::get_instance()->strings['meta_instructions'], array( $this, 'soliloquy_instructions' ), 'soliloquy', 'side', 'core' );
 
@@ -230,7 +231,7 @@ class Tgmsp_Lite_Admin {
 	public function soliloquy_settings( $post ) {
 
 		global $_wp_additional_image_sizes;
-		
+
 		/** Always keep security first */
 		wp_nonce_field( 'soliloquy_settings_script', 'soliloquy_settings_script' );
 
@@ -302,7 +303,7 @@ class Tgmsp_Lite_Admin {
 		do_action( 'tgmsp_after_settings', $post );
 
 	}
-	
+
 	/**
 	 * Callback function for Soliloquy upgrading methods.
 	 *
@@ -314,8 +315,42 @@ class Tgmsp_Lite_Admin {
 
 		$upgrade = '<p><strong>' . Tgmsp_Lite_Strings::get_instance()->strings['upgrade'] . '</strong></p>';
 		$upgrade .= sprintf( '<p><a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank"><strong>%1$s</strong></a></p>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_now'] );
-		
+
 		echo $upgrade;
+
+	}
+
+	/**
+	 * Callback function for Soliloquy email signup.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param object $post Current post object data
+	 */
+	public function soliloquy_email( $post ) {
+
+		echo '<div class="soliloquy-email">';
+			echo '<p>' . Tgmsp_Lite_Strings::get_instance()->strings['email_desc'] . '</p>';
+			echo '<input type="email" name="soliloquy-email" value="" placeholder="' . Tgmsp_Lite_Strings::get_instance()->strings['email_placeholder'] . '" style="margin-right:5px;width:186px;" />';
+			echo '<a class="button button-primary soliloquy-signup-email" href="#" title="' . Tgmsp_Lite_Strings::get_instance()->strings['email_now'] . '">' . Tgmsp_Lite_Strings::get_instance()->strings['email_now'] . '</a>';
+			echo '<script type="text/javascript">';
+				echo 'jQuery(document).ready(function($){';
+					echo '$(".soliloquy-signup-email").on("click", function(e){';
+						echo 'e.preventDefault();';
+						echo 'var $this = $(this), working = "' . Tgmsp_Lite_Strings::get_instance()->strings["working"] . '", orig_text = $this.text();';
+						echo '$this.text(working); $(".soliloquy-error").remove();';
+						echo '$.post(ajaxurl, { action: "soliloquy_email", email: $("input[name=\'soliloquy-email\']").val() }, function(resp){';
+							echo 'if ( resp && resp.error ) {';
+								echo '$("input[name=\'soliloquy-email\']").before("<p class=\'soliloquy-error\' style=\'color:#ff0000;\'>" + resp.error + "</p>");';
+							echo '} else {';
+								echo '$("input[name=\'soliloquy-email\']").before("<p style=\'color:#009933;\'>" + resp.success + "</p>");';
+							echo '}';
+							echo '$this.text(orig_text);';
+						echo '}, "json");';
+					echo '});';
+				echo '});';
+			echo '</script>';
+		echo '</div>';
 
 	}
 
@@ -332,7 +367,7 @@ class Tgmsp_Lite_Admin {
 		$instructions .= '<p><code>[soliloquy id="' . $post->ID . '"]</code></p>';
 		$instructions .= '<p>' . Tgmsp_Lite_Strings::get_instance()->strings['instructions_more'] . '</p>';
 		$instructions .= '<p><code>if ( function_exists( \'soliloquy_slider\' ) ) soliloquy_slider( \'' . $post->ID . '\' );</code></p>';
-		
+
 		echo apply_filters( 'tgmsp_slider_instructions', $instructions, $post );
 
 	}
@@ -348,13 +383,13 @@ class Tgmsp_Lite_Admin {
 			/** If a user hasn't dismissed the notice yet, output it for them to upgrade */
 			if ( ! get_user_meta( get_current_user_id(), 'soliloquy_dismissed_notice', true ) )
 				add_settings_error( 'tgmsp', 'tgmsp-upgrade-soliloquy', sprintf( Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag'], sprintf( '<a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_link'] ), sprintf( '<a id="soliloquy-dismiss-notice" href="#" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_dismiss'] ) ), 'updated' );
-			
+
 			/** Allow settings notices to be filtered */
 			apply_filters( 'tgmsp_output_notices', settings_errors( 'tgmsp' ) );
 		}
 
 	}
-	
+
 	/**
 	 * Helper function to get custom field values for the Soliloquy post type.
 	 *
@@ -395,16 +430,16 @@ class Tgmsp_Lite_Admin {
 		return false;
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 }

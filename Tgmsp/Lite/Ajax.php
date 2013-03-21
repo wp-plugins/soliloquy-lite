@@ -24,10 +24,11 @@ class Tgmsp_Lite_Ajax {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
-		
+
+		add_action( 'wp_ajax_soliloquy_email', array( $this, 'signup' ) );
+		add_action( 'wp_ajax_nopriv_soliloquy_email', array( $this, 'signup' ) );
 		add_action( 'wp_ajax_soliloquy_dismiss_notice', array( $this, 'dismiss' ) );
 		add_action( 'wp_ajax_soliloquy_refresh_images', array( $this, 'refresh_images' ) );
 		add_action( 'wp_ajax_soliloquy_iframe_refresh_images', array ( $this, 'refresh_images' ) );
@@ -35,9 +36,36 @@ class Tgmsp_Lite_Ajax {
 		add_action( 'wp_ajax_nopriv_soliloquy_sort_images', array( $this, 'sort_images' ) );
 		add_action( 'wp_ajax_soliloquy_remove_images', array( $this, 'remove_images' ) );
 		add_action( 'wp_ajax_soliloquy_update_meta', array( $this, 'update_meta' ) );
-	
+
 	}
-	
+
+	/**
+	 * Signs a user up to the email optin list for Thomas Griffin Media.
+	 *
+	 * @since 1.0.0
+	 */
+	public function signup() {
+
+		// Validate the fields before loading the API .
+		if ( ! isset( $_REQUEST['email'] ) || isset( $_REQUEST['email'] ) && empty( $_REQUEST['email'] ) || ! is_email( $_REQUEST['email'] ) ) {
+			echo json_encode( array( 'error' => Tgmsp_Lite_Strings::get_instance()->strings['email_error'] ) );
+			die;
+		}
+
+		// Add the user to the email newsletter list.
+		require_once plugin_dir_path( dirname( dirname( __FILE__ ) ) ) . 'madmimi/MadMimi.class.php';
+		$mimi = new MadMimi( 'thomas@thomasgriffinmedia.com', '709d4d36e5690d97382f36ee11d7a268' );
+
+		// Add to general email list.
+		$info = array( 'email' => $_REQUEST['email'], 'add_list' => 'Soliloquy Lite' );
+		$mimi->AddUser( $info );
+
+		// Ensure that we properly die at the end of processing the request.
+		echo json_encode( array( 'success' => Tgmsp_Lite_Strings::get_instance()->strings['email_success'] ) );
+		die;
+
+	}
+
 	/**
 	 * Dismisses the upgrade nag notice from the Dashboard.
 	 *
@@ -51,7 +79,7 @@ class Tgmsp_Lite_Ajax {
 		/** Update the user meta with a value */
 		if ( update_user_meta( get_current_user_id(), 'soliloquy_dismissed_notice', 1 ) );
 			echo json_encode( true );
-			
+
 		/** Kill the script */
 		die;
 
@@ -207,16 +235,16 @@ class Tgmsp_Lite_Ajax {
 		die;
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 }

@@ -78,6 +78,9 @@ As of v1.3.0, Soliloquy Lite has been brought to parity with Soliloquy in terms 
 
 == Changelog ==
 
+= 1.4.2 =
+* Bug fixes and enhancements
+
 = 1.4.1 =
 * Fixed a bug with the dynamic size calculation when using a loading icon for the slider
 

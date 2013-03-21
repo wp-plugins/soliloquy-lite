@@ -17,7 +17,7 @@ class Tgmsp_Lite_Strings {
 	 * @var object
 	 */
 	private static $instance;
-	
+
 	/**
 	 * Holds a copy of all the strings used by Soliloquy.
 	 *
@@ -33,9 +33,9 @@ class Tgmsp_Lite_Strings {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
+
 		$this->strings = apply_filters( 'tgmsp_strings', array(
 			'add_edit_help'			=> __( 'Create and manage your slider from this screen. Click on the Upload Images button to begin uploading your images, and once uploaded, you can drag-and-drop sort them, add image meta and set slider options.', 'soliloquy-lite' ),
 			'add_slider'			=> esc_attr__( 'Add Soliloquy Slider', 'soliloquy-lite' ),
@@ -51,6 +51,12 @@ class Tgmsp_Lite_Strings {
 			'column_shortcode'		=> __( 'Shortcode', 'soliloquy-lite' ),
 			'column_title'			=> __( 'Title', 'soliloquy-lite' ),
 			'dismissing'			=> __( 'Dismissing...', 'soliloquy-lite' ),
+			'email_error'			=> __( 'Oops - there was an error. Please try again!', 'soliloquy-lite' ),
+			'email_instructions'	=> __( 'Signup for the Soliloquy Newsletter!', 'soliloquy-lite' ),
+			'email_desc'			=> __( 'Receive all the latest news on Soliloquy, including plugin updates, new Addons and discount promotions! <em>You will never be spammed.</em>', 'soliloquy-lite' ),
+			'email_now'				=> esc_attr__( 'Signup!', 'soliloquy-lite' ),
+			'email_placeholder'		=> __( 'Enter your email address here...', 'soliloquy-lite' ),
+			'email_success'			=> __( 'Success! You have been signed up!', 'soliloquy-lite' ),
 			'image_alt'				=> __( 'Image Alt Tag', 'soliloquy-lite' ),
 			'image_caption'			=> __( 'Image Caption', 'soliloquy-lite' ),
 			'image_link'			=> __( 'Image Link', 'soliloquy-lite' ),
@@ -121,20 +127,21 @@ class Tgmsp_Lite_Strings {
 			'upgrade_now'			=> __( 'Click here to purchase your upgrade for Soliloquy and unleash the power of the best responsive WordPress slider plugin on the market!', 'soliloquy-lite' ),
 			'upgrade_nag'			=> __( 'Want full access to all available Soliloquy features? %s %s', 'soliloquy-lite' ),
 			'upgrade_nag_link'		=> __( 'Click here to upgrade Soliloquy now!', 'soliloquy-lite' ),
-			'upgrade_nag_dismiss'	=> __( 'Dismiss this notice', 'soliloquy-lite' )
+			'upgrade_nag_dismiss'	=> __( 'Dismiss this notice', 'soliloquy-lite' ),
+			'working'				=> __( 'Doing...', 'soliloquy-lite' )
 		) );
-	
+
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 }
