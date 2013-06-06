@@ -1,37 +1,43 @@
 === Soliloquy Lite Responsive Image Slider ===
 Contributors: griffinjt
-Tags: slider, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag
+Tags: wordpress slider, slider, wordpress slider plugin, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag
 Requires at least: 3.3.1
-Tested up to: 3.5
+Tested up to: 3.6
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
 
-The best responsive WordPress image slider plugin. Made lite and free.
+The best responsive WordPress slider plugin. Made lite and free.
 
 == Description ==
 
-Soliloquy, the [best responsive WordPress slider plugin](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite), is now available in its Lite form! Soliloquy is audited by Mark Jaquith, lead developer of WordPress, for security and features the easiest to use and most performance optimized code for an image slider plugin. By utilizing custom post types, Soliloquy allows you to create an infinite number of responsive image sliders with an infinite number of images in each slider with a few clicks of the mouse.
+Soliloquy, the [best responsive WordPress slider plugin](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite), is now available in its Lite form! Soliloquy is audited by Mark Jaquith, lead developer of WordPress, for security and features the **easiest to use and most performance optimized code for a WordPress slider plugin.** By utilizing custom post types, Soliloquy allows you to create an infinite number of responsive WordPress sliders with an infinite number of images in each slider with a few clicks of the mouse.
 
-**Note: This is the lite version of the image slider. Want even more slider features, including complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? [Click here to purchase the best responsive WordPress slider plugin now!](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
+**Note: This is the lite version of the Soliloquy WordPress slider. Want even more slider features, including HTML/video slides, complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? [Click here to purchase the best responsive WordPress slider plugin now!](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 = Features =
 
-* Usage of custom post types to create an unlimited number of image sliders.
+* Usage of custom post types to create an unlimited number of WordPress sliders.
 * Drag-and-drop image uploading, sorting and saving.
 * Completely SEO optimized with the ability to specify alt and title tags for your images within the slider.
 * Completely responsive (with touch enabled swiping).
-* Shortcode and template tags handy so that you can insert your image slider anywhere in your theme.
+* Shortcode and template tags handy so that you can insert your WordPress slider anywhere in your theme.
 * Metadata editing for each image, including image titles, alt tags and full HTML captions.
-* Smart JS/CSS loading so that assets only load on pages where a slider is present.
-* Media uploader button to easily insert your image slider into your posts/pages from the WYSIWYG editor.
+* Smart JS/CSS loading so that assets only load on pages where a Soliloquy WordPress slider is present.
+* Media uploader button to easily insert your WordPress slider into your posts/pages from the WYSIWYG editor.
 
-**Note: This image slider plugin is provided as-is. Only critical bug fixes, future compatibility with WordPress versions and routine maintenance will be addressed in plugin updates. If you want support or access to more slider features, [consider purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
+= Why Choose Soliloquy? =
+
+Soliloquy is the **best choice for a WordPress slider plugin** because it is fast, extremely inuitive and super easy to use. You can get your slider going in just a matter of seconds. In fact, take a look at how easy it is to create a WordPress slider with the paid version of the Soliloquy WordPress slider in the video below:
+
+[youtube http://www.youtube.com/watch?v=zw_t7RXYzTE]
+
+**Note: This WordPress slider plugin is provided as-is. Only critical bug fixes, future compatibility with WordPress versions and routine maintenance will be addressed in plugin updates. If you want support or access to more slider features, [consider purchasing a support license](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 == Installation ==
 
 1. Install Soliloquy Lite either via the WordPress.org plugin directory, or by uploading the files to your server.
 2. Activate Soliloquy Lite.
-3. Navigate to the Soliloquy tab at the bottom of your admin menu and click "Add New" to begin creating your new slider.
+3. Navigate to the Soliloquy tab at the bottom of your admin menu and click "Add New" to begin creating your new WordPress slider.
 4. Salivate for new features and [purchase the full version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite)!
 
 == Frequently Asked Questions ==
