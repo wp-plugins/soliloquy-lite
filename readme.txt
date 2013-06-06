@@ -84,6 +84,11 @@ As of v1.3.0, Soliloquy Lite has been brought to parity with Soliloquy in terms 
 
 == Changelog ==
 
+= 1.4.3 =
+* Fixed undefined variable notice when using the loading icon
+* Better loading of files (admin and front-end separation)
+* Miscalleneous bug fixes and enhancements
+
 = 1.4.2 =
 * Bug fixes and enhancements
 
