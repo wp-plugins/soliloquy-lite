@@ -24,18 +24,16 @@ class Tgmsp_Lite_Media {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-			
-		add_image_size( 'soliloquy-thumb', 115, 115, true );
-		
+
 		add_action( 'load-media-upload.php', array( $this, 'load_media_upload' ) );
 		add_action( 'load-async-upload.php', array( $this, 'load_async_upload' ) );
 		add_filter( 'attachment_fields_to_edit', array( $this, 'add_image_link' ), 10, 2 );
 		add_filter( 'attachment_fields_to_save', array( $this, 'save_image_link' ), 10, 2 );
-	
+
 	}
-	
+
 	/**
 	 * Runs on the load-media-upload.php action hook and conditionally
 	 * adds actions and filters.
@@ -53,7 +51,7 @@ class Tgmsp_Lite_Media {
 		}
 
 	}
-	
+
 	/**
 	 * Removes 'Gallery' and 'Media Library' tabs from the Media Uploader.
 	 *
@@ -63,12 +61,12 @@ class Tgmsp_Lite_Media {
 	 * @return array $tabs Amended media upload tabs
 	 */
 	public function remove_tabs( $tabs ) {
-	
+
 		unset( $tabs['gallery'] );
 		unset( $tabs['library'] );
-		
+
 		return $tabs;
-	
+
 	}
 
 	/**
@@ -140,7 +138,7 @@ class Tgmsp_Lite_Media {
 		<?php
 
 	}
-	
+
 	/**
 	 * Filter the thickbox insert button text for our image upload context.
 	 *
@@ -159,7 +157,7 @@ class Tgmsp_Lite_Media {
 		return $translated_text;
 
 	}
-	
+
 	/**
 	 * Add an extra image meta field to store image links.
 	 *
@@ -169,7 +167,7 @@ class Tgmsp_Lite_Media {
 	 * @param object $attachment The current attachment object
 	 */
 	public function add_image_link( $fields, $attachment ) {
-		
+
 		if ( $this->is_our_context() || Tgmsp_Lite::is_soliloquy_screen() ) {
 			$fields['soliloquy_link'] = apply_filters( 'tgmsp_extra_media_fields_link', array(
 				'label' => Tgmsp_Lite_Strings::get_instance()->strings['image_link'],
@@ -205,7 +203,7 @@ class Tgmsp_Lite_Media {
 	 * @param array $post_var The submitted $_POST array
 	 */
 	public function save_image_link( $attachment, $post_var ) {
-		
+
 		if ( $this->is_our_context() || Tgmsp_Lite::is_soliloquy_screen() ) {
 			/** Update image meta link field */
 			update_post_meta( $attachment['ID'], '_soliloquy_image_link', isset( $post_var['soliloquy_link'] ) ? esc_url( $post_var['soliloquy_link'] ) : '' );
@@ -218,16 +216,16 @@ class Tgmsp_Lite_Media {
 		return $attachment;
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
 
 }

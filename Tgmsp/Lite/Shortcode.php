@@ -67,11 +67,12 @@ class Tgmsp_Lite_Shortcode {
 		}
 
 		/** Ok, we have a valid slider ID - store all data in one variable and get started */
-		$soliloquy_data[absint( $soliloquy_count )]['id'] 			= $id;
-		$soliloquy_data[absint( $soliloquy_count )]['meta'] 		= get_post_meta( $id, '_soliloquy_settings', true );
-		$slider 													= '';
-		$images 													= $this->get_images( $id, $soliloquy_data[absint( $soliloquy_count )]['meta'] );
-		$i 															= 1;
+		$soliloquy_data[absint( $soliloquy_count )]['id'] 	= $id;
+		$soliloquy_data[absint( $soliloquy_count )]['meta'] = get_post_meta( $id, '_soliloquy_settings', true );
+		$slider 											= '';
+		$images 											= $this->get_images( $id, $soliloquy_data[absint( $soliloquy_count )]['meta'] );
+		$i 													= 1;
+		$preloader											= false;
 
 		/** Only proceed if we have images to output */
 		if ( $images ) {

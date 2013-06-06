@@ -5,13 +5,13 @@ Plugin URI: http://soliloquywp.com/
 Description: Soliloquy is the best responsive WordPress slider plugin. Period. This is the lite version.
 Author: Thomas Griffin
 Author URI: http://thomasgriffinmedia.com/
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 
 /*
-	Copyright 2012	 Thomas Griffin	 (email : thomas@thomasgriffinmedia.com)
+	Copyright 2013	 Thomas Griffin	 (email : thomas@thomasgriffinmedia.com)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -121,16 +121,20 @@ class Tgmsp_Lite {
 		/** Load the plugin textdomain for internationalizing strings */
 		load_plugin_textdomain( 'soliloquy', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
+		/** Instantiate all the necessary admin components of the plugin */
+		if ( is_admin() ) :
+			$tgmsp_lite_admin		= new Tgmsp_Lite_Admin();
+			$tgmsp_lite_ajax		= new Tgmsp_Lite_Ajax();
+			$tgmsp_lite_editor		= new Tgmsp_Lite_Editor();
+			$tgmsp_lite_help		= new Tgmsp_Lite_Help();
+			$tgmsp_lite_media		= new Tgmsp_Lite_Media();
+			$tgmsp_lite_strings		= new Tgmsp_Lite_Strings();
+		endif;
+
 		/** Instantiate all the necessary components of the plugin */
-		$tgmsp_lite_admin		= new Tgmsp_Lite_Admin;
-		$tgmsp_lite_ajax		= new Tgmsp_Lite_Ajax;
-		$tgmsp_lite_assets		= new Tgmsp_Lite_Assets;
-		$tgmsp_lite_editor		= new Tgmsp_Lite_Editor;
-		$tgmsp_lite_help		= new Tgmsp_Lite_Help;
-		$tgmsp_lite_media		= new Tgmsp_Lite_Media;
-		$tgmsp_lite_posttype	= new Tgmsp_Lite_Posttype;
-		$tgmsp_lite_shortcode	= new Tgmsp_Lite_Shortcode;
-		$tgmsp_lite_strings		= new Tgmsp_Lite_Strings;
+		$tgmsp_lite_assets		= new Tgmsp_Lite_Assets();
+		$tgmsp_lite_posttype	= new Tgmsp_Lite_Posttype();
+		$tgmsp_lite_shortcode	= new Tgmsp_Lite_Shortcode();
 
 	}
 
@@ -220,7 +224,7 @@ class Tgmsp_Lite {
 }
 
 /** Instantiate the init class */
-new Tgmsp_Lite;
+$tgmsp_lite = new Tgmsp_Lite();
 
 if ( ! function_exists( 'soliloquy_slider' ) ) {
 	/**

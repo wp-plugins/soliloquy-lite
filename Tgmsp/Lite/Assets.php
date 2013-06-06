@@ -24,20 +24,22 @@ class Tgmsp_Lite_Assets {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
+
+		add_image_size( 'soliloquy-thumb', 115, 115, true );
+
 		/** Register scripts and styles */
 		wp_register_script( 'soliloquy-admin', plugins_url( 'js/admin.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
 		wp_register_script( 'soliloquy-script', plugins_url( 'js/soliloquy.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
 		wp_register_style( 'soliloquy-admin', plugins_url( 'css/admin.css', dirname( dirname( __FILE__ ) ) ) );
 		wp_register_style( 'soliloquy-style', plugins_url( 'css/soliloquy.css', dirname( dirname( __FILE__ ) ) ) );
-		
+
 		/** Load assets */
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
-	
+
 	}
-	
+
 	/**
 	 * Enqueue custom scripts and styles for the Soliloquy post type.
 	 *
@@ -98,7 +100,7 @@ class Tgmsp_Lite_Assets {
 			wp_enqueue_script( 'soliloquy-admin' );
 			wp_localize_script( 'soliloquy-admin', 'soliloquy', $args );
 		}
-		
+
 		/** Only load for the Soliloquy post type add and edit screens */
 		if ( Tgmsp_Lite::is_soliloquy_add_edit_screen() ) {
 			wp_enqueue_script( 'jquery-ui-sortable' );
@@ -106,16 +108,16 @@ class Tgmsp_Lite_Assets {
 		}
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 }
