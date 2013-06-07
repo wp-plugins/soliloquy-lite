@@ -84,6 +84,10 @@ As of v1.3.0, Soliloquy Lite has been brought to parity with Soliloquy in terms 
 
 == Changelog ==
 
+= 1.4.4 =
+* Updated the main slider script and init script. Be sure to check out the forum topic if your slider disappears. It is caused by a caching issue.
+* Added touch support for Windows mobile phones.
+
 = 1.4.3 =
 * Fixed undefined variable notice when using the loading icon
 * Better loading of files (admin and front-end separation)
