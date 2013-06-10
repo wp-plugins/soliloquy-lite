@@ -25,6 +25,10 @@ Soliloquy, the [best responsive WordPress slider plugin](http://soliloquywp.com/
 * Smart JS/CSS loading so that assets only load on pages where a Soliloquy WordPress slider is present.
 * Media uploader button to easily insert your WordPress slider into your posts/pages from the WYSIWYG editor.
 
+Beyond the features mentioned above, there are plenty of other **WordPress slider features** inside of the plugin. You gain the benefit of an intuitive user interface that makes slider management easy, simple to understand slider options, and a plethora of hooks and filters to **manipulate the slider output.**
+
+_It's hard to go wrong by choosing [Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite) as your all-in-one **WordPress slider plugin** solution!_
+
 = Why Choose Soliloquy? =
 
 Soliloquy is the **best choice for a WordPress slider plugin** because it is fast, extremely inuitive and super easy to use. You can get your slider going in just a matter of seconds. In fact, take a look at how easy it is to create a WordPress slider with the paid version of the Soliloquy WordPress slider in the video below:
