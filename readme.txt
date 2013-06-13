@@ -39,7 +39,7 @@ Soliloquy is the **best choice for a WordPress slider plugin** because it is fas
 
 == Installation ==
 
-1. Install Soliloquy Lite either via the WordPress.org plugin directory, or by uploading the files to your server.
+1. Install Soliloquy Lite either via the WordPress.org plugin repository, or by uploading the files to your server.
 2. Activate Soliloquy Lite.
 3. Navigate to the Soliloquy tab at the bottom of your admin menu and click "Add New" to begin creating your new WordPress slider.
 4. Salivate for new features and [purchase the full version of Soliloquy](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite)!
