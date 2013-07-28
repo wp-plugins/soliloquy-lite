@@ -128,9 +128,11 @@ class Tgmsp_Lite_Admin {
                 </div>
             </header>
 
-            <p style="font-size:16px;margin:15px 0 25px;"><?php _e( 'Do you want <strong>immediate</strong> access to all of the incredible features of the pro version of Soliloquy? You can upgrade to the pro version of Soliloquy <strong>instantly</strong> from this page. It only takes a couple minutes to be using the fully featured, best responsive WordPress slider plugin on the market - Soliloquy! <strong>Just choose the license below that best suits your needs to get started!</strong>', 'soliloquy-lite' ); ?></p>
+            <p style="font-size:16px;margin:15px 0;"><?php _e( 'Do you want <strong>immediate</strong> access to all of the incredible features of the pro version of Soliloquy? You can upgrade to the pro version of Soliloquy <strong>instantly</strong> from this page. It only takes a couple minutes to be using the fully featured, best responsive WordPress slider plugin on the market - Soliloquy! <strong>Just choose the license below that best suits your needs to get started!</strong>', 'soliloquy-lite' ); ?></p>
 
-            <p><em><?php _e( 'Not convinced you should upgrade? <a href="#" class="soliloquy-comparison-show" data-popup="#soliloquy-comparison">Click here to view a comparison chart to see why Soliloquy Pro is so much better!</a>', 'soliloquy-lite' ); ?></em></p>
+            <p><strong><?php _e( 'Not convinced you should upgrade? <a href="#" class="soliloquy-comparison-show" data-popup="#soliloquy-comparison">Click here to view a comparison chart to see why Soliloquy Pro is so much better!</a>', 'soliloquy-lite' ); ?></strong></p>
+
+            <p><em><?php _e( 'If you would rather do this from the official Soliloquy website, you can do so by <a href="http://soliloquywp.com/" title="Go to the main Soliloquy Site" target="_blank">clicking on this link to visit the official Soliloquy website.</a>', 'soliloquy-lite' ); ?></em></p>
 
             <div id="soliloquy-comparison" class="mfp-hide">
             	<p style="font-size:16px;"><strong><?php _e( 'You can view the features below to see why Soliloquy Pro is so much better!', 'soliloquy-lite' ); ?></strong></p>
