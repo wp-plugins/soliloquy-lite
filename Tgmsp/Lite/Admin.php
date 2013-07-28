@@ -391,6 +391,7 @@ class Tgmsp_Lite_Admin {
 
         // Enqueue scripts.
         wp_enqueue_script( $this->upgrade_slug . '-bootstrap', plugins_url( 'lib/bootstrap/js/bootstrap.min.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), $this->version );
+        wp_enqueue_script( 'soliloquy-lite-lightbox' );
 
 	}
 
