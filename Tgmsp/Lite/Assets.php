@@ -30,10 +30,11 @@ class Tgmsp_Lite_Assets {
 		add_image_size( 'soliloquy-thumb', 115, 115, true );
 
 		/** Register scripts and styles */
-		wp_register_script( 'soliloquy-admin', plugins_url( 'js/admin.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
-		wp_register_script( 'soliloquy-script', plugins_url( 'js/soliloquy.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), '1.0.0', true );
-		wp_register_style( 'soliloquy-admin', plugins_url( 'css/admin.css', dirname( dirname( __FILE__ ) ) ) );
-		wp_register_style( 'soliloquy-style', plugins_url( 'css/soliloquy.css', dirname( dirname( __FILE__ ) ) ) );
+		wp_register_script( 'soliloquy-admin', plugins_url( 'js/admin.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), Tgmsp_Lite::get_instance()->version, true );
+		wp_register_script( 'soliloquy-script', plugins_url( 'js/soliloquy.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), Tgmsp_Lite::get_instance()->version, true );
+		wp_register_style( 'soliloquy-admin', plugins_url( 'css/admin.css', dirname( dirname( __FILE__ ) ) ), array(), Tgmsp_Lite::get_instance()->version );
+		wp_register_style( 'soliloquy-style', plugins_url( 'css/soliloquy.css', dirname( dirname( __FILE__ ) ) ), array(), Tgmsp_Lite::get_instance()->version );
+		wp_register_script( 'soliloquy-lite-lightbox', plugins_url( 'js/lightbox.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), Tgmsp_Lite::get_instance()->version );
 
 		/** Load assets */
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
@@ -94,7 +95,11 @@ class Tgmsp_Lite_Assets {
 				'tab'			=> Tgmsp_Lite_Strings::get_instance()->strings['new_tab'],
 				'title'			=> Tgmsp_Lite_Strings::get_instance()->strings['image_title'],
 				'url'			=> Tgmsp_Lite_Strings::get_instance()->strings['image_url'],
-				'width'			=> 600
+				'width'			=> 600,
+				'danger'		=> __( 'Please enter a valid email address.', 'soliloquy-lite' ),
+				'stripe'		=> plugins_url( 'css/images/128x128.png', dirname( dirname( __FILE__ ) ) ),
+				'stripe_err'	=> __( 'An error occurred during the upgrade process. Please check your email address for further instructions.', 'soliloquy-lite' ),
+				'upgrade'		=> __( 'Transaction processed! You will be redirected when the plugin upgrade is complete...', 'soliloquy-lite' )
 			) );
 
 			wp_enqueue_script( 'soliloquy-admin' );
@@ -105,6 +110,7 @@ class Tgmsp_Lite_Assets {
 		if ( Tgmsp_Lite::is_soliloquy_add_edit_screen() ) {
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			add_thickbox();
+			wp_enqueue_script( 'soliloquy-lite-lightbox' );
 		}
 
 	}

@@ -1,0 +1,6254 @@
+/*!
+ * Bootstrap v3.0.0
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world by @mdo and @fat.
+ */
+
+#tgm-plugin-settings,
+#soliloquy-comparison {
+  /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+
+  /*
+// Move the options list down to align with labels
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+  padding-top: 5px; // has to be padding because margin collapses
+}
+*/
+
+}
+
+#tgm-plugin-settings article,
+#soliloquy-comparison article,
+#tgm-plugin-settings aside,
+#soliloquy-comparison aside,
+#tgm-plugin-settings details,
+#soliloquy-comparison details,
+#tgm-plugin-settings figcaption,
+#soliloquy-comparison figcaption,
+#tgm-plugin-settings figure,
+#soliloquy-comparison figure,
+#tgm-plugin-settings footer,
+#soliloquy-comparison footer,
+#tgm-plugin-settings header,
+#soliloquy-comparison header,
+#tgm-plugin-settings hgroup,
+#soliloquy-comparison hgroup,
+#tgm-plugin-settings main,
+#soliloquy-comparison main,
+#tgm-plugin-settings nav,
+#soliloquy-comparison nav,
+#tgm-plugin-settings section,
+#soliloquy-comparison section,
+#tgm-plugin-settings summary,
+#soliloquy-comparison summary {
+  display: block;
+}
+
+#tgm-plugin-settings audio,
+#soliloquy-comparison audio,
+#tgm-plugin-settings canvas,
+#soliloquy-comparison canvas,
+#tgm-plugin-settings video,
+#soliloquy-comparison video {
+  display: inline-block;
+}
+
+#tgm-plugin-settings audio:not([controls]),
+#soliloquy-comparison audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+#tgm-plugin-settings [hidden],
+#soliloquy-comparison [hidden] {
+  display: none;
+}
+
+#tgm-plugin-settings html,
+#soliloquy-comparison html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+#tgm-plugin-settings body,
+#soliloquy-comparison body {
+  margin: 0;
+}
+
+#tgm-plugin-settings a:focus,
+#soliloquy-comparison a:focus {
+  outline: thin dotted;
+}
+
+#tgm-plugin-settings a:active,
+#soliloquy-comparison a:active,
+#tgm-plugin-settings a:hover,
+#soliloquy-comparison a:hover {
+  outline: 0;
+}
+
+#tgm-plugin-settings h1,
+#soliloquy-comparison h1 {
+  margin: 0.67em 0;
+  font-size: 2em;
+}
+
+#tgm-plugin-settings abbr[title],
+#soliloquy-comparison abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+#tgm-plugin-settings b,
+#soliloquy-comparison b,
+#tgm-plugin-settings strong,
+#soliloquy-comparison strong {
+  font-weight: bold;
+}
+
+#tgm-plugin-settings dfn,
+#soliloquy-comparison dfn {
+  font-style: italic;
+}
+
+#tgm-plugin-settings hr,
+#soliloquy-comparison hr {
+  height: 0;
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+}
+
+#tgm-plugin-settings mark,
+#soliloquy-comparison mark {
+  color: #000;
+  background: #ff0;
+}
+
+#tgm-plugin-settings code,
+#soliloquy-comparison code,
+#tgm-plugin-settings kbd,
+#soliloquy-comparison kbd,
+#tgm-plugin-settings pre,
+#soliloquy-comparison pre,
+#tgm-plugin-settings samp,
+#soliloquy-comparison samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+#tgm-plugin-settings pre,
+#soliloquy-comparison pre {
+  white-space: pre-wrap;
+}
+
+#tgm-plugin-settings q,
+#soliloquy-comparison q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+#tgm-plugin-settings small,
+#soliloquy-comparison small {
+  font-size: 80%;
+}
+
+#tgm-plugin-settings sub,
+#soliloquy-comparison sub,
+#tgm-plugin-settings sup,
+#soliloquy-comparison sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+#tgm-plugin-settings sup,
+#soliloquy-comparison sup {
+  top: -0.5em;
+}
+
+#tgm-plugin-settings sub,
+#soliloquy-comparison sub {
+  bottom: -0.25em;
+}
+
+#tgm-plugin-settings img,
+#soliloquy-comparison img {
+  border: 0;
+}
+
+#tgm-plugin-settings svg:not(:root),
+#soliloquy-comparison svg:not(:root) {
+  overflow: hidden;
+}
+
+#tgm-plugin-settings figure,
+#soliloquy-comparison figure {
+  margin: 0;
+}
+
+#tgm-plugin-settings fieldset,
+#soliloquy-comparison fieldset {
+  padding: 0.35em 0.625em 0.75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
+}
+
+#tgm-plugin-settings legend,
+#soliloquy-comparison legend {
+  padding: 0;
+  border: 0;
+}
+
+#tgm-plugin-settings button,
+#soliloquy-comparison button,
+#tgm-plugin-settings input,
+#soliloquy-comparison input,
+#tgm-plugin-settings select,
+#soliloquy-comparison select,
+#tgm-plugin-settings textarea,
+#soliloquy-comparison textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+#tgm-plugin-settings button,
+#soliloquy-comparison button,
+#tgm-plugin-settings input,
+#soliloquy-comparison input {
+  line-height: normal;
+}
+
+#tgm-plugin-settings button,
+#soliloquy-comparison button,
+#tgm-plugin-settings select,
+#soliloquy-comparison select {
+  text-transform: none;
+}
+
+#tgm-plugin-settings button,
+#soliloquy-comparison button,
+#tgm-plugin-settings html input[type="button"],
+#soliloquy-comparison html input[type="button"],
+#tgm-plugin-settings input[type="reset"],
+#soliloquy-comparison input[type="reset"],
+#tgm-plugin-settings input[type="submit"],
+#soliloquy-comparison input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+#tgm-plugin-settings button[disabled],
+#soliloquy-comparison button[disabled],
+#tgm-plugin-settings html input[disabled],
+#soliloquy-comparison html input[disabled] {
+  cursor: default;
+}
+
+#tgm-plugin-settings input[type="checkbox"],
+#soliloquy-comparison input[type="checkbox"],
+#tgm-plugin-settings input[type="radio"],
+#soliloquy-comparison input[type="radio"] {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#tgm-plugin-settings input[type="search"],
+#soliloquy-comparison input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+#tgm-plugin-settings input[type="search"]::-webkit-search-cancel-button,
+#soliloquy-comparison input[type="search"]::-webkit-search-cancel-button,
+#tgm-plugin-settings input[type="search"]::-webkit-search-decoration,
+#soliloquy-comparison input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+#tgm-plugin-settings button::-moz-focus-inner,
+#soliloquy-comparison button::-moz-focus-inner,
+#tgm-plugin-settings input::-moz-focus-inner,
+#soliloquy-comparison input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+#tgm-plugin-settings textarea,
+#soliloquy-comparison textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+#tgm-plugin-settings table,
+#soliloquy-comparison table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media print {
+  #tgm-plugin-settings *,
+  #soliloquy-comparison * {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  #tgm-plugin-settings a,
+  #soliloquy-comparison a,
+  #tgm-plugin-settings a:visited,
+  #soliloquy-comparison a:visited {
+    text-decoration: underline;
+  }
+  #tgm-plugin-settings a[href]:after,
+  #soliloquy-comparison a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  #tgm-plugin-settings abbr[title]:after,
+  #soliloquy-comparison abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  #tgm-plugin-settings .ir a:after,
+  #soliloquy-comparison .ir a:after,
+  #tgm-plugin-settings a[href^="javascript:"]:after,
+  #soliloquy-comparison a[href^="javascript:"]:after,
+  #tgm-plugin-settings a[href^="#"]:after,
+  #soliloquy-comparison a[href^="#"]:after {
+    content: "";
+  }
+  #tgm-plugin-settings pre,
+  #soliloquy-comparison pre,
+  #tgm-plugin-settings blockquote,
+  #soliloquy-comparison blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  #tgm-plugin-settings thead,
+  #soliloquy-comparison thead {
+    display: table-header-group;
+  }
+  #tgm-plugin-settings tr,
+  #soliloquy-comparison tr,
+  #tgm-plugin-settings img,
+  #soliloquy-comparison img {
+    page-break-inside: avoid;
+  }
+  #tgm-plugin-settings img,
+  #soliloquy-comparison img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 2cm .5cm;
+  }
+  #tgm-plugin-settings p,
+  #soliloquy-comparison p,
+  #tgm-plugin-settings h2,
+  #soliloquy-comparison h2,
+  #tgm-plugin-settings h3,
+  #soliloquy-comparison h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  #tgm-plugin-settings h2,
+  #soliloquy-comparison h2,
+  #tgm-plugin-settings h3,
+  #soliloquy-comparison h3 {
+    page-break-after: avoid;
+  }
+  #tgm-plugin-settings .navbar,
+  #soliloquy-comparison .navbar {
+    display: none;
+  }
+  #tgm-plugin-settings .table td,
+  #soliloquy-comparison .table td,
+  #tgm-plugin-settings .table th,
+  #soliloquy-comparison .table th {
+    background-color: #fff !important;
+  }
+  #tgm-plugin-settings .btn > .caret,
+  #soliloquy-comparison .btn > .caret,
+  #tgm-plugin-settings .dropup > .btn > .caret,
+  #soliloquy-comparison .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  #tgm-plugin-settings .label,
+  #soliloquy-comparison .label {
+    border: 1px solid #000;
+  }
+  #tgm-plugin-settings .table,
+  #soliloquy-comparison .table {
+    border-collapse: collapse !important;
+  }
+  #tgm-plugin-settings .table-bordered th,
+  #soliloquy-comparison .table-bordered th,
+  #tgm-plugin-settings .table-bordered td,
+  #soliloquy-comparison .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+
+#tgm-plugin-settings *,
+#soliloquy-comparison * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#tgm-plugin-settings html,
+#soliloquy-comparison html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#tgm-plugin-settings body,
+#soliloquy-comparison body {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: #ecf0f1;
+}
+
+#tgm-plugin-settings input,
+#soliloquy-comparison input,
+#tgm-plugin-settings button,
+#soliloquy-comparison button,
+#tgm-plugin-settings select,
+#soliloquy-comparison select,
+#tgm-plugin-settings textarea,
+#soliloquy-comparison textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#tgm-plugin-settings a,
+#soliloquy-comparison a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+#tgm-plugin-settings a:hover,
+#soliloquy-comparison a:hover,
+#tgm-plugin-settings a:focus,
+#soliloquy-comparison a:focus {
+  color: #11181f;
+  text-decoration: underline;
+}
+
+#tgm-plugin-settings a:focus,
+#soliloquy-comparison a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+#tgm-plugin-settings img,
+#soliloquy-comparison img {
+  vertical-align: middle;
+}
+
+#tgm-plugin-settings .img-responsive,
+#soliloquy-comparison .img-responsive {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+
+#tgm-plugin-settings .img-rounded,
+#soliloquy-comparison .img-rounded {
+  border-radius: 6px;
+}
+
+#tgm-plugin-settings .img-circle,
+#soliloquy-comparison .img-circle {
+  border-radius: 500px;
+}
+
+#tgm-plugin-settings hr,
+#soliloquy-comparison hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+#tgm-plugin-settings p,
+#soliloquy-comparison p {
+  margin: 0 0 10px;
+}
+
+#tgm-plugin-settings .lead,
+#soliloquy-comparison .lead {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+#tgm-plugin-settings small,
+#soliloquy-comparison small {
+  font-size: 85%;
+}
+
+#tgm-plugin-settings cite,
+#soliloquy-comparison cite {
+  font-style: normal;
+}
+
+#tgm-plugin-settings .text-muted,
+#soliloquy-comparison .text-muted {
+  color: #999999;
+}
+
+#tgm-plugin-settings a.text-muted:hover,
+#soliloquy-comparison a.text-muted:hover,
+#tgm-plugin-settings a.text-muted:focus,
+#soliloquy-comparison a.text-muted:focus {
+  color: #808080;
+}
+
+#tgm-plugin-settings .text-warning,
+#soliloquy-comparison .text-warning {
+  color: #c09853;
+}
+
+#tgm-plugin-settings a.text-warning:hover,
+#soliloquy-comparison a.text-warning:hover,
+#tgm-plugin-settings a.text-warning:focus,
+#soliloquy-comparison a.text-warning:focus {
+  color: #a47e3c;
+}
+
+#tgm-plugin-settings .text-danger,
+#soliloquy-comparison .text-danger {
+  color: #b94a48;
+}
+
+#tgm-plugin-settings a.text-danger:hover,
+#soliloquy-comparison a.text-danger:hover,
+#tgm-plugin-settings a.text-danger:focus,
+#soliloquy-comparison a.text-danger:focus {
+  color: #953b39;
+}
+
+#tgm-plugin-settings .text-success,
+#soliloquy-comparison .text-success {
+  color: #468847;
+}
+
+#tgm-plugin-settings a.text-success:hover,
+#soliloquy-comparison a.text-success:hover,
+#tgm-plugin-settings a.text-success:focus,
+#soliloquy-comparison a.text-success:focus {
+  color: #356635;
+}
+
+#tgm-plugin-settings .text-left,
+#soliloquy-comparison .text-left {
+  text-align: left;
+}
+
+#tgm-plugin-settings .text-right,
+#soliloquy-comparison .text-right {
+  text-align: right;
+}
+
+#tgm-plugin-settings .text-center,
+#soliloquy-comparison .text-center {
+  text-align: center;
+}
+
+#tgm-plugin-settings h1,
+#soliloquy-comparison h1,
+#tgm-plugin-settings h2,
+#soliloquy-comparison h2,
+#tgm-plugin-settings h3,
+#soliloquy-comparison h3,
+#tgm-plugin-settings h4,
+#soliloquy-comparison h4,
+#tgm-plugin-settings h5,
+#soliloquy-comparison h5,
+#tgm-plugin-settings h6,
+#soliloquy-comparison h6,
+#tgm-plugin-settings .h1,
+#soliloquy-comparison .h1,
+#tgm-plugin-settings .h2,
+#soliloquy-comparison .h2,
+#tgm-plugin-settings .h3,
+#soliloquy-comparison .h3,
+#tgm-plugin-settings .h4,
+#soliloquy-comparison .h4,
+#tgm-plugin-settings .h5,
+#soliloquy-comparison .h5,
+#tgm-plugin-settings .h6,
+#soliloquy-comparison .h6 {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+#tgm-plugin-settings h1 small,
+#soliloquy-comparison h1 small,
+#tgm-plugin-settings h2 small,
+#soliloquy-comparison h2 small,
+#tgm-plugin-settings h3 small,
+#soliloquy-comparison h3 small,
+#tgm-plugin-settings h4 small,
+#soliloquy-comparison h4 small,
+#tgm-plugin-settings h5 small,
+#soliloquy-comparison h5 small,
+#tgm-plugin-settings h6 small,
+#soliloquy-comparison h6 small,
+#tgm-plugin-settings .h1 small,
+#soliloquy-comparison .h1 small,
+#tgm-plugin-settings .h2 small,
+#soliloquy-comparison .h2 small,
+#tgm-plugin-settings .h3 small,
+#soliloquy-comparison .h3 small,
+#tgm-plugin-settings .h4 small,
+#soliloquy-comparison .h4 small,
+#tgm-plugin-settings .h5 small,
+#soliloquy-comparison .h5 small,
+#tgm-plugin-settings .h6 small,
+#soliloquy-comparison .h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+#tgm-plugin-settings h1,
+#soliloquy-comparison h1,
+#tgm-plugin-settings h2,
+#soliloquy-comparison h2,
+#tgm-plugin-settings h3,
+#soliloquy-comparison h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#tgm-plugin-settings h4,
+#soliloquy-comparison h4,
+#tgm-plugin-settings h5,
+#soliloquy-comparison h5,
+#tgm-plugin-settings h6,
+#soliloquy-comparison h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#tgm-plugin-settings h1,
+#soliloquy-comparison h1,
+#tgm-plugin-settings .h1,
+#soliloquy-comparison .h1 {
+  font-size: 38px;
+}
+
+#tgm-plugin-settings h2,
+#soliloquy-comparison h2,
+#tgm-plugin-settings .h2,
+#soliloquy-comparison .h2 {
+  font-size: 32px;
+}
+
+#tgm-plugin-settings h3,
+#soliloquy-comparison h3,
+#tgm-plugin-settings .h3,
+#soliloquy-comparison .h3 {
+  font-size: 24px;
+}
+
+#tgm-plugin-settings h4,
+#soliloquy-comparison h4,
+#tgm-plugin-settings .h4,
+#soliloquy-comparison .h4 {
+  font-size: 18px;
+}
+
+#tgm-plugin-settings h5,
+#soliloquy-comparison h5,
+#tgm-plugin-settings .h5,
+#soliloquy-comparison .h5 {
+  font-size: 14px;
+}
+
+#tgm-plugin-settings h6,
+#soliloquy-comparison h6,
+#tgm-plugin-settings .h6,
+#soliloquy-comparison .h6 {
+  font-size: 12px;
+}
+
+#tgm-plugin-settings h1 small,
+#soliloquy-comparison h1 small,
+#tgm-plugin-settings .h1 small,
+#soliloquy-comparison .h1 small {
+  font-size: 24px;
+}
+
+#tgm-plugin-settings h2 small,
+#soliloquy-comparison h2 small,
+#tgm-plugin-settings .h2 small,
+#soliloquy-comparison .h2 small {
+  font-size: 18px;
+}
+
+#tgm-plugin-settings h3 small,
+#soliloquy-comparison h3 small,
+#tgm-plugin-settings .h3 small,
+#soliloquy-comparison .h3 small,
+#tgm-plugin-settings h4 small,
+#soliloquy-comparison h4 small,
+#tgm-plugin-settings .h4 small,
+#soliloquy-comparison .h4 small {
+  font-size: 14px;
+}
+
+#tgm-plugin-settings .page-header,
+#soliloquy-comparison .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#tgm-plugin-settings ul,
+#soliloquy-comparison ul,
+#tgm-plugin-settings ol,
+#soliloquy-comparison ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#tgm-plugin-settings ul ul,
+#soliloquy-comparison ul ul,
+#tgm-plugin-settings ol ul,
+#soliloquy-comparison ol ul,
+#tgm-plugin-settings ul ol,
+#soliloquy-comparison ul ol,
+#tgm-plugin-settings ol ol,
+#soliloquy-comparison ol ol {
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings .list-unstyled,
+#soliloquy-comparison .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+#tgm-plugin-settings .list-inline,
+#soliloquy-comparison .list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+#tgm-plugin-settings .list-inline > li,
+#soliloquy-comparison .list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#tgm-plugin-settings dl,
+#soliloquy-comparison dl {
+  margin-bottom: 20px;
+}
+
+#tgm-plugin-settings dt,
+#soliloquy-comparison dt,
+#tgm-plugin-settings dd,
+#soliloquy-comparison dd {
+  line-height: 1.428571429;
+}
+
+#tgm-plugin-settings dt,
+#soliloquy-comparison dt {
+  font-weight: bold;
+}
+
+#tgm-plugin-settings dd,
+#soliloquy-comparison dd {
+  margin-left: 10px;
+}
+
+#tgm-plugin-settings .dl-horizontal dt,
+#soliloquy-comparison .dl-horizontal dt {
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#tgm-plugin-settings .dl-horizontal dd,
+#soliloquy-comparison .dl-horizontal dd {
+  margin-left: 180px;
+}
+
+#tgm-plugin-settings .dl-horizontal dd:before,
+#soliloquy-comparison .dl-horizontal dd:before,
+#tgm-plugin-settings .dl-horizontal dd:after,
+#soliloquy-comparison .dl-horizontal dd:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .dl-horizontal dd:after,
+#soliloquy-comparison .dl-horizontal dd:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .dl-horizontal dd:before,
+#soliloquy-comparison .dl-horizontal dd:before,
+#tgm-plugin-settings .dl-horizontal dd:after,
+#soliloquy-comparison .dl-horizontal dd:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .dl-horizontal dd:after,
+#soliloquy-comparison .dl-horizontal dd:after {
+  clear: both;
+}
+
+#tgm-plugin-settings abbr[title],
+#soliloquy-comparison abbr[title],
+#tgm-plugin-settings abbr[data-original-title],
+#soliloquy-comparison abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+#tgm-plugin-settings abbr.initialism,
+#soliloquy-comparison abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+#tgm-plugin-settings blockquote,
+#soliloquy-comparison blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+
+#tgm-plugin-settings blockquote p,
+#soliloquy-comparison blockquote p {
+  font-size: 17.5px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+#tgm-plugin-settings blockquote p:last-child,
+#soliloquy-comparison blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings blockquote small,
+#soliloquy-comparison blockquote small {
+  display: block;
+  line-height: 1.428571429;
+  color: #999999;
+}
+
+#tgm-plugin-settings blockquote small:before,
+#soliloquy-comparison blockquote small:before {
+  content: '\2014 \00A0';
+}
+
+#tgm-plugin-settings blockquote.pull-right,
+#soliloquy-comparison blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+
+#tgm-plugin-settings blockquote.pull-right p,
+#soliloquy-comparison blockquote.pull-right p,
+#tgm-plugin-settings blockquote.pull-right small,
+#soliloquy-comparison blockquote.pull-right small {
+  text-align: right;
+}
+
+#tgm-plugin-settings blockquote.pull-right small:before,
+#soliloquy-comparison blockquote.pull-right small:before {
+  content: '';
+}
+
+#tgm-plugin-settings blockquote.pull-right small:after,
+#soliloquy-comparison blockquote.pull-right small:after {
+  content: '\00A0 \2014';
+}
+
+#tgm-plugin-settings q:before,
+#soliloquy-comparison q:before,
+#tgm-plugin-settings q:after,
+#soliloquy-comparison q:after,
+#tgm-plugin-settings blockquote:before,
+#soliloquy-comparison blockquote:before,
+#tgm-plugin-settings blockquote:after,
+#soliloquy-comparison blockquote:after {
+  content: "";
+}
+
+#tgm-plugin-settings address,
+#soliloquy-comparison address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.428571429;
+}
+
+#tgm-plugin-settings code,
+#soliloquy-comparison code,
+#tgm-plugin-settings pre,
+#soliloquy-comparison pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+#tgm-plugin-settings code,
+#soliloquy-comparison code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  white-space: nowrap;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings pre,
+#soliloquy-comparison pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  color: #333333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings pre.prettyprint,
+#soliloquy-comparison pre.prettyprint {
+  margin-bottom: 20px;
+}
+
+#tgm-plugin-settings pre code,
+#soliloquy-comparison pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+
+#tgm-plugin-settings .pre-scrollable,
+#soliloquy-comparison .pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+
+#tgm-plugin-settings .container,
+#soliloquy-comparison .container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tgm-plugin-settings .container:before,
+#soliloquy-comparison .container:before,
+#tgm-plugin-settings .container:after,
+#soliloquy-comparison .container:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .container:after,
+#soliloquy-comparison .container:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .container:before,
+#soliloquy-comparison .container:before,
+#tgm-plugin-settings .container:after,
+#soliloquy-comparison .container:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .container:after,
+#soliloquy-comparison .container:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .row:before,
+#soliloquy-comparison .row:before,
+#tgm-plugin-settings .row:after,
+#soliloquy-comparison .row:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .row:after,
+#soliloquy-comparison .row:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .row:before,
+#soliloquy-comparison .row:before,
+#tgm-plugin-settings .row:after,
+#soliloquy-comparison .row:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .row:after,
+#soliloquy-comparison .row:after {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  #tgm-plugin-settings .row,
+  #soliloquy-comparison .row {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+
+#tgm-plugin-settings .row .row,
+#soliloquy-comparison .row .row {
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+#tgm-plugin-settings .col-1,
+#soliloquy-comparison .col-1,
+#tgm-plugin-settings .col-2,
+#soliloquy-comparison .col-2,
+#tgm-plugin-settings .col-3,
+#soliloquy-comparison .col-3,
+#tgm-plugin-settings .col-4,
+#soliloquy-comparison .col-4,
+#tgm-plugin-settings .col-5,
+#soliloquy-comparison .col-5,
+#tgm-plugin-settings .col-6,
+#soliloquy-comparison .col-6,
+#tgm-plugin-settings .col-7,
+#soliloquy-comparison .col-7,
+#tgm-plugin-settings .col-8,
+#soliloquy-comparison .col-8,
+#tgm-plugin-settings .col-9,
+#soliloquy-comparison .col-9,
+#tgm-plugin-settings .col-10,
+#soliloquy-comparison .col-10,
+#tgm-plugin-settings .col-11,
+#soliloquy-comparison .col-11,
+#tgm-plugin-settings .col-12,
+#soliloquy-comparison .col-12,
+#tgm-plugin-settings .col-sm-1,
+#soliloquy-comparison .col-sm-1,
+#tgm-plugin-settings .col-sm-2,
+#soliloquy-comparison .col-sm-2,
+#tgm-plugin-settings .col-sm-3,
+#soliloquy-comparison .col-sm-3,
+#tgm-plugin-settings .col-sm-4,
+#soliloquy-comparison .col-sm-4,
+#tgm-plugin-settings .col-sm-5,
+#soliloquy-comparison .col-sm-5,
+#tgm-plugin-settings .col-sm-6,
+#soliloquy-comparison .col-sm-6,
+#tgm-plugin-settings .col-sm-7,
+#soliloquy-comparison .col-sm-7,
+#tgm-plugin-settings .col-sm-8,
+#soliloquy-comparison .col-sm-8,
+#tgm-plugin-settings .col-sm-9,
+#soliloquy-comparison .col-sm-9,
+#tgm-plugin-settings .col-sm-10,
+#soliloquy-comparison .col-sm-10,
+#tgm-plugin-settings .col-sm-11,
+#soliloquy-comparison .col-sm-11,
+#tgm-plugin-settings .col-sm-12,
+#soliloquy-comparison .col-sm-12,
+#tgm-plugin-settings .col-lg-1,
+#soliloquy-comparison .col-lg-1,
+#tgm-plugin-settings .col-lg-2,
+#soliloquy-comparison .col-lg-2,
+#tgm-plugin-settings .col-lg-3,
+#soliloquy-comparison .col-lg-3,
+#tgm-plugin-settings .col-lg-4,
+#soliloquy-comparison .col-lg-4,
+#tgm-plugin-settings .col-lg-5,
+#soliloquy-comparison .col-lg-5,
+#tgm-plugin-settings .col-lg-6,
+#soliloquy-comparison .col-lg-6,
+#tgm-plugin-settings .col-lg-7,
+#soliloquy-comparison .col-lg-7,
+#tgm-plugin-settings .col-lg-8,
+#soliloquy-comparison .col-lg-8,
+#tgm-plugin-settings .col-lg-9,
+#soliloquy-comparison .col-lg-9,
+#tgm-plugin-settings .col-lg-10,
+#soliloquy-comparison .col-lg-10,
+#tgm-plugin-settings .col-lg-11,
+#soliloquy-comparison .col-lg-11,
+#tgm-plugin-settings .col-lg-12,
+#soliloquy-comparison .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#tgm-plugin-settings .col-1,
+#soliloquy-comparison .col-1,
+#tgm-plugin-settings .col-2,
+#soliloquy-comparison .col-2,
+#tgm-plugin-settings .col-3,
+#soliloquy-comparison .col-3,
+#tgm-plugin-settings .col-4,
+#soliloquy-comparison .col-4,
+#tgm-plugin-settings .col-5,
+#soliloquy-comparison .col-5,
+#tgm-plugin-settings .col-6,
+#soliloquy-comparison .col-6,
+#tgm-plugin-settings .col-7,
+#soliloquy-comparison .col-7,
+#tgm-plugin-settings .col-8,
+#soliloquy-comparison .col-8,
+#tgm-plugin-settings .col-9,
+#soliloquy-comparison .col-9,
+#tgm-plugin-settings .col-10,
+#soliloquy-comparison .col-10,
+#tgm-plugin-settings .col-11,
+#soliloquy-comparison .col-11,
+#tgm-plugin-settings .col-12,
+#soliloquy-comparison .col-12 {
+  float: left;
+}
+
+#tgm-plugin-settings .col-1,
+#soliloquy-comparison .col-1 {
+  width: 8.333333333333332%;
+}
+
+#tgm-plugin-settings .col-2,
+#soliloquy-comparison .col-2 {
+  width: 16.666666666666664%;
+}
+
+#tgm-plugin-settings .col-3,
+#soliloquy-comparison .col-3 {
+  width: 25%;
+}
+
+#tgm-plugin-settings .col-4,
+#soliloquy-comparison .col-4 {
+  width: 33.33333333333333%;
+}
+
+#tgm-plugin-settings .col-5,
+#soliloquy-comparison .col-5 {
+  width: 41.66666666666667%;
+}
+
+#tgm-plugin-settings .col-6,
+#soliloquy-comparison .col-6 {
+  width: 50%;
+}
+
+#tgm-plugin-settings .col-7,
+#soliloquy-comparison .col-7 {
+  width: 58.333333333333336%;
+}
+
+#tgm-plugin-settings .col-8,
+#soliloquy-comparison .col-8 {
+  width: 66.66666666666666%;
+}
+
+#tgm-plugin-settings .col-9,
+#soliloquy-comparison .col-9 {
+  width: 75%;
+}
+
+#tgm-plugin-settings .col-10,
+#soliloquy-comparison .col-10 {
+  width: 83.33333333333334%;
+}
+
+#tgm-plugin-settings .col-11,
+#soliloquy-comparison .col-11 {
+  width: 91.66666666666666%;
+}
+
+#tgm-plugin-settings .col-12,
+#soliloquy-comparison .col-12 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #tgm-plugin-settings .container,
+  #soliloquy-comparison .container {
+    max-width: 728px;
+  }
+  #tgm-plugin-settings .col-sm-1,
+  #soliloquy-comparison .col-sm-1,
+  #tgm-plugin-settings .col-sm-2,
+  #soliloquy-comparison .col-sm-2,
+  #tgm-plugin-settings .col-sm-3,
+  #soliloquy-comparison .col-sm-3,
+  #tgm-plugin-settings .col-sm-4,
+  #soliloquy-comparison .col-sm-4,
+  #tgm-plugin-settings .col-sm-5,
+  #soliloquy-comparison .col-sm-5,
+  #tgm-plugin-settings .col-sm-6,
+  #soliloquy-comparison .col-sm-6,
+  #tgm-plugin-settings .col-sm-7,
+  #soliloquy-comparison .col-sm-7,
+  #tgm-plugin-settings .col-sm-8,
+  #soliloquy-comparison .col-sm-8,
+  #tgm-plugin-settings .col-sm-9,
+  #soliloquy-comparison .col-sm-9,
+  #tgm-plugin-settings .col-sm-10,
+  #soliloquy-comparison .col-sm-10,
+  #tgm-plugin-settings .col-sm-11,
+  #soliloquy-comparison .col-sm-11,
+  #tgm-plugin-settings .col-sm-12,
+  #soliloquy-comparison .col-sm-12 {
+    float: left;
+  }
+  #tgm-plugin-settings .col-sm-1,
+  #soliloquy-comparison .col-sm-1 {
+    width: 8.333333333333332%;
+  }
+  #tgm-plugin-settings .col-sm-2,
+  #soliloquy-comparison .col-sm-2 {
+    width: 16.666666666666664%;
+  }
+  #tgm-plugin-settings .col-sm-3,
+  #soliloquy-comparison .col-sm-3 {
+    width: 25%;
+  }
+  #tgm-plugin-settings .col-sm-4,
+  #soliloquy-comparison .col-sm-4 {
+    width: 33.33333333333333%;
+  }
+  #tgm-plugin-settings .col-sm-5,
+  #soliloquy-comparison .col-sm-5 {
+    width: 41.66666666666667%;
+  }
+  #tgm-plugin-settings .col-sm-6,
+  #soliloquy-comparison .col-sm-6 {
+    width: 50%;
+  }
+  #tgm-plugin-settings .col-sm-7,
+  #soliloquy-comparison .col-sm-7 {
+    width: 58.333333333333336%;
+  }
+  #tgm-plugin-settings .col-sm-8,
+  #soliloquy-comparison .col-sm-8 {
+    width: 66.66666666666666%;
+  }
+  #tgm-plugin-settings .col-sm-9,
+  #soliloquy-comparison .col-sm-9 {
+    width: 75%;
+  }
+  #tgm-plugin-settings .col-sm-10,
+  #soliloquy-comparison .col-sm-10 {
+    width: 83.33333333333334%;
+  }
+  #tgm-plugin-settings .col-sm-11,
+  #soliloquy-comparison .col-sm-11 {
+    width: 91.66666666666666%;
+  }
+  #tgm-plugin-settings .col-sm-12,
+  #soliloquy-comparison .col-sm-12 {
+    width: 100%;
+  }
+  #tgm-plugin-settings .col-push-1,
+  #soliloquy-comparison .col-push-1 {
+    left: 8.333333333333332%;
+  }
+  #tgm-plugin-settings .col-push-2,
+  #soliloquy-comparison .col-push-2 {
+    left: 16.666666666666664%;
+  }
+  #tgm-plugin-settings .col-push-3,
+  #soliloquy-comparison .col-push-3 {
+    left: 25%;
+  }
+  #tgm-plugin-settings .col-push-4,
+  #soliloquy-comparison .col-push-4 {
+    left: 33.33333333333333%;
+  }
+  #tgm-plugin-settings .col-push-5,
+  #soliloquy-comparison .col-push-5 {
+    left: 41.66666666666667%;
+  }
+  #tgm-plugin-settings .col-push-6,
+  #soliloquy-comparison .col-push-6 {
+    left: 50%;
+  }
+  #tgm-plugin-settings .col-push-7,
+  #soliloquy-comparison .col-push-7 {
+    left: 58.333333333333336%;
+  }
+  #tgm-plugin-settings .col-push-8,
+  #soliloquy-comparison .col-push-8 {
+    left: 66.66666666666666%;
+  }
+  #tgm-plugin-settings .col-push-9,
+  #soliloquy-comparison .col-push-9 {
+    left: 75%;
+  }
+  #tgm-plugin-settings .col-push-10,
+  #soliloquy-comparison .col-push-10 {
+    left: 83.33333333333334%;
+  }
+  #tgm-plugin-settings .col-push-11,
+  #soliloquy-comparison .col-push-11 {
+    left: 91.66666666666666%;
+  }
+  #tgm-plugin-settings .col-pull-1,
+  #soliloquy-comparison .col-pull-1 {
+    right: 8.333333333333332%;
+  }
+  #tgm-plugin-settings .col-pull-2,
+  #soliloquy-comparison .col-pull-2 {
+    right: 16.666666666666664%;
+  }
+  #tgm-plugin-settings .col-pull-3,
+  #soliloquy-comparison .col-pull-3 {
+    right: 25%;
+  }
+  #tgm-plugin-settings .col-pull-4,
+  #soliloquy-comparison .col-pull-4 {
+    right: 33.33333333333333%;
+  }
+  #tgm-plugin-settings .col-pull-5,
+  #soliloquy-comparison .col-pull-5 {
+    right: 41.66666666666667%;
+  }
+  #tgm-plugin-settings .col-pull-6,
+  #soliloquy-comparison .col-pull-6 {
+    right: 50%;
+  }
+  #tgm-plugin-settings .col-pull-7,
+  #soliloquy-comparison .col-pull-7 {
+    right: 58.333333333333336%;
+  }
+  #tgm-plugin-settings .col-pull-8,
+  #soliloquy-comparison .col-pull-8 {
+    right: 66.66666666666666%;
+  }
+  #tgm-plugin-settings .col-pull-9,
+  #soliloquy-comparison .col-pull-9 {
+    right: 75%;
+  }
+  #tgm-plugin-settings .col-pull-10,
+  #soliloquy-comparison .col-pull-10 {
+    right: 83.33333333333334%;
+  }
+  #tgm-plugin-settings .col-pull-11,
+  #soliloquy-comparison .col-pull-11 {
+    right: 91.66666666666666%;
+  }
+}
+
+@media (min-width: 992px) {
+  #tgm-plugin-settings .container,
+  #soliloquy-comparison .container {
+    max-width: 940px;
+  }
+  #tgm-plugin-settings .col-lg-1,
+  #soliloquy-comparison .col-lg-1,
+  #tgm-plugin-settings .col-lg-2,
+  #soliloquy-comparison .col-lg-2,
+  #tgm-plugin-settings .col-lg-3,
+  #soliloquy-comparison .col-lg-3,
+  #tgm-plugin-settings .col-lg-4,
+  #soliloquy-comparison .col-lg-4,
+  #tgm-plugin-settings .col-lg-5,
+  #soliloquy-comparison .col-lg-5,
+  #tgm-plugin-settings .col-lg-6,
+  #soliloquy-comparison .col-lg-6,
+  #tgm-plugin-settings .col-lg-7,
+  #soliloquy-comparison .col-lg-7,
+  #tgm-plugin-settings .col-lg-8,
+  #soliloquy-comparison .col-lg-8,
+  #tgm-plugin-settings .col-lg-9,
+  #soliloquy-comparison .col-lg-9,
+  #tgm-plugin-settings .col-lg-10,
+  #soliloquy-comparison .col-lg-10,
+  #tgm-plugin-settings .col-lg-11,
+  #soliloquy-comparison .col-lg-11,
+  #tgm-plugin-settings .col-lg-12,
+  #soliloquy-comparison .col-lg-12 {
+    float: left;
+  }
+  #tgm-plugin-settings .col-lg-1,
+  #soliloquy-comparison .col-lg-1 {
+    width: 8.333333333333332%;
+  }
+  #tgm-plugin-settings .col-lg-2,
+  #soliloquy-comparison .col-lg-2 {
+    width: 16.666666666666664%;
+  }
+  #tgm-plugin-settings .col-lg-3,
+  #soliloquy-comparison .col-lg-3 {
+    width: 25%;
+  }
+  #tgm-plugin-settings .col-lg-4,
+  #soliloquy-comparison .col-lg-4 {
+    width: 33.33333333333333%;
+  }
+  #tgm-plugin-settings .col-lg-5,
+  #soliloquy-comparison .col-lg-5 {
+    width: 41.66666666666667%;
+  }
+  #tgm-plugin-settings .col-lg-6,
+  #soliloquy-comparison .col-lg-6 {
+    width: 50%;
+  }
+  #tgm-plugin-settings .col-lg-7,
+  #soliloquy-comparison .col-lg-7 {
+    width: 58.333333333333336%;
+  }
+  #tgm-plugin-settings .col-lg-8,
+  #soliloquy-comparison .col-lg-8 {
+    width: 66.66666666666666%;
+  }
+  #tgm-plugin-settings .col-lg-9,
+  #soliloquy-comparison .col-lg-9 {
+    width: 75%;
+  }
+  #tgm-plugin-settings .col-lg-10,
+  #soliloquy-comparison .col-lg-10 {
+    width: 83.33333333333334%;
+  }
+  #tgm-plugin-settings .col-lg-11,
+  #soliloquy-comparison .col-lg-11 {
+    width: 91.66666666666666%;
+  }
+  #tgm-plugin-settings .col-lg-12,
+  #soliloquy-comparison .col-lg-12 {
+    width: 100%;
+  }
+  #tgm-plugin-settings .col-offset-1,
+  #soliloquy-comparison .col-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  #tgm-plugin-settings .col-offset-2,
+  #soliloquy-comparison .col-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  #tgm-plugin-settings .col-offset-3,
+  #soliloquy-comparison .col-offset-3 {
+    margin-left: 25%;
+  }
+  #tgm-plugin-settings .col-offset-4,
+  #soliloquy-comparison .col-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  #tgm-plugin-settings .col-offset-5,
+  #soliloquy-comparison .col-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  #tgm-plugin-settings .col-offset-6,
+  #soliloquy-comparison .col-offset-6 {
+    margin-left: 50%;
+  }
+  #tgm-plugin-settings .col-offset-7,
+  #soliloquy-comparison .col-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  #tgm-plugin-settings .col-offset-8,
+  #soliloquy-comparison .col-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  #tgm-plugin-settings .col-offset-9,
+  #soliloquy-comparison .col-offset-9 {
+    margin-left: 75%;
+  }
+  #tgm-plugin-settings .col-offset-10,
+  #soliloquy-comparison .col-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  #tgm-plugin-settings .col-offset-11,
+  #soliloquy-comparison .col-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #tgm-plugin-settings .container,
+  #soliloquy-comparison .container {
+    max-width: 1170px;
+  }
+}
+
+#tgm-plugin-settings table,
+#soliloquy-comparison table {
+  max-width: 100%;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings th,
+#soliloquy-comparison th {
+  text-align: left;
+}
+
+#tgm-plugin-settings .table,
+#soliloquy-comparison .table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#tgm-plugin-settings .table thead > tr > th,
+#soliloquy-comparison .table thead > tr > th,
+#tgm-plugin-settings .table tbody > tr > th,
+#soliloquy-comparison .table tbody > tr > th,
+#tgm-plugin-settings .table tfoot > tr > th,
+#soliloquy-comparison .table tfoot > tr > th,
+#tgm-plugin-settings .table thead > tr > td,
+#soliloquy-comparison .table thead > tr > td,
+#tgm-plugin-settings .table tbody > tr > td,
+#soliloquy-comparison .table tbody > tr > td,
+#tgm-plugin-settings .table tfoot > tr > td,
+#soliloquy-comparison .table tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+#tgm-plugin-settings .table thead > tr > th,
+#soliloquy-comparison .table thead > tr > th {
+  vertical-align: bottom;
+}
+
+#tgm-plugin-settings .table caption + thead tr:first-child th,
+#soliloquy-comparison .table caption + thead tr:first-child th,
+#tgm-plugin-settings .table colgroup + thead tr:first-child th,
+#soliloquy-comparison .table colgroup + thead tr:first-child th,
+#tgm-plugin-settings .table thead:first-child tr:first-child th,
+#soliloquy-comparison .table thead:first-child tr:first-child th,
+#tgm-plugin-settings .table caption + thead tr:first-child td,
+#soliloquy-comparison .table caption + thead tr:first-child td,
+#tgm-plugin-settings .table colgroup + thead tr:first-child td,
+#soliloquy-comparison .table colgroup + thead tr:first-child td,
+#tgm-plugin-settings .table thead:first-child tr:first-child td,
+#soliloquy-comparison .table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+#tgm-plugin-settings .table tbody + tbody,
+#soliloquy-comparison .table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+#tgm-plugin-settings .table .table,
+#soliloquy-comparison .table .table {
+  background-color: #ecf0f1;
+}
+
+#tgm-plugin-settings .table-condensed thead > tr > th,
+#soliloquy-comparison .table-condensed thead > tr > th,
+#tgm-plugin-settings .table-condensed tbody > tr > th,
+#soliloquy-comparison .table-condensed tbody > tr > th,
+#tgm-plugin-settings .table-condensed tfoot > tr > th,
+#soliloquy-comparison .table-condensed tfoot > tr > th,
+#tgm-plugin-settings .table-condensed thead > tr > td,
+#soliloquy-comparison .table-condensed thead > tr > td,
+#tgm-plugin-settings .table-condensed tbody > tr > td,
+#soliloquy-comparison .table-condensed tbody > tr > td,
+#tgm-plugin-settings .table-condensed tfoot > tr > td,
+#soliloquy-comparison .table-condensed tfoot > tr > td {
+  padding: 5px;
+}
+
+#tgm-plugin-settings .table-bordered,
+#soliloquy-comparison .table-bordered {
+  border: 1px solid #dddddd;
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .table-bordered > thead > tr > th,
+#soliloquy-comparison .table-bordered > thead > tr > th,
+#tgm-plugin-settings .table-bordered > tbody > tr > th,
+#soliloquy-comparison .table-bordered > tbody > tr > th,
+#tgm-plugin-settings .table-bordered > tfoot > tr > th,
+#soliloquy-comparison .table-bordered > tfoot > tr > th,
+#tgm-plugin-settings .table-bordered > thead > tr > td,
+#soliloquy-comparison .table-bordered > thead > tr > td,
+#tgm-plugin-settings .table-bordered > tbody > tr > td,
+#soliloquy-comparison .table-bordered > tbody > tr > td,
+#tgm-plugin-settings .table-bordered > tfoot > tr > td,
+#soliloquy-comparison .table-bordered > tfoot > tr > td {
+  border-left: 1px solid #dddddd;
+}
+
+#tgm-plugin-settings .table-bordered > caption + thead > tr:first-child th,
+#soliloquy-comparison .table-bordered > caption + thead > tr:first-child th,
+#tgm-plugin-settings .table-bordered > caption + tbody > tr:first-child th,
+#soliloquy-comparison .table-bordered > caption + tbody > tr:first-child th,
+#tgm-plugin-settings .table-bordered > caption + tbody > tr:first-child td,
+#soliloquy-comparison .table-bordered > caption + tbody > tr:first-child td,
+#tgm-plugin-settings .table-bordered > colgroup + thead > tr:first-child th,
+#soliloquy-comparison .table-bordered > colgroup + thead > tr:first-child th,
+#tgm-plugin-settings .table-bordered > colgroup + tbody > tr:first-child th,
+#soliloquy-comparison .table-bordered > colgroup + tbody > tr:first-child th,
+#tgm-plugin-settings .table-bordered > colgroup + tbody > tr:first-child td,
+#soliloquy-comparison .table-bordered > colgroup + tbody > tr:first-child td,
+#tgm-plugin-settings .table-bordered > thead:first-child > tr:first-child th,
+#soliloquy-comparison .table-bordered > thead:first-child > tr:first-child th,
+#tgm-plugin-settings .table-bordered > tbody:first-child > tr:first-child th,
+#soliloquy-comparison .table-bordered > tbody:first-child > tr:first-child th,
+#tgm-plugin-settings .table-bordered > tbody:first-child > tr:first-child td,
+#soliloquy-comparison .table-bordered > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+
+#tgm-plugin-settings .table-bordered > thead:first-child > tr:first-child > th:first-child,
+#soliloquy-comparison .table-bordered > thead:first-child > tr:first-child > th:first-child,
+#tgm-plugin-settings .table-bordered > tbody:first-child > tr:first-child > td:first-child,
+#soliloquy-comparison .table-bordered > tbody:first-child > tr:first-child > td:first-child,
+#tgm-plugin-settings .table-bordered > tbody:first-child > tr:first-child > th:first-child,
+#soliloquy-comparison .table-bordered > tbody:first-child > tr:first-child > th:first-child {
+  border-top-left-radius: 4px;
+}
+
+#tgm-plugin-settings .table-bordered > thead:first-child > tr:first-child > th:last-child,
+#soliloquy-comparison .table-bordered > thead:first-child > tr:first-child > th:last-child,
+#tgm-plugin-settings .table-bordered > tbody:first-child > tr:first-child > td:last-child,
+#soliloquy-comparison .table-bordered > tbody:first-child > tr:first-child > td:last-child,
+#tgm-plugin-settings .table-bordered > tbody:first-child > tr:first-child > th:last-child,
+#soliloquy-comparison .table-bordered > tbody:first-child > tr:first-child > th:last-child {
+  border-top-right-radius: 4px;
+}
+
+#tgm-plugin-settings .table-bordered > thead:last-child > tr:last-child > th:first-child,
+#soliloquy-comparison .table-bordered > thead:last-child > tr:last-child > th:first-child,
+#tgm-plugin-settings .table-bordered > tbody:last-child > tr:last-child > td:first-child,
+#soliloquy-comparison .table-bordered > tbody:last-child > tr:last-child > td:first-child,
+#tgm-plugin-settings .table-bordered > tbody:last-child > tr:last-child > th:first-child,
+#soliloquy-comparison .table-bordered > tbody:last-child > tr:last-child > th:first-child,
+#tgm-plugin-settings .table-bordered > tfoot:last-child > tr:last-child > td:first-child,
+#soliloquy-comparison .table-bordered > tfoot:last-child > tr:last-child > td:first-child,
+#tgm-plugin-settings .table-bordered > tfoot:last-child > tr:last-child > th:first-child,
+#soliloquy-comparison .table-bordered > tfoot:last-child > tr:last-child > th:first-child {
+  border-bottom-left-radius: 4px;
+}
+
+#tgm-plugin-settings .table-bordered > thead:last-child > tr:last-child > th:last-child,
+#soliloquy-comparison .table-bordered > thead:last-child > tr:last-child > th:last-child,
+#tgm-plugin-settings .table-bordered > tbody:last-child > tr:last-child > td:last-child,
+#soliloquy-comparison .table-bordered > tbody:last-child > tr:last-child > td:last-child,
+#tgm-plugin-settings .table-bordered > tbody:last-child > tr:last-child > th:last-child,
+#soliloquy-comparison .table-bordered > tbody:last-child > tr:last-child > th:last-child,
+#tgm-plugin-settings .table-bordered > tfoot:last-child > tr:last-child > td:last-child,
+#soliloquy-comparison .table-bordered > tfoot:last-child > tr:last-child > td:last-child,
+#tgm-plugin-settings .table-bordered > tfoot:last-child > tr:last-child > th:last-child,
+#soliloquy-comparison .table-bordered > tfoot:last-child > tr:last-child > th:last-child {
+  border-bottom-right-radius: 4px;
+}
+
+#tgm-plugin-settings .table-bordered > tfoot + tbody:last-child > tr:last-child > td:first-child,
+#soliloquy-comparison .table-bordered > tfoot + tbody:last-child > tr:last-child > td:first-child {
+  border-bottom-left-radius: 0;
+}
+
+#tgm-plugin-settings .table-bordered > tfoot + tbody:last-child > tr:last-child > td:last-child,
+#soliloquy-comparison .table-bordered > tfoot + tbody:last-child > tr:last-child > td:last-child {
+  border-bottom-right-radius: 0;
+}
+
+#tgm-plugin-settings .table-bordered > caption + thead > tr:first-child > th:first-child,
+#soliloquy-comparison .table-bordered > caption + thead > tr:first-child > th:first-child,
+#tgm-plugin-settings .table-bordered > colgroup + thead > tr:first-child > th:first-child,
+#soliloquy-comparison .table-bordered > colgroup + thead > tr:first-child > th:first-child,
+#tgm-plugin-settings .table-bordered > caption + tbody > tr:first-child > td:first-child,
+#soliloquy-comparison .table-bordered > caption + tbody > tr:first-child > td:first-child,
+#tgm-plugin-settings .table-bordered > colgroup + tbody > tr:first-child > td:first-child,
+#soliloquy-comparison .table-bordered > colgroup + tbody > tr:first-child > td:first-child {
+  border-top-left-radius: 4px;
+}
+
+#tgm-plugin-settings .table-bordered > caption + thead > tr:first-child > th:last-child,
+#soliloquy-comparison .table-bordered > caption + thead > tr:first-child > th:last-child,
+#tgm-plugin-settings .table-bordered > colgroup + thead > tr:first-child > th:last-child,
+#soliloquy-comparison .table-bordered > colgroup + thead > tr:first-child > th:last-child,
+#tgm-plugin-settings .table-bordered > caption + tbody > tr:first-child > td:last-child,
+#soliloquy-comparison .table-bordered > caption + tbody > tr:first-child > td:last-child,
+#tgm-plugin-settings .table-bordered > colgroup + tbody > tr:first-child > td:last-child,
+#soliloquy-comparison .table-bordered > colgroup + tbody > tr:first-child > td:last-child {
+  border-top-right-radius: 4px;
+}
+
+#tgm-plugin-settings .table-striped > tbody > tr:nth-child(odd) > td,
+#soliloquy-comparison .table-striped > tbody > tr:nth-child(odd) > td,
+#tgm-plugin-settings .table-striped > tbody > tr:nth-child(odd) > th,
+#soliloquy-comparison .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+#tgm-plugin-settings .table-hover > tbody > tr:hover > td,
+#soliloquy-comparison .table-hover > tbody > tr:hover > td,
+#tgm-plugin-settings .table-hover > tbody > tr:hover > th,
+#soliloquy-comparison .table-hover > tbody > tr:hover > th {
+  background-color: #f5f5f5;
+}
+
+#tgm-plugin-settings table col[class^="col-"],
+#soliloquy-comparison table col[class^="col-"] {
+  display: table-column;
+  float: none;
+}
+
+#tgm-plugin-settings table td[class^="col-"],
+#soliloquy-comparison table td[class^="col-"],
+#tgm-plugin-settings table th[class^="col-"],
+#soliloquy-comparison table th[class^="col-"] {
+  display: table-cell;
+  float: none;
+}
+
+#tgm-plugin-settings .table > tbody > tr > td.active,
+#soliloquy-comparison .table > tbody > tr > td.active,
+#tgm-plugin-settings .table > tbody > tr > th.active,
+#soliloquy-comparison .table > tbody > tr > th.active,
+#tgm-plugin-settings .table > tbody > tr.active > td,
+#soliloquy-comparison .table > tbody > tr.active > td {
+  background-color: #f5f5f5;
+}
+
+#tgm-plugin-settings .table > tbody > tr > td.success,
+#soliloquy-comparison .table > tbody > tr > td.success,
+#tgm-plugin-settings .table > tbody > tr > th.success,
+#soliloquy-comparison .table > tbody > tr > th.success,
+#tgm-plugin-settings .table > tbody > tr.success > td,
+#soliloquy-comparison .table > tbody > tr.success > td {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+#tgm-plugin-settings .table > tbody > tr > td.danger,
+#soliloquy-comparison .table > tbody > tr > td.danger,
+#tgm-plugin-settings .table > tbody > tr > th.danger,
+#soliloquy-comparison .table > tbody > tr > th.danger,
+#tgm-plugin-settings .table > tbody > tr.danger > td,
+#soliloquy-comparison .table > tbody > tr.danger > td {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+#tgm-plugin-settings .table > tbody > tr > td.warning,
+#soliloquy-comparison .table > tbody > tr > td.warning,
+#tgm-plugin-settings .table > tbody > tr > th.warning,
+#soliloquy-comparison .table > tbody > tr > th.warning,
+#tgm-plugin-settings .table > tbody > tr.warning > td,
+#soliloquy-comparison .table > tbody > tr.warning > td {
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+
+#tgm-plugin-settings .table-hover > tbody > tr > td.success:hover,
+#soliloquy-comparison .table-hover > tbody > tr > td.success:hover,
+#tgm-plugin-settings .table-hover > tbody > tr > th.success:hover,
+#soliloquy-comparison .table-hover > tbody > tr > th.success:hover,
+#tgm-plugin-settings .table-hover > tbody > tr.success:hover > td,
+#soliloquy-comparison .table-hover > tbody > tr.success:hover > td {
+  background-color: #d0e9c6;
+  border-color: #c9e2b3;
+}
+
+#tgm-plugin-settings .table-hover > tbody > tr > td.danger:hover,
+#soliloquy-comparison .table-hover > tbody > tr > td.danger:hover,
+#tgm-plugin-settings .table-hover > tbody > tr > th.danger:hover,
+#soliloquy-comparison .table-hover > tbody > tr > th.danger:hover,
+#tgm-plugin-settings .table-hover > tbody > tr.danger:hover > td,
+#soliloquy-comparison .table-hover > tbody > tr.danger:hover > td {
+  background-color: #ebcccc;
+  border-color: #e6c1c7;
+}
+
+#tgm-plugin-settings .table-hover > tbody > tr > td.warning:hover,
+#soliloquy-comparison .table-hover > tbody > tr > td.warning:hover,
+#tgm-plugin-settings .table-hover > tbody > tr > th.warning:hover,
+#soliloquy-comparison .table-hover > tbody > tr > th.warning:hover,
+#tgm-plugin-settings .table-hover > tbody > tr.warning:hover > td,
+#soliloquy-comparison .table-hover > tbody > tr.warning:hover > td {
+  background-color: #faf2cc;
+  border-color: #f8e5be;
+}
+
+#tgm-plugin-settings form,
+#soliloquy-comparison form {
+  margin: 0;
+}
+
+#tgm-plugin-settings fieldset,
+#soliloquy-comparison fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#tgm-plugin-settings legend,
+#soliloquy-comparison legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#tgm-plugin-settings label,
+#soliloquy-comparison label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#tgm-plugin-settings select,
+#soliloquy-comparison select,
+#tgm-plugin-settings textarea,
+#soliloquy-comparison textarea,
+#tgm-plugin-settings input[type="text"],
+#soliloquy-comparison input[type="text"],
+#tgm-plugin-settings input[type="password"],
+#soliloquy-comparison input[type="password"],
+#tgm-plugin-settings input[type="datetime"],
+#soliloquy-comparison input[type="datetime"],
+#tgm-plugin-settings input[type="datetime-local"],
+#soliloquy-comparison input[type="datetime-local"],
+#tgm-plugin-settings input[type="date"],
+#soliloquy-comparison input[type="date"],
+#tgm-plugin-settings input[type="month"],
+#soliloquy-comparison input[type="month"],
+#tgm-plugin-settings input[type="time"],
+#soliloquy-comparison input[type="time"],
+#tgm-plugin-settings input[type="week"],
+#soliloquy-comparison input[type="week"],
+#tgm-plugin-settings input[type="number"],
+#soliloquy-comparison input[type="number"],
+#tgm-plugin-settings input[type="email"],
+#soliloquy-comparison input[type="email"],
+#tgm-plugin-settings input[type="url"],
+#soliloquy-comparison input[type="url"],
+#tgm-plugin-settings input[type="search"],
+#soliloquy-comparison input[type="search"],
+#tgm-plugin-settings input[type="tel"],
+#soliloquy-comparison input[type="tel"],
+#tgm-plugin-settings input[type="color"],
+#soliloquy-comparison input[type="color"] {
+  display: block;
+  height: 42px;
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+#tgm-plugin-settings select:focus,
+#soliloquy-comparison select:focus,
+#tgm-plugin-settings textarea:focus,
+#soliloquy-comparison textarea:focus,
+#tgm-plugin-settings input[type="text"]:focus,
+#soliloquy-comparison input[type="text"]:focus,
+#tgm-plugin-settings input[type="password"]:focus,
+#soliloquy-comparison input[type="password"]:focus,
+#tgm-plugin-settings input[type="datetime"]:focus,
+#soliloquy-comparison input[type="datetime"]:focus,
+#tgm-plugin-settings input[type="datetime-local"]:focus,
+#soliloquy-comparison input[type="datetime-local"]:focus,
+#tgm-plugin-settings input[type="date"]:focus,
+#soliloquy-comparison input[type="date"]:focus,
+#tgm-plugin-settings input[type="month"]:focus,
+#soliloquy-comparison input[type="month"]:focus,
+#tgm-plugin-settings input[type="time"]:focus,
+#soliloquy-comparison input[type="time"]:focus,
+#tgm-plugin-settings input[type="week"]:focus,
+#soliloquy-comparison input[type="week"]:focus,
+#tgm-plugin-settings input[type="number"]:focus,
+#soliloquy-comparison input[type="number"]:focus,
+#tgm-plugin-settings input[type="email"]:focus,
+#soliloquy-comparison input[type="email"]:focus,
+#tgm-plugin-settings input[type="url"]:focus,
+#soliloquy-comparison input[type="url"]:focus,
+#tgm-plugin-settings input[type="search"]:focus,
+#soliloquy-comparison input[type="search"]:focus,
+#tgm-plugin-settings input[type="tel"]:focus,
+#soliloquy-comparison input[type="tel"]:focus,
+#tgm-plugin-settings input[type="color"]:focus,
+#soliloquy-comparison input[type="color"]:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+#tgm-plugin-settings select[disabled],
+#soliloquy-comparison select[disabled],
+#tgm-plugin-settings textarea[disabled],
+#soliloquy-comparison textarea[disabled],
+#tgm-plugin-settings input[type="text"][disabled],
+#soliloquy-comparison input[type="text"][disabled],
+#tgm-plugin-settings input[type="password"][disabled],
+#soliloquy-comparison input[type="password"][disabled],
+#tgm-plugin-settings input[type="datetime"][disabled],
+#soliloquy-comparison input[type="datetime"][disabled],
+#tgm-plugin-settings input[type="datetime-local"][disabled],
+#soliloquy-comparison input[type="datetime-local"][disabled],
+#tgm-plugin-settings input[type="date"][disabled],
+#soliloquy-comparison input[type="date"][disabled],
+#tgm-plugin-settings input[type="month"][disabled],
+#soliloquy-comparison input[type="month"][disabled],
+#tgm-plugin-settings input[type="time"][disabled],
+#soliloquy-comparison input[type="time"][disabled],
+#tgm-plugin-settings input[type="week"][disabled],
+#soliloquy-comparison input[type="week"][disabled],
+#tgm-plugin-settings input[type="number"][disabled],
+#soliloquy-comparison input[type="number"][disabled],
+#tgm-plugin-settings input[type="email"][disabled],
+#soliloquy-comparison input[type="email"][disabled],
+#tgm-plugin-settings input[type="url"][disabled],
+#soliloquy-comparison input[type="url"][disabled],
+#tgm-plugin-settings input[type="search"][disabled],
+#soliloquy-comparison input[type="search"][disabled],
+#tgm-plugin-settings input[type="tel"][disabled],
+#soliloquy-comparison input[type="tel"][disabled],
+#tgm-plugin-settings input[type="color"][disabled],
+#soliloquy-comparison input[type="color"][disabled],
+#tgm-plugin-settings select[readonly],
+#soliloquy-comparison select[readonly],
+#tgm-plugin-settings textarea[readonly],
+#soliloquy-comparison textarea[readonly],
+#tgm-plugin-settings input[type="text"][readonly],
+#soliloquy-comparison input[type="text"][readonly],
+#tgm-plugin-settings input[type="password"][readonly],
+#soliloquy-comparison input[type="password"][readonly],
+#tgm-plugin-settings input[type="datetime"][readonly],
+#soliloquy-comparison input[type="datetime"][readonly],
+#tgm-plugin-settings input[type="datetime-local"][readonly],
+#soliloquy-comparison input[type="datetime-local"][readonly],
+#tgm-plugin-settings input[type="date"][readonly],
+#soliloquy-comparison input[type="date"][readonly],
+#tgm-plugin-settings input[type="month"][readonly],
+#soliloquy-comparison input[type="month"][readonly],
+#tgm-plugin-settings input[type="time"][readonly],
+#soliloquy-comparison input[type="time"][readonly],
+#tgm-plugin-settings input[type="week"][readonly],
+#soliloquy-comparison input[type="week"][readonly],
+#tgm-plugin-settings input[type="number"][readonly],
+#soliloquy-comparison input[type="number"][readonly],
+#tgm-plugin-settings input[type="email"][readonly],
+#soliloquy-comparison input[type="email"][readonly],
+#tgm-plugin-settings input[type="url"][readonly],
+#soliloquy-comparison input[type="url"][readonly],
+#tgm-plugin-settings input[type="search"][readonly],
+#soliloquy-comparison input[type="search"][readonly],
+#tgm-plugin-settings input[type="tel"][readonly],
+#soliloquy-comparison input[type="tel"][readonly],
+#tgm-plugin-settings input[type="color"][readonly],
+#soliloquy-comparison input[type="color"][readonly],
+fieldset[disabled] #tgm-plugin-settings select,
+fieldset[disabled] #soliloquy-comparison select,
+fieldset[disabled] #tgm-plugin-settings textarea,
+fieldset[disabled] #soliloquy-comparison textarea,
+fieldset[disabled] #tgm-plugin-settings input[type="text"],
+fieldset[disabled] #soliloquy-comparison input[type="text"],
+fieldset[disabled] #tgm-plugin-settings input[type="password"],
+fieldset[disabled] #soliloquy-comparison input[type="password"],
+fieldset[disabled] #tgm-plugin-settings input[type="datetime"],
+fieldset[disabled] #soliloquy-comparison input[type="datetime"],
+fieldset[disabled] #tgm-plugin-settings input[type="datetime-local"],
+fieldset[disabled] #soliloquy-comparison input[type="datetime-local"],
+fieldset[disabled] #tgm-plugin-settings input[type="date"],
+fieldset[disabled] #soliloquy-comparison input[type="date"],
+fieldset[disabled] #tgm-plugin-settings input[type="month"],
+fieldset[disabled] #soliloquy-comparison input[type="month"],
+fieldset[disabled] #tgm-plugin-settings input[type="time"],
+fieldset[disabled] #soliloquy-comparison input[type="time"],
+fieldset[disabled] #tgm-plugin-settings input[type="week"],
+fieldset[disabled] #soliloquy-comparison input[type="week"],
+fieldset[disabled] #tgm-plugin-settings input[type="number"],
+fieldset[disabled] #soliloquy-comparison input[type="number"],
+fieldset[disabled] #tgm-plugin-settings input[type="email"],
+fieldset[disabled] #soliloquy-comparison input[type="email"],
+fieldset[disabled] #tgm-plugin-settings input[type="url"],
+fieldset[disabled] #soliloquy-comparison input[type="url"],
+fieldset[disabled] #tgm-plugin-settings input[type="search"],
+fieldset[disabled] #soliloquy-comparison input[type="search"],
+fieldset[disabled] #tgm-plugin-settings input[type="tel"],
+fieldset[disabled] #soliloquy-comparison input[type="tel"],
+fieldset[disabled] #tgm-plugin-settings input[type="color"],
+fieldset[disabled] #soliloquy-comparison input[type="color"] {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+
+#tgm-plugin-settings input,
+#soliloquy-comparison input,
+#tgm-plugin-settings select,
+#soliloquy-comparison select,
+#tgm-plugin-settings textarea,
+#soliloquy-comparison textarea {
+  width: 100%;
+}
+
+#tgm-plugin-settings input[type="file"],
+#soliloquy-comparison input[type="file"],
+#tgm-plugin-settings input[type="image"],
+#soliloquy-comparison input[type="image"],
+#tgm-plugin-settings input[type="submit"],
+#soliloquy-comparison input[type="submit"],
+#tgm-plugin-settings input[type="reset"],
+#soliloquy-comparison input[type="reset"],
+#tgm-plugin-settings input[type="button"],
+#soliloquy-comparison input[type="button"],
+#tgm-plugin-settings input[type="radio"],
+#soliloquy-comparison input[type="radio"],
+#tgm-plugin-settings input[type="checkbox"],
+#soliloquy-comparison input[type="checkbox"] {
+  width: auto;
+}
+
+#tgm-plugin-settings input[type="search"],
+#soliloquy-comparison input[type="search"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#tgm-plugin-settings textarea,
+#soliloquy-comparison textarea {
+  height: auto;
+}
+
+#tgm-plugin-settings input[type="radio"],
+#soliloquy-comparison input[type="radio"],
+#tgm-plugin-settings input[type="checkbox"],
+#soliloquy-comparison input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  /* IE8-9 */
+
+  line-height: normal;
+}
+
+#tgm-plugin-settings input[type="file"],
+#soliloquy-comparison input[type="file"] {
+  height: 42px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size. TODO: Check if this is still needed when dropping IE7 support */
+
+  line-height: 42px;
+}
+
+#tgm-plugin-settings select[multiple],
+#soliloquy-comparison select[multiple],
+#tgm-plugin-settings select[size],
+#soliloquy-comparison select[size] {
+  height: auto;
+}
+
+#tgm-plugin-settings select optgroup,
+#soliloquy-comparison select optgroup {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+}
+
+#tgm-plugin-settings input[type="file"]:focus,
+#soliloquy-comparison input[type="file"]:focus,
+#tgm-plugin-settings input[type="radio"]:focus,
+#soliloquy-comparison input[type="radio"]:focus,
+#tgm-plugin-settings input[type="checkbox"]:focus,
+#soliloquy-comparison input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+#tgm-plugin-settings input[type="number"]::-webkit-outer-spin-button,
+#soliloquy-comparison input[type="number"]::-webkit-outer-spin-button,
+#tgm-plugin-settings input[type="number"]::-webkit-inner-spin-button,
+#soliloquy-comparison input[type="number"]::-webkit-inner-spin-button {
+  height: auto;
+}
+
+#tgm-plugin-settings input:-moz-placeholder,
+#soliloquy-comparison input:-moz-placeholder,
+#tgm-plugin-settings textarea:-moz-placeholder,
+#soliloquy-comparison textarea:-moz-placeholder {
+  color: #999999;
+}
+
+#tgm-plugin-settings input::-moz-placeholder,
+#soliloquy-comparison input::-moz-placeholder,
+#tgm-plugin-settings textarea::-moz-placeholder,
+#soliloquy-comparison textarea::-moz-placeholder {
+  color: #999999;
+}
+
+#tgm-plugin-settings input:-ms-input-placeholder,
+#soliloquy-comparison input:-ms-input-placeholder,
+#tgm-plugin-settings textarea:-ms-input-placeholder,
+#soliloquy-comparison textarea:-ms-input-placeholder {
+  color: #999999;
+}
+
+#tgm-plugin-settings input::-webkit-input-placeholder,
+#soliloquy-comparison input::-webkit-input-placeholder,
+#tgm-plugin-settings textarea::-webkit-input-placeholder,
+#soliloquy-comparison textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+
+#tgm-plugin-settings .radio,
+#soliloquy-comparison .radio,
+#tgm-plugin-settings .checkbox,
+#soliloquy-comparison .checkbox {
+  display: block;
+  min-height: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+
+#tgm-plugin-settings .radio label,
+#soliloquy-comparison .radio label,
+#tgm-plugin-settings .checkbox label,
+#soliloquy-comparison .checkbox label {
+  display: inline;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+#tgm-plugin-settings .radio input[type="radio"],
+#soliloquy-comparison .radio input[type="radio"],
+#tgm-plugin-settings .radio-inline input[type="radio"],
+#soliloquy-comparison .radio-inline input[type="radio"],
+#tgm-plugin-settings .checkbox input[type="checkbox"],
+#soliloquy-comparison .checkbox input[type="checkbox"],
+#tgm-plugin-settings .checkbox-inline input[type="checkbox"],
+#soliloquy-comparison .checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+
+#tgm-plugin-settings .radio + .radio,
+#soliloquy-comparison .radio + .radio,
+#tgm-plugin-settings .checkbox + .checkbox,
+#soliloquy-comparison .checkbox + .checkbox {
+  margin-top: -5px;
+}
+
+#tgm-plugin-settings .radio-inline,
+#soliloquy-comparison .radio-inline,
+#tgm-plugin-settings .checkbox-inline,
+#soliloquy-comparison .checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#tgm-plugin-settings .radio-inline + .radio-inline,
+#soliloquy-comparison .radio-inline + .radio-inline,
+#tgm-plugin-settings .checkbox-inline + .checkbox-inline,
+#soliloquy-comparison .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+#tgm-plugin-settings select.input-large,
+#soliloquy-comparison select.input-large,
+#tgm-plugin-settings textarea.input-large,
+#soliloquy-comparison textarea.input-large,
+#tgm-plugin-settings input[type="text"].input-large,
+#soliloquy-comparison input[type="text"].input-large,
+#tgm-plugin-settings input[type="password"].input-large,
+#soliloquy-comparison input[type="password"].input-large,
+#tgm-plugin-settings input[type="datetime"].input-large,
+#soliloquy-comparison input[type="datetime"].input-large,
+#tgm-plugin-settings input[type="datetime-local"].input-large,
+#soliloquy-comparison input[type="datetime-local"].input-large,
+#tgm-plugin-settings input[type="date"].input-large,
+#soliloquy-comparison input[type="date"].input-large,
+#tgm-plugin-settings input[type="month"].input-large,
+#soliloquy-comparison input[type="month"].input-large,
+#tgm-plugin-settings input[type="time"].input-large,
+#soliloquy-comparison input[type="time"].input-large,
+#tgm-plugin-settings input[type="week"].input-large,
+#soliloquy-comparison input[type="week"].input-large,
+#tgm-plugin-settings input[type="number"].input-large,
+#soliloquy-comparison input[type="number"].input-large,
+#tgm-plugin-settings input[type="email"].input-large,
+#soliloquy-comparison input[type="email"].input-large,
+#tgm-plugin-settings input[type="url"].input-large,
+#soliloquy-comparison input[type="url"].input-large,
+#tgm-plugin-settings input[type="search"].input-large,
+#soliloquy-comparison input[type="search"].input-large,
+#tgm-plugin-settings input[type="tel"].input-large,
+#soliloquy-comparison input[type="tel"].input-large,
+#tgm-plugin-settings input[type="color"].input-large,
+#soliloquy-comparison input[type="color"].input-large {
+  height: 60px;
+  padding: 16px 18px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+#tgm-plugin-settings select.input-small,
+#soliloquy-comparison select.input-small,
+#tgm-plugin-settings textarea.input-small,
+#soliloquy-comparison textarea.input-small,
+#tgm-plugin-settings input[type="text"].input-small,
+#soliloquy-comparison input[type="text"].input-small,
+#tgm-plugin-settings input[type="password"].input-small,
+#soliloquy-comparison input[type="password"].input-small,
+#tgm-plugin-settings input[type="datetime"].input-small,
+#soliloquy-comparison input[type="datetime"].input-small,
+#tgm-plugin-settings input[type="datetime-local"].input-small,
+#soliloquy-comparison input[type="datetime-local"].input-small,
+#tgm-plugin-settings input[type="date"].input-small,
+#soliloquy-comparison input[type="date"].input-small,
+#tgm-plugin-settings input[type="month"].input-small,
+#soliloquy-comparison input[type="month"].input-small,
+#tgm-plugin-settings input[type="time"].input-small,
+#soliloquy-comparison input[type="time"].input-small,
+#tgm-plugin-settings input[type="week"].input-small,
+#soliloquy-comparison input[type="week"].input-small,
+#tgm-plugin-settings input[type="number"].input-small,
+#soliloquy-comparison input[type="number"].input-small,
+#tgm-plugin-settings input[type="email"].input-small,
+#soliloquy-comparison input[type="email"].input-small,
+#tgm-plugin-settings input[type="url"].input-small,
+#soliloquy-comparison input[type="url"].input-small,
+#tgm-plugin-settings input[type="search"].input-small,
+#soliloquy-comparison input[type="search"].input-small,
+#tgm-plugin-settings input[type="tel"].input-small,
+#soliloquy-comparison input[type="tel"].input-small,
+#tgm-plugin-settings input[type="color"].input-small,
+#soliloquy-comparison input[type="color"].input-small {
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+#tgm-plugin-settings select.input-large,
+#soliloquy-comparison select.input-large {
+  height: 60px;
+  line-height: 60px;
+}
+
+#tgm-plugin-settings select.input-small,
+#soliloquy-comparison select.input-small {
+  height: 32px;
+  line-height: 32px;
+}
+
+#tgm-plugin-settings .has-warning .help-block,
+#soliloquy-comparison .has-warning .help-block,
+#tgm-plugin-settings .has-warning .control-label,
+#soliloquy-comparison .has-warning .control-label {
+  color: #c09853;
+}
+
+#tgm-plugin-settings .has-warning .input-with-feedback,
+#soliloquy-comparison .has-warning .input-with-feedback {
+  padding-right: 32px;
+  border-color: #c09853;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+#tgm-plugin-settings .has-warning .input-with-feedback:focus,
+#soliloquy-comparison .has-warning .input-with-feedback:focus {
+  border-color: #a47e3c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+}
+
+#tgm-plugin-settings .has-warning .input-group-addon,
+#soliloquy-comparison .has-warning .input-group-addon {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #c09853;
+}
+
+#tgm-plugin-settings .has-error .help-block,
+#soliloquy-comparison .has-error .help-block,
+#tgm-plugin-settings .has-error .control-label,
+#soliloquy-comparison .has-error .control-label {
+  color: #b94a48;
+}
+
+#tgm-plugin-settings .has-error .input-with-feedback,
+#soliloquy-comparison .has-error .input-with-feedback {
+  padding-right: 32px;
+  border-color: #b94a48;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+#tgm-plugin-settings .has-error .input-with-feedback:focus,
+#soliloquy-comparison .has-error .input-with-feedback:focus {
+  border-color: #953b39;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+}
+
+#tgm-plugin-settings .has-error .input-group-addon,
+#soliloquy-comparison .has-error .input-group-addon {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;
+}
+
+#tgm-plugin-settings .has-success .help-block,
+#soliloquy-comparison .has-success .help-block,
+#tgm-plugin-settings .has-success .control-label,
+#soliloquy-comparison .has-success .control-label {
+  color: #468847;
+}
+
+#tgm-plugin-settings .has-success .input-with-feedback,
+#soliloquy-comparison .has-success .input-with-feedback {
+  padding-right: 32px;
+  border-color: #468847;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+#tgm-plugin-settings .has-success .input-with-feedback:focus,
+#soliloquy-comparison .has-success .input-with-feedback:focus {
+  border-color: #356635;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+}
+
+#tgm-plugin-settings .has-success .input-group-addon,
+#soliloquy-comparison .has-success .input-group-addon {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #468847;
+}
+
+#tgm-plugin-settings .help-block,
+#soliloquy-comparison .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+
+#tgm-plugin-settings .input-group,
+#soliloquy-comparison .input-group {
+  display: table;
+  border-collapse: separate;
+}
+
+#tgm-plugin-settings .input-group.col,
+#soliloquy-comparison .input-group.col {
+  float: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#tgm-plugin-settings .input-group input,
+#soliloquy-comparison .input-group input,
+#tgm-plugin-settings .input-group select,
+#soliloquy-comparison .input-group select {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings .input-group-addon,
+#soliloquy-comparison .input-group-addon,
+#tgm-plugin-settings .input-group-btn,
+#soliloquy-comparison .input-group-btn,
+#tgm-plugin-settings .input-group input,
+#soliloquy-comparison .input-group input {
+  display: table-cell;
+}
+
+#tgm-plugin-settings .input-group-addon:not(:first-child):not(:last-child),
+#soliloquy-comparison .input-group-addon:not(:first-child):not(:last-child),
+#tgm-plugin-settings .input-group-btn:not(:first-child):not(:last-child),
+#soliloquy-comparison .input-group-btn:not(:first-child):not(:last-child),
+#tgm-plugin-settings .input-group input:not(:first-child):not(:last-child),
+#soliloquy-comparison .input-group input:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .input-group-addon,
+#soliloquy-comparison .input-group-addon,
+#tgm-plugin-settings .input-group-btn,
+#soliloquy-comparison .input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+#tgm-plugin-settings .input-group-addon,
+#soliloquy-comparison .input-group-addon {
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#tgm-plugin-settings .input-group-addon.input-small,
+#soliloquy-comparison .input-group-addon.input-small {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+#tgm-plugin-settings .input-group-addon.input-large,
+#soliloquy-comparison .input-group-addon.input-large {
+  padding: 16px 18px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+#tgm-plugin-settings .input-group input:first-child,
+#soliloquy-comparison .input-group input:first-child,
+#tgm-plugin-settings .input-group-addon:first-child,
+#soliloquy-comparison .input-group-addon:first-child,
+#tgm-plugin-settings .input-group-btn:first-child > .btn,
+#soliloquy-comparison .input-group-btn:first-child > .btn,
+#tgm-plugin-settings .input-group-btn:first-child > .dropdown-toggle,
+#soliloquy-comparison .input-group-btn:first-child > .dropdown-toggle,
+#tgm-plugin-settings .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+#soliloquy-comparison .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#tgm-plugin-settings .input-group-addon:first-child,
+#soliloquy-comparison .input-group-addon:first-child {
+  border-right: 0;
+}
+
+#tgm-plugin-settings .input-group input:last-child,
+#soliloquy-comparison .input-group input:last-child,
+#tgm-plugin-settings .input-group-addon:last-child,
+#soliloquy-comparison .input-group-addon:last-child,
+#tgm-plugin-settings .input-group-btn:last-child > .btn,
+#soliloquy-comparison .input-group-btn:last-child > .btn,
+#tgm-plugin-settings .input-group-btn:last-child > .dropdown-toggle,
+#soliloquy-comparison .input-group-btn:last-child > .dropdown-toggle,
+#tgm-plugin-settings .input-group-btn:first-child > .btn:not(:first-child),
+#soliloquy-comparison .input-group-btn:first-child > .btn:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .input-group-addon:last-child,
+#soliloquy-comparison .input-group-addon:last-child {
+  border-left: 0;
+}
+
+#tgm-plugin-settings .input-group-btn,
+#soliloquy-comparison .input-group-btn {
+  position: relative;
+  white-space: nowrap;
+}
+
+#tgm-plugin-settings .input-group-btn > .btn,
+#soliloquy-comparison .input-group-btn > .btn {
+  position: relative;
+}
+
+#tgm-plugin-settings .input-group-btn > .btn + .btn,
+#soliloquy-comparison .input-group-btn > .btn + .btn {
+  margin-left: -4px;
+}
+
+#tgm-plugin-settings .input-group-btn > .btn:hover,
+#soliloquy-comparison .input-group-btn > .btn:hover,
+#tgm-plugin-settings .input-group-btn > .btn:active,
+#soliloquy-comparison .input-group-btn > .btn:active {
+  z-index: 2;
+}
+
+#tgm-plugin-settings .form-inline input,
+#soliloquy-comparison .form-inline input,
+#tgm-plugin-settings .form-inline select,
+#soliloquy-comparison .form-inline select,
+#tgm-plugin-settings .form-inline textarea,
+#soliloquy-comparison .form-inline textarea,
+#tgm-plugin-settings .form-inline .radio,
+#soliloquy-comparison .form-inline .radio,
+#tgm-plugin-settings .form-inline .checkbox,
+#soliloquy-comparison .form-inline .checkbox {
+  display: inline-block;
+}
+
+#tgm-plugin-settings .form-inline .radio,
+#soliloquy-comparison .form-inline .radio,
+#tgm-plugin-settings .form-inline .checkbox,
+#soliloquy-comparison .form-inline .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings .form-horizontal .row + .row,
+#soliloquy-comparison .form-horizontal .row + .row {
+  margin-top: 15px;
+}
+
+#tgm-plugin-settings .form-horizontal .control-label,
+#soliloquy-comparison .form-horizontal .control-label {
+  padding-top: 6px;
+}
+
+@media (min-width: 768px) {
+  #tgm-plugin-settings .form-horizontal .control-label,
+  #soliloquy-comparison .form-horizontal .control-label {
+    text-align: right;
+  }
+}
+
+#tgm-plugin-settings .btn,
+#soliloquy-comparison .btn {
+  display: inline-block;
+  padding: 10px 14px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .btn:focus,
+#soliloquy-comparison .btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+#tgm-plugin-settings .btn:hover,
+#soliloquy-comparison .btn:hover,
+#tgm-plugin-settings .btn:focus,
+#soliloquy-comparison .btn:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+#tgm-plugin-settings .btn:active,
+#soliloquy-comparison .btn:active,
+#tgm-plugin-settings .btn.active,
+#soliloquy-comparison .btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+#tgm-plugin-settings .btn.disabled,
+#soliloquy-comparison .btn.disabled,
+#tgm-plugin-settings .btn[disabled],
+#soliloquy-comparison .btn[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn,
+fieldset[disabled] #soliloquy-comparison .btn {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#tgm-plugin-settings .btn-default,
+#soliloquy-comparison .btn-default {
+  color: #ffffff;
+  background-color: #95a5a6;
+  border-color: #95a5a6;
+}
+
+#tgm-plugin-settings .btn-default:hover,
+#soliloquy-comparison .btn-default:hover,
+#tgm-plugin-settings .btn-default:focus,
+#soliloquy-comparison .btn-default:focus,
+#tgm-plugin-settings .btn-default:active,
+#soliloquy-comparison .btn-default:active,
+#tgm-plugin-settings .btn-default.active,
+#soliloquy-comparison .btn-default.active {
+  background-color: #87999a;
+  border-color: #798d8f;
+}
+
+#tgm-plugin-settings .btn-default.disabled,
+#soliloquy-comparison .btn-default.disabled,
+#tgm-plugin-settings .btn-default[disabled],
+#soliloquy-comparison .btn-default[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-default,
+fieldset[disabled] #soliloquy-comparison .btn-default,
+#tgm-plugin-settings .btn-default.disabled:hover,
+#soliloquy-comparison .btn-default.disabled:hover,
+#tgm-plugin-settings .btn-default[disabled]:hover,
+#soliloquy-comparison .btn-default[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-default:hover,
+fieldset[disabled] #soliloquy-comparison .btn-default:hover,
+#tgm-plugin-settings .btn-default.disabled:focus,
+#soliloquy-comparison .btn-default.disabled:focus,
+#tgm-plugin-settings .btn-default[disabled]:focus,
+#soliloquy-comparison .btn-default[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-default:focus,
+fieldset[disabled] #soliloquy-comparison .btn-default:focus,
+#tgm-plugin-settings .btn-default.disabled:active,
+#soliloquy-comparison .btn-default.disabled:active,
+#tgm-plugin-settings .btn-default[disabled]:active,
+#soliloquy-comparison .btn-default[disabled]:active,
+fieldset[disabled] #tgm-plugin-settings .btn-default:active,
+fieldset[disabled] #soliloquy-comparison .btn-default:active,
+#tgm-plugin-settings .btn-default.disabled.active,
+#soliloquy-comparison .btn-default.disabled.active,
+#tgm-plugin-settings .btn-default[disabled].active,
+#soliloquy-comparison .btn-default[disabled].active,
+fieldset[disabled] #tgm-plugin-settings .btn-default.active,
+fieldset[disabled] #soliloquy-comparison .btn-default.active {
+  background-color: #95a5a6;
+  border-color: #95a5a6;
+}
+
+#tgm-plugin-settings .btn-primary,
+#soliloquy-comparison .btn-primary {
+  color: #ffffff;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings .btn-primary:hover,
+#soliloquy-comparison .btn-primary:hover,
+#tgm-plugin-settings .btn-primary:focus,
+#soliloquy-comparison .btn-primary:focus,
+#tgm-plugin-settings .btn-primary:active,
+#soliloquy-comparison .btn-primary:active,
+#tgm-plugin-settings .btn-primary.active,
+#soliloquy-comparison .btn-primary.active {
+  background-color: #233140;
+  border-color: #1a242f;
+}
+
+#tgm-plugin-settings .btn-primary.disabled,
+#soliloquy-comparison .btn-primary.disabled,
+#tgm-plugin-settings .btn-primary[disabled],
+#soliloquy-comparison .btn-primary[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-primary,
+fieldset[disabled] #soliloquy-comparison .btn-primary,
+#tgm-plugin-settings .btn-primary.disabled:hover,
+#soliloquy-comparison .btn-primary.disabled:hover,
+#tgm-plugin-settings .btn-primary[disabled]:hover,
+#soliloquy-comparison .btn-primary[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-primary:hover,
+fieldset[disabled] #soliloquy-comparison .btn-primary:hover,
+#tgm-plugin-settings .btn-primary.disabled:focus,
+#soliloquy-comparison .btn-primary.disabled:focus,
+#tgm-plugin-settings .btn-primary[disabled]:focus,
+#soliloquy-comparison .btn-primary[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-primary:focus,
+fieldset[disabled] #soliloquy-comparison .btn-primary:focus,
+#tgm-plugin-settings .btn-primary.disabled:active,
+#soliloquy-comparison .btn-primary.disabled:active,
+#tgm-plugin-settings .btn-primary[disabled]:active,
+#soliloquy-comparison .btn-primary[disabled]:active,
+fieldset[disabled] #tgm-plugin-settings .btn-primary:active,
+fieldset[disabled] #soliloquy-comparison .btn-primary:active,
+#tgm-plugin-settings .btn-primary.disabled.active,
+#soliloquy-comparison .btn-primary.disabled.active,
+#tgm-plugin-settings .btn-primary[disabled].active,
+#soliloquy-comparison .btn-primary[disabled].active,
+fieldset[disabled] #tgm-plugin-settings .btn-primary.active,
+fieldset[disabled] #soliloquy-comparison .btn-primary.active {
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings .btn-warning,
+#soliloquy-comparison .btn-warning {
+  color: #ffffff;
+  background-color: #f39c12;
+  border-color: #f39c12;
+}
+
+#tgm-plugin-settings .btn-warning:hover,
+#soliloquy-comparison .btn-warning:hover,
+#tgm-plugin-settings .btn-warning:focus,
+#soliloquy-comparison .btn-warning:focus,
+#tgm-plugin-settings .btn-warning:active,
+#soliloquy-comparison .btn-warning:active,
+#tgm-plugin-settings .btn-warning.active,
+#soliloquy-comparison .btn-warning.active {
+  background-color: #e08e0b;
+  border-color: #c87f0a;
+}
+
+#tgm-plugin-settings .btn-warning.disabled,
+#soliloquy-comparison .btn-warning.disabled,
+#tgm-plugin-settings .btn-warning[disabled],
+#soliloquy-comparison .btn-warning[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-warning,
+fieldset[disabled] #soliloquy-comparison .btn-warning,
+#tgm-plugin-settings .btn-warning.disabled:hover,
+#soliloquy-comparison .btn-warning.disabled:hover,
+#tgm-plugin-settings .btn-warning[disabled]:hover,
+#soliloquy-comparison .btn-warning[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-warning:hover,
+fieldset[disabled] #soliloquy-comparison .btn-warning:hover,
+#tgm-plugin-settings .btn-warning.disabled:focus,
+#soliloquy-comparison .btn-warning.disabled:focus,
+#tgm-plugin-settings .btn-warning[disabled]:focus,
+#soliloquy-comparison .btn-warning[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-warning:focus,
+fieldset[disabled] #soliloquy-comparison .btn-warning:focus,
+#tgm-plugin-settings .btn-warning.disabled:active,
+#soliloquy-comparison .btn-warning.disabled:active,
+#tgm-plugin-settings .btn-warning[disabled]:active,
+#soliloquy-comparison .btn-warning[disabled]:active,
+fieldset[disabled] #tgm-plugin-settings .btn-warning:active,
+fieldset[disabled] #soliloquy-comparison .btn-warning:active,
+#tgm-plugin-settings .btn-warning.disabled.active,
+#soliloquy-comparison .btn-warning.disabled.active,
+#tgm-plugin-settings .btn-warning[disabled].active,
+#soliloquy-comparison .btn-warning[disabled].active,
+fieldset[disabled] #tgm-plugin-settings .btn-warning.active,
+fieldset[disabled] #soliloquy-comparison .btn-warning.active {
+  background-color: #f39c12;
+  border-color: #f39c12;
+}
+
+#tgm-plugin-settings .btn-danger,
+#soliloquy-comparison .btn-danger {
+  color: #ffffff;
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+#tgm-plugin-settings .btn-danger:hover,
+#soliloquy-comparison .btn-danger:hover,
+#tgm-plugin-settings .btn-danger:focus,
+#soliloquy-comparison .btn-danger:focus,
+#tgm-plugin-settings .btn-danger:active,
+#soliloquy-comparison .btn-danger:active,
+#tgm-plugin-settings .btn-danger.active,
+#soliloquy-comparison .btn-danger.active {
+  background-color: #ab3326;
+  border-color: #962d22;
+}
+
+#tgm-plugin-settings .btn-danger.disabled,
+#soliloquy-comparison .btn-danger.disabled,
+#tgm-plugin-settings .btn-danger[disabled],
+#soliloquy-comparison .btn-danger[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-danger,
+fieldset[disabled] #soliloquy-comparison .btn-danger,
+#tgm-plugin-settings .btn-danger.disabled:hover,
+#soliloquy-comparison .btn-danger.disabled:hover,
+#tgm-plugin-settings .btn-danger[disabled]:hover,
+#soliloquy-comparison .btn-danger[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-danger:hover,
+fieldset[disabled] #soliloquy-comparison .btn-danger:hover,
+#tgm-plugin-settings .btn-danger.disabled:focus,
+#soliloquy-comparison .btn-danger.disabled:focus,
+#tgm-plugin-settings .btn-danger[disabled]:focus,
+#soliloquy-comparison .btn-danger[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-danger:focus,
+fieldset[disabled] #soliloquy-comparison .btn-danger:focus,
+#tgm-plugin-settings .btn-danger.disabled:active,
+#soliloquy-comparison .btn-danger.disabled:active,
+#tgm-plugin-settings .btn-danger[disabled]:active,
+#soliloquy-comparison .btn-danger[disabled]:active,
+fieldset[disabled] #tgm-plugin-settings .btn-danger:active,
+fieldset[disabled] #soliloquy-comparison .btn-danger:active,
+#tgm-plugin-settings .btn-danger.disabled.active,
+#soliloquy-comparison .btn-danger.disabled.active,
+#tgm-plugin-settings .btn-danger[disabled].active,
+#soliloquy-comparison .btn-danger[disabled].active,
+fieldset[disabled] #tgm-plugin-settings .btn-danger.active,
+fieldset[disabled] #soliloquy-comparison .btn-danger.active {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+#tgm-plugin-settings .btn-success,
+#soliloquy-comparison .btn-success {
+  color: #ffffff;
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+#tgm-plugin-settings .btn-success:hover,
+#soliloquy-comparison .btn-success:hover,
+#tgm-plugin-settings .btn-success:focus,
+#soliloquy-comparison .btn-success:focus,
+#tgm-plugin-settings .btn-success:active,
+#soliloquy-comparison .btn-success:active,
+#tgm-plugin-settings .btn-success.active,
+#soliloquy-comparison .btn-success.active {
+  background-color: #229955;
+  border-color: #1e8449;
+}
+
+#tgm-plugin-settings .btn-success.disabled,
+#soliloquy-comparison .btn-success.disabled,
+#tgm-plugin-settings .btn-success[disabled],
+#soliloquy-comparison .btn-success[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-success,
+fieldset[disabled] #soliloquy-comparison .btn-success,
+#tgm-plugin-settings .btn-success.disabled:hover,
+#soliloquy-comparison .btn-success.disabled:hover,
+#tgm-plugin-settings .btn-success[disabled]:hover,
+#soliloquy-comparison .btn-success[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-success:hover,
+fieldset[disabled] #soliloquy-comparison .btn-success:hover,
+#tgm-plugin-settings .btn-success.disabled:focus,
+#soliloquy-comparison .btn-success.disabled:focus,
+#tgm-plugin-settings .btn-success[disabled]:focus,
+#soliloquy-comparison .btn-success[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-success:focus,
+fieldset[disabled] #soliloquy-comparison .btn-success:focus,
+#tgm-plugin-settings .btn-success.disabled:active,
+#soliloquy-comparison .btn-success.disabled:active,
+#tgm-plugin-settings .btn-success[disabled]:active,
+#soliloquy-comparison .btn-success[disabled]:active,
+fieldset[disabled] #tgm-plugin-settings .btn-success:active,
+fieldset[disabled] #soliloquy-comparison .btn-success:active,
+#tgm-plugin-settings .btn-success.disabled.active,
+#soliloquy-comparison .btn-success.disabled.active,
+#tgm-plugin-settings .btn-success[disabled].active,
+#soliloquy-comparison .btn-success[disabled].active,
+fieldset[disabled] #tgm-plugin-settings .btn-success.active,
+fieldset[disabled] #soliloquy-comparison .btn-success.active {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+#tgm-plugin-settings .btn-info,
+#soliloquy-comparison .btn-info {
+  color: #ffffff;
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+#tgm-plugin-settings .btn-info:hover,
+#soliloquy-comparison .btn-info:hover,
+#tgm-plugin-settings .btn-info:focus,
+#soliloquy-comparison .btn-info:focus,
+#tgm-plugin-settings .btn-info:active,
+#soliloquy-comparison .btn-info:active,
+#tgm-plugin-settings .btn-info.active,
+#soliloquy-comparison .btn-info.active {
+  background-color: #2472a4;
+  border-color: #20638f;
+}
+
+#tgm-plugin-settings .btn-info.disabled,
+#soliloquy-comparison .btn-info.disabled,
+#tgm-plugin-settings .btn-info[disabled],
+#soliloquy-comparison .btn-info[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-info,
+fieldset[disabled] #soliloquy-comparison .btn-info,
+#tgm-plugin-settings .btn-info.disabled:hover,
+#soliloquy-comparison .btn-info.disabled:hover,
+#tgm-plugin-settings .btn-info[disabled]:hover,
+#soliloquy-comparison .btn-info[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-info:hover,
+fieldset[disabled] #soliloquy-comparison .btn-info:hover,
+#tgm-plugin-settings .btn-info.disabled:focus,
+#soliloquy-comparison .btn-info.disabled:focus,
+#tgm-plugin-settings .btn-info[disabled]:focus,
+#soliloquy-comparison .btn-info[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-info:focus,
+fieldset[disabled] #soliloquy-comparison .btn-info:focus,
+#tgm-plugin-settings .btn-info.disabled:active,
+#soliloquy-comparison .btn-info.disabled:active,
+#tgm-plugin-settings .btn-info[disabled]:active,
+#soliloquy-comparison .btn-info[disabled]:active,
+fieldset[disabled] #tgm-plugin-settings .btn-info:active,
+fieldset[disabled] #soliloquy-comparison .btn-info:active,
+#tgm-plugin-settings .btn-info.disabled.active,
+#soliloquy-comparison .btn-info.disabled.active,
+#tgm-plugin-settings .btn-info[disabled].active,
+#soliloquy-comparison .btn-info[disabled].active,
+fieldset[disabled] #tgm-plugin-settings .btn-info.active,
+fieldset[disabled] #soliloquy-comparison .btn-info.active {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+#tgm-plugin-settings .btn-link,
+#soliloquy-comparison .btn-link {
+  font-weight: normal;
+  color: #2c3e50;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .btn-link,
+#soliloquy-comparison .btn-link,
+#tgm-plugin-settings .btn-link:active,
+#soliloquy-comparison .btn-link:active,
+#tgm-plugin-settings .btn-link[disabled],
+#soliloquy-comparison .btn-link[disabled],
+fieldset[disabled] #tgm-plugin-settings .btn-link,
+fieldset[disabled] #soliloquy-comparison .btn-link {
+  background-color: transparent;
+  background-image: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#tgm-plugin-settings .btn-link,
+#soliloquy-comparison .btn-link,
+#tgm-plugin-settings .btn-link:hover,
+#soliloquy-comparison .btn-link:hover,
+#tgm-plugin-settings .btn-link:focus,
+#soliloquy-comparison .btn-link:focus,
+#tgm-plugin-settings .btn-link:active,
+#soliloquy-comparison .btn-link:active {
+  border-color: transparent;
+}
+
+#tgm-plugin-settings .btn-link:hover,
+#soliloquy-comparison .btn-link:hover,
+#tgm-plugin-settings .btn-link:focus,
+#soliloquy-comparison .btn-link:focus {
+  color: #11181f;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .btn-link[disabled]:hover,
+#soliloquy-comparison .btn-link[disabled]:hover,
+fieldset[disabled] #tgm-plugin-settings .btn-link:hover,
+fieldset[disabled] #soliloquy-comparison .btn-link:hover,
+#tgm-plugin-settings .btn-link[disabled]:focus,
+#soliloquy-comparison .btn-link[disabled]:focus,
+fieldset[disabled] #tgm-plugin-settings .btn-link:focus,
+fieldset[disabled] #soliloquy-comparison .btn-link:focus {
+  color: #333333;
+  text-decoration: none;
+}
+
+#tgm-plugin-settings .btn-large,
+#soliloquy-comparison .btn-large {
+  padding: 16px 18px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+#tgm-plugin-settings .btn-small,
+#soliloquy-comparison .btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+#tgm-plugin-settings .btn-block,
+#soliloquy-comparison .btn-block {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#tgm-plugin-settings .btn-block + .btn-block,
+#soliloquy-comparison .btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+#tgm-plugin-settings input[type="submit"].btn-block,
+#soliloquy-comparison input[type="submit"].btn-block,
+#tgm-plugin-settings input[type="reset"].btn-block,
+#soliloquy-comparison input[type="reset"].btn-block,
+#tgm-plugin-settings input[type="button"].btn-block,
+#soliloquy-comparison input[type="button"].btn-block {
+  width: 100%;
+}
+
+#tgm-plugin-settings .fade,
+#soliloquy-comparison .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+          transition: opacity 0.15s linear;
+}
+
+#tgm-plugin-settings .fade.in,
+#soliloquy-comparison .fade.in {
+  opacity: 1;
+}
+
+#tgm-plugin-settings .collapse,
+#soliloquy-comparison .collapse {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+          transition: height 0.35s ease;
+}
+
+#tgm-plugin-settings .collapse.in,
+#soliloquy-comparison .collapse.in {
+  height: auto;
+}
+
+#tgm-plugin-settings .caret,
+#soliloquy-comparison .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid #000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+#tgm-plugin-settings .dropdown-menu,
+#soliloquy-comparison .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+#tgm-plugin-settings .dropdown-menu.pull-right,
+#soliloquy-comparison .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+#tgm-plugin-settings .dropdown-menu .divider,
+#soliloquy-comparison .dropdown-menu .divider {
+  height: 2px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+#tgm-plugin-settings .dropdown-menu > li > a,
+#soliloquy-comparison .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap;
+}
+
+#tgm-plugin-settings .dropdown-menu > li > a:hover,
+#soliloquy-comparison .dropdown-menu > li > a:hover,
+#tgm-plugin-settings .dropdown-menu > li > a:focus,
+#soliloquy-comparison .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #233140;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#2c3e50), to(#233140));
+  background-image: -webkit-linear-gradient(top, #2c3e50, 0%, #233140, 100%);
+  background-image: -moz-linear-gradient(top, #2c3e50 0%, #233140 100%);
+  background-image: linear-gradient(to bottom, #2c3e50 0%, #233140 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2c3e50', endColorstr='#ff233140', GradientType=0);
+}
+
+#tgm-plugin-settings .dropdown-menu > .active > a,
+#soliloquy-comparison .dropdown-menu > .active > a,
+#tgm-plugin-settings .dropdown-menu > .active > a:hover,
+#soliloquy-comparison .dropdown-menu > .active > a:hover,
+#tgm-plugin-settings .dropdown-menu > .active > a:focus,
+#soliloquy-comparison .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #233140;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#2c3e50), to(#233140));
+  background-image: -webkit-linear-gradient(top, #2c3e50, 0%, #233140, 100%);
+  background-image: -moz-linear-gradient(top, #2c3e50 0%, #233140 100%);
+  background-image: linear-gradient(to bottom, #2c3e50 0%, #233140 100%);
+  background-repeat: repeat-x;
+  outline: 0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2c3e50', endColorstr='#ff233140', GradientType=0);
+}
+
+#tgm-plugin-settings .dropdown-menu > .disabled > a,
+#soliloquy-comparison .dropdown-menu > .disabled > a,
+#tgm-plugin-settings .dropdown-menu > .disabled > a:hover,
+#soliloquy-comparison .dropdown-menu > .disabled > a:hover,
+#tgm-plugin-settings .dropdown-menu > .disabled > a:focus,
+#soliloquy-comparison .dropdown-menu > .disabled > a:focus {
+  color: #999999;
+}
+
+#tgm-plugin-settings .dropdown-menu > .disabled > a:hover,
+#soliloquy-comparison .dropdown-menu > .disabled > a:hover,
+#tgm-plugin-settings .dropdown-menu > .disabled > a:focus,
+#soliloquy-comparison .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  cursor: default;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+#tgm-plugin-settings .open > .dropdown-menu,
+#soliloquy-comparison .open > .dropdown-menu {
+  display: block;
+}
+
+#tgm-plugin-settings .open > a,
+#soliloquy-comparison .open > a {
+  outline: 0;
+}
+
+#tgm-plugin-settings .dropdown-header,
+#soliloquy-comparison .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #999999;
+}
+
+#tgm-plugin-settings .dropdown-backdrop,
+#soliloquy-comparison .dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+
+#tgm-plugin-settings .pull-right > .dropdown-menu,
+#soliloquy-comparison .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+#tgm-plugin-settings .dropup .caret,
+#soliloquy-comparison .dropup .caret,
+#tgm-plugin-settings .navbar-fixed-bottom .dropdown .caret,
+#soliloquy-comparison .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px solid #000;
+  content: "";
+}
+
+#tgm-plugin-settings .dropup .dropdown-menu,
+#soliloquy-comparison .dropup .dropdown-menu,
+#tgm-plugin-settings .navbar-fixed-bottom .dropdown .dropdown-menu,
+#soliloquy-comparison .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+
+#tgm-plugin-settings .list-group,
+#soliloquy-comparison .list-group {
+  padding-left: 0;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+#tgm-plugin-settings .list-group-item,
+#soliloquy-comparison .list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 30px 10px 15px;
+  margin-bottom: -1px;
+  border: 1px solid #dddddd;
+}
+
+#tgm-plugin-settings .list-group-item:first-child,
+#soliloquy-comparison .list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+#tgm-plugin-settings .list-group-item:last-child,
+#soliloquy-comparison .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#tgm-plugin-settings .list-group-item > .badge,
+#soliloquy-comparison .list-group-item > .badge {
+  float: right;
+  margin-right: -15px;
+}
+
+#tgm-plugin-settings .list-group-item-heading,
+#soliloquy-comparison .list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+#tgm-plugin-settings .list-group-item-text,
+#soliloquy-comparison .list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+#tgm-plugin-settings a.list-group-item .list-group-item-heading,
+#soliloquy-comparison a.list-group-item .list-group-item-heading {
+  color: #333;
+}
+
+#tgm-plugin-settings a.list-group-item .list-group-item-text,
+#soliloquy-comparison a.list-group-item .list-group-item-text {
+  color: #555;
+}
+
+#tgm-plugin-settings a.list-group-item:hover,
+#soliloquy-comparison a.list-group-item:hover,
+#tgm-plugin-settings a.list-group-item:focus,
+#soliloquy-comparison a.list-group-item:focus {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+#tgm-plugin-settings a.list-group-item.active,
+#soliloquy-comparison a.list-group-item.active {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings a.list-group-item.active .list-group-item-heading,
+#soliloquy-comparison a.list-group-item.active .list-group-item-heading {
+  color: inherit;
+}
+
+#tgm-plugin-settings a.list-group-item.active .list-group-item-text,
+#soliloquy-comparison a.list-group-item.active .list-group-item-text {
+  color: #8aa4be;
+}
+
+#tgm-plugin-settings .panel,
+#soliloquy-comparison .panel {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#tgm-plugin-settings .panel-heading,
+#soliloquy-comparison .panel-heading {
+  padding: 10px 15px;
+  margin: -15px -15px 15px;
+  font-size: 17.5px;
+  font-weight: 500;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #dddddd;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+#tgm-plugin-settings .panel-footer,
+#soliloquy-comparison .panel-footer {
+  padding: 10px 15px;
+  margin: 15px -15px -15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#tgm-plugin-settings .panel-primary,
+#soliloquy-comparison .panel-primary {
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings .panel-primary .panel-heading,
+#soliloquy-comparison .panel-primary .panel-heading {
+  color: #ffffff;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings .panel-success,
+#soliloquy-comparison .panel-success {
+  border-color: #d6e9c6;
+}
+
+#tgm-plugin-settings .panel-success .panel-heading,
+#soliloquy-comparison .panel-success .panel-heading {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+#tgm-plugin-settings .panel-warning,
+#soliloquy-comparison .panel-warning {
+  border-color: #fbeed5;
+}
+
+#tgm-plugin-settings .panel-warning .panel-heading,
+#soliloquy-comparison .panel-warning .panel-heading {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+
+#tgm-plugin-settings .panel-danger,
+#soliloquy-comparison .panel-danger {
+  border-color: #eed3d7;
+}
+
+#tgm-plugin-settings .panel-danger .panel-heading,
+#soliloquy-comparison .panel-danger .panel-heading {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+#tgm-plugin-settings .panel-info,
+#soliloquy-comparison .panel-info {
+  border-color: #bce8f1;
+}
+
+#tgm-plugin-settings .panel-info .panel-heading,
+#soliloquy-comparison .panel-info .panel-heading {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+#tgm-plugin-settings .list-group-flush,
+#soliloquy-comparison .list-group-flush {
+  margin: 15px -15px -15px;
+}
+
+#tgm-plugin-settings .list-group-flush .list-group-item,
+#soliloquy-comparison .list-group-flush .list-group-item {
+  border-width: 1px 0;
+}
+
+#tgm-plugin-settings .list-group-flush .list-group-item:first-child,
+#soliloquy-comparison .list-group-flush .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .list-group-flush .list-group-item:last-child,
+#soliloquy-comparison .list-group-flush .list-group-item:last-child {
+  border-bottom: 0;
+}
+
+#tgm-plugin-settings .well,
+#soliloquy-comparison .well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#tgm-plugin-settings .well blockquote,
+#soliloquy-comparison .well blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+#tgm-plugin-settings .well-large,
+#soliloquy-comparison .well-large {
+  padding: 24px;
+  border-radius: 6px;
+}
+
+#tgm-plugin-settings .well-small,
+#soliloquy-comparison .well-small {
+  padding: 9px;
+  border-radius: 3px;
+}
+
+#tgm-plugin-settings .close,
+#soliloquy-comparison .close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+#tgm-plugin-settings .close:hover,
+#soliloquy-comparison .close:hover,
+#tgm-plugin-settings .close:focus,
+#soliloquy-comparison .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+button#tgm-plugin-settings .close,
+button#soliloquy-comparison .close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+#tgm-plugin-settings .nav,
+#soliloquy-comparison .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+#tgm-plugin-settings .nav:before,
+#soliloquy-comparison .nav:before,
+#tgm-plugin-settings .nav:after,
+#soliloquy-comparison .nav:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .nav:after,
+#soliloquy-comparison .nav:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .nav:before,
+#soliloquy-comparison .nav:before,
+#tgm-plugin-settings .nav:after,
+#soliloquy-comparison .nav:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .nav:after,
+#soliloquy-comparison .nav:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .nav > li,
+#soliloquy-comparison .nav > li {
+  position: relative;
+  display: block;
+}
+
+#tgm-plugin-settings .nav > li > a,
+#soliloquy-comparison .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+#tgm-plugin-settings .nav > li > a:hover,
+#soliloquy-comparison .nav > li > a:hover,
+#tgm-plugin-settings .nav > li > a:focus,
+#soliloquy-comparison .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+
+#tgm-plugin-settings .nav > li.disabled > a,
+#soliloquy-comparison .nav > li.disabled > a {
+  color: #999999;
+}
+
+#tgm-plugin-settings .nav > li.disabled > a:hover,
+#soliloquy-comparison .nav > li.disabled > a:hover,
+#tgm-plugin-settings .nav > li.disabled > a:focus,
+#soliloquy-comparison .nav > li.disabled > a:focus {
+  color: #999999;
+  text-decoration: none;
+  cursor: default;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .nav > li + .nav-header,
+#soliloquy-comparison .nav > li + .nav-header {
+  margin-top: 9px;
+}
+
+#tgm-plugin-settings .nav.open > a,
+#soliloquy-comparison .nav.open > a,
+#tgm-plugin-settings .nav.open > a:hover,
+#soliloquy-comparison .nav.open > a:hover,
+#tgm-plugin-settings .nav.open > a:focus,
+#soliloquy-comparison .nav.open > a:focus {
+  color: #fff;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings .nav.open > a .caret,
+#soliloquy-comparison .nav.open > a .caret,
+#tgm-plugin-settings .nav.open > a:hover .caret,
+#soliloquy-comparison .nav.open > a:hover .caret,
+#tgm-plugin-settings .nav.open > a:focus .caret,
+#soliloquy-comparison .nav.open > a:focus .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+
+#tgm-plugin-settings .nav > .pull-right,
+#soliloquy-comparison .nav > .pull-right {
+  float: right;
+}
+
+#tgm-plugin-settings .nav .nav-divider,
+#soliloquy-comparison .nav .nav-divider {
+  height: 2px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+#tgm-plugin-settings .nav-tabs,
+#soliloquy-comparison .nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+#tgm-plugin-settings .nav-tabs > li,
+#soliloquy-comparison .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+
+#tgm-plugin-settings .nav-tabs > li > a,
+#soliloquy-comparison .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+
+#tgm-plugin-settings .nav-tabs > li > a:hover,
+#soliloquy-comparison .nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+
+#tgm-plugin-settings .nav-tabs > li.active > a,
+#soliloquy-comparison .nav-tabs > li.active > a,
+#tgm-plugin-settings .nav-tabs > li.active > a:hover,
+#soliloquy-comparison .nav-tabs > li.active > a:hover,
+#tgm-plugin-settings .nav-tabs > li.active > a:focus,
+#soliloquy-comparison .nav-tabs > li.active > a:focus {
+  color: #555555;
+  cursor: default;
+  background-color: #ecf0f1;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+
+#tgm-plugin-settings .nav-tabs.nav-justified,
+#soliloquy-comparison .nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+
+#tgm-plugin-settings .nav-tabs.nav-justified > li,
+#soliloquy-comparison .nav-tabs.nav-justified > li {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+
+#tgm-plugin-settings .nav-tabs.nav-justified > li > a,
+#soliloquy-comparison .nav-tabs.nav-justified > li > a {
+  text-align: center;
+}
+
+#tgm-plugin-settings .nav-tabs.nav-justified > li > a,
+#soliloquy-comparison .nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#tgm-plugin-settings .nav-tabs.nav-justified > .active > a,
+#soliloquy-comparison .nav-tabs.nav-justified > .active > a {
+  border-bottom-color: #ecf0f1;
+}
+
+#tgm-plugin-settings .nav-pills > li,
+#soliloquy-comparison .nav-pills > li {
+  float: left;
+}
+
+#tgm-plugin-settings .nav-pills > li > a,
+#soliloquy-comparison .nav-pills > li > a {
+  border-radius: 5px;
+}
+
+#tgm-plugin-settings .nav-pills > li + li > a,
+#soliloquy-comparison .nav-pills > li + li > a {
+  margin-left: 2px;
+}
+
+#tgm-plugin-settings .nav-pills > li.active > a,
+#soliloquy-comparison .nav-pills > li.active > a,
+#tgm-plugin-settings .nav-pills > li.active > a:hover,
+#soliloquy-comparison .nav-pills > li.active > a:hover,
+#tgm-plugin-settings .nav-pills > li.active > a:focus,
+#soliloquy-comparison .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #2c3e50;
+}
+
+#tgm-plugin-settings .nav-stacked > li,
+#soliloquy-comparison .nav-stacked > li {
+  float: none;
+}
+
+#tgm-plugin-settings .nav-stacked > li + li > a,
+#soliloquy-comparison .nav-stacked > li + li > a {
+  margin-top: 2px;
+  margin-left: 0;
+}
+
+#tgm-plugin-settings .nav-justified,
+#soliloquy-comparison .nav-justified {
+  width: 100%;
+}
+
+#tgm-plugin-settings .nav-justified > li,
+#soliloquy-comparison .nav-justified > li {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+
+#tgm-plugin-settings .nav-justified > li > a,
+#soliloquy-comparison .nav-justified > li > a {
+  text-align: center;
+}
+
+#tgm-plugin-settings .tabbable:before,
+#soliloquy-comparison .tabbable:before,
+#tgm-plugin-settings .tabbable:after,
+#soliloquy-comparison .tabbable:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .tabbable:after,
+#soliloquy-comparison .tabbable:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .tabbable:before,
+#soliloquy-comparison .tabbable:before,
+#tgm-plugin-settings .tabbable:after,
+#soliloquy-comparison .tabbable:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .tabbable:after,
+#soliloquy-comparison .tabbable:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .tab-content > .tab-pane,
+#soliloquy-comparison .tab-content > .tab-pane,
+#tgm-plugin-settings .pill-content > .pill-pane,
+#soliloquy-comparison .pill-content > .pill-pane {
+  display: none;
+}
+
+#tgm-plugin-settings .tab-content > .active,
+#soliloquy-comparison .tab-content > .active,
+#tgm-plugin-settings .pill-content > .active,
+#soliloquy-comparison .pill-content > .active {
+  display: block;
+}
+
+#tgm-plugin-settings .nav .caret,
+#soliloquy-comparison .nav .caret {
+  border-top-color: #2c3e50;
+  border-bottom-color: #2c3e50;
+}
+
+#tgm-plugin-settings .nav a:hover .caret,
+#soliloquy-comparison .nav a:hover .caret {
+  border-top-color: #11181f;
+  border-bottom-color: #11181f;
+}
+
+#tgm-plugin-settings .nav-tabs .dropdown-menu,
+#soliloquy-comparison .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .navbar,
+#soliloquy-comparison .navbar {
+  position: relative;
+  min-height: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  background-color: #eeeeee;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .navbar:before,
+#soliloquy-comparison .navbar:before,
+#tgm-plugin-settings .navbar:after,
+#soliloquy-comparison .navbar:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .navbar:after,
+#soliloquy-comparison .navbar:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .navbar:before,
+#soliloquy-comparison .navbar:before,
+#tgm-plugin-settings .navbar:after,
+#soliloquy-comparison .navbar:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .navbar:after,
+#soliloquy-comparison .navbar:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .navbar-nav,
+#soliloquy-comparison .navbar-nav {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+#tgm-plugin-settings .navbar-nav > li > a,
+#soliloquy-comparison .navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #777777;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .navbar-nav > li > a:hover,
+#soliloquy-comparison .navbar-nav > li > a:hover,
+#tgm-plugin-settings .navbar-nav > li > a:focus,
+#soliloquy-comparison .navbar-nav > li > a:focus {
+  color: #333333;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .navbar-nav > .active > a,
+#soliloquy-comparison .navbar-nav > .active > a,
+#tgm-plugin-settings .navbar-nav > .active > a:hover,
+#soliloquy-comparison .navbar-nav > .active > a:hover,
+#tgm-plugin-settings .navbar-nav > .active > a:focus,
+#soliloquy-comparison .navbar-nav > .active > a:focus {
+  color: #555555;
+  background-color: #d5d5d5;
+}
+
+#tgm-plugin-settings .navbar-nav > .disabled > a,
+#soliloquy-comparison .navbar-nav > .disabled > a,
+#tgm-plugin-settings .navbar-nav > .disabled > a:hover,
+#soliloquy-comparison .navbar-nav > .disabled > a:hover,
+#tgm-plugin-settings .navbar-nav > .disabled > a:focus,
+#soliloquy-comparison .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .navbar-nav.pull-right,
+#soliloquy-comparison .navbar-nav.pull-right {
+  width: 100%;
+}
+
+#tgm-plugin-settings .navbar-static-top,
+#soliloquy-comparison .navbar-static-top {
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .navbar-fixed-top,
+#soliloquy-comparison .navbar-fixed-top,
+#tgm-plugin-settings .navbar-fixed-bottom,
+#soliloquy-comparison .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .navbar-fixed-top,
+#soliloquy-comparison .navbar-fixed-top {
+  top: 0;
+}
+
+#tgm-plugin-settings .navbar-fixed-bottom,
+#soliloquy-comparison .navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings .navbar-brand,
+#soliloquy-comparison .navbar-brand {
+  display: block;
+  max-width: 200px;
+  padding: 15px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #777777;
+  text-align: center;
+}
+
+#tgm-plugin-settings .navbar-brand:hover,
+#soliloquy-comparison .navbar-brand:hover,
+#tgm-plugin-settings .navbar-brand:focus,
+#soliloquy-comparison .navbar-brand:focus {
+  color: #5e5e5e;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .navbar-toggle,
+#soliloquy-comparison .navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 48px;
+  height: 32px;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .navbar-toggle:hover,
+#soliloquy-comparison .navbar-toggle:hover,
+#tgm-plugin-settings .navbar-toggle:focus,
+#soliloquy-comparison .navbar-toggle:focus {
+  background-color: #ddd;
+}
+
+#tgm-plugin-settings .navbar-toggle .icon-bar,
+#soliloquy-comparison .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #ccc;
+  border-radius: 1px;
+}
+
+#tgm-plugin-settings .navbar-toggle .icon-bar + .icon-bar,
+#soliloquy-comparison .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+#tgm-plugin-settings .navbar-form,
+#soliloquy-comparison .navbar-form {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#tgm-plugin-settings .navbar-form input,
+#soliloquy-comparison .navbar-form input,
+#tgm-plugin-settings .navbar-form select,
+#soliloquy-comparison .navbar-form select,
+#tgm-plugin-settings .navbar-form textarea,
+#soliloquy-comparison .navbar-form textarea,
+#tgm-plugin-settings .navbar-form .radio,
+#soliloquy-comparison .navbar-form .radio,
+#tgm-plugin-settings .navbar-form .checkbox,
+#soliloquy-comparison .navbar-form .checkbox {
+  display: inline-block;
+}
+
+#tgm-plugin-settings .navbar-form .radio,
+#soliloquy-comparison .navbar-form .radio,
+#tgm-plugin-settings .navbar-form .checkbox,
+#soliloquy-comparison .navbar-form .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings .navbar-nav > li > .dropdown-menu,
+#soliloquy-comparison .navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu,
+#soliloquy-comparison .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#tgm-plugin-settings .navbar-nav > .dropdown > a:hover .caret,
+#soliloquy-comparison .navbar-nav > .dropdown > a:hover .caret,
+#tgm-plugin-settings .navbar-nav > .dropdown > a:focus .caret,
+#soliloquy-comparison .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333;
+}
+
+#tgm-plugin-settings .navbar-nav > .open > a,
+#soliloquy-comparison .navbar-nav > .open > a,
+#tgm-plugin-settings .navbar-nav > .open > a:hover,
+#soliloquy-comparison .navbar-nav > .open > a:hover,
+#tgm-plugin-settings .navbar-nav > .open > a:focus,
+#soliloquy-comparison .navbar-nav > .open > a:focus {
+  color: #555555;
+  background-color: #d5d5d5;
+}
+
+#tgm-plugin-settings .navbar-nav > .open > a .caret,
+#soliloquy-comparison .navbar-nav > .open > a .caret,
+#tgm-plugin-settings .navbar-nav > .open > a:hover .caret,
+#soliloquy-comparison .navbar-nav > .open > a:hover .caret,
+#tgm-plugin-settings .navbar-nav > .open > a:focus .caret,
+#soliloquy-comparison .navbar-nav > .open > a:focus .caret {
+  border-top-color: #555555;
+  border-bottom-color: #555555;
+}
+
+#tgm-plugin-settings .navbar-nav > .dropdown > a .caret,
+#soliloquy-comparison .navbar-nav > .dropdown > a .caret {
+  border-top-color: #777777;
+  border-bottom-color: #777777;
+}
+
+#tgm-plugin-settings .navbar-nav.pull-right > li > .dropdown-menu,
+#soliloquy-comparison .navbar-nav.pull-right > li > .dropdown-menu,
+#tgm-plugin-settings .navbar-nav > li > .dropdown-menu.pull-right,
+#soliloquy-comparison .navbar-nav > li > .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+#tgm-plugin-settings .navbar-inverse,
+#soliloquy-comparison .navbar-inverse {
+  background-color: #222222;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-brand,
+#soliloquy-comparison .navbar-inverse .navbar-brand {
+  color: #999999;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-brand:hover,
+#soliloquy-comparison .navbar-inverse .navbar-brand:hover,
+#tgm-plugin-settings .navbar-inverse .navbar-brand:focus,
+#soliloquy-comparison .navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-text,
+#soliloquy-comparison .navbar-inverse .navbar-text {
+  color: #999999;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > li > a,
+#soliloquy-comparison .navbar-inverse .navbar-nav > li > a {
+  color: #999999;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > li > a:hover,
+#soliloquy-comparison .navbar-inverse .navbar-nav > li > a:hover,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > li > a:focus,
+#soliloquy-comparison .navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .active > a,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .active > a,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .active > a:hover,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .active > a:hover,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .active > a:focus,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #080808;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .disabled > a,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .disabled > a,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .disabled > a:hover,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .disabled > a:hover,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .disabled > a:focus,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .disabled > a:focus {
+  color: #444444;
+  background-color: transparent;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-toggle,
+#soliloquy-comparison .navbar-inverse .navbar-toggle {
+  border-color: #333;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-toggle:hover,
+#soliloquy-comparison .navbar-inverse .navbar-toggle:hover,
+#tgm-plugin-settings .navbar-inverse .navbar-toggle:focus,
+#soliloquy-comparison .navbar-inverse .navbar-toggle:focus {
+  background-color: #333;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-toggle .icon-bar,
+#soliloquy-comparison .navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .open > a,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .open > a,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .open > a:hover,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .open > a:hover,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .open > a:focus,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #080808;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .dropdown > a:hover .caret,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .dropdown > a .caret,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .dropdown > a .caret {
+  border-top-color: #999999;
+  border-bottom-color: #999999;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .open > a .caret,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .open > a .caret,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .open > a:hover .caret,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .open > a:hover .caret,
+#tgm-plugin-settings .navbar-inverse .navbar-nav > .open > a:focus .caret,
+#soliloquy-comparison .navbar-inverse .navbar-nav > .open > a:focus .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  #tgm-plugin-settings .navbar-brand,
+  #soliloquy-comparison .navbar-brand {
+    float: left;
+    margin-right: 5px;
+    margin-left: -20px;
+  }
+  #tgm-plugin-settings .navbar-nav,
+  #soliloquy-comparison .navbar-nav {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #tgm-plugin-settings .navbar-nav > li,
+  #soliloquy-comparison .navbar-nav > li {
+    float: left;
+  }
+  #tgm-plugin-settings .navbar-nav > li > a,
+  #soliloquy-comparison .navbar-nav > li > a {
+    border-radius: 0;
+  }
+  #tgm-plugin-settings .navbar-nav.pull-right,
+  #soliloquy-comparison .navbar-nav.pull-right {
+    float: right;
+    width: auto;
+  }
+  #tgm-plugin-settings .navbar-toggle,
+  #soliloquy-comparison .navbar-toggle {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: none;
+  }
+  #tgm-plugin-settings .nav-collapse.collapse,
+  #soliloquy-comparison .nav-collapse.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+#tgm-plugin-settings .navbar-btn,
+#soliloquy-comparison .navbar-btn {
+  margin-top: 4px;
+}
+
+#tgm-plugin-settings .navbar-text,
+#soliloquy-comparison .navbar-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#tgm-plugin-settings .navbar-link,
+#soliloquy-comparison .navbar-link {
+  color: #777777;
+}
+
+#tgm-plugin-settings .navbar-link:hover,
+#soliloquy-comparison .navbar-link:hover {
+  color: #333333;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-link,
+#soliloquy-comparison .navbar-inverse .navbar-link {
+  color: #999999;
+}
+
+#tgm-plugin-settings .navbar-inverse .navbar-link:hover,
+#soliloquy-comparison .navbar-inverse .navbar-link:hover {
+  color: #ffffff;
+}
+
+#tgm-plugin-settings .btn .caret,
+#soliloquy-comparison .btn .caret {
+  border-top-color: #ffffff;
+}
+
+#tgm-plugin-settings .dropup .btn .caret,
+#soliloquy-comparison .dropup .btn .caret {
+  border-bottom-color: #ffffff;
+}
+
+#tgm-plugin-settings .btn-group,
+#soliloquy-comparison .btn-group,
+#tgm-plugin-settings .btn-group-vertical,
+#soliloquy-comparison .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#tgm-plugin-settings .btn-group > .btn,
+#soliloquy-comparison .btn-group > .btn,
+#tgm-plugin-settings .btn-group-vertical > .btn,
+#soliloquy-comparison .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+
+#tgm-plugin-settings .btn-group > .btn:hover,
+#soliloquy-comparison .btn-group > .btn:hover,
+#tgm-plugin-settings .btn-group-vertical > .btn:hover,
+#soliloquy-comparison .btn-group-vertical > .btn:hover,
+#tgm-plugin-settings .btn-group > .btn:active,
+#soliloquy-comparison .btn-group > .btn:active,
+#tgm-plugin-settings .btn-group-vertical > .btn:active,
+#soliloquy-comparison .btn-group-vertical > .btn:active {
+  z-index: 2;
+}
+
+#tgm-plugin-settings .btn-group .btn + .btn,
+#soliloquy-comparison .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+#tgm-plugin-settings .btn-toolbar:before,
+#soliloquy-comparison .btn-toolbar:before,
+#tgm-plugin-settings .btn-toolbar:after,
+#soliloquy-comparison .btn-toolbar:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .btn-toolbar:after,
+#soliloquy-comparison .btn-toolbar:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .btn-toolbar:before,
+#soliloquy-comparison .btn-toolbar:before,
+#tgm-plugin-settings .btn-toolbar:after,
+#soliloquy-comparison .btn-toolbar:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .btn-toolbar:after,
+#soliloquy-comparison .btn-toolbar:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .btn-toolbar .btn-group,
+#soliloquy-comparison .btn-toolbar .btn-group {
+  float: left;
+}
+
+#tgm-plugin-settings .btn-toolbar > .btn + .btn,
+#soliloquy-comparison .btn-toolbar > .btn + .btn,
+#tgm-plugin-settings .btn-toolbar > .btn-group + .btn,
+#soliloquy-comparison .btn-toolbar > .btn-group + .btn,
+#tgm-plugin-settings .btn-toolbar > .btn + .btn-group,
+#soliloquy-comparison .btn-toolbar > .btn + .btn-group,
+#tgm-plugin-settings .btn-toolbar > .btn-group + .btn-group,
+#soliloquy-comparison .btn-toolbar > .btn-group + .btn-group {
+  margin-left: 5px;
+}
+
+#tgm-plugin-settings .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+#soliloquy-comparison .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn:first-child,
+#soliloquy-comparison .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+#soliloquy-comparison .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn:last-child:not(:first-child),
+#soliloquy-comparison .btn-group > .btn:last-child:not(:first-child),
+#tgm-plugin-settings .btn-group > .dropdown-toggle:not(:first-child),
+#soliloquy-comparison .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn-group,
+#soliloquy-comparison .btn-group > .btn-group {
+  float: left;
+}
+
+#tgm-plugin-settings .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
+#soliloquy-comparison .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn-group:first-child > .btn:last-child,
+#soliloquy-comparison .btn-group > .btn-group:first-child > .btn:last-child,
+#tgm-plugin-settings .btn-group > .btn-group:first-child > .dropdown-toggle,
+#soliloquy-comparison .btn-group > .btn-group:first-child > .dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn-group:last-child > .btn:first-child,
+#soliloquy-comparison .btn-group > .btn-group:last-child > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group .dropdown-toggle:active,
+#soliloquy-comparison .btn-group .dropdown-toggle:active,
+#tgm-plugin-settings .btn-group.open .dropdown-toggle,
+#soliloquy-comparison .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+#tgm-plugin-settings .btn-group > .btn + .dropdown-toggle,
+#soliloquy-comparison .btn-group > .btn + .dropdown-toggle {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#tgm-plugin-settings .btn-group > .btn-large + .dropdown-toggle,
+#soliloquy-comparison .btn-group > .btn-large + .dropdown-toggle {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+#tgm-plugin-settings .btn-group.open .dropdown-toggle,
+#soliloquy-comparison .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+#tgm-plugin-settings .btn .caret,
+#soliloquy-comparison .btn .caret {
+  margin-left: 0;
+}
+
+#tgm-plugin-settings .btn-large .caret,
+#soliloquy-comparison .btn-large .caret {
+  border-width: 5px;
+}
+
+#tgm-plugin-settings .dropup .btn-large .caret,
+#soliloquy-comparison .dropup .btn-large .caret {
+  border-bottom-width: 5px;
+}
+
+#tgm-plugin-settings .btn-group-vertical > .btn,
+#soliloquy-comparison .btn-group-vertical > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+#tgm-plugin-settings .btn-group-vertical > .btn + .btn,
+#soliloquy-comparison .btn-group-vertical > .btn + .btn {
+  margin-top: -1px;
+}
+
+#tgm-plugin-settings .btn-group-vertical .btn:not(:first-child):not(:last-child),
+#soliloquy-comparison .btn-group-vertical .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group-vertical .btn:first-child,
+#soliloquy-comparison .btn-group-vertical .btn:first-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group-vertical .btn:last-child,
+#soliloquy-comparison .btn-group-vertical .btn:last-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#tgm-plugin-settings .btn-group-justified,
+#soliloquy-comparison .btn-group-justified {
+  display: table;
+  width: 100%;
+}
+
+#tgm-plugin-settings .btn-group-justified .btn,
+#soliloquy-comparison .btn-group-justified .btn {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+
+#tgm-plugin-settings .btn-group[data-toggle="buttons"] > .btn > input[type="radio"],
+#soliloquy-comparison .btn-group[data-toggle="buttons"] > .btn > input[type="radio"],
+#tgm-plugin-settings .btn-group[data-toggle="buttons"] > .btn > input[type="checkbox"],
+#soliloquy-comparison .btn-group[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  display: none;
+}
+
+#tgm-plugin-settings .breadcrumb,
+#soliloquy-comparison .breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .breadcrumb > li,
+#soliloquy-comparison .breadcrumb > li {
+  display: inline-block;
+}
+
+#tgm-plugin-settings .breadcrumb > li + li:before,
+#soliloquy-comparison .breadcrumb > li + li:before {
+  display: inline-block;
+  padding: 0 5px;
+  color: #cccccc;
+  content: "/\00a0";
+}
+
+#tgm-plugin-settings .breadcrumb > .active,
+#soliloquy-comparison .breadcrumb > .active {
+  color: #999999;
+}
+
+#tgm-plugin-settings .pagination,
+#soliloquy-comparison .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .pagination > li,
+#soliloquy-comparison .pagination > li {
+  display: inline;
+}
+
+#tgm-plugin-settings .pagination > li > a,
+#soliloquy-comparison .pagination > li > a,
+#tgm-plugin-settings .pagination > li > span,
+#soliloquy-comparison .pagination > li > span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+
+#tgm-plugin-settings .pagination > li:first-child > a,
+#soliloquy-comparison .pagination > li:first-child > a,
+#tgm-plugin-settings .pagination > li:first-child > span,
+#soliloquy-comparison .pagination > li:first-child > span {
+  border-left-width: 1px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+#tgm-plugin-settings .pagination > li:last-child > a,
+#soliloquy-comparison .pagination > li:last-child > a,
+#tgm-plugin-settings .pagination > li:last-child > span,
+#soliloquy-comparison .pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+#tgm-plugin-settings .pagination > li > a:hover,
+#soliloquy-comparison .pagination > li > a:hover,
+#tgm-plugin-settings .pagination > li > a:focus,
+#soliloquy-comparison .pagination > li > a:focus,
+#tgm-plugin-settings .pagination > .active > a,
+#soliloquy-comparison .pagination > .active > a,
+#tgm-plugin-settings .pagination > .active > span,
+#soliloquy-comparison .pagination > .active > span {
+  background-color: #f5f5f5;
+}
+
+#tgm-plugin-settings .pagination > .active > a,
+#soliloquy-comparison .pagination > .active > a,
+#tgm-plugin-settings .pagination > .active > span,
+#soliloquy-comparison .pagination > .active > span {
+  color: #999999;
+  cursor: default;
+}
+
+#tgm-plugin-settings .pagination > .disabled > span,
+#soliloquy-comparison .pagination > .disabled > span,
+#tgm-plugin-settings .pagination > .disabled > a,
+#soliloquy-comparison .pagination > .disabled > a,
+#tgm-plugin-settings .pagination > .disabled > a:hover,
+#soliloquy-comparison .pagination > .disabled > a:hover,
+#tgm-plugin-settings .pagination > .disabled > a:focus,
+#soliloquy-comparison .pagination > .disabled > a:focus {
+  color: #999999;
+  cursor: default;
+  background-color: #ffffff;
+}
+
+#tgm-plugin-settings .pagination-large > li > a,
+#soliloquy-comparison .pagination-large > li > a,
+#tgm-plugin-settings .pagination-large > li > span,
+#soliloquy-comparison .pagination-large > li > span {
+  padding: 16px 18px;
+  font-size: 18px;
+}
+
+#tgm-plugin-settings .pagination-large > li:first-child > a,
+#soliloquy-comparison .pagination-large > li:first-child > a,
+#tgm-plugin-settings .pagination-large > li:first-child > span,
+#soliloquy-comparison .pagination-large > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+#tgm-plugin-settings .pagination-large > li:last-child > a,
+#soliloquy-comparison .pagination-large > li:last-child > a,
+#tgm-plugin-settings .pagination-large > li:last-child > span,
+#soliloquy-comparison .pagination-large > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#tgm-plugin-settings .pagination-small > li > a,
+#soliloquy-comparison .pagination-small > li > a,
+#tgm-plugin-settings .pagination-small > li > span,
+#soliloquy-comparison .pagination-small > li > span {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+#tgm-plugin-settings .pagination-small > li:first-child > a,
+#soliloquy-comparison .pagination-small > li:first-child > a,
+#tgm-plugin-settings .pagination-small > li:first-child > span,
+#soliloquy-comparison .pagination-small > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+#tgm-plugin-settings .pagination-small > li:last-child > a,
+#soliloquy-comparison .pagination-small > li:last-child > a,
+#tgm-plugin-settings .pagination-small > li:last-child > span,
+#soliloquy-comparison .pagination-small > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#tgm-plugin-settings .pager,
+#soliloquy-comparison .pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+
+#tgm-plugin-settings .pager:before,
+#soliloquy-comparison .pager:before,
+#tgm-plugin-settings .pager:after,
+#soliloquy-comparison .pager:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .pager:after,
+#soliloquy-comparison .pager:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .pager:before,
+#soliloquy-comparison .pager:before,
+#tgm-plugin-settings .pager:after,
+#soliloquy-comparison .pager:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .pager:after,
+#soliloquy-comparison .pager:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .pager li,
+#soliloquy-comparison .pager li {
+  display: inline;
+}
+
+#tgm-plugin-settings .pager li > a,
+#soliloquy-comparison .pager li > a,
+#tgm-plugin-settings .pager li > span,
+#soliloquy-comparison .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+}
+
+#tgm-plugin-settings .pager li > a:hover,
+#soliloquy-comparison .pager li > a:hover,
+#tgm-plugin-settings .pager li > a:focus,
+#soliloquy-comparison .pager li > a:focus {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+#tgm-plugin-settings .pager .next > a,
+#soliloquy-comparison .pager .next > a,
+#tgm-plugin-settings .pager .next > span,
+#soliloquy-comparison .pager .next > span {
+  float: right;
+}
+
+#tgm-plugin-settings .pager .previous > a,
+#soliloquy-comparison .pager .previous > a,
+#tgm-plugin-settings .pager .previous > span,
+#soliloquy-comparison .pager .previous > span {
+  float: left;
+}
+
+#tgm-plugin-settings .pager .disabled > a,
+#soliloquy-comparison .pager .disabled > a,
+#tgm-plugin-settings .pager .disabled > a:hover,
+#soliloquy-comparison .pager .disabled > a:hover,
+#tgm-plugin-settings .pager .disabled > a:focus,
+#soliloquy-comparison .pager .disabled > a:focus,
+#tgm-plugin-settings .pager .disabled > span,
+#soliloquy-comparison .pager .disabled > span {
+  color: #999999;
+  cursor: default;
+  background-color: #ffffff;
+}
+
+#tgm-plugin-settings .modal-open,
+#soliloquy-comparison .modal-open {
+  overflow: hidden;
+}
+
+#tgm-plugin-settings .modal,
+#soliloquy-comparison .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+#tgm-plugin-settings .modal.fade,
+#soliloquy-comparison .modal.fade {
+  top: -25%;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+          transition: opacity 0.3s linear, top 0.3s ease-out;
+}
+
+#tgm-plugin-settings .modal.fade.in,
+#soliloquy-comparison .modal.fade.in {
+  top: 0;
+}
+
+#tgm-plugin-settings .modal-dialog,
+#soliloquy-comparison .modal-dialog {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+  width: auto;
+  padding: 10px;
+}
+
+#tgm-plugin-settings .modal-content,
+#soliloquy-comparison .modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+}
+
+#tgm-plugin-settings .modal-backdrop,
+#soliloquy-comparison .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #000;
+}
+
+#tgm-plugin-settings .modal-backdrop.fade,
+#soliloquy-comparison .modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+#tgm-plugin-settings .modal-backdrop.fade.in,
+#soliloquy-comparison .modal-backdrop.fade.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+#tgm-plugin-settings .modal-header,
+#soliloquy-comparison .modal-header {
+  min-height: 16.428571429px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#tgm-plugin-settings .modal-header .close,
+#soliloquy-comparison .modal-header .close {
+  margin-top: -2px;
+}
+
+#tgm-plugin-settings .modal-title,
+#soliloquy-comparison .modal-title {
+  margin: 0;
+  line-height: 1.428571429;
+}
+
+#tgm-plugin-settings .modal-body,
+#soliloquy-comparison .modal-body {
+  position: relative;
+  padding: 20px;
+}
+
+#tgm-plugin-settings .modal-footer,
+#soliloquy-comparison .modal-footer {
+  padding: 19px 20px 20px;
+  margin-top: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+#tgm-plugin-settings .modal-footer:before,
+#soliloquy-comparison .modal-footer:before,
+#tgm-plugin-settings .modal-footer:after,
+#soliloquy-comparison .modal-footer:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .modal-footer:after,
+#soliloquy-comparison .modal-footer:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .modal-footer:before,
+#soliloquy-comparison .modal-footer:before,
+#tgm-plugin-settings .modal-footer:after,
+#soliloquy-comparison .modal-footer:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .modal-footer:after,
+#soliloquy-comparison .modal-footer:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .modal-footer .btn + .btn,
+#soliloquy-comparison .modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+#tgm-plugin-settings .modal-footer .btn-group .btn + .btn,
+#soliloquy-comparison .modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+#tgm-plugin-settings .modal-footer .btn-block + .btn-block,
+#soliloquy-comparison .modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #tgm-plugin-settings .modal-dialog,
+  #soliloquy-comparison .modal-dialog {
+    right: auto;
+    left: 50%;
+    width: 560px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: -280px;
+  }
+  #tgm-plugin-settings .modal-content,
+  #soliloquy-comparison .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+#tgm-plugin-settings .tooltip,
+#soliloquy-comparison .tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible;
+}
+
+#tgm-plugin-settings .tooltip.in,
+#soliloquy-comparison .tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+#tgm-plugin-settings .tooltip.top,
+#soliloquy-comparison .tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+
+#tgm-plugin-settings .tooltip.right,
+#soliloquy-comparison .tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+
+#tgm-plugin-settings .tooltip.bottom,
+#soliloquy-comparison .tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+
+#tgm-plugin-settings .tooltip.left,
+#soliloquy-comparison .tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+
+#tgm-plugin-settings .tooltip-inner,
+#soliloquy-comparison .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .tooltip-arrow,
+#soliloquy-comparison .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+#tgm-plugin-settings .tooltip.top .tooltip-arrow,
+#soliloquy-comparison .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  border-width: 5px 5px 0;
+}
+
+#tgm-plugin-settings .tooltip.top-left .tooltip-arrow,
+#soliloquy-comparison .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  border-width: 5px 5px 0;
+}
+
+#tgm-plugin-settings .tooltip.top-right .tooltip-arrow,
+#soliloquy-comparison .tooltip.top-right .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  border-width: 5px 5px 0;
+}
+
+#tgm-plugin-settings .tooltip.right .tooltip-arrow,
+#soliloquy-comparison .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: rgba(0, 0, 0, 0.9);
+  border-width: 5px 5px 5px 0;
+}
+
+#tgm-plugin-settings .tooltip.left .tooltip-arrow,
+#soliloquy-comparison .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-left-color: rgba(0, 0, 0, 0.9);
+  border-width: 5px 0 5px 5px;
+}
+
+#tgm-plugin-settings .tooltip.bottom .tooltip-arrow,
+#soliloquy-comparison .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+  border-width: 0 5px 5px;
+}
+
+#tgm-plugin-settings .tooltip.bottom-left .tooltip-arrow,
+#soliloquy-comparison .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+  border-width: 0 5px 5px;
+}
+
+#tgm-plugin-settings .tooltip.bottom-right .tooltip-arrow,
+#soliloquy-comparison .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+  border-width: 0 5px 5px;
+}
+
+#tgm-plugin-settings .popover,
+#soliloquy-comparison .popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left;
+  white-space: normal;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  -webkit-bg-clip: padding-box;
+     -moz-bg-clip: padding;
+}
+
+#tgm-plugin-settings .popover.top,
+#soliloquy-comparison .popover.top {
+  margin-top: -10px;
+}
+
+#tgm-plugin-settings .popover.right,
+#soliloquy-comparison .popover.right {
+  margin-left: 10px;
+}
+
+#tgm-plugin-settings .popover.bottom,
+#soliloquy-comparison .popover.bottom {
+  margin-top: 10px;
+}
+
+#tgm-plugin-settings .popover.left,
+#soliloquy-comparison .popover.left {
+  margin-left: -10px;
+}
+
+#tgm-plugin-settings .popover-title,
+#soliloquy-comparison .popover-title {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+
+#tgm-plugin-settings .popover-content,
+#soliloquy-comparison .popover-content {
+  padding: 9px 14px;
+}
+
+#tgm-plugin-settings .popover .arrow,
+#soliloquy-comparison .popover .arrow,
+#tgm-plugin-settings .popover .arrow:after,
+#soliloquy-comparison .popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+#tgm-plugin-settings .popover .arrow,
+#soliloquy-comparison .popover .arrow {
+  border-width: 11px;
+}
+
+#tgm-plugin-settings .popover .arrow:after,
+#soliloquy-comparison .popover .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+
+#tgm-plugin-settings .popover.top .arrow,
+#soliloquy-comparison .popover.top .arrow {
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-color: #999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  border-bottom-width: 0;
+}
+
+#tgm-plugin-settings .popover.top .arrow:after,
+#soliloquy-comparison .popover.top .arrow:after {
+  bottom: 1px;
+  margin-left: -10px;
+  border-top-color: #ffffff;
+  border-bottom-width: 0;
+  content: " ";
+}
+
+#tgm-plugin-settings .popover.right .arrow,
+#soliloquy-comparison .popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-right-color: #999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+  border-left-width: 0;
+}
+
+#tgm-plugin-settings .popover.right .arrow:after,
+#soliloquy-comparison .popover.right .arrow:after {
+  bottom: -10px;
+  left: 1px;
+  border-right-color: #ffffff;
+  border-left-width: 0;
+  content: " ";
+}
+
+#tgm-plugin-settings .popover.bottom .arrow,
+#soliloquy-comparison .popover.bottom .arrow {
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-color: #999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  border-top-width: 0;
+}
+
+#tgm-plugin-settings .popover.bottom .arrow:after,
+#soliloquy-comparison .popover.bottom .arrow:after {
+  top: 1px;
+  margin-left: -10px;
+  border-bottom-color: #ffffff;
+  border-top-width: 0;
+  content: " ";
+}
+
+#tgm-plugin-settings .popover.left .arrow,
+#soliloquy-comparison .popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-left-color: #999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+  border-right-width: 0;
+}
+
+#tgm-plugin-settings .popover.left .arrow:after,
+#soliloquy-comparison .popover.left .arrow:after {
+  right: 1px;
+  bottom: -10px;
+  border-left-color: #ffffff;
+  border-right-width: 0;
+  content: " ";
+}
+
+#tgm-plugin-settings .alert,
+#soliloquy-comparison .alert {
+  padding: 10px 35px 10px 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .alert h4,
+#soliloquy-comparison .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+
+#tgm-plugin-settings .alert hr,
+#soliloquy-comparison .alert hr {
+  border-top-color: #f8e5be;
+}
+
+#tgm-plugin-settings .alert .alert-link,
+#soliloquy-comparison .alert .alert-link {
+  font-weight: 500;
+  color: #a47e3c;
+}
+
+#tgm-plugin-settings .alert .close,
+#soliloquy-comparison .alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+
+#tgm-plugin-settings .alert-success,
+#soliloquy-comparison .alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+#tgm-plugin-settings .alert-success hr,
+#soliloquy-comparison .alert-success hr {
+  border-top-color: #c9e2b3;
+}
+
+#tgm-plugin-settings .alert-success .alert-link,
+#soliloquy-comparison .alert-success .alert-link {
+  color: #356635;
+}
+
+#tgm-plugin-settings .alert-danger,
+#soliloquy-comparison .alert-danger {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+#tgm-plugin-settings .alert-danger hr,
+#soliloquy-comparison .alert-danger hr {
+  border-top-color: #e6c1c7;
+}
+
+#tgm-plugin-settings .alert-danger .alert-link,
+#soliloquy-comparison .alert-danger .alert-link {
+  color: #953b39;
+}
+
+#tgm-plugin-settings .alert-info,
+#soliloquy-comparison .alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+#tgm-plugin-settings .alert-info hr,
+#soliloquy-comparison .alert-info hr {
+  border-top-color: #a6e1ec;
+}
+
+#tgm-plugin-settings .alert-info .alert-link,
+#soliloquy-comparison .alert-info .alert-link {
+  color: #2d6987;
+}
+
+#tgm-plugin-settings .alert-block,
+#soliloquy-comparison .alert-block {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#tgm-plugin-settings .alert-block > p,
+#soliloquy-comparison .alert-block > p,
+#tgm-plugin-settings .alert-block > ul,
+#soliloquy-comparison .alert-block > ul {
+  margin-bottom: 0;
+}
+
+#tgm-plugin-settings .alert-block p + p,
+#soliloquy-comparison .alert-block p + p {
+  margin-top: 5px;
+}
+
+#tgm-plugin-settings .thumbnail,
+#soliloquy-comparison .thumbnail,
+#tgm-plugin-settings .img-thumbnail,
+#soliloquy-comparison .img-thumbnail {
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #ecf0f1;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+#tgm-plugin-settings .thumbnail,
+#soliloquy-comparison .thumbnail {
+  display: block;
+}
+
+#tgm-plugin-settings .thumbnail > img,
+#soliloquy-comparison .thumbnail > img,
+#tgm-plugin-settings .img-thumbnail,
+#soliloquy-comparison .img-thumbnail {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+
+#tgm-plugin-settings a.thumbnail:hover,
+#soliloquy-comparison a.thumbnail:hover,
+#tgm-plugin-settings a.thumbnail:focus,
+#soliloquy-comparison a.thumbnail:focus {
+  border-color: #2c3e50;
+}
+
+#tgm-plugin-settings .thumbnail > img,
+#soliloquy-comparison .thumbnail > img {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tgm-plugin-settings .thumbnail .caption,
+#soliloquy-comparison .thumbnail .caption {
+  padding: 9px;
+  color: #333333;
+}
+
+#tgm-plugin-settings .media,
+#soliloquy-comparison .media,
+#tgm-plugin-settings .media-body,
+#soliloquy-comparison .media-body {
+  overflow: hidden;
+  zoom: 1;
+}
+
+#tgm-plugin-settings .media,
+#soliloquy-comparison .media,
+#tgm-plugin-settings .media .media,
+#soliloquy-comparison .media .media {
+  margin-top: 15px;
+}
+
+#tgm-plugin-settings .media:first-child,
+#soliloquy-comparison .media:first-child {
+  margin-top: 0;
+}
+
+#tgm-plugin-settings .media-object,
+#soliloquy-comparison .media-object {
+  display: block;
+}
+
+#tgm-plugin-settings .media-heading,
+#soliloquy-comparison .media-heading {
+  margin: 0 0 5px;
+}
+
+#tgm-plugin-settings .media > .pull-left,
+#soliloquy-comparison .media > .pull-left {
+  margin-right: 10px;
+}
+
+#tgm-plugin-settings .media > .pull-right,
+#soliloquy-comparison .media > .pull-right {
+  margin-left: 10px;
+}
+
+#tgm-plugin-settings .media-list,
+#soliloquy-comparison .media-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+#tgm-plugin-settings .label,
+#soliloquy-comparison .label {
+  display: inline;
+  padding: .25em .6em;
+  font-size: 75%;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #999999;
+  border-radius: .25em;
+}
+
+#tgm-plugin-settings .label[href]:hover,
+#soliloquy-comparison .label[href]:hover,
+#tgm-plugin-settings .label[href]:focus,
+#soliloquy-comparison .label[href]:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #808080;
+}
+
+#tgm-plugin-settings .label-danger,
+#soliloquy-comparison .label-danger {
+  background-color: #c0392b;
+}
+
+#tgm-plugin-settings .label-danger[href]:hover,
+#soliloquy-comparison .label-danger[href]:hover,
+#tgm-plugin-settings .label-danger[href]:focus,
+#soliloquy-comparison .label-danger[href]:focus {
+  background-color: #962d22;
+}
+
+#tgm-plugin-settings .label-success,
+#soliloquy-comparison .label-success {
+  background-color: #27ae60;
+}
+
+#tgm-plugin-settings .label-success[href]:hover,
+#soliloquy-comparison .label-success[href]:hover,
+#tgm-plugin-settings .label-success[href]:focus,
+#soliloquy-comparison .label-success[href]:focus {
+  background-color: #1e8449;
+}
+
+#tgm-plugin-settings .label-warning,
+#soliloquy-comparison .label-warning {
+  background-color: #f39c12;
+}
+
+#tgm-plugin-settings .label-warning[href]:hover,
+#soliloquy-comparison .label-warning[href]:hover,
+#tgm-plugin-settings .label-warning[href]:focus,
+#soliloquy-comparison .label-warning[href]:focus {
+  background-color: #c87f0a;
+}
+
+#tgm-plugin-settings .label-info,
+#soliloquy-comparison .label-info {
+  background-color: #2980b9;
+}
+
+#tgm-plugin-settings .label-info[href]:hover,
+#soliloquy-comparison .label-info[href]:hover,
+#tgm-plugin-settings .label-info[href]:focus,
+#soliloquy-comparison .label-info[href]:focus {
+  background-color: #20638f;
+}
+
+#tgm-plugin-settings .badge,
+#soliloquy-comparison .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#tgm-plugin-settings .badge:empty,
+#soliloquy-comparison .badge:empty {
+  display: none;
+}
+
+#tgm-plugin-settings a.badge:hover,
+#soliloquy-comparison a.badge:hover,
+#tgm-plugin-settings a.badge:focus,
+#soliloquy-comparison a.badge:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#tgm-plugin-settings .btn .badge,
+#soliloquy-comparison .btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+#tgm-plugin-settings a.list-group-item.active > .badge,
+#soliloquy-comparison a.list-group-item.active > .badge,
+#tgm-plugin-settings .nav-pills > .active > a > .badge,
+#soliloquy-comparison .nav-pills > .active > a > .badge {
+  color: #2c3e50;
+  background-color: #ffffff;
+}
+
+#tgm-plugin-settings .nav-pills > li > a > .badge,
+#soliloquy-comparison .nav-pills > li > a > .badge {
+  margin-left: 3px;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@-moz-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@-ms-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+#tgm-plugin-settings .progress,
+#soliloquy-comparison .progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#tgm-plugin-settings .progress-bar,
+#soliloquy-comparison .progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #2c3e50;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+          transition: width 0.6s ease;
+}
+
+#tgm-plugin-settings .progress-striped .progress-bar,
+#soliloquy-comparison .progress-striped .progress-bar {
+  background-color: #2c3e50;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+
+#tgm-plugin-settings .progress.active .progress-bar,
+#soliloquy-comparison .progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+     -moz-animation: progress-bar-stripes 2s linear infinite;
+      -ms-animation: progress-bar-stripes 2s linear infinite;
+       -o-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite;
+}
+
+#tgm-plugin-settings .progress-bar-danger,
+#soliloquy-comparison .progress-bar-danger {
+  background-color: #c0392b;
+}
+
+.progress-striped #tgm-plugin-settings .progress-bar-danger,
+.progress-striped #soliloquy-comparison .progress-bar-danger {
+  background-color: #c0392b;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+
+#tgm-plugin-settings .progress-bar-success,
+#soliloquy-comparison .progress-bar-success {
+  background-color: #27ae60;
+}
+
+.progress-striped #tgm-plugin-settings .progress-bar-success,
+.progress-striped #soliloquy-comparison .progress-bar-success {
+  background-color: #27ae60;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+
+#tgm-plugin-settings .progress-bar-warning,
+#soliloquy-comparison .progress-bar-warning {
+  background-color: #f39c12;
+}
+
+.progress-striped #tgm-plugin-settings .progress-bar-warning,
+.progress-striped #soliloquy-comparison .progress-bar-warning {
+  background-color: #f39c12;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+
+#tgm-plugin-settings .progress-bar-info,
+#soliloquy-comparison .progress-bar-info {
+  background-color: #2980b9;
+}
+
+.progress-striped #tgm-plugin-settings .progress-bar-info,
+.progress-striped #soliloquy-comparison .progress-bar-info {
+  background-color: #2980b9;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+
+#tgm-plugin-settings .accordion,
+#soliloquy-comparison .accordion {
+  margin-bottom: 20px;
+}
+
+#tgm-plugin-settings .accordion-group,
+#soliloquy-comparison .accordion-group {
+  margin-bottom: 2px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+#tgm-plugin-settings .accordion-heading,
+#soliloquy-comparison .accordion-heading {
+  border-bottom: 0;
+}
+
+#tgm-plugin-settings .accordion-heading .accordion-toggle,
+#soliloquy-comparison .accordion-heading .accordion-toggle {
+  display: block;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+#tgm-plugin-settings .accordion-inner,
+#soliloquy-comparison .accordion-inner {
+  padding: 9px 15px;
+  border-top: 1px solid #e5e5e5;
+}
+
+#tgm-plugin-settings .carousel,
+#soliloquy-comparison .carousel {
+  position: relative;
+}
+
+#tgm-plugin-settings .carousel-inner,
+#soliloquy-comparison .carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#tgm-plugin-settings .carousel-inner > .item,
+#soliloquy-comparison .carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+          transition: 0.6s ease-in-out left;
+}
+
+#tgm-plugin-settings .carousel-inner > .item > img,
+#soliloquy-comparison .carousel-inner > .item > img,
+#tgm-plugin-settings .carousel-inner > .item > a > img,
+#soliloquy-comparison .carousel-inner > .item > a > img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  line-height: 1;
+}
+
+#tgm-plugin-settings .carousel-inner > .active,
+#soliloquy-comparison .carousel-inner > .active,
+#tgm-plugin-settings .carousel-inner > .next,
+#soliloquy-comparison .carousel-inner > .next,
+#tgm-plugin-settings .carousel-inner > .prev,
+#soliloquy-comparison .carousel-inner > .prev {
+  display: block;
+}
+
+#tgm-plugin-settings .carousel-inner > .active,
+#soliloquy-comparison .carousel-inner > .active {
+  left: 0;
+}
+
+#tgm-plugin-settings .carousel-inner > .next,
+#soliloquy-comparison .carousel-inner > .next,
+#tgm-plugin-settings .carousel-inner > .prev,
+#soliloquy-comparison .carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#tgm-plugin-settings .carousel-inner > .next,
+#soliloquy-comparison .carousel-inner > .next {
+  left: 100%;
+}
+
+#tgm-plugin-settings .carousel-inner > .prev,
+#soliloquy-comparison .carousel-inner > .prev {
+  left: -100%;
+}
+
+#tgm-plugin-settings .carousel-inner > .next.left,
+#soliloquy-comparison .carousel-inner > .next.left,
+#tgm-plugin-settings .carousel-inner > .prev.right,
+#soliloquy-comparison .carousel-inner > .prev.right {
+  left: 0;
+}
+
+#tgm-plugin-settings .carousel-inner > .active.left,
+#soliloquy-comparison .carousel-inner > .active.left {
+  left: -100%;
+}
+
+#tgm-plugin-settings .carousel-inner > .active.right,
+#soliloquy-comparison .carousel-inner > .active.right {
+  left: 100%;
+}
+
+#tgm-plugin-settings .carousel-control,
+#soliloquy-comparison .carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+#tgm-plugin-settings .carousel-control.left,
+#soliloquy-comparison .carousel-control.left {
+  background-color: rgba(0, 0, 0, 0.0001);
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+
+#tgm-plugin-settings .carousel-control.right,
+#soliloquy-comparison .carousel-control.right {
+  right: 0;
+  left: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0), color-stop(rgba(0, 0, 0, 0.5) 100%));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+
+#tgm-plugin-settings .carousel-control:hover,
+#soliloquy-comparison .carousel-control:hover,
+#tgm-plugin-settings .carousel-control:focus,
+#soliloquy-comparison .carousel-control:focus {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+#tgm-plugin-settings .carousel-control .glyphicon,
+#soliloquy-comparison .carousel-control .glyphicon,
+#tgm-plugin-settings .carousel-control .icon-prev,
+#soliloquy-comparison .carousel-control .icon-prev,
+#tgm-plugin-settings .carousel-control .icon-next,
+#soliloquy-comparison .carousel-control .icon-next {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+#tgm-plugin-settings .carousel-control .icon-prev:before,
+#soliloquy-comparison .carousel-control .icon-prev:before {
+  content: '\2039';
+}
+
+#tgm-plugin-settings .carousel-control .icon-next:before,
+#soliloquy-comparison .carousel-control .icon-next:before {
+  content: '\203a';
+}
+
+#tgm-plugin-settings .carousel-indicators,
+#soliloquy-comparison .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 120px;
+  padding-left: 0;
+  margin-left: -60px;
+  text-align: center;
+  list-style: none;
+}
+
+#tgm-plugin-settings .carousel-indicators li,
+#soliloquy-comparison .carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+#tgm-plugin-settings .carousel-indicators .active,
+#soliloquy-comparison .carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #fff;
+}
+
+#tgm-plugin-settings .carousel-caption,
+#soliloquy-comparison .carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#tgm-plugin-settings .carousel-caption .btn,
+#soliloquy-comparison .carousel-caption .btn {
+  text-shadow: none;
+}
+
+@media screen and (min-width: 768px) {
+  #tgm-plugin-settings .carousel-control .glyphicon,
+  #soliloquy-comparison .carousel-control .glyphicon,
+  #tgm-plugin-settings .carousel-control .icon-prev,
+  #soliloquy-comparison .carousel-control .icon-prev,
+  #tgm-plugin-settings .carousel-control .icon-next,
+  #soliloquy-comparison .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px;
+  }
+  #tgm-plugin-settings .carousel-caption,
+  #soliloquy-comparison .carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+  }
+  #tgm-plugin-settings .carousel-indicators,
+  #soliloquy-comparison .carousel-indicators {
+    bottom: 20px;
+  }
+}
+
+#tgm-plugin-settings .jumbotron,
+#soliloquy-comparison .jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
+}
+
+#tgm-plugin-settings .jumbotron h1,
+#soliloquy-comparison .jumbotron h1 {
+  line-height: 1;
+  color: inherit;
+}
+
+#tgm-plugin-settings .jumbotron p,
+#soliloquy-comparison .jumbotron p {
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) {
+  #tgm-plugin-settings .jumbotron,
+  #soliloquy-comparison .jumbotron {
+    padding: 50px 60px;
+    border-radius: 6px;
+  }
+  #tgm-plugin-settings .jumbotron h1,
+  #soliloquy-comparison .jumbotron h1 {
+    font-size: 63px;
+  }
+}
+
+#tgm-plugin-settings .clearfix:before,
+#soliloquy-comparison .clearfix:before,
+#tgm-plugin-settings .clearfix:after,
+#soliloquy-comparison .clearfix:after {
+  display: table;
+  content: " ";
+}
+
+#tgm-plugin-settings .clearfix:after,
+#soliloquy-comparison .clearfix:after {
+  clear: both;
+}
+
+#tgm-plugin-settings .pull-right,
+#soliloquy-comparison .pull-right {
+  float: right;
+}
+
+#tgm-plugin-settings .pull-left,
+#soliloquy-comparison .pull-left {
+  float: left;
+}
+
+#tgm-plugin-settings .hide,
+#soliloquy-comparison .hide {
+  display: none !important;
+}
+
+#tgm-plugin-settings .show,
+#soliloquy-comparison .show {
+  display: block !important;
+}
+
+#tgm-plugin-settings .invisible,
+#soliloquy-comparison .invisible {
+  visibility: hidden;
+}
+
+#tgm-plugin-settings .text-hide,
+#soliloquy-comparison .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+#tgm-plugin-settings .affix,
+#soliloquy-comparison .affix {
+  position: fixed;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@media screen and (max-width: 400px) {
+  @-ms-viewport {
+    width: 320px;
+  }
+}
+
+#tgm-plugin-settings .hidden,
+#soliloquy-comparison .hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#tgm-plugin-settings .visible-sm,
+#soliloquy-comparison .visible-sm {
+  display: block !important;
+}
+
+tr#tgm-plugin-settings .visible-sm,
+tr#soliloquy-comparison .visible-sm {
+  display: table-row !important;
+}
+
+th#tgm-plugin-settings .visible-sm,
+th#soliloquy-comparison .visible-sm,
+td#tgm-plugin-settings .visible-sm,
+td#soliloquy-comparison .visible-sm {
+  display: table-cell !important;
+}
+
+#tgm-plugin-settings .visible-md,
+#soliloquy-comparison .visible-md {
+  display: none !important;
+}
+
+tr#tgm-plugin-settings .visible-md,
+tr#soliloquy-comparison .visible-md {
+  display: none !important;
+}
+
+th#tgm-plugin-settings .visible-md,
+th#soliloquy-comparison .visible-md,
+td#tgm-plugin-settings .visible-md,
+td#soliloquy-comparison .visible-md {
+  display: none !important;
+}
+
+#tgm-plugin-settings .visible-lg,
+#soliloquy-comparison .visible-lg {
+  display: none !important;
+}
+
+tr#tgm-plugin-settings .visible-lg,
+tr#soliloquy-comparison .visible-lg {
+  display: none !important;
+}
+
+th#tgm-plugin-settings .visible-lg,
+th#soliloquy-comparison .visible-lg,
+td#tgm-plugin-settings .visible-lg,
+td#soliloquy-comparison .visible-lg {
+  display: none !important;
+}
+
+#tgm-plugin-settings .hidden-sm,
+#soliloquy-comparison .hidden-sm {
+  display: none !important;
+}
+
+tr#tgm-plugin-settings .hidden-sm,
+tr#soliloquy-comparison .hidden-sm {
+  display: none !important;
+}
+
+th#tgm-plugin-settings .hidden-sm,
+th#soliloquy-comparison .hidden-sm,
+td#tgm-plugin-settings .hidden-sm,
+td#soliloquy-comparison .hidden-sm {
+  display: none !important;
+}
+
+#tgm-plugin-settings .hidden-md,
+#soliloquy-comparison .hidden-md {
+  display: block !important;
+}
+
+tr#tgm-plugin-settings .hidden-md,
+tr#soliloquy-comparison .hidden-md {
+  display: table-row !important;
+}
+
+th#tgm-plugin-settings .hidden-md,
+th#soliloquy-comparison .hidden-md,
+td#tgm-plugin-settings .hidden-md,
+td#soliloquy-comparison .hidden-md {
+  display: table-cell !important;
+}
+
+#tgm-plugin-settings .hidden-lg,
+#soliloquy-comparison .hidden-lg {
+  display: block !important;
+}
+
+tr#tgm-plugin-settings .hidden-lg,
+tr#soliloquy-comparison .hidden-lg {
+  display: table-row !important;
+}
+
+th#tgm-plugin-settings .hidden-lg,
+th#soliloquy-comparison .hidden-lg,
+td#tgm-plugin-settings .hidden-lg,
+td#soliloquy-comparison .hidden-lg {
+  display: table-cell !important;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #tgm-plugin-settings .visible-sm,
+  #soliloquy-comparison .visible-sm {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .visible-sm,
+  tr#soliloquy-comparison .visible-sm {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .visible-sm,
+  th#soliloquy-comparison .visible-sm,
+  td#tgm-plugin-settings .visible-sm,
+  td#soliloquy-comparison .visible-sm {
+    display: none !important;
+  }
+  #tgm-plugin-settings .visible-md,
+  #soliloquy-comparison .visible-md {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .visible-md,
+  tr#soliloquy-comparison .visible-md {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .visible-md,
+  th#soliloquy-comparison .visible-md,
+  td#tgm-plugin-settings .visible-md,
+  td#soliloquy-comparison .visible-md {
+    display: table-cell !important;
+  }
+  #tgm-plugin-settings .visible-lg,
+  #soliloquy-comparison .visible-lg {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .visible-lg,
+  tr#soliloquy-comparison .visible-lg {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .visible-lg,
+  th#soliloquy-comparison .visible-lg,
+  td#tgm-plugin-settings .visible-lg,
+  td#soliloquy-comparison .visible-lg {
+    display: none !important;
+  }
+  #tgm-plugin-settings .hidden-sm,
+  #soliloquy-comparison .hidden-sm {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .hidden-sm,
+  tr#soliloquy-comparison .hidden-sm {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .hidden-sm,
+  th#soliloquy-comparison .hidden-sm,
+  td#tgm-plugin-settings .hidden-sm,
+  td#soliloquy-comparison .hidden-sm {
+    display: table-cell !important;
+  }
+  #tgm-plugin-settings .hidden-md,
+  #soliloquy-comparison .hidden-md {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .hidden-md,
+  tr#soliloquy-comparison .hidden-md {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .hidden-md,
+  th#soliloquy-comparison .hidden-md,
+  td#tgm-plugin-settings .hidden-md,
+  td#soliloquy-comparison .hidden-md {
+    display: none !important;
+  }
+  #tgm-plugin-settings .hidden-lg,
+  #soliloquy-comparison .hidden-lg {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .hidden-lg,
+  tr#soliloquy-comparison .hidden-lg {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .hidden-lg,
+  th#soliloquy-comparison .hidden-lg,
+  td#tgm-plugin-settings .hidden-lg,
+  td#soliloquy-comparison .hidden-lg {
+    display: table-cell !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #tgm-plugin-settings .visible-sm,
+  #soliloquy-comparison .visible-sm {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .visible-sm,
+  tr#soliloquy-comparison .visible-sm {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .visible-sm,
+  th#soliloquy-comparison .visible-sm,
+  td#tgm-plugin-settings .visible-sm,
+  td#soliloquy-comparison .visible-sm {
+    display: none !important;
+  }
+  #tgm-plugin-settings .visible-md,
+  #soliloquy-comparison .visible-md {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .visible-md,
+  tr#soliloquy-comparison .visible-md {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .visible-md,
+  th#soliloquy-comparison .visible-md,
+  td#tgm-plugin-settings .visible-md,
+  td#soliloquy-comparison .visible-md {
+    display: none !important;
+  }
+  #tgm-plugin-settings .visible-lg,
+  #soliloquy-comparison .visible-lg {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .visible-lg,
+  tr#soliloquy-comparison .visible-lg {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .visible-lg,
+  th#soliloquy-comparison .visible-lg,
+  td#tgm-plugin-settings .visible-lg,
+  td#soliloquy-comparison .visible-lg {
+    display: table-cell !important;
+  }
+  #tgm-plugin-settings .hidden-sm,
+  #soliloquy-comparison .hidden-sm {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .hidden-sm,
+  tr#soliloquy-comparison .hidden-sm {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .hidden-sm,
+  th#soliloquy-comparison .hidden-sm,
+  td#tgm-plugin-settings .hidden-sm,
+  td#soliloquy-comparison .hidden-sm {
+    display: table-cell !important;
+  }
+  #tgm-plugin-settings .hidden-md,
+  #soliloquy-comparison .hidden-md {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .hidden-md,
+  tr#soliloquy-comparison .hidden-md {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .hidden-md,
+  th#soliloquy-comparison .hidden-md,
+  td#tgm-plugin-settings .hidden-md,
+  td#soliloquy-comparison .hidden-md {
+    display: table-cell !important;
+  }
+  #tgm-plugin-settings .hidden-lg,
+  #soliloquy-comparison .hidden-lg {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .hidden-lg,
+  tr#soliloquy-comparison .hidden-lg {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .hidden-lg,
+  th#soliloquy-comparison .hidden-lg,
+  td#tgm-plugin-settings .hidden-lg,
+  td#soliloquy-comparison .hidden-lg {
+    display: none !important;
+  }
+}
+
+#tgm-plugin-settings .visible-print,
+#soliloquy-comparison .visible-print {
+  display: none !important;
+}
+
+tr#tgm-plugin-settings .visible-print,
+tr#soliloquy-comparison .visible-print {
+  display: none !important;
+}
+
+th#tgm-plugin-settings .visible-print,
+th#soliloquy-comparison .visible-print,
+td#tgm-plugin-settings .visible-print,
+td#soliloquy-comparison .visible-print {
+  display: none !important;
+}
+
+@media print {
+  #tgm-plugin-settings .visible-print,
+  #soliloquy-comparison .visible-print {
+    display: block !important;
+  }
+  tr#tgm-plugin-settings .visible-print,
+  tr#soliloquy-comparison .visible-print {
+    display: table-row !important;
+  }
+  th#tgm-plugin-settings .visible-print,
+  th#soliloquy-comparison .visible-print,
+  td#tgm-plugin-settings .visible-print,
+  td#soliloquy-comparison .visible-print {
+    display: table-cell !important;
+  }
+  #tgm-plugin-settings .hidden-print,
+  #soliloquy-comparison .hidden-print {
+    display: none !important;
+  }
+  tr#tgm-plugin-settings .hidden-print,
+  tr#soliloquy-comparison .hidden-print {
+    display: none !important;
+  }
+  th#tgm-plugin-settings .hidden-print,
+  th#soliloquy-comparison .hidden-print,
+  td#tgm-plugin-settings .hidden-print,
+  td#soliloquy-comparison .hidden-print {
+    display: none !important;
+  }
+}

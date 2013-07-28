@@ -19,6 +19,24 @@ class Tgmsp_Lite_Admin {
 	private static $instance;
 
 	/**
+	 * Holds a copy of the upgrade page slug.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @var bool|string
+	 */
+	public $upgrade_slug = false;
+
+	/**
+	 * Holds the version of the plugin for cache busting.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @var bool|string
+	 */
+	public $version = '1.5.0';
+
+	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
 	 * @since 1.0.0
@@ -28,6 +46,7 @@ class Tgmsp_Lite_Admin {
 		self::$instance = $this;
 
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'add_meta_boxes', array( $this, 'remove_seo_support' ), 99 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
@@ -81,6 +100,301 @@ class Tgmsp_Lite_Admin {
 	}
 
 	/**
+	 * Adds a custom upgrade item to the Soliloquy post type menu.
+	 *
+	 * @since 1.0.0
+	 */
+	public function admin_menu() {
+
+		$this->upgrade_slug = add_submenu_page( 'edit.php?post_type=soliloquy', __( 'Get Immediate Access to the Pro Version of Soliloquy!', 'soliloquy-lite' ), __( 'Instant Upgrade', 'soliloquy-lite' ), 'manage_options', 'soliloquy-lite-upgrade', array( $this, 'upgrade_page' ) );
+
+		if ( $this->upgrade_slug )
+			add_action( 'load-' . $this->upgrade_slug, array( $this, 'upgrade_assets' ) );
+
+	}
+
+	/**
+	 * Outputs content on the upgrade page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function upgrade_page() {
+
+		?>
+        <div id="tgm-plugin-settings" class="container">
+            <header class="row">
+                <div class="col-lg-12">
+                    <h2><img style="margin:0 8px 4px 0;vertical-align:middle;" src="<?php echo plugins_url( 'css/images/title-icon.png', dirname( dirname( __FILE__ ) ) ); ?>" alt="<?php esc_attr_e( 'Get Soliloquy Pro!', 'soliloquy-lite' ); ?>" /><?php echo esc_html( get_admin_page_title() ); ?></h2>
+                </div>
+            </header>
+
+            <p style="font-size:16px;margin:15px 0 25px;"><?php _e( 'Do you want <strong>immediate</strong> access to all of the incredible features of the pro version of Soliloquy? You can upgrade to the pro version of Soliloquy <strong>instantly</strong> from this page. It only takes a couple minutes to be using the fully featured, best responsive WordPress slider plugin on the market - Soliloquy! <strong>Just choose the license below that best suits your needs to get started!</strong>', 'soliloquy-lite' ); ?></p>
+
+            <p><em><?php _e( 'Not convinced you should upgrade? <a href="#" class="soliloquy-comparison-show" data-popup="#soliloquy-comparison">Click here to view a comparison chart to see why Soliloquy Pro is so much better!</a>', 'soliloquy-lite' ); ?></em></p>
+
+            <div id="soliloquy-comparison" class="mfp-hide">
+            	<p style="font-size:16px;"><strong><?php _e( 'You can view the features below to see why Soliloquy Pro is so much better!', 'soliloquy-lite' ); ?></strong></p>
+            	<table class="table table-striped table-bordered comparison-table">
+					<thead>
+						<tr>
+							<th>Plugin Feature</th>
+							<th>Soliloquy Lite</th>
+							<th>Soliloquy Pro</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Uses a custom post type to handle the sliders</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Ability to create an unlimited number of sliders</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Ajax uploading, drag-and-drop sorting and saving of image order</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Media buttons for easy slider insertion into the post editor</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Touch swipe support for touch-enabled devices</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Fully compatible with WordPress MultiSite</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Shortcode and template tags for slider display</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Custom metadata (title, alt, caption, link title, etc.) for each image</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td>Uses WordPress media uploader for uploading images</td>
+							<td><i class="icon-ok"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Custom video slides</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Custom HTML slides (use any HTML you want to build your slide!)</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Use images already in Media Library for sliders</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Use thumbnail sizes registered with WordPress for slider sizes</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Captions can accept any HTML (forms, email signups, iframe videos, etc.)</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Full customization of all slider options</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Ability to utilize Soliloquy Addons (developer license only)</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Ajax preloading of images for lightening fast load times</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Configurable widget for outputting slider in widgetized areas</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Access to all slider transition effects</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Internal linking feature to quickly link images to internal content</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Embedded video and API support for YouTube and Vimeo</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Over 50+ hooks and filters to customize the slider output</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Ability to be completely white-labeled for client use (via hooks and filters)</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Enhanced SEO and speed for better rankings</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Show/hide navigation, control and pause-play controls</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Randomize slide order on a per slider basis</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Choose between native CSS and JS slide transitions</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Reverse animation direction for slide transitions</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Animate slider height when images in slider are different sizes</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+						<tr>
+							<td><strong class="text-success">Get access to official support forums and documentation</strong></td>
+							<td><i class="icon-remove"></i></td>
+							<td><i class="icon-ok"></i></td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel">
+                        <div class="panel-heading text-center"><?php _e( 'Soliloquy Single License', 'soliloquy-lite' ); ?></div>
+                        <h4 style="margin:20px 0 0;" class="text-center"><strong><?php _e( 'Upgrade for Only $19!', 'soliloquy-lite' ); ?></strong></h4>
+                        <hr />
+                        <div class="panel-area">
+	                        <table class="table table-striped table-bordered clearfix clear">
+	                        	<tbody>
+	                        		<tr><td class="text-center"><?php _e( '<strong>Full Access to All Slider Options</strong>', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( 'Updates for <strong>One Site</strong> for Life', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( '<strong>Unlimited</strong> Sliders', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( 'Complete Documentation Access', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( 'One Complimentary Support Token', 'soliloquy-lite' ); ?></td></tr>
+	                        	</tbody>
+	                        </table>
+	                        <a class="btn btn-default btn-block soliloquy-do-upgrade" title="<?php esc_attr_e( 'Get Soliloquy Today!', 'soliloquy-lite' ); ?>" href="#" data-license="single" target="_blank"><strong><?php _e( 'Click Here to Get Started with Your Upgrade for Only $19!', 'soliloquy-lite' ); ?></strong></a>
+                    	</div>
+                    	<div class="account-information-single row" style="display:none;">
+	                    	<form class="col-lg-12 clearfix clear">
+	                    		<p class="clear clearfix"><label for="account-email-single"><?php _e( 'Email Address', 'soliloquy-lite' ); ?></label><small class="help-block text-muted" style="margin-bottom:10px;"><?php _e( 'This email address will be used for your account login and purchase receipt.', 'soliloquy-lite' ); ?></small>
+	                    		<input id="account-email-single" type="text" class="col-lg-12" placeholder="<?php esc_attr_e( 'Enter your email address...', 'soliloquy-lite' ); ?>" value="" /></p>
+	                    		<p style="margin:15px 0 0;"><input type="submit" value="<?php _e( 'Get Started with the Upgrade for Only $19!', 'soliloquy' ); ?>" class="btn btn-block btn-default soliloquy-start-upgrade" data-amount="1900" data-name="<?php esc_attr_e( 'Single License', 'soliloquy-lite' ); ?>" data-plugin="Soliloquy Single License" data-slug="soliloquy-single-license" data-desc="<?php esc_attr_e( 'x1 Single License - $19', 'soliloquy-lite' ); ?>" data-panel="<?php esc_attr_e( 'Pay Securely via Stripe - ', 'soliloquy-lite' ); ?>" /></p>
+	                    	</form>
+                    	</div>
+                        <div class="panel-footer">
+                            <p class="no-margin text-center"><?php _e( 'Your upgrade will be applied <strong>instantly</strong> once your purchase is complete!', 'soliloquy-lite' ); ?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading text-center"><?php _e( 'Soliloquy Developer License <strong>(best value)</strong>', 'soliloquy-lite' ); ?></div>
+                        <h4 style="margin:20px 0 0;" class="text-center text-success"><strong><?php _e( 'Upgrade for Only $99! That\'s A Steal!', 'soliloquy-lite' ); ?></strong></h4>
+                        <hr />
+                        <div class="panel-area">
+	                        <table class="table table-striped table-bordered clearfix clear">
+	                        	<tbody>
+	                        		<tr><td class="text-center"><?php _e( '<strong>Full Access to All Slider Options</strong>', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( '<strong>Exclusive Access to <a href="#" data-popup="#addons-image" class="soliloquy-show-addons">Soliloquy Addons</a></strong><br /><small class="help-block no-margin text-muted">(can install <strong>immediately</strong> after upgrading from this screen)</small>', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( 'Updates for <strong>Unlimited Sites</strong> for Life', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( '<strong>Unlimited</strong> Sliders', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( 'Complete Documentation Access', 'soliloquy-lite' ); ?></td></tr>
+	                        		<tr><td class="text-center"><?php _e( 'One Complimentary Support Token', 'soliloquy-lite' ); ?></td></tr>
+	                        	</tbody>
+	                        </table>
+	                        <div id="addons-image" class="mfp-hide"><img src="<?php echo plugins_url( '/css/images/addons.png', dirname( dirname( __FILE__ ) ) ); ?>" /></div>
+	                        <a class="btn btn-success btn-block soliloquy-do-upgrade" data-license="developer" title="<?php esc_attr_e( 'Get Soliloquy Today!', 'fsb' ); ?>" href="#" target="_blank"><strong><?php _e( 'Click Here to Get Started with Your Upgrade for Only $99!', 'soliloquy-lite' ); ?></strong></a>
+                        </div>
+                        <div class="account-information-developer row" style="display:none;">
+	                    	<form class="col-lg-12 clearfix clear">
+	                    		<p class="clear clearfix"><label for="account-email-developer"><?php _e( 'Email Address', 'soliloquy-lite' ); ?></label><small class="help-block text-muted" style="margin-bottom:10px;"><?php _e( 'This email address will be used for your account login and purchase receipt.', 'soliloquy-lite' ); ?></small>
+	                    		<input id="account-email-developer" type="text" class="col-lg-12" placeholder="<?php esc_attr_e( 'Enter your email address...', 'soliloquy-lite' ); ?>" value="" /></p>
+	                    		<p style="margin:15px 0 0;"><input type="submit" value="<?php _e( 'Get Started with the Upgrade for Only $99!', 'soliloquy' ); ?>" class="btn btn-block btn-success soliloquy-start-upgrade" data-amount="9900" data-name="<?php esc_attr_e( 'Developer License', 'soliloquy-lite' ); ?>" data-plugin="Soliloquy Developer License" data-slug="soliloquy-developer-license" data-desc="<?php esc_attr_e( 'x1 Developer License - $99', 'soliloquy-lite' ); ?>" data-panel="<?php esc_attr_e( 'Pay Securely via Stripe - ', 'soliloquy-lite' ); ?>" /></p>
+	                    	</form>
+                    	</div>
+                        <div class="panel-footer">
+                            <p class="no-margin text-center"><?php _e( 'Your upgrade will be applied <strong>instantly</strong> once your purchase is complete!', 'soliloquy-lite' ); ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <small class="help-block text-muted no-margin text-center"><strong><?php _e( 'Upgrades are processed securely (256-bit SSL) by credit card via Stripe and are made to Griffin Media, LLC.', 'soliloquy-lite' ); ?></strong></small>
+            <small class="help-block text-muted no-margin text-center"><em><?php _e( 'By purchasing Soliloquy, you agree to the <a href="http://soliloquywp.com/terms-and-conditions/" title="Soliloquy Terms and Conditions" target="_blank">Terms and Conditions</a> of use.', 'soliloquy-lite' ); ?></em></small>
+
+            <div class="tgm-plugin-overlay" style="display:none;">
+            	<div class="tgm-plugin-cover">
+            		<div class="tgm-plugin-processing">
+            			<h3 class="tgm-plugin-title"><?php _e( 'Your upgrade is being processed. Hang tight for just a few more moments...', 'soliloquy-lite' ); ?></h3>
+            		</div>
+            	</div>
+            </div>
+        </div>
+        <?php
+
+	}
+
+	/**
+	 * Outputs assets on the upgrade page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function upgrade_assets() {
+
+		// Remove admin notices from this page.
+		remove_action( 'admin_notices', array( $this, 'admin_notices' ) );
+
+		wp_enqueue_style( $this->upgrade_slug . '-lightbox', plugins_url( 'css/lightbox.css', dirname( dirname( __FILE__ ) ) ), array(), $this->version );
+		wp_enqueue_style( $this->upgrade_slug . '-bootstrap', plugins_url( 'lib/bootstrap/css/bootstrap.min.css', dirname( dirname( __FILE__ ) ) ), array(), $this->version );
+        wp_enqueue_style( $this->upgrade_slug . '-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600', array( $this->upgrade_slug . '-bootstrap' ), $this->version );
+        wp_enqueue_style( $this->upgrade_slug . '-font-awesome', plugins_url( 'css/font-awesome.css', dirname( dirname( __FILE__ ) ) ), array(), $this->version );
+
+        // Enqueue scripts.
+        wp_enqueue_script( $this->upgrade_slug . '-bootstrap', plugins_url( 'lib/bootstrap/js/bootstrap.min.js', dirname( dirname( __FILE__ ) ) ), array( 'jquery' ), $this->version );
+
+	}
+
+	/**
 	 * There is no need to apply SEO to the Soliloquy post type, so we check to
 	 * see if some popular SEO plugins are installed, and if so, remove the inpost
 	 * meta boxes from view.
@@ -116,7 +430,6 @@ class Tgmsp_Lite_Admin {
 
 		add_meta_box( 'soliloquy_uploads', Tgmsp_Lite_Strings::get_instance()->strings['meta_uploads'], array( $this, 'soliloquy_uploads' ), 'soliloquy', 'normal', 'high' );
 		add_meta_box( 'soliloquy_settings', Tgmsp_Lite_Strings::get_instance()->strings['meta_settings'], array( $this, 'soliloquy_settings' ), 'soliloquy', 'normal', 'high' );
-		add_meta_box( 'soliloquy_email', Tgmsp_Lite_Strings::get_instance()->strings['email_instructions'], array( $this, 'soliloquy_email' ), 'soliloquy', 'side', 'high' );
 		add_meta_box( 'soliloquy_upgrade', Tgmsp_Lite_Strings::get_instance()->strings['meta_upgrade'], array( $this, 'soliloquy_upgrade' ), 'soliloquy', 'side', 'core' );
 		add_meta_box( 'soliloquy_instructions', Tgmsp_Lite_Strings::get_instance()->strings['meta_instructions'], array( $this, 'soliloquy_instructions' ), 'soliloquy', 'side', 'core' );
 
@@ -247,7 +560,7 @@ class Tgmsp_Lite_Admin {
 						<div id="soliloquy-default-sizes">
 							<input id="soliloquy-width" type="text" name="_soliloquy_settings[width]" value="<?php echo esc_attr( $this->get_custom_field( '_soliloquy_settings', 'width' ) ); ?>" /> &#215; <input id="soliloquy-height" type="text" name="_soliloquy_settings[height]" value="<?php echo esc_attr( $this->get_custom_field( '_soliloquy_settings', 'height' ) ); ?>" />
 							<p class="description"><?php printf( '%s <a class="soliloquy-size-more" href="#">%s</a>', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_desc'], Tgmsp_Lite_Strings::get_instance()->strings['slider_size_more'] ); ?></p>
-							<p id="soliloquy-explain-size" class="description" style="display: none;"><?php printf( '%s <a href="%s" target="_blank">%s</a>.', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_explain'], apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ), Tgmsp_Lite_Strings::get_instance()->strings['slider_size_upgrade'] ); ?></p>
+							<p id="soliloquy-explain-size" class="description" style="display: none;"><?php printf( '%s <a href="%s">%s</a>.', Tgmsp_Lite_Strings::get_instance()->strings['slider_size_explain'], add_query_arg( array( 'post_type' => 'soliloquy', 'page' => 'soliloquy-lite-upgrade' ), admin_url( 'edit.php' ) ), Tgmsp_Lite_Strings::get_instance()->strings['slider_size_upgrade'] ); ?></p>
 						</div>
 					</td>
 				</tr>
@@ -296,7 +609,7 @@ class Tgmsp_Lite_Admin {
 		<?php do_action( 'tgmsp_after_settings_table', $post ); ?>
 
 		<div class="soliloquy-advanced">
-			<p><strong><?php echo sprintf( Tgmsp_Lite_Strings::get_instance()->strings['slider_cb'], sprintf( '<a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['slider_cb_up'] ) ); ?></strong></p>
+			<p><strong><?php echo sprintf( Tgmsp_Lite_Strings::get_instance()->strings['slider_cb'], sprintf( '<a href="' . add_query_arg( array( 'post_type' => 'soliloquy', 'page' => 'soliloquy-lite-upgrade' ), admin_url( 'edit.php' ) ) . '" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['slider_cb_up'] ) ); ?></strong></p>
 		</div>
 		<?php
 
@@ -314,43 +627,9 @@ class Tgmsp_Lite_Admin {
 	public function soliloquy_upgrade( $post ) {
 
 		$upgrade = '<p><strong>' . Tgmsp_Lite_Strings::get_instance()->strings['upgrade'] . '</strong></p>';
-		$upgrade .= sprintf( '<p><a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank"><strong>%1$s</strong></a></p>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_now'] );
+		$upgrade .= sprintf( '<p><a href="' . add_query_arg( array( 'post_type' => 'soliloquy', 'page' => 'soliloquy-lite-upgrade' ), admin_url( 'edit.php' ) ) . '" title="%1$s"><strong>%1$s</strong></a></p>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_now'] );
 
 		echo $upgrade;
-
-	}
-
-	/**
-	 * Callback function for Soliloquy email signup.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param object $post Current post object data
-	 */
-	public function soliloquy_email( $post ) {
-
-		echo '<div class="soliloquy-email">';
-			echo '<p>' . Tgmsp_Lite_Strings::get_instance()->strings['email_desc'] . '</p>';
-			echo '<input type="email" name="soliloquy-email" value="" placeholder="' . Tgmsp_Lite_Strings::get_instance()->strings['email_placeholder'] . '" style="margin-right:5px;width:186px;" />';
-			echo '<a class="button button-primary soliloquy-signup-email" href="#" title="' . Tgmsp_Lite_Strings::get_instance()->strings['email_now'] . '">' . Tgmsp_Lite_Strings::get_instance()->strings['email_now'] . '</a>';
-			echo '<script type="text/javascript">';
-				echo 'jQuery(document).ready(function($){';
-					echo '$(".soliloquy-signup-email").on("click", function(e){';
-						echo 'e.preventDefault();';
-						echo 'var $this = $(this), working = "' . Tgmsp_Lite_Strings::get_instance()->strings["working"] . '", orig_text = $this.text();';
-						echo '$this.text(working); $(".soliloquy-error").remove();';
-						echo '$.post(ajaxurl, { action: "soliloquy_email", email: $("input[name=\'soliloquy-email\']").val() }, function(resp){';
-							echo 'if ( resp && resp.error ) {';
-								echo '$("input[name=\'soliloquy-email\']").before("<p class=\'soliloquy-error\' style=\'color:#ff0000;\'>" + resp.error + "</p>");';
-							echo '} else {';
-								echo '$("input[name=\'soliloquy-email\']").before("<p style=\'color:#009933;\'>" + resp.success + "</p>");';
-							echo '}';
-							echo '$this.text(orig_text);';
-						echo '}, "json");';
-					echo '});';
-				echo '});';
-			echo '</script>';
-		echo '</div>';
 
 	}
 
@@ -382,7 +661,7 @@ class Tgmsp_Lite_Admin {
 		if ( Tgmsp_Lite::is_soliloquy_screen() && current_user_can( 'manage_options' ) ) {
 			/** If a user hasn't dismissed the notice yet, output it for them to upgrade */
 			if ( ! get_user_meta( get_current_user_id(), 'soliloquy_dismissed_notice', true ) )
-				add_settings_error( 'tgmsp', 'tgmsp-upgrade-soliloquy', sprintf( Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag'], sprintf( '<a href="' . apply_filters( 'tgmsp_affiliate_url', 'http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite' ) . '" title="%1$s" target="_blank">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_link'] ), sprintf( '<a id="soliloquy-dismiss-notice" href="#" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_dismiss'] ) ), 'updated' );
+				add_settings_error( 'tgmsp', 'tgmsp-upgrade-soliloquy', sprintf( Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag'], sprintf( '<a href="' . add_query_arg( array( 'post_type' => 'soliloquy', 'page' => 'soliloquy-lite-upgrade' ), admin_url( 'edit.php' ) ) . '" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_link'] ), sprintf( '<a id="soliloquy-dismiss-notice" href="#" title="%1$s">%1$s</a>', Tgmsp_Lite_Strings::get_instance()->strings['upgrade_nag_dismiss'] ) ), 'updated' );
 
 			/** Allow settings notices to be filtered */
 			apply_filters( 'tgmsp_output_notices', settings_errors( 'tgmsp' ) );

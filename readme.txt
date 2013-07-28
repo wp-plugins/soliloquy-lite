@@ -64,6 +64,9 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 == Changelog ==
 
+= 1.5.0 =
+* Bug fixes and enhancements, including upgrade enhancements.
+
 = 1.4.4 =
 * Updated the main slider script and init script. Be sure to check out the forum topic if your slider disappears. It is caused by a caching issue.
 * Added touch support for Windows mobile phones.
