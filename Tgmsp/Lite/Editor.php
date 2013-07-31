@@ -24,16 +24,16 @@ class Tgmsp_Lite_Editor {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
+
 		add_filter( 'media_buttons_context', array( $this, 'tinymce' ) );
 		add_action( 'save_post', array( $this, 'save_slider_settings' ), 10, 2 );
 		add_filter( 'post_updated_messages', array( $this, 'messages' ) );
 		add_action( 'admin_footer', array( $this, 'admin_footer' ) );
-	
+
 	}
-	
+
 	/**
 	 * Adds a custom slider insert button beside the media uploader button.
 	 *
@@ -60,7 +60,7 @@ class Tgmsp_Lite_Editor {
 		return $context . $output;
 
 	}
-	
+
 	/**
 	 * Save settings post meta fields added to Soliloquy metaboxes.
 	 *
@@ -104,7 +104,7 @@ class Tgmsp_Lite_Editor {
 		update_post_meta( $post_id, '_soliloquy_settings', $settings );
 
 	}
-	
+
 	/**
 	 * Contextualizes the post updated messages.
 	 *
@@ -136,7 +136,7 @@ class Tgmsp_Lite_Editor {
 		return $messages;
 
 	}
-	
+
 	/**
 	 * Outputs the jQuery and HTML necessary to insert a slider when the user
 	 * uses the button added to the media buttons above TinyMCE.
@@ -192,16 +192,16 @@ class Tgmsp_Lite_Editor {
 		}
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
-	
+
 }

@@ -5,7 +5,7 @@ Plugin URI: http://soliloquywp.com/
 Description: Soliloquy is the best responsive WordPress slider plugin. Period. This is the lite version.
 Author: Thomas Griffin
 Author URI: http://thomasgriffinmedia.com/
-Version: 1.5.0
+Version: 1.5.1
 License: GNU General Public License v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
@@ -61,13 +61,13 @@ class Tgmsp_Lite {
 	private static $file = __FILE__;
 
 	/**
-	 * Holds the version of the plugin.
+	 * Holds version of the plugin.
 	 *
-	 * @since 1.0.0
+	 * @since 1.5.0
 	 *
 	 * @var string
 	 */
-	public $version = '1.5.0';
+	public $version = '1.5.1';
 
 	/**
 	 * Constructor. Hooks all interactions into correct areas to start

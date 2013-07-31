@@ -27,7 +27,6 @@ class Tgmsp_Lite_Ajax {
 
 		self::$instance = $this;
 
-		add_action( 'wp_ajax_soliloquy_do_plugin_upgrade', array( $this, 'upgrade' ) );
 		add_action( 'wp_ajax_soliloquy_dismiss_notice', array( $this, 'dismiss' ) );
 		add_action( 'wp_ajax_soliloquy_refresh_images', array( $this, 'refresh_images' ) );
 		add_action( 'wp_ajax_soliloquy_iframe_refresh_images', array ( $this, 'refresh_images' ) );
@@ -35,73 +34,6 @@ class Tgmsp_Lite_Ajax {
 		add_action( 'wp_ajax_nopriv_soliloquy_sort_images', array( $this, 'sort_images' ) );
 		add_action( 'wp_ajax_soliloquy_remove_images', array( $this, 'remove_images' ) );
 		add_action( 'wp_ajax_soliloquy_update_meta', array( $this, 'update_meta' ) );
-
-	}
-
-	/**
-	 * Upgrades the user to the paid version of Soliloquy.
-	 *
-	 * @since 1.0.0
-	 */
-	public function upgrade() {
-
-		// Prepare variables.
-		$plugin = stripslashes( $_POST['download'] );
-		$key 	= stripslashes( $_POST['key'] );
-		$single = stripslashes( $_POST['single'] );
-		global $hook_suffix; // Have to declare this in order to avoid an undefined index notice, doesn't do anything
-
-		/** Set the current screen to avoid undefined notices */
-		set_current_screen();
-
-		// Go ahead and update the option with our license key.
-		$license = array();
-		$license['license'] = $key;
-		$license['single']  = 'true' == $single ? true : false;
-		update_option( 'soliloquy_license_key', $license );
-
-		/** Prepare variables for request_filesystem_credentials */
-		$method = '';
-		$url 	= add_query_arg(
-			array(
-				'post_type' => 'soliloquy',
-				'page'		=> 'soliloquy-lite-upgrade'
-			),
-			admin_url( 'edit.php' )
-		);
-
-		/** Start output bufferring to catch the filesystem form if credentials are needed */
-		ob_start();
-		if ( false === ( $creds = request_filesystem_credentials( $url, $method, false, false, null ) ) ) {
-			$form = ob_get_clean();
-			echo json_encode( array( 'form' => $form ) );
-			die;
-		}
-
-		if ( ! WP_Filesystem( $creds ) ) {
-			ob_start();
-			request_filesystem_credentials( $url, $method, true, false, null ); // Setup WP_Filesystem
-			$form = ob_get_clean();
-			echo json_encode( array( 'form' => $form ) );
-			die;
-		}
-
-		/** We do not need any extra credentials if we have gotten this far, so let's install the plugin */
-		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes
-		require_once plugin_dir_path( __FILE__ ) . 'Skin.php'; // Need to customize the upgrader skin
-
-		/** Create a new Plugin_Upgrader instance */
-		$installer = new Plugin_Upgrader( $skin = new Tgmsp_Lite_Skin() );
-		$installer->install( $plugin );
-
-		// Flush the cache and install the plugin and deactivate Soliloquy Lite.
-		wp_cache_flush();
-		activate_plugins( $installer->plugin_info() );
-		deactivate_plugins( Tgmsp_Lite::get_file() );
-
-		// Send back a response and die.
-		echo json_encode( array( 'page' => add_query_arg( array( 'post_type' => 'soliloquy', 'page'	=> 'soliloquy-settings', 'just_upgraded' => true ), admin_url( 'edit.php' ) ) ) );
-		die;
 
 	}
 

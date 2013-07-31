@@ -24,9 +24,9 @@ class Tgmsp_Lite_Posttype {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-	
+
 		self::$instance = $this;
-	
+
 		$labels = apply_filters( 'tgmsp_post_type_labels', array(
 			'name' 					=> __( 'Soliloquy', 'soliloquy' ),
 			'singular_name' 		=> __( 'Soliloquy', 'soliloquy' ),
@@ -57,14 +57,14 @@ class Tgmsp_Lite_Posttype {
 
 		/** Register post type with args */
 		register_post_type( 'soliloquy', $args );
-		
+
 		/** Filter the post type columns */
 		add_filter( 'manage_edit-soliloquy_columns', array( $this, 'soliloquy_columns' ) );
 		add_filter( 'manage_soliloquy_posts_custom_column', array( $this, 'soliloquy_custom_columns' ), 10, 2 );
 		add_filter( 'post_row_actions', array( $this, 'soliloquy_row_actions' ) );
-	
+
 	}
-	
+
 	/**
 	 * Customize the post columns for the Soliloquy post type.
 	 *
@@ -122,7 +122,7 @@ class Tgmsp_Lite_Posttype {
 		}
 
 	}
-	
+
 	/**
 	 * Filter out unnecessary row actions from the Soliloquy post table.
 	 *
@@ -132,7 +132,7 @@ class Tgmsp_Lite_Posttype {
 	 * @return array $actions Amended slider row actions
 	 */
 	public function soliloquy_row_actions( $actions ) {
-		
+
 		if ( Tgmsp_Lite::is_soliloquy_screen() ) {
 			unset( $actions['inline hide-if-no-js'] );
 			unset( $actions['view'] );
@@ -141,16 +141,16 @@ class Tgmsp_Lite_Posttype {
 		return $actions;
 
 	}
-	
+
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
-	
+
 		return self::$instance;
-	
+
 	}
 
 }

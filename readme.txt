@@ -64,6 +64,9 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 == Changelog ==
 
+= 1.5.1 =
+* More bug fixes and enhancements.
+
 = 1.5.0 =
 * Bug fixes and enhancements, including upgrade enhancements.
 
