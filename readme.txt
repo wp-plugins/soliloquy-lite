@@ -61,6 +61,18 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 == Notes ==
 
+Soliloquy is absolutely, positively the [best responsive WordPress slider plugin](http://soliloquywp.com/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite) on the market. It is fast, flexible and solves the problem of responsive sliders in a flash.
+
+= Addons =
+
+Soliloquy has many Addons that extend its default functionality to make it do incredible things.
+
+* (Soliloquy Themes Addon)[http://soliloquywp.com/addons/themes/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - beautiful themes for your WordPress slider.
+* (Soliloquy Preview Addon)[http://soliloquywp.com/addons/preview/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - get instant previews of your slider straight inside the editing area of the slider.
+* (Soliloquy Lightbox Addon)[http://soliloquywp.com/addons/lightbox/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - use powerful lightbox features to enhance the presentation and interaction with your WordPress slider.
+* (Soliloquy Instagram Addon)[http://soliloquywp.com/addons/instagram/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make awesome responsive WordPress sliders from your Instagram photo stream.
+* (Soliloquy Crop Addon)[http://soliloquywp.com/addons/crop/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - instantly and dynamically crop images to the size you specify on the fly. No more resizing in Photoshop!
+* (Soliloquy Featured Content Addon)[http://soliloquywp.com/addons/featured-content/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make a gorgeous WordPress slider from you posts, pages and other custom post types.
 
 == Changelog ==
 
