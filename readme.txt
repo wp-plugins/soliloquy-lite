@@ -73,6 +73,7 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 * (Soliloquy Instagram Addon)[http://soliloquywp.com/addons/instagram/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make awesome responsive WordPress sliders from your Instagram photo stream.
 * (Soliloquy Crop Addon)[http://soliloquywp.com/addons/crop/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - instantly and dynamically crop images to the size you specify on the fly. No more resizing in Photoshop!
 * (Soliloquy Featured Content Addon)[http://soliloquywp.com/addons/featured-content/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make a gorgeous WordPress slider from you posts, pages and other custom post types.
+* (Soliloquy Pinterest Addon)[http://soliloquywp.com/addons/pinterest/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - easily add a "Pin It" button to images in your slider.
 
 == Changelog ==
 
