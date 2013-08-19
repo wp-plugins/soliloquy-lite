@@ -75,6 +75,8 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 * (Soliloquy Featured Content Addon)[http://soliloquywp.com/addons/featured-content/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make a gorgeous WordPress slider from you posts, pages and other custom post types.
 * (Soliloquy Pinterest Addon)[http://soliloquywp.com/addons/pinterest/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - easily add a "Pin It" button to images in your slider.
 * (Soliloquy Thumbnails Addon)[http://soliloquywp.com/addons/thumbnails/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - give your slider easy-to-use and responsive thumbnails.
+* (Soliloquy Filters Addon)[http://soliloquywp.com/addons/filters/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - add 25+  awesome filters to images in your WordPress slider.
+* (Soliloquy Carousel Addon)[http://soliloquywp.com/addons/carousel/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - transform your default WordPress slider into a responsive and easy-to-navigate carousel slider.
 
 == Changelog ==
 
