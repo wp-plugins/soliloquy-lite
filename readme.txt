@@ -12,7 +12,7 @@ The best responsive WordPress slider plugin. Made lite and free.
 
 Soliloquy, the [best responsive WordPress slider plugin](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite), is now available in its Lite form! Soliloquy is audited by Mark Jaquith, lead developer of WordPress, for security and features the **easiest to use and most performance optimized code for a WordPress slider plugin.** By utilizing custom post types, Soliloquy allows you to create an infinite number of responsive WordPress sliders with an infinite number of images in each slider with a few clicks of the mouse.
 
-**Note: This is the lite version of the Soliloquy WordPress slider. Want even more slider features, including HTML/video slides, complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? [Click here to purchase the best responsive WordPress slider plugin now!](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
+**Note: This is the lite version of the Soliloquy WordPress slider. Want even more WordPress slider features, including HTML/video slides, complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? [Click here to purchase the best responsive WordPress slider plugin now!](http://soliloquywp.com/pricing/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite).**
 
 = Features =
 
