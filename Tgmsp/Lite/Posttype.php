@@ -50,7 +50,7 @@ class Tgmsp_Lite_Posttype {
 			'show_in_admin_bar'		=> false,
 			'rewrite'				=> false,
 			'query_var'				=> false,
-			'menu_position' 		=> 100,
+			'menu_position' 		=> 176,
 			'menu_icon' 			=> plugins_url( 'css/images/menu-icon.png', dirname( dirname( __FILE__ ) ) ),
 			'supports' 				=> array( 'title' )
 		) );

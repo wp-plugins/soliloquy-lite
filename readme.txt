@@ -82,6 +82,11 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 1.5.2 =
+* Fixed possible menu positioning conflict with other plugins.
+* Updated the slider engine to add touch support for Windows phones and other touch devices.
+* More optimized CSS/JS files.
+
 = 1.5.1 =
 * More bug fixes and enhancements.
 

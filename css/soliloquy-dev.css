@@ -1,15 +1,3 @@
-/**
- * jQuery FlexSlider v2.1
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- */
- 
- 
 /* Resets
 ------------------------------------------------------------ */
 
@@ -25,30 +13,30 @@
 .soliloquy-container .soliloquy-direction-nav,
 .soliloquy-container .soliloquy-direction-nav li {
 	list-style: none;
-	margin: 0; 
-	padding: 0; 
+	margin: 0;
+	padding: 0;
 }
- 
+
 
 /* Soliloquy necessary styles
------------------------------------------------------------- */ 
+------------------------------------------------------------ */
 
 .soliloquy-container {
 	margin: 0;
 	position: relative;
 	width: 100%;
-	zoom: 1; 
+	zoom: 1;
 }
 
 .soliloquy-container .soliloquy-viewport {
-	-webkit-transition: all 1s ease; 
+	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
-	max-height: 2000px; 
+	max-height: 2000px;
 	transition: all 1s ease;
 }
 
-.soliloquy-container .soliloquy { 
-	margin: 0; 
+.soliloquy-container .soliloquy {
+	margin: 0;
 	padding: 0;
 	position: relative;
 	width: 100%;
@@ -70,16 +58,16 @@
 
 .soliloquy-container .soliloquy-slides:after {
 	clear: both;
-	content: "."; 
-	display: block; 
+	content: ".";
+	display: block;
 	height: 0;
-	line-height: 0; 
-	visibility: hidden; 
-} 
+	line-height: 0;
+	visibility: hidden;
+}
 
 html[xmlns] .soliloquy-container .soliloquy-slides {
 	display: block;
-} 
+}
 
 * html .soliloquy-container .soliloquy-slides {
 	height: 1%;
@@ -125,12 +113,12 @@ html[xmlns] .soliloquy-container .soliloquy-slides {
 	color: #fff;
 	display: block;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
-	font-size: 14px; 
+	font-size: 14px;
 	line-height: 18px;
 	margin: 0;
 	padding: 10px;
-	text-align: center;  
-	text-shadow: 0 1px 0 rgba(0, 0, 0, .3); 
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
 	zoom: 1;
 }
 
@@ -155,7 +143,7 @@ html[xmlns] .soliloquy-container .soliloquy-slides {
 	display: block;
 }
 
-.soliloquy-container .soliloquy-direction-nav li a { 
+.soliloquy-container .soliloquy-direction-nav li a {
 	border: 0 none;
 	display: block;
 	outline: none;
@@ -176,7 +164,7 @@ html[xmlns] .soliloquy-container .soliloquy-slides {
 
 .soliloquy-container .soliloquy-direction-nav li .soliloquy-prev {
 	background: url('images/slider-arrows-horizontal.png') no-repeat scroll 0 0;
-	height: 18px; 
+	height: 18px;
 	left: 10px;
 	margin-top: -8px;
 	position: absolute;
@@ -190,7 +178,7 @@ html[xmlns] .soliloquy-container .soliloquy-slides {
 .soliloquy-container .soliloquy-direction-nav li .soliloquy-disabled {
 	cursor: default;
 	filter: alpha(opacity=30);
-	opacity: .3;  
+	opacity: .3;
 }
 
 
@@ -207,17 +195,17 @@ html[xmlns] .soliloquy-container .soliloquy-slides {
 	z-index: 30;
 }
 
-.soliloquy-container .soliloquy-control-nav li { 
-	display: inline-block; 
+.soliloquy-container .soliloquy-control-nav li {
+	display: inline-block;
 	*display: inline;
 	margin: 0 0 0 5px;
-	zoom: 1; 
+	zoom: 1;
 }
 
 .soliloquy-container .soliloquy-control-nav li a {
 	background: url('images/slider-dots.png') no-repeat scroll 0 0;
 	cursor: pointer;
-	display: block; 
+	display: block;
 	float: left;
 	height: 14px;
 	position: relative;
@@ -247,13 +235,13 @@ html[xmlns] .soliloquy-container .soliloquy-slides {
 		background: url('images/slider-arrows-horizontal@2x.png') no-repeat scroll 0 0;
 		background-size: 100%;
 	}
-	
+
 	.soliloquy-container .soliloquy-control-nav li a {
 		background: url('images/slider-dots@2x.png') no-repeat scroll 0 0;
 		background-size: 100%;
 		height: 15px;
 	}
-	
+
 	.soliloquy-container .soliloquy-control-nav li a:hover,
 	.soliloquy-container .soliloquy-control-nav li a.active,
 	.soliloquy-container .soliloquy-control-nav li a.soliloquy-active {
