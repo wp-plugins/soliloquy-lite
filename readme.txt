@@ -1,6 +1,6 @@
 === Responsive WordPress Slider - Soliloquy Lite ===
 Contributors: griffinjt
-Tags: wordpress slider, slider, wordpress slider plugin, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag
+Tags: wordpress slider, slider, wordpress slider plugin, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag, wordpress slideshow, photo slider, wordpress responsive slider
 Requires at least: 3.3.1
 Tested up to: 3.8
 Stable tag: trunk
