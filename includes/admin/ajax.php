@@ -102,6 +102,9 @@ function soliloquy_lite_ajax_upgrade_sliders() {
         // Update the post meta for the new slider.
         update_post_meta( $slider->ID, '_sol_slider_data', $new_meta );
 
+        // Force the post to update.
+        wp_update_post( array( 'ID' => $slider->ID ) );
+
         // Flush caches for any sliders.
         Soliloquy_Common_Lite::get_instance()->flush_slider_caches( $slider->ID, $new_meta['config']['slug'] );
     }
