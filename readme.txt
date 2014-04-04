@@ -84,6 +84,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.1 =
+* Fixed fatal error on activation for wrong class name.
+
 = 2.0.0 =
 * Upgrade to v2 architecture. Make sure you upgrade your sliders after updating!!
 * Fixed numerous bugs and other browser incompatibilities.

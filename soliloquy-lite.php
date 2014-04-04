@@ -5,7 +5,7 @@
  * Description: Soliloquy is best responsive WordPress slider plugin. This is the lite version.
  * Author:      Thomas Griffin
  * Author URI:  http://thomasgriffinmedia.com
- * Version:     2.0.0
+ * Version:     2.0.1
  * Text Domain: soliloquy
  * Domain Path: languages
  *
@@ -54,7 +54,7 @@ class Soliloquy_Lite {
      *
      * @var string
      */
-    public $version = '2.0.0';
+    public $version = '2.0.1';
 
     /**
      * The name of the plugin.
@@ -429,36 +429,20 @@ function soliloquy_lite_activation_hook( $network_wide ) {
         wp_die( sprintf( __( 'Sorry, but your version of WordPress does not meet Soliloquy Lite\'s required version of <strong>3.5.1</strong> to run properly. The plugin has been deactivated. <a href="%s">Click here to return to the Dashboard</a>.', 'soliloquy' ), get_admin_url() ) );
     }
 
-    $instance = Soliloquy::get_instance();
-
     if ( is_multisite() && $network_wide ) {
         global $wpdb;
         $site_list = $wpdb->get_results( "SELECT * FROM $wpdb->blogs ORDER BY blog_id" );
         foreach ( (array) $site_list as $site ) {
             switch_to_blog( $site->blog_id );
 
-            // Set default license option.
-            $option = get_option( 'soliloquy' );
-            if ( ! $option || empty( $option ) ) {
-                update_option( 'soliloquy', Soliloquy::default_options() );
-            }
-
             // Set the upgraded licenses since this is an activation and no slider will have existed yet.
-            update_option( 'soliloquy_lite_upgrade', true );
-            update_option( 'soliloquy_pro_upgrade', true );
+            update_option( 'soliloquy_upgrade', true );
 
             restore_current_blog();
         }
     } else {
-        // Set default license option.
-        $option = get_option( 'soliloquy' );
-        if ( ! $option || empty( $option ) ) {
-            update_option( 'soliloquy', Soliloquy::default_options() );
-        }
-
         // Set the upgraded licenses since this is an activation and no slider will have existed yet.
-        update_option( 'soliloquy_lite_upgrade', true );
-        update_option( 'soliloquy_pro_upgrade', true );
+        update_option( 'soliloquy_upgrade', true );
     }
 
 }
