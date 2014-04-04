@@ -90,6 +90,7 @@ function soliloquy_lite_ajax_upgrade_sliders() {
             $alt_text = get_post_meta( $slide->ID, '_wp_attachment_image_alt', true );
             $new_meta['slider'][$slide->ID] = array(
                 'status'  => 'active',
+                'id'      => $slide->ID,
                 'src'     => isset( $url[0] ) ? esc_url( $url[0] ) : '',
                 'title'   => get_the_title( $slide->ID ),
                 'link'    => get_post_meta( $slide->ID, '_soliloquy_image_link', true ),
