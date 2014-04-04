@@ -1,8 +1,8 @@
 === Responsive WordPress Slider - Soliloquy Lite ===
 Contributors: griffinjt
 Tags: wordpress slider, slider, wordpress slider plugin, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag, wordpress slideshow, photo slider, wordpress responsive slider, wordpress picture slider, responsive picture slider
-Requires at least: 3.3.1
-Tested up to: 3.8
+Requires at least: 3.5.1
+Tested up to: 3.9
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
 
@@ -56,14 +56,16 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 1. Main Soliloquy screen.
 2. Soliloquy Add/Edit screen with images loaded.
-3. Soliloquy Thickbox upload screen.
-4. Check out the Media insert button on your WYSIWYG editor.
+3. Soliloquy Config options screen.
+4. Soliloquy image metadata editing modal.
 5. Easily select a slider to insert into your post or page.
 6. The final result.
 
 == Notes ==
 
 Soliloquy is absolutely, positively the [best responsive WordPress slider plugin](http://soliloquywp.com/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite) on the market. It is fast, flexible and solves the problem of responsive sliders in a flash.
+
+In v2.0 of Soliloquy Lite, it includes a big plugin architecture change. You need to make sure you click on the link and follow the instructions on the screen when updating. There will be an upgrade notice - make sure you click this and upgrade your sliders after updating to v2!
 
 = Addons =
 
@@ -81,6 +83,14 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 * (Soliloquy Carousel Addon)[http://soliloquywp.com/addons/carousel/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - transform your default WordPress slider into a responsive and easy-to-use carousel slider.
 
 == Changelog ==
+
+= 2.0.0 =
+* Upgrade to v2 architecture. Make sure you upgrade your sliders after updating!!
+* Fixed numerous bugs and other browser incompatibilities.
+* Transitioned to new data structure for better performance and security.
+* Faster loading times and better prevention of content shifting.
+* A shiny new interface for easily handling sliders.
+* Sliders can now be made right inside post/page screens!
 
 = 1.5.2 =
 * Fixed possible menu positioning conflict with other plugins.
