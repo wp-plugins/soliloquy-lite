@@ -84,6 +84,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.2 =
+* Fixed error with caption classes.
+
 = 2.0.1 =
 * Fixed fatal error on activation for wrong class name.
 

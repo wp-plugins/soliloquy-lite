@@ -214,7 +214,7 @@
     background: rgba(0,0,0,.7) url('images/play.png') no-repeat scroll 50% 50%;
 }
 
-.soliloquy-container .soliloquy-caption-wrap {
+.soliloquy-container .soliloquy-caption {
     position: absolute;
     top: 0;
     left: 0;
@@ -223,7 +223,7 @@
     background: rgba(0,0,0,.5);
 }
 
-.soliloquy-container .soliloquy-caption {
+.soliloquy-container .soliloquy-caption-inside {
     font-size: 1em;
     line-height: 1.25;
     display: block;
@@ -282,7 +282,7 @@
    Featured Content Styles
    ========================================================================== */
 
-.soliloquy-fc-slider .soliloquy-caption-wrap {
+.soliloquy-fc-slider .soliloquy-caption {
     width: 40%;
     right: 52px;
     left: auto;
@@ -290,23 +290,23 @@
     top: auto;
 }
 
-.soliloquy-fc-slider .soliloquy-caption {
+.soliloquy-fc-slider .soliloquy-caption-inside {
     text-align: left;
 }
 
-.soliloquy-fc-slider .soliloquy-caption .soliloquy-fc-title,
-.soliloquy-fc-slider .soliloquy-caption .soliloquy-fc-title-link {
+.soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title,
+.soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title-link {
     font-size: 1.2em;
     font-weight: 700;
     margin-bottom: 1em;
     color: #fff;
 }
 
-.soliloquy-fc-slider .soliloquy-caption .soliloquy-fc-title-link {
+.soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title-link {
     font-size: 1em;
 }
 
-.soliloquy-fc-slider .soliloquy-caption .soliloquy-fc-read-more {
+.soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-read-more {
     font-weight: 700;
     color: #fff;
 }

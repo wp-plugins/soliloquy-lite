@@ -297,7 +297,7 @@ class Soliloquy_Shortcode_Lite {
         // If we have a caption, output the caption.
         if ( ! empty( $item['caption'] ) ) {
             $output  = apply_filters( 'soliloquy_output_before_caption', $output, $id, $item, $data, $i );
-            $output .= '<div class="soliloquy-caption-wrap"><div class="soliloquy-caption">';
+            $output .= '<div class="soliloquy-caption"><div class="soliloquy-caption-inside">';
                 $caption = apply_filters( 'soliloquy_output_caption', $item['caption'], $id, $item, $data, $i );
                 $output .= $caption;
             $output .= '</div></div>';
