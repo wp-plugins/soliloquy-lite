@@ -84,6 +84,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.6 =
+* Fixed loading icon bug in v2.
+
 = 2.0.5 =
 * Numerous bug fixes and enhancements with the new v2 launch!
 

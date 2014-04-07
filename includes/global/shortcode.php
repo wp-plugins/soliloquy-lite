@@ -347,6 +347,8 @@ class Soliloquy_Shortcode_Lite {
                 }
                 <?php endif; ?>
 
+                jQuery('#soliloquy-container-<?php echo $data['id']; ?>').css('height', Math.round(jQuery('#soliloquy-container-<?php echo $data['id']; ?>').width()/(<?php echo $this->get_config( 'slider_width', $data ); ?>/<?php echo $this->get_config( 'slider_height', $data ); ?>)));
+
                 jQuery(window).load(function(){
                     var $ = jQuery;
                     <?php do_action( 'soliloquy_api_start', $data ); ?>
