@@ -43,7 +43,6 @@
     z-index: 10;
     width: 100%;
     max-width: 100%;
-    opacity: 0;
 }
 
 .soliloquy-container:after {
@@ -94,6 +93,7 @@
 .soliloquy-container .soliloquy-item {
     min-height: 1px;
     min-width: 1px;
+    display: none;
 }
 
 .soliloquy-container .soliloquy-item:after {

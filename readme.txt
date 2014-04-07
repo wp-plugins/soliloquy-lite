@@ -84,6 +84,10 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.4 =
+* Fixed bug with loading size.
+* Other bug fixes and improvements.
+
 = 2.0.3 =
 * Fixed bug with captions loading at top instead of bottom of slide.
 
