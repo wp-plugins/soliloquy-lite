@@ -193,7 +193,7 @@ class Soliloquy_Shortcode_Lite {
 
         // Build out the slider HTML.
         $slider .= '<div id="soliloquy-container-' . sanitize_html_class( $data['id'] ) . '" class="' . $this->get_slider_classes( $data ) . '" style="max-width:' . $this->get_config( 'slider_width', $data ) . 'px;max-height:' . $this->get_config( 'slider_height', $data ) . 'px;' . apply_filters( 'soliloquy_output_container_style', '', $data ) . '"' . apply_filters( 'soliloquy_output_container_attr', '', $data ) . '>';
-            $slider .= '<ul id="soliloquy-' . sanitize_html_class( $data['id'] ) . '" class="soliloquy-slider soliloquy-wrap soliloquy-clear">';
+            $slider .= '<ul id="soliloquy-' . sanitize_html_class( $data['id'] ) . '" class="soliloquy-slider soliloquy-slides soliloquy-wrap soliloquy-clear">';
                 $slider = apply_filters( 'soliloquy_output_before_container', $slider, $data );
 
                 foreach ( (array) $data['slider'] as $id => $item ) {
@@ -374,7 +374,10 @@ class Soliloquy_Shortcode_Lite {
                         <?php do_action( 'soliloquy_api_config_callback', $data ); ?>
                         onSliderLoad: function(currentIndex){
                             soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide');
-                            soliloquy_container_<?php echo $data['id']; ?>.css({'height':'auto','background-image':'none'}).find('.soliloquy-controls').fadeTo(300, 1);
+                            soliloquy_container_<?php echo $data['id']; ?>.css({'height':'auto','background-image':'none'});
+                            if ( soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-slider li').size() > 1 ) {
+                                soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls').fadeTo(300, 1);
+                            }
                             soliloquy_<?php echo $data['id']; ?>.find('.soliloquy-item:not(.soliloquy-clone):eq(' + currentIndex + ')').addClass('soliloquy-active-slide');
                             // Purge all cloned items of IDs to avoid duplicate ID issues.
                             soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-clone').find('*').removeAttr('id');

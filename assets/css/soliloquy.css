@@ -40,7 +40,7 @@
 .soliloquy-container {
     position: relative;
     background: transparent url('images/preloader.gif') no-repeat scroll 50% 50%;
-    z-index: 10;
+    z-index: 0;
     width: 100%;
     max-width: 100%;
 }
@@ -60,6 +60,16 @@
     padding: 0;
     list-style: none !important;
     height: 100%;
+    zoom: 1;
+    *zoom: 1;
+}
+
+.soliloquy-container .soliloquy-viewport {
+    -webkit-transform: translatez(0);
+       -moz-transform: translatez(0);
+        -ms-transform: translatez(0);
+         -o-transform: translatez(0);
+            transform: translatez(0);
 }
 
 .soliloquy-clear {
@@ -94,6 +104,10 @@
     min-height: 1px;
     min-width: 1px;
     display: none;
+}
+
+.no-js .soliloquy-container .soliloquy-slides > li:first-child {
+	display: block;
 }
 
 .soliloquy-container .soliloquy-item:after {

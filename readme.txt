@@ -84,6 +84,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.5 =
+* Numerous bug fixes and enhancements with the new v2 launch!
+
 = 2.0.4 =
 * Fixed bug with loading size.
 * Other bug fixes and improvements.

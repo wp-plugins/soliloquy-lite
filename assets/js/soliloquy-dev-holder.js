@@ -4,6 +4,9 @@
 
 	var defaults = {
 
+	    // Added by Thomas
+	    keyboard: false,
+
 		// GENERAL
 		mode: 'horizontal',
 		slideSelector: '',
@@ -23,6 +26,8 @@
 		useCSS: true,
 		preloadImages: 'visible',
 		responsive: true,
+		slideZIndex: 50,
+		wrapperClass: 'soliloquy-wrapper',
 
 		// TOUCH
 		touchEnabled: true,
@@ -50,7 +55,6 @@
 		stopText: 'Stop',
 		autoControlsCombine: false,
 		autoControlsSelector: null,
-		keyboard: false,
 
 		// AUTO
 		auto: false,
@@ -59,6 +63,7 @@
 		autoDirection: 'next',
 		autoHover: false,
 		autoDelay: 0,
+		autoSlideForOnePage: false,
 
 		// CAROUSEL
 		minSlides: 1,
@@ -71,7 +76,8 @@
 		onSlideBefore: function() {},
 		onSlideAfter: function() {},
 		onSlideNext: function() {},
-		onSlidePrev: function() {}
+		onSlidePrev: function() {},
+		onSliderResize: function() {}
 	}
 
 	$.fn.soliloquy = function(options){
@@ -170,7 +176,7 @@
 		 */
 		var setup = function(){
 			// wrap el in a wrapper
-			el.wrap('<div class="soliloquy-wrapper"><div class="soliloquy-viewport"></div></div>');
+			el.wrap('<div class="' + slider.settings.wrapperClass + '"><div class="soliloquy-viewport"></div></div>');
 			// store a namspace reference to .soliloquy-viewport
 			slider.viewport = el.parent();
 			// add a loading div to display while images are loading
@@ -226,7 +232,7 @@
 					display: 'none'
 				});
 				// prepare the z-index on the showing element
-				slider.children.eq(slider.settings.startSlide).css({zIndex: 50, display: 'block'});
+				slider.children.eq(slider.settings.startSlide).css({zIndex: slider.settings.slideZIndex, display: 'block'});
 			}
 			// create an element to contain all slider controls (pager, start / stop, etc)
 			slider.controls.el = $('<div class="soliloquy-controls" />');
@@ -234,8 +240,7 @@
 			if(slider.settings.captions) appendCaptions();
 			// check if startSlide is last slide
 			slider.active.last = slider.settings.startSlide == getPagerQty() - 1;
-			// if video is true, set up the soliloquyVids plugin
-			if(slider.settings.video) el.soliloquyVids();
+			// Added by Thomas - removed fitVids support, no need.
 			// set the default preload selector (visible)
 			var preloadSelector = slider.children.eq(slider.settings.startSlide);
 			if (slider.settings.preloadImages == "all") preloadSelector = slider.children;
@@ -300,8 +305,8 @@
 			slider.initialized = true;
 			// bind the resize call to the window
 			if (slider.settings.responsive) $(window).bind('resize', resizeWindow);
-			// if auto is true, start the show
-			if (slider.settings.auto && slider.settings.autoStart) initAuto();
+			// if auto is true and has more than 1 page, start the show
+			if (slider.settings.auto && slider.settings.autoStart && (getPagerQty() > 1 || slider.settings.autoSlideForOnePage)) initAuto();
 			// if ticker is true, start the ticker
 			if (slider.settings.ticker) initTicker();
 			// if pager is requested, make the appropriate pager link active
@@ -310,7 +315,8 @@
 			if (slider.settings.controls) updateDirectionControls();
 			// if touchEnabled is true, setup the touch events
 			if (slider.settings.touchEnabled && !slider.settings.ticker) initTouch();
-			// if keyboardEnabled is true, setup the keyboard events
+
+			// Added by Thomas
             if (slider.settings.keyboard && !slider.settings.ticker) {
                 $(document).on('keydown', function(e){
                     if (e.keyCode == 39) {
@@ -371,6 +377,14 @@
 					return $(this).outerHeight(false);
 				}).get());
 			}
+
+			if(slider.viewport.css('box-sizing') == 'border-box'){
+				height +=	parseFloat(slider.viewport.css('padding-top')) + parseFloat(slider.viewport.css('padding-bottom')) +
+							parseFloat(slider.viewport.css('border-top-width')) + parseFloat(slider.viewport.css('border-bottom-width'));
+			}else if(slider.viewport.css('box-sizing') == 'padding-box'){
+				height +=	parseFloat(slider.viewport.css('padding-top')) + parseFloat(slider.viewport.css('padding-bottom'));
+			}
+
 			return height;
 		}
 
@@ -427,8 +441,9 @@
 					slidesShowing = slider.settings.maxSlides;
 				// if viewport is between min / max thresholds, divide viewport width by first child width
 				}else{
-					var childWidth = slider.children.first().width();
-					slidesShowing = Math.floor(slider.viewport.width() / childWidth);
+					var childWidth = slider.children.first().width() + slider.settings.slideMargin;
+					slidesShowing = Math.floor((slider.viewport.width() +
+						slider.settings.slideMargin) / childWidth);
 				}
 			// if "vertical" mode, slides showing will always be minSlides
 			}else if(slider.settings.mode == 'vertical'){
@@ -445,7 +460,7 @@
 			// if moveSlides is specified by the user
 			if(slider.settings.moveSlides > 0){
 				if(slider.settings.infiniteLoop){
-					pagerQty = slider.children.length / getMoveBy();
+					pagerQty = Math.ceil(slider.children.length / getMoveBy());
 				}else{
 					// use a while loop to determine pages
 					var breakPoint = 0;
@@ -487,7 +502,7 @@
 					var lastChild = slider.children.last();
 					var position = lastChild.position();
 					// set the left position
-					setPositionProperty(-(position.left - (slider.viewport.width() - lastChild.width())), 'reset', 0);
+					setPositionProperty(-(position.left - (slider.viewport.width() - lastChild.outerWidth())), 'reset', 0);
 				}else if(slider.settings.mode == 'vertical'){
 					// get the last showing index's position
 					var lastShowingIndex = slider.children.length - slider.settings.minSlides;
@@ -622,7 +637,7 @@
 				slider.pagerEl = $(slider.settings.pagerCustom);
 			}
 			// assign the pager click binding
-			slider.pagerEl.delegate('a', 'click', clickPagerBind);
+			slider.pagerEl.on('click', 'a', clickPagerBind);
 		}
 
 		/**
@@ -662,8 +677,8 @@
 			// add the controls to the DOM
 			slider.controls.autoEl = $('<div class="soliloquy-controls-auto" />');
 			// bind click actions to the controls
-			slider.controls.autoEl.delegate('.soliloquy-start', 'click', clickStartBind);
-			slider.controls.autoEl.delegate('.soliloquy-stop', 'click', clickStopBind);
+			slider.controls.autoEl.on('click', '.soliloquy-start', clickStartBind);
+			slider.controls.autoEl.on('click', '.soliloquy-stop', clickStopBind);
 			// if autoControlsCombine, insert only the "start" control
 			if(slider.settings.autoControlsCombine){
 				slider.controls.autoEl.append(slider.controls.start);
@@ -755,10 +770,12 @@
 			// if auto show is running, stop it
 			if (slider.settings.auto) el.stopAuto();
 			var pagerLink = $(e.currentTarget);
-			var pagerIndex = parseInt(pagerLink.attr('data-slide-index'));
-			// if clicked pager link is not active, continue with the goToSlide call
-			if(pagerIndex != slider.active.index) el.goToSlide(pagerIndex);
-			e.preventDefault();
+			if(pagerLink.attr('data-slide-index') !== undefined){
+				var pagerIndex = parseInt(pagerLink.attr('data-slide-index'));
+				// if clicked pager link is not active, continue with the goToSlide call
+				if(pagerIndex != slider.active.index) el.goToSlide(pagerIndex);
+				e.preventDefault();
+			}
 		}
 
 		/**
@@ -801,12 +818,14 @@
 				}else if(slider.active.index == slider.children.length - 1){
 					position = slider.children.eq(slider.children.length - 1).position();
 				}
-				if (slider.settings.mode == 'horizontal') { setPositionProperty(-position.left, 'reset', 0);; }
-				else if (slider.settings.mode == 'vertical') { setPositionProperty(-position.top, 'reset', 0);; }
+				if(position){
+					if (slider.settings.mode == 'horizontal') { setPositionProperty(-position.left, 'reset', 0); }
+					else if (slider.settings.mode == 'vertical') { setPositionProperty(-position.top, 'reset', 0); }
+				}
 			}
 			// declare that the transition is complete
 			slider.working = false;
-			// Remove overflow hidden now that the transition is complete.
+			// Added by Thomas
 			if(slider.settings.mode == 'fade'){
     			slider.viewport.css({overflow:''});
 			}
@@ -1072,6 +1091,8 @@
 		 * Window resize event callback
 		 */
 		var resizeWindow = function(e){
+			// don't do anything if slider isn't initialized.
+			if(!slider.initialized) return;
 			// get the new window dimens (again, thank you IE)
 			var windowWidthNew = $(window).width();
 			var windowHeightNew = $(window).height();
@@ -1084,6 +1105,8 @@
 				windowHeight = windowHeightNew;
 				// update all dynamic elements
 				el.redrawSlider();
+				// Call user resize handler
+				slider.settings.onSliderResize.call(el, slider.active.index);
 			}
 		}
 
@@ -1134,8 +1157,8 @@
 			if(slider.settings.controls) updateDirectionControls();
 			// if slider is set to mode: "fade"
 			if(slider.settings.mode == 'fade'){
-			    // Set overflow hidden when transitioning slides.
-                slider.viewport.css({overflow:'hidden'});
+			    // Added by Thomas
+			    slider.viewport.css({overflow:'hidden'});
 				// if adaptiveHeight is true and next height is different from current height, animate to the new height
 				if(slider.settings.adaptiveHeight && slider.viewport.height() != getViewportHeight()){
 					slider.viewport.animate({height: getViewportHeight()}, slider.settings.adaptiveHeightSpeed);
@@ -1143,8 +1166,8 @@
 				// fade out the visible child and reset its z-index value
 				slider.children.filter(':visible').fadeOut(slider.settings.speed).css({zIndex: 0});
 				// fade in the newly requested slide
-				slider.children.eq(slider.active.index).css('zIndex', 51).fadeIn(slider.settings.speed, function(){
-					$(this).css('zIndex', 50);
+				slider.children.eq(slider.active.index).css('zIndex', slider.settings.slideZIndex+1).fadeIn(slider.settings.speed, function(){
+					$(this).css('zIndex', slider.settings.slideZIndex);
 					updateAfterSlideTransition();
 				});
 			// slider mode is not "fade"
@@ -1258,6 +1281,13 @@
 		}
 
 		/**
+		 * Returns current slide element
+		 */
+		el.getCurrentSlideElement = function(){
+			return slider.children.eq(slider.active.index);
+		}
+
+		/**
 		 * Returns number of slides in show
 		 */
 		el.getSlideCount = function(){
@@ -1269,7 +1299,7 @@
 		 */
 		el.redrawSlider = function(){
 			// resize all children in ratio to new screen size
-			slider.children.add(el.find('.soliloquy-clone')).outerWidth(getSlideWidth());
+			slider.children.add(el.find('.soliloquy-clone')).width(getSlideWidth());
 			// adjust the height
 			slider.viewport.css('height', getViewportHeight());
 			// update the slide position
@@ -1302,7 +1332,7 @@
 			if(slider.controls.el) slider.controls.el.remove();
 			if(slider.controls.next) slider.controls.next.remove();
 			if(slider.controls.prev) slider.controls.prev.remove();
-			if(slider.pagerEl) slider.pagerEl.remove();
+			if(slider.pagerEl && slider.settings.controls) slider.pagerEl.remove();
 			$('.soliloquy-caption', this).remove();
 			if(slider.controls.autoEl) slider.controls.autoEl.remove();
 			clearInterval(slider.interval);
@@ -1325,6 +1355,7 @@
 	}
 
 })(jQuery);
+
 // Video functions.
 function soliloquyYouTubeVids(data, id, width, height, holder, $){
     // Immediately make the holder visible and increase z-index to overlay the player icon.
