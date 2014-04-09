@@ -84,6 +84,11 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.7 =
+* Improved the slider engine inline styles output for better responsive behaviors.
+* Improved UI styles.
+* Miscellaneous bug fixes and improvements.
+
 = 2.0.6 =
 * Fixed loading icon bug in v2.
 

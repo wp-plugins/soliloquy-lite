@@ -87,6 +87,10 @@
     zoom: 1;
 }
 
+.soliloquy-hide {
+    display: none;
+}
+
 .soliloquy-container a {
     outline: none;
 }
