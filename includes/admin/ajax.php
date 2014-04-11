@@ -43,6 +43,18 @@ function soliloquy_lite_ajax_upgrade_sliders() {
             'slider' => array(),
             'status' => 'active'
         );
+        
+        if ( ! empty( $new_meta['config']['gutter'] ) ) {
+            $new_meta['config']['gutter'] = 0;
+        }
+        
+        if ( ! empty( $new_meta['config']['position'] ) ) {
+            $new_meta['config']['position'] = 'none';
+        }
+        
+        if ( ! empty( $new_meta['config']['mobile'] ) ) {
+            $new_meta['config']['mobile'] = 0;
+        }
 
         // Splice meta from v1 to v2.
         $new_meta['config']['title']  = $slider->post_title;

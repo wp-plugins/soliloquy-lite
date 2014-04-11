@@ -84,6 +84,10 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.8 =
+* Fixed slider shrinking bug (finally!).
+* Other UI improvements and adjustments.
+
 = 2.0.7 =
 * Improved the slider engine inline styles output for better responsive behaviors.
 * Improved UI styles.

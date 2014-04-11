@@ -227,7 +227,6 @@
 			// if "fade" mode, add positioning and z-index CSS
 			if(slider.settings.mode == 'fade'){
 				slider.children.css({
-					position: 'absolute',
 					zIndex: 0,
 					display: 'none',
 					marginRight: '-100%',
@@ -376,6 +375,7 @@
 			// if not "vertical" mode, calculate the max height of the children
 			}else{
 				height = Math.max.apply(Math, children.map(function(){
+				    console.log($(this), $(this).height());
 					return $(this).outerHeight(false);
 				}).get());
 			}
