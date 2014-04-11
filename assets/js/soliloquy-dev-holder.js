@@ -375,7 +375,6 @@
 			// if not "vertical" mode, calculate the max height of the children
 			}else{
 				height = Math.max.apply(Math, children.map(function(){
-				    console.log($(this), $(this).height());
 					return $(this).outerHeight(false);
 				}).get());
 			}
