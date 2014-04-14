@@ -1254,7 +1254,9 @@ class Soliloquy_Metaboxes_Lite {
      */
     public function get_skipped_posttypes() {
 
-        return apply_filters( 'soliloquy_skipped_posttypes', array( 'attachment', 'revision', 'nav_menu_item', 'envira' ) );
+        $post_types = get_post_types( array( 'public' => true ) );
+        unset( $post_types['soliloquy'] );
+        return apply_filters( 'soliloquy_skipped_posttypes', $post_types );
 
     }
 

@@ -363,6 +363,7 @@ class Soliloquy_Shortcode_Lite {
                         pause: <?php echo $this->get_config( 'duration', $data ); ?>,
                         auto: 1,
                         useCSS: 0,
+                        keyboard: true,
                         adaptiveHeight: 1,
                         adaptiveHeightSpeed: <?php echo apply_filters( 'soliloquy_adaptive_height_speed', 400, $data ); ?>,
                         infiniteLoop: 1,
@@ -402,7 +403,7 @@ class Soliloquy_Shortcode_Lite {
                 });
 
             // Minify before outputting to improve page load time.
-            <?php do_action( 'soliloquy_api_end_global', $data ); echo $this->minify( ob_get_clean() ); ?></script>
+            <?php do_action( 'soliloquy_api_end_global', $data ); echo $this->minify( ob_get_clean() ); echo '<!--[if IE]><script type="text/javascript">jQuery(document).ready(function($){$(".soliloquy-container").each(function(i, el){$(el).hover(function(){$(this).addClass("soliloquy-hover");},function(){$(this).removeClass("soliloquy-hover");});});});<![endif]-->'; ?></script>
             <?php
         }
 

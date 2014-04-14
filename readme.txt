@@ -84,6 +84,12 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.0.9 =
+* Fixed navigation arrow regression (hidden by default and exposed on hover).
+* Fixed keyboard navigation regression (keyboard navigation now on by default).
+* Soliloquy interface now only shown on Soliloquy post type by default.
+* Other bug fixes and improvements.
+
 = 2.0.8 =
 * Fixed slider shrinking bug (finally!).
 * Other UI improvements and adjustments.

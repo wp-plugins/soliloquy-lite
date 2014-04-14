@@ -10,6 +10,16 @@
     content: url('images/slider-arrows-horizontal.png') url('images/slider-dots.png');
 }
 
+.soliloquy-theme-classic .soliloquy-controls-direction {
+    display: none;
+	height: 0;
+}
+
+.soliloquy-theme-classic:hover .soliloquy-controls-direction,
+.soliloquy-theme-classic.soliloquy-hover .soliloquy-controls-direction {
+    display: block;
+}
+
 .soliloquy-theme-classic .soliloquy-prev {
     display: block;
     width: 13px;
