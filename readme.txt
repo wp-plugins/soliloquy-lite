@@ -84,6 +84,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.1.0 =
+* Fix hover state error.
+
 = 2.0.9 =
 * Fixed navigation arrow regression (hidden by default and exposed on hover).
 * Fixed keyboard navigation regression (keyboard navigation now on by default).

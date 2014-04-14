@@ -403,7 +403,7 @@ class Soliloquy_Shortcode_Lite {
                 });
 
             // Minify before outputting to improve page load time.
-            <?php do_action( 'soliloquy_api_end_global', $data ); echo $this->minify( ob_get_clean() ); echo '<!--[if IE]><script type="text/javascript">jQuery(document).ready(function($){$(".soliloquy-container").each(function(i, el){$(el).hover(function(){$(this).addClass("soliloquy-hover");},function(){$(this).removeClass("soliloquy-hover");});});});<![endif]-->'; ?></script>
+            <?php do_action( 'soliloquy_api_end_global', $data ); echo $this->minify( ob_get_clean() ); ?></script>
             <?php
         }
 
