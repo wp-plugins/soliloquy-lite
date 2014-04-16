@@ -84,8 +84,12 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.1.1 =
+* Fixed backwards compat bug with shortcodes that used IDs to output sliders.
+* Added ability to parse shortcodes in widgets to prevent sliders from disappearing.
+
 = 2.1.0 =
-* Fix hover state error.
+* Fixed hover state error.
 
 = 2.0.9 =
 * Fixed navigation arrow regression (hidden by default and exposed on hover).

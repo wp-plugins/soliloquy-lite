@@ -117,6 +117,7 @@ class Soliloquy_Shortcode_Lite {
 
         // Load hooks and filters.
         add_shortcode( 'soliloquy', array( $this, 'shortcode' ) );
+        add_filter( 'widget_text', 'do_shortcode' );
 
     }
 
@@ -148,6 +149,12 @@ class Soliloquy_Shortcode_Lite {
         } else {
             // A custom attribute must have been passed. Allow it to be filtered to grab data from a custom source.
             $data = apply_filters( 'soliloquy_custom_slider_data', false, $atts, $post );
+        }
+
+        // If there is no data and the attribute used is an ID, try slug as well.
+        if ( ! $data && isset( $atts['id'] ) ) {
+            $slider_id = $atts['id'];
+            $data      = is_preview() ? $this->base->_get_slider_by_slug( $slider_id ) : $this->base->get_slider_by_slug( $slider_id );
         }
 
         // Allow the data to be filtered before it is stored and used to create the slider output.
