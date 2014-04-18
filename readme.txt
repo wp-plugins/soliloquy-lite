@@ -84,6 +84,10 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.1.2 =
+* Fixed a couple image cropping bugs.
+* Prevent upgrade option from showing for new users of Soliloquy.
+
 = 2.1.1 =
 * Fixed backwards compat bug with shortcodes that used IDs to output sliders.
 * Added ability to parse shortcodes in widgets to prevent sliders from disappearing.

@@ -171,7 +171,7 @@ class Soliloquy_Common_Lite {
         global $wpdb;
 
         // Get common vars.
-        $args   = func_get_args();
+        $args   = array( $url, $width, $height, $crop, $align, $quality, $retina );
         $common = $this->get_image_info( $args );
 
         // Unpack variables if an array, otherwise return WP_Error.

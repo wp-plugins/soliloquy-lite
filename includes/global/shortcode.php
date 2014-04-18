@@ -232,6 +232,10 @@ class Soliloquy_Shortcode_Lite {
         // Increment the counter.
         $this->counter++;
 
+        // Add no JS fallback support.
+        $no_js   = apply_filters( 'soliloquy_output_no_js', '<noscript><style type="text/css">#soliloquy-container-' . sanitize_html_class( $data['id'] ) . '{opacity:1}</style></noscript>', $data );
+        $slider .= $no_js;
+
         // Return the slider HTML.
         return apply_filters( 'soliloquy_output', $slider, $data );
 
