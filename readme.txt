@@ -71,16 +71,15 @@ In v2.0 of Soliloquy Lite, it includes a big plugin architecture change. You nee
 
 Soliloquy has many Addons that extend its default functionality to make it do incredible things.
 
-* (Soliloquy Themes Addon)[http://soliloquywp.com/addons/themes/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - beautiful themes for your WordPress slider.
-* (Soliloquy Preview Addon)[http://soliloquywp.com/addons/preview/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - get instant previews of your slider straight inside the editing area of the slider.
-* (Soliloquy Lightbox Addon)[http://soliloquywp.com/addons/lightbox/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - use powerful lightbox features to enhance the presentation and interaction with your WordPress slider.
-* (Soliloquy Instagram Addon)[http://soliloquywp.com/addons/instagram/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make awesome responsive WordPress sliders from your Instagram photo stream.
-* (Soliloquy Crop Addon)[http://soliloquywp.com/addons/crop/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - instantly and dynamically crop images to the size you specify on the fly. No more resizing in Photoshop!
-* (Soliloquy Featured Content Addon)[http://soliloquywp.com/addons/featured-content/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - make a gorgeous WordPress slider from you posts, pages and other custom post types.
-* (Soliloquy Pinterest Addon)[http://soliloquywp.com/addons/pinterest/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - easily add a "Pin It" button to images in your slider.
-* (Soliloquy Thumbnails Addon)[http://soliloquywp.com/addons/thumbnails/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - give your slider easy-to-use and responsive thumbnails.
-* (Soliloquy Filters Addon)[http://soliloquywp.com/addons/filters/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - add 25+  awesome filters to images in your WordPress slider.
-* (Soliloquy Carousel Addon)[http://soliloquywp.com/addons/carousel/?utm_source=orgrepo&utm_medium=link&utm_campaign=Soliloquy%2BLite] - transform your default WordPress slider into a responsive and easy-to-use carousel slider.
+* [Soliloquy Themes Addon](http://soliloquywp.com/addons/themes/) - beautiful themes for your WordPress slider.
+* [Soliloquy Lightbox Addon](http://soliloquywp.com/addons/lightbox/) - use powerful lightbox features to enhance the presentation and interaction with your WordPress slider.
+* [Soliloquy Instagram Addon](http://soliloquywp.com/addons/instagram/) - make awesome responsive WordPress sliders from your Instagram photo stream.
+* [Soliloquy Crop Addon](http://soliloquywp.com/addons/crop/) - instantly and dynamically crop images to the size you specify on the fly. No more resizing in Photoshop!
+* [Soliloquy Featured Content Addon](http://soliloquywp.com/addons/featured-content/) - make a gorgeous WordPress slider from you posts, pages and other custom post types.
+* [Soliloquy Pinterest Addon](http://soliloquywp.com/addons/pinterest/) - easily add a "Pin It" button to images in your slider.
+* [Soliloquy Thumbnails Addon](http://soliloquywp.com/addons/thumbnails/) - give your slider easy-to-use and responsive thumbnails.
+* [Soliloquy Filters Addon](http://soliloquywp.com/addons/filters/) - add 25+  awesome filters to images in your WordPress slider.
+* [Soliloquy Carousel Addon](http://soliloquywp.com/addons/carousel/) - transform your default WordPress slider into a responsive and easy-to-use carousel slider.
 
 == Changelog ==
 
