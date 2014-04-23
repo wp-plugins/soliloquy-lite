@@ -63,7 +63,7 @@ You can get access to more features, Addons and support by [visiting the Soliloq
 
 == Notes ==
 
-Soliloquy is absolutely, positively the [best responsive WordPress slider plugin](http://soliloquywp.com/) on the market. It is fast, flexible and solves the problem of responsive sliders in a flash.
+Soliloquy is absolutely, positively the <a href="http://soliloquywp.com/" rel="dofollow" title="Soliloquy">best responsive WordPress slider plugin</a> on the market. It is fast, flexible and solves the problem of responsive sliders in a flash.
 
 In v2.0 of Soliloquy Lite, it includes a big plugin architecture change. You need to make sure you click on the link and follow the instructions on the screen when updating. There will be an upgrade notice - make sure you click this and upgrade your sliders after updating to v2!
 
