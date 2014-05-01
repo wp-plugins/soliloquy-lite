@@ -947,10 +947,10 @@ class Soliloquy_Metaboxes_Lite {
                 $item = $this->get_slider_image( $id, $data, $post_id );
                 break;
             case 'video' :
-                $item = $this->get_slider_video( $id, $data, $post_id );
+                $item = '';
                 break;
             case 'html' :
-                $item = $this->get_slider_html( $id, $data, $post_id );
+                $item = '';
                 break;
         }
 
@@ -1050,10 +1050,12 @@ class Soliloquy_Metaboxes_Lite {
                                 <div class="media-sidebar">
                                     <div class="soliloquy-meta-sidebar">
                                         <h3><?php _e( 'Helpful Tips', 'soliloquy' ); ?></h3>
-                                        <strong><?php _e( 'Image Titles', 'soliloquy' ); ?></strong>
-                                        <p><?php _e( 'Image titles can take any type of HTML. You can adjust the position of the titles in the main Lightbox settings.', 'soliloquy' ); ?></p>
+                                        <strong><?php _e( 'Images and SEO', 'soliloquy' ); ?></strong>
+                                        <p><?php _e( 'Images are a small but important part of your overall SEO strategy. In order to get the most SEO benefits from your slider, it is recommended that you fill out each applicable field with SEO friendly information about the image.', 'soliloquy' ); ?></p>
                                         <strong><?php _e( 'Image Hyperlinks', 'soliloquy' ); ?></strong>
-                                        <p><?php _e( 'The image hyperlink field is used when you click on an image in the slider. It determines what is displayed in the lightbox view. It could be a larger version of the image, a video, or some other form of content.', 'soliloquy' ); ?></p>
+                                        <p><?php _e( 'The image hyperlink field is used when you click on an image in the slider.', 'soliloquy' ); ?></p>
+                                        <strong><?php _e( 'Image Captions', 'soliloquy' ); ?></strong>
+                                        <p><?php _e( 'Captions can take any type of HTML content, such as <code>form</code>, <code>iframe</code> and <code>h1</code> tags.', 'soliloquy' ); ?></p>
                                         <strong><?php _e( 'Saving and Exiting', 'soliloquy' ); ?></strong>
                                         <p class="no-margin"><?php _e( 'Click on the button below to save your image metadata. You can close this window by either clicking on the "X" above or hitting the <code>esc</code> key on your keyboard.', 'soliloquy' ); ?></p>
                                     </div><!-- end .soliloquy-meta-sidebar -->
@@ -1118,7 +1120,7 @@ class Soliloquy_Metaboxes_Lite {
         // Loop through the images and crop them.
         if ( $images ) {
             // Increase the time limit to account for large image sets and suspend cache invalidations.
-            set_time_limit( 0 );
+            set_time_limit( Soliloquy_Common_Lite::get_instance()->get_max_execution_time() );
             wp_suspend_cache_invalidation( true );
 
             foreach ( $images as $id => $item ) {

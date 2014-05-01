@@ -535,11 +535,17 @@
                 e.preventDefault();
                 $('#' + formfield).appendTo('#' + attach_id).hide();
                 soliloquy_main_frame = false;
+                $(document).off('click.soliloquyLink');
             };
             $(document).on('click.soliloquyIframe', '.media-modal-close, .media-modal-backdrop', append_and_hide);
             $(document).on('keydown.soliloquyIframe', function(e){
                 if ( 27 == e.keyCode && soliloquy_main_frame )
                     append_and_hide(e);
+            });
+            $(document).on('click.soliloquyLink', '.ed_button', function(){
+                // Set custom z-index for link dialog box.
+                $('#wp-link-backdrop').css('zIndex', '170100');
+                $('#wp-link-wrap').css('zIndex', '171005' );
             });
         });
 

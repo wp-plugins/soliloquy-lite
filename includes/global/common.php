@@ -407,6 +407,20 @@ class Soliloquy_Common_Lite {
     }
 
     /**
+     * Helper method to return the max execution time for scripts.
+     *
+     * @since 1.0.0
+     *
+     * @param int $time The max execution time available for PHP scripts.
+     */
+    public function get_max_execution_time() {
+
+        $time = ini_get( 'max_execution_time' );
+        return ! $time || empty( $time ) ? (int) 0 : $time;
+
+    }
+
+    /**
      * Returns the singleton instance of the class.
      *
      * @since 1.0.0

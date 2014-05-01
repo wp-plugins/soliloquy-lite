@@ -20,7 +20,7 @@ function soliloquy_lite_ajax_upgrade_sliders() {
     check_ajax_referer( 'soliloquy-upgrade', 'nonce' );
 
     // Increase the time limit to account for large slider sets and suspend cache invalidations.
-    set_time_limit( 0 );
+    set_time_limit( Soliloquy_Common_Lite::get_instance()->get_max_execution_time() );
     wp_suspend_cache_invalidation( true );
 
     // Grab all sliders and convert them to the new system.
@@ -43,15 +43,15 @@ function soliloquy_lite_ajax_upgrade_sliders() {
             'slider' => array(),
             'status' => 'active'
         );
-        
+
         if ( ! empty( $new_meta['config']['gutter'] ) ) {
             $new_meta['config']['gutter'] = 0;
         }
-        
+
         if ( ! empty( $new_meta['config']['position'] ) ) {
             $new_meta['config']['position'] = 'none';
         }
-        
+
         if ( ! empty( $new_meta['config']['mobile'] ) ) {
             $new_meta['config']['mobile'] = 0;
         }

@@ -83,6 +83,12 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.1.3 =
+* Fixed bug with link dialog modal showing below the edit metadata modal.
+* Fixed issue with max_execution_time on some hosts when cropping images.
+* Fixed Retina display bug with Classic theme.
+* Fixed contextual language bug in edit metadata modal.
+
 = 2.1.2 =
 * Fixed a couple image cropping bugs.
 * Prevent upgrade option from showing for new users of Soliloquy.

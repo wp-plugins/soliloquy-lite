@@ -12,7 +12,7 @@
 
 .soliloquy-theme-classic .soliloquy-controls-direction {
     display: none;
-	height: 0;
+    height: 0;
 }
 
 .soliloquy-theme-classic:hover .soliloquy-controls-direction,
@@ -97,23 +97,25 @@ only screen and (                min-resolution: 2dppx) {
 
     .soliloquy-theme-classic .soliloquy-prev {
         background: url('images/slider-arrows-horizontal@2x.png') no-repeat scroll 0 0;
-		background-size: 100%;
+        background-size: 100%;
     }
 
     .soliloquy-theme-classic .soliloquy-next {
         background: url('images/slider-arrows-horizontal@2x.png') no-repeat scroll 0 -20px;
-		background-size: 100%;
+        background-size: 100%;
     }
 
     .soliloquy-theme-classic .soliloquy-pager-link {
         background: url('images/slider-dots@2x.png') no-repeat scroll 0 0;
-		background-size: 100%;
-		height: 15px;
+        background-size: 100%;
+        height: 15px;
     }
 
     .soliloquy-theme-classic .soliloquy-pager-link:hover,
     .soliloquy-theme-classic .soliloquy-pager-link.active {
-        background-position: 0 -15px;
+        background: url('images/slider-dots@2x.png') no-repeat scroll 0 -15px;
+        background-size: 100%;
+        height: 15px;
     }
 
 }

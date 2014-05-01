@@ -260,10 +260,10 @@ class Soliloquy_Shortcode_Lite {
                 $slide = $this->get_image_slide( $id, $item, $data, $i );
                 break;
             case 'video' :
-                $slide = $this->get_video_slide( $id, $item, $data, $i );
+                $slide = '';
                 break;
             case 'html' :
-                $slide = $this->get_html_slide( $id, $item, $data, $i );
+                $slide = '';
                 break;
         }
 
