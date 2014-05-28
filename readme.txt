@@ -27,7 +27,7 @@ Soliloquy, the <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy -
 * Smart JS/CSS loading so that assets only load on pages where a Soliloquy WordPress slider is present.
 * Media uploader button to easily insert your WordPress slider into your posts/pages from the WYSIWYG editor.
 
-Beyond the features mentioned above, there are plenty of other **WordPress slider features** inside of the plugin. You gain the benefit of an intuitive user interface that makes slider management easy, simple to understand slider options, and a plethora of hooks and filters to **manipulate the slider output.**
+Beyond the features mentioned above, there are lots of other **WordPress slider features** inside of the plugin. You gain the benefit of an intuitive user interface that makes slider management easy, simple to understand slider options, and a plethora of hooks and filters to **manipulate the slider output.**
 
 _It's hard to go wrong by choosing <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy">Soliloquy</a> as your all-in-one **WordPress slider plugin** solution!_
 
