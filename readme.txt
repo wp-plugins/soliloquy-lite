@@ -67,6 +67,8 @@ Soliloquy is absolutely, positively the <a href="http://soliloquywp.com/" rel="f
 
 In v2.0 of Soliloquy Lite, it includes a big plugin architecture change. You need to make sure you click on the link and follow the instructions on the screen when updating. There will be an upgrade notice - make sure you click this and upgrade your sliders after updating to v2!
 
+The pro version of Soliloquy has many more features and enables you to do so much more than Soliloquy Lite, such as add images from your Media Library and use your own custom videos from YouTube, Vimeo and Wistia!
+
 = Addons =
 
 Soliloquy has many Addons that extend its default functionality to make it do incredible things.
