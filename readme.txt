@@ -18,8 +18,8 @@ Soliloquy, the <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy -
 
 = Features =
 
-* Usage of custom post types to create an unlimited number of WordPress sliders.
-* Drag-and-drop image uploading, sorting and saving.
+* Usage of a custom post type to create an unlimited number of WordPress sliders.
+* Drag-and-drop image uploading, sorting and saving for each WordPress slider that you build.
 * Completely SEO optimized with the ability to specify alt and title tags for your images within the slider.
 * Completely responsive (with touch enabled swiping).
 * Shortcode and template tags handy so that you can insert your WordPress slider anywhere in your theme.
