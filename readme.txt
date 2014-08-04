@@ -14,7 +14,7 @@ Soliloquy, the <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy -
 
 *Need more convincing? <a href="http://soliloquywp.com/wordpress-slider-plugin/" rel="friend" title="Check out the top ten reasons why Soliloquy is the best responsive WordPress slider plugin on the market!">Check out the top ten reasons why Soliloquy is the **best responsive WordPress slider plugin** on the market!</a>
 
-**Note: This is the lite version of the Soliloquy WordPress slider. Want even more WordPress slider features, including HTML/video slides, complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? <a href="http://soliloquywp.com/pricing/" rel="friend" title="Click here to purchase the best responsive WordPress slider plugin now!">Click here to purchase the best responsive WordPress slider plugin now!</a>.**
+**Note: This is the lite version of the Soliloquy WordPress slider. Want even more WordPress slider features, including HTML/video slides, complete embedded video support for YouTube and Vimeo, widgets, and access to exclusive Addons (such as full lightbox support and image filters)? <a href="http://soliloquywp.com/pricing/" rel="friend" title="Click here to purchase the best responsive WordPress slider plugin now!">Click here to purchase the best responsive WordPress slider plugin now!</a>**
 
 = Features =
 
