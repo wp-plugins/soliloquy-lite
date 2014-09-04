@@ -2,7 +2,7 @@
 Contributors: griffinjt
 Tags: wordpress slider, slider, wordpress slider plugin, slider plugin, responsive, responsive slider, image slider, image slider plugin, responsive slider plugin, responsive image slider, responsive image slider plugin, custom post types, slideshow, responsive slideshow, slideshow plugin, responsive slideshow plugin, rotator, image rotator, responsive rotator, jquery slider, javascript slider, jquery rotator, javascript rotator, picture slider, photo slider, photo rotator, shortcode, template tag, wordpress slideshow, photo slider, wordpress responsive slider, wordpress picture slider, responsive picture slider, wordpress image slider, wordpress gallery, image gallery, photo gallery, wordpress photo gallery, wordpress picture gallery, wordpress picture slider, wp slider, best wordpress slider, best slider, best slider wordpress, best responsive slider, best responsive wordpress slider plugin
 Requires at least: 3.5.1
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
 
@@ -84,6 +84,11 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 * <a href="http://soliloquywp.com/addons/carousel/" rel="friend" title="Soliloquy Carousel Addon">Soliloquy Carousel Addon</a> - transform your default WordPress slider into a responsive and easy-to-use carousel slider.
 
 == Changelog ==
+
+= 2.1.5 =
+* Fixed bug with setting config defaults.
+* Added support for new plugin icon in 4.0.
+* Compatibility updates for WordPress 4.0.
 
 = 2.1.4 =
 * Fixed bug where metadata modal would not close using the Esc key.

@@ -1196,7 +1196,7 @@ class Soliloquy_Metaboxes_Lite {
         }
 
         $settings = get_post_meta( $post_id, '_sol_slider_data', true );
-        if ( isset( $settings['config'][$key] ) ) {
+        if ( is_array( $settings ) && isset( $settings['config'][$key] ) ) {
             return $settings['config'][$key];
         } else {
             return $default ? $default : '';
