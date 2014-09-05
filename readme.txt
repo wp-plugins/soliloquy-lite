@@ -85,6 +85,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.1.6 =
+* Fixed bug with grabbing settings.
+
 = 2.1.5 =
 * Fixed bug with setting config defaults.
 * Added support for new plugin icon in 4.0.
