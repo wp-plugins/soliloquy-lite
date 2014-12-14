@@ -69,6 +69,8 @@ In v2.0 of Soliloquy Lite, it includes a big plugin architecture change. You nee
 
 The pro version of Soliloquy has many more features and enables you to do so much more than Soliloquy Lite, such as add images from your Media Library and use your own custom videos from YouTube, Vimeo and Wistia!
 
+<a href="http://thomasgriffin.io" rel="me" title="WordPress Developer - Thomas Griffin">Also, check out my blog to learn more WordPress tips and tutorials!</a>
+
 = Addons =
 
 Soliloquy has many Addons that extend its default functionality to make it do incredible things.
