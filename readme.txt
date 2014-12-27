@@ -69,7 +69,7 @@ In v2.0 of Soliloquy Lite, it includes a big plugin architecture change. You nee
 
 The pro version of Soliloquy has many more features and enables you to do so much more than Soliloquy Lite, such as add images from your Media Library and use your own custom videos from YouTube, Vimeo and Wistia!
 
-<a href="http://thomasgriffin.io" rel="me" title="WordPress Developer - Thomas Griffin">Also, check out my blog to learn more WordPress tips and tutorials!</a>
+<a href="https://thomasgriffin.io" rel="me" title="WordPress Developer - Thomas Griffin">Also, check out my blog to learn more WordPress tips and tutorials!</a>
 
 = Addons =
 
@@ -86,6 +86,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 * <a href="http://soliloquywp.com/addons/carousel/" rel="friend" title="Soliloquy Carousel Addon">Soliloquy Carousel Addon</a> - transform your default WordPress slider into a responsive and easy-to-use carousel slider.
 
 == Changelog ==
+
+= 2.1.7 =
+* Compatibility updates with WordPress 4.1.
 
 = 2.1.6 =
 * Fixed bug with grabbing settings.
