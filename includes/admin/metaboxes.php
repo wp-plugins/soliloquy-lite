@@ -71,6 +71,11 @@ class Soliloquy_Metaboxes_Lite {
      * @return null Return early if not on the proper screen.
      */
     public function meta_box_styles() {
+	    
+	    // We always need to load metabox.css so we fix 4.0 styling on media grid
+        // Load necessary metabox styles.
+        wp_register_style( $this->base->plugin_slug . '-metabox-style', plugins_url( 'assets/css/metabox.css', $this->base->file ), array(), $this->base->version );
+        wp_enqueue_style( $this->base->plugin_slug . '-metabox-style' );
 
         if ( 'post' !== get_current_screen()->base ) {
             return;
@@ -79,10 +84,6 @@ class Soliloquy_Metaboxes_Lite {
         if ( isset( get_current_screen()->post_type ) && in_array( get_current_screen()->post_type, $this->get_skipped_posttypes() ) ) {
             return;
         }
-
-        // Load necessary metabox styles.
-        wp_register_style( $this->base->plugin_slug . '-metabox-style', plugins_url( 'assets/css/metabox.css', $this->base->file ), array(), $this->base->version );
-        wp_enqueue_style( $this->base->plugin_slug . '-metabox-style' );
 
         // Fire a hook to load in custom metabox styles.
         do_action( 'soliloquy_metabox_styles' );

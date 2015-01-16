@@ -133,9 +133,9 @@ class Soliloquy_Editor_Lite {
                                 <div class="attachments-browser">
                                     <ul class="soliloquy-meta attachments" style="padding-left: 8px; top: 1em;">
                                         <li class="attachment" data-soliloquy-id="<?php echo absint( $post->ID ); ?>" style="margin: 8px;">
-                                            <div class="attachment-preview landscape">
-                                                <div class="thumbnail" style="display: table;">
-                                                    <div style="display: table-cell; vertical-align: middle; text-align: center;">
+                                            <div class="attachment-preview">
+                                                <div class="thumbnail">
+                                                    <div class="inside">
                                                         <h3 style="margin: 0;color: #7ad03a;"><?php _e( 'This Post\'s Slider', 'soliloquy' ); ?></h3>
                                                         <code style="color: #7ad03a;">[soliloquy id="<?php echo absint( $post->ID ); ?>"]</code>
                                                     </div>
@@ -145,9 +145,9 @@ class Soliloquy_Editor_Lite {
                                         </li>
                                         <?php foreach ( (array) $sliders as $slider ) : if ( $post->ID == $slider['id'] ) continue; ?>
                                         <li class="attachment" data-soliloquy-id="<?php echo absint( $slider['id'] ); ?>" style="margin: 8px;">
-                                            <div class="attachment-preview landscape">
-                                                <div class="thumbnail" style="display: table;">
-                                                    <div style="display: table-cell; vertical-align: middle; text-align: center;">
+                                            <div class="attachment-preview">
+                                                <div class="thumbnail">
+                                                    <div class="inside">
                                                         <?php
                                                         if ( ! empty( $slider['config']['title'] ) ) {
                                                             $title = $slider['config']['title'];
