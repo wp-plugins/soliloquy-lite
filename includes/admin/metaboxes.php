@@ -1039,7 +1039,7 @@ class Soliloquy_Metaboxes_Lite {
                                             <tr id="soliloquy-caption-box-<?php echo $id; ?>" valign="middle">
                                                 <th scope="row"><label for="soliloquy-caption-<?php echo $id; ?>"><?php _e( 'Image Caption', 'soliloquy' ); ?></label></th>
                                                 <td>
-                                                    <?php wp_editor( ( ! empty( $data['caption'] ) ? $data['caption'] : '' ), 'soliloquy-caption-' . $id, array( 'media_buttons' => false, 'wpautop' => false, 'tinymce' => false, 'textarea_name' => '_soliloquy[meta_caption]', 'quicktags' => array( 'buttons' => 'strong,em,link,ul,ol,li,close' ) ) ); ?>
+                                                    <?php wp_editor( ( ! empty( $data['caption'] ) ? $data['caption'] : '' ), 'soliloquy-caption-' . $id, array( 'textarea_rows' => 5, 'media_buttons' => false, 'wpautop' => false, 'tinymce' => false, 'textarea_name' => '_soliloquy[meta_caption]', 'quicktags' => array( 'buttons' => 'strong,em,link,ul,ol,li,close' ) ) ); ?>
                                                     <p class="description"><?php _e( 'Image captions can take any type of HTML.', 'soliloquy' ); ?></p>
                                                 </td>
                                             </tr>
