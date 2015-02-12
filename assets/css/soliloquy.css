@@ -201,6 +201,8 @@
     display: block;
     outline: none;
     text-indent: -9999px;
+    text-decoration: none;
+    border: none;
 }
 
 .soliloquy-container .soliloquy-pager-link:hover,
