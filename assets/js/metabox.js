@@ -567,9 +567,16 @@
             meta.caption = $('#soliloquy-meta-table-' + attach_id).find('textarea[name="_soliloquy[meta_caption]"]').val();
 
             // Get all meta fields and values.
-            $('#soliloquy-meta-table-' + attach_id).find(':input').not('.ed_button').each(function(i, el){
-                if ( $(this).data('soliloquy-meta') )
-                    meta[$(this).data('soliloquy-meta')] = $(this).val();
+            $('#soliloquy-meta-table-' + attach_id).find(':input,select').not('.ed_button').each(function(i, el){
+                if ( $(this).data('soliloquy-meta') ) {
+                    if ( 'checkbox' == $(this).attr('type') || 'radio' == $(this).attr('type') ) {
+                        meta[$(this).data('soliloquy-meta')] = $(this).is(':checked') ? 1 : 0;
+                    } else if ( 'select' == $(this).attr('type') ) {
+                        meta[$(this).data('soliloquy-meta')] = $(this).find(':selected').val();
+                    } else {
+                        meta[$(this).data('soliloquy-meta')] = $(this).val();
+                    }
+                }
             });
 
             // Prepare the data to be sent.

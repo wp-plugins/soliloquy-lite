@@ -1027,6 +1027,7 @@ class Soliloquy_Metaboxes_Lite {
                                                     <p class="description"><?php _e( 'The image alt text is used for SEO. You should probably fill this one out!', 'soliloquy' ); ?></p>
                                                 </td>
                                             </tr>
+
                                             <?php do_action( 'soliloquy_before_image_meta_link', $id, $data, $post_id ); ?>
                                             <tr id="soliloquy-link-box-<?php echo $id; ?>" class="soliloquy-link-cell" valign="middle">
                                                 <th scope="row"><label for="soliloquy-link-<?php echo $id; ?>"><?php _e( 'Image Hyperlink', 'soliloquy' ); ?></label></th>
@@ -1035,6 +1036,16 @@ class Soliloquy_Metaboxes_Lite {
                                                     <p class="description"><?php _e( 'The image hyperlink determines what opens once the image is clicked. If left empty, no link will be added.', 'soliloquy' ); ?></p>
                                                 </td>
                                             </tr>
+
+                                            <?php do_action( 'soliloquy_before_image_meta_tab', $id, $data, $post_id ); ?>
+                                            <tr id="soliloquy-tab-box-<?php echo $id; ?>" class="soliloquy-tab-cell" valign="middle">
+                                                <th scope="row"><label for="soliloquy-link-<?php echo $id; ?>"><?php _e( 'Open Link in New Tab', 'soliloquy' ); ?></label></th>
+                                                <td>
+                                                    <input id="soliloquy-tab-<?php echo $id; ?>" class="soliloquy-tab" type="checkbox" name="_soliloquy[meta_tab]" value="1" <?php checked( ( ! empty( $data['linktab'] ) && $data['linktab'] ? 1 : 0 ), 1 ); ?> data-soliloquy-meta="linktab" />
+                                                    <p class="description"><?php _e( 'If enabled, opens the Image Hyperlink in a new browser window/tab.', 'soliloquy' ); ?></p>
+                                                </td>
+                                            </tr>
+
                                             <?php do_action( 'soliloquy_before_image_meta_caption', $id, $data, $post_id ); ?>
                                             <tr id="soliloquy-caption-box-<?php echo $id; ?>" valign="middle">
                                                 <th scope="row"><label for="soliloquy-caption-<?php echo $id; ?>"><?php _e( 'Image Caption', 'soliloquy' ); ?></label></th>

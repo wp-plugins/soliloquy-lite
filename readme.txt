@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.2.1 =
+* Added: Option to open slide link in new window / tab
+
 = 2.2.0 =
 * Fix: Metadata - wp_editor too large for smaller screen resolutions
 
