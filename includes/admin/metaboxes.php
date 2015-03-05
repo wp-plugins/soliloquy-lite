@@ -906,22 +906,6 @@ class Soliloquy_Metaboxes_Lite {
             $this->crop_images( $args, $post_id );
         }
 
-        // If the mobile option is checked, crop images accordingly.
-        if ( isset( $settings['config']['slider'] ) && $settings['config']['slider'] ) {
-            if ( isset( $settings['config']['mobile'] ) && $settings['config']['mobile'] ) {
-                $args = apply_filters( 'soliloquy_crop_image_args',
-                    array(
-                        'position' => 'c',
-                        'width'    => $this->get_config( 'mobile_width', $this->get_config_default( 'mobile_width' ) ),
-                        'height'   => $this->get_config( 'mobile_height', $this->get_config_default( 'mobile_height' ) ),
-                        'quality'  => 100,
-                        'retina'   => false
-                    )
-                );
-                $this->crop_images( $args, $post_id );
-            }
-        }
-
         // Fire a hook for addons that need to utilize the cropping feature.
         do_action( 'soliloquy_saved_settings', $settings, $post_id, $post );
 

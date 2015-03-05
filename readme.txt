@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.2.3 =
+* Fix: Removed deprecated code for image cropping
+
 = 2.2.2 =
 * Fix: Improved error message UI when uploading files exceeding WordPress / PHP file size limits
 
