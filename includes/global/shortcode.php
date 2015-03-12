@@ -291,7 +291,11 @@ class Soliloquy_Shortcode_Lite {
         // If our image is linked, link it.
         if ( ! empty( $item['link'] ) ) {
             $output  = apply_filters( 'soliloquy_output_before_link', $output, $id, $item, $data, $i );
-            $output .= '<a href="' . esc_url( $item['link'] ) . '" class="soliloquy-link" title="' . esc_attr( $item['title'] ) . '"' . apply_filters( 'soliloquy_output_link_attr', '', $id, $item, $data, $i ) . '>';
+            if ( ! empty( $item['linktab'] ) && $item['linktab'] ) {
+                $output .= '<a href="' . esc_url( $item['link'] ) . '" class="soliloquy-link" title="' . esc_attr( $item['title'] ) . '" target="_blank"' . apply_filters( 'soliloquy_output_link_attr', '', $id, $item, $data, $i ) . '>';
+            } else {
+                $output .= '<a href="' . esc_url( $item['link'] ) . '" class="soliloquy-link" title="' . esc_attr( $item['title'] ) . '"' . apply_filters( 'soliloquy_output_link_attr', '', $id, $item, $data, $i ) . '>';
+            }
         }
 
         $output  = apply_filters( 'soliloquy_output_before_image', $output, $id, $item, $data, $i );
