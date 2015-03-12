@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.2.4 =
+* Added: Minified CSS
+
 = 2.2.3 =
 * Fix: Removed deprecated code for image cropping
 
