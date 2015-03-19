@@ -120,7 +120,7 @@ class Soliloquy_Metaboxes_Lite {
 
         // Load necessary metabox scripts.
         wp_enqueue_script( 'plupload-handlers' );
-        wp_register_script( $this->base->plugin_slug . '-metabox-script', plugins_url( 'assets/js/metabox.js', $this->base->file ), array( 'jquery', 'plupload-handlers', 'quicktags', 'jquery-ui-sortable' ), $this->base->version, true );
+        wp_register_script( $this->base->plugin_slug . '-metabox-script', plugins_url( 'assets/js/min/metabox-min.js', $this->base->file ), array( 'jquery', 'plupload-handlers', 'quicktags', 'jquery-ui-sortable' ), $this->base->version, true );
         wp_enqueue_script( $this->base->plugin_slug . '-metabox-script' );
         wp_localize_script(
             $this->base->plugin_slug . '-metabox-script',
@@ -171,7 +171,7 @@ class Soliloquy_Metaboxes_Lite {
         );
 
         // Load necessary HTML slide scripts and styles.
-        wp_register_script( $this->base->plugin_slug . '-codemirror', plugins_url( 'assets/js/codemirror.js', $this->base->file ), array(), $this->base->version, true );
+        wp_register_script( $this->base->plugin_slug . '-codemirror', plugins_url( 'assets/js/min/codemirror-min.js', $this->base->file ), array(), $this->base->version, true );
         wp_register_style( $this->base->plugin_slug . '-codemirror', plugins_url( 'assets/css/codemirror.css', $this->base->file ), array(), $this->base->version );
         wp_enqueue_script( $this->base->plugin_slug . '-codemirror' );
         wp_enqueue_style( $this->base->plugin_slug . '-codemirror' );

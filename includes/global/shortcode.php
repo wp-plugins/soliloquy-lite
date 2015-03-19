@@ -113,7 +113,7 @@ class Soliloquy_Shortcode_Lite {
         wp_register_style( $this->base->plugin_slug . '-style', plugins_url( 'assets/css/soliloquy.css', $this->base->file ), array(), $this->base->version );
 
         // Register main slider script.
-        wp_register_script( $this->base->plugin_slug . '-script', plugins_url( 'assets/js/soliloquy.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
+        wp_register_script( $this->base->plugin_slug . '-script', plugins_url( 'assets/js/min/soliloquy-min.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
 
         // Load hooks and filters.
         add_shortcode( 'soliloquy', array( $this, 'shortcode' ) );
