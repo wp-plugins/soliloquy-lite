@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.2.6 =
+* Added: .POT file for translation / localization support
+
 = 2.2.5 =
 * Added: Minified JS
 
