@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.2.7 =
+* Fix: Loading localization language files for some installations
+
 = 2.2.6 =
 * Added: .POT file for translation / localization support
 

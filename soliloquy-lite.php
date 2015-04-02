@@ -5,7 +5,7 @@
  * Description: Soliloquy is best responsive WordPress slider plugin. This is the lite version.
  * Author:      Thomas Griffin
  * Author URI:  http://thomasgriffinmedia.com
- * Version:     2.2.6
+ * Version:     2.2.7
  * Text Domain: soliloquy
  * Domain Path: languages
  *
@@ -54,7 +54,7 @@ class Soliloquy_Lite {
      *
      * @var string
      */
-    public $version = '2.2.6';
+    public $version = '2.2.7';
 
     /**
      * The name of the plugin.
@@ -108,16 +108,7 @@ class Soliloquy_Lite {
      */
     public function load_plugin_textdomain() {
 
-        // If the main Soliloquy plugin exists, do nothing.
-        if ( class_exists( 'Soliloquy' ) || class_exists( 'Tgmsp' ) ) {
-            return;
-        }
-
-        $domain = 'soliloquy';
-        $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-
-        load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
-        load_plugin_textdomain( $domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain( $this->plugin_slug, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
     }
 
