@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.2.8 =
+* Fix: Caption link color sometimes matched caption background color, making it difficult to see links in captions
+
 = 2.2.7 =
 * Fix: Loading localization language files for some installations
 
