@@ -806,8 +806,8 @@ class Soliloquy_Shortcode_Lite {
             return true;
         }
 
-        // Return false if not a mobile device.
-        return false;
+        // Return wp_is_mobile for the final check.
+        return wp_is_mobile();
 
     }
 
