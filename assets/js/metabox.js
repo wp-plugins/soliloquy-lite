@@ -567,9 +567,16 @@
             meta.caption = $('#soliloquy-meta-table-' + attach_id).find('textarea[name="_soliloquy[meta_caption]"]').val();
 
             // Get all meta fields and values.
-            $('#soliloquy-meta-table-' + attach_id).find(':input').not('.ed_button').each(function(i, el){
-                if ( $(this).data('soliloquy-meta') )
-                    meta[$(this).data('soliloquy-meta')] = $(this).val();
+            $('#soliloquy-meta-table-' + attach_id).find(':input,select').not('.ed_button').each(function(i, el){
+                if ( $(this).data('soliloquy-meta') ) {
+                    if ( 'checkbox' == $(this).attr('type') || 'radio' == $(this).attr('type') ) {
+                        meta[$(this).data('soliloquy-meta')] = $(this).is(':checked') ? 1 : 0;
+                    } else if ( 'select' == $(this).attr('type') ) {
+                        meta[$(this).data('soliloquy-meta')] = $(this).find(':selected').val();
+                    } else {
+                        meta[$(this).data('soliloquy-meta')] = $(this).val();
+                    }
+                }
             });
 
             // Prepare the data to be sent.
@@ -840,7 +847,8 @@
                             wpQueueError(pluploadL10n.security_error);
                             break;
                         default:
-                            wpFileError(fileObj, pluploadL10n.default_error);
+                            soliloquyUploadError(up, error.file);
+                            break;
                     }
                     up.refresh();
                 });
@@ -851,12 +859,13 @@
         function soliloquyUploadError( up, file, over100mb ) {
             var message;
 
-            if ( over100mb )
+            if ( over100mb ) {
                 message = pluploadL10n.big_upload_queued.replace('%s', file.name) + ' ' + pluploadL10n.big_upload_failed.replace('%1$s', '<a class="uploader-html" href="#">').replace('%2$s', '</a>');
-            else
+            } else {
                 message = pluploadL10n.file_exceeds_size_limit.replace('%s', file.name);
-
-            $('#soliloquy-upload-error').html('<p class="error">' + message + '</p>');
+            }
+            
+            $('#soliloquy-upload-error').html('<div class="error fade"><p>' + message + '</p></div>');
             up.removeFile(file);
         }
     });
