@@ -132,17 +132,6 @@ class Soliloquy_Editor_Lite {
                             <div class="media-frame-content">
                                 <div class="attachments-browser">
                                     <ul class="soliloquy-meta attachments" style="padding-left: 8px; top: 1em;">
-                                        <li class="attachment" data-soliloquy-id="<?php echo absint( $post->ID ); ?>" style="margin: 8px;">
-                                            <div class="attachment-preview">
-                                                <div class="thumbnail">
-                                                    <div class="inside">
-                                                        <h3 style="margin: 0;color: #7ad03a;"><?php _e( 'This Post\'s Slider', 'soliloquy' ); ?></h3>
-                                                        <code style="color: #7ad03a;">[soliloquy id="<?php echo absint( $post->ID ); ?>"]</code>
-                                                    </div>
-                                                </div>
-                                                <a class="check" href="#"><div class="media-modal-icon"></div></a>
-                                            </div>
-                                        </li>
                                         <?php foreach ( (array) $sliders as $slider ) : if ( $post->ID == $slider['id'] ) continue; ?>
                                         <li class="attachment" data-soliloquy-id="<?php echo absint( $slider['id'] ); ?>" style="margin: 8px;">
                                             <div class="attachment-preview">
