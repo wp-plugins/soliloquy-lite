@@ -512,6 +512,12 @@ function soliloquy_lite_ajax_save_meta() {
         $slider_data['slider'][$attach_id]['link'] = esc_url( $meta['link'] );
     }
 
+    if ( isset( $meta['linktab'] ) && $meta['linktab'] ) {
+        $slider_data['slider'][ $attach_id ]['linktab'] = 1;
+    } else {
+        $slider_data['slider'][ $attach_id ]['linktab'] = 0;
+    }
+
     if ( isset( $meta['caption'] ) ) {
         $slider_data['slider'][$attach_id]['caption'] = trim( $meta['caption'] );
     }
