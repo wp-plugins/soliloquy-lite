@@ -75,7 +75,7 @@ class Soliloquy_Editor_Lite {
         $button .= '<a id="soliloquy-media-modal-button" href="#" class="button soliloquy-choose-slider" title="' . esc_attr__( 'Add Slider', 'soliloquy' ) . '" style="padding-left: .4em;"><span class="soliloquy-media-icon" style="background: transparent url(' . plugins_url( 'assets/css/images/editor-icon.png', $this->base->file ) . ') no-repeat scroll 0 0; width: 16px; height: 16px; display: inline-block; vertical-align: text-top;"></span> ' . __( 'Add Slider', 'soliloquy' ) . '</a>';
 
         // Enqueue the script that will trigger the editor button.
-        wp_enqueue_script( $this->base->plugin_slug . '-editor-script', plugins_url( 'assets/js/editor.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
+        wp_enqueue_script( $this->base->plugin_slug . '-editor-script', plugins_url( 'assets/js/min/editor-min.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
 
         // Add the action to the footer to output the modal window.
         add_action( 'admin_footer', array( $this, 'slider_selection_modal' ) );
@@ -132,17 +132,6 @@ class Soliloquy_Editor_Lite {
                             <div class="media-frame-content">
                                 <div class="attachments-browser">
                                     <ul class="soliloquy-meta attachments" style="padding-left: 8px; top: 1em;">
-                                        <li class="attachment" data-soliloquy-id="<?php echo absint( $post->ID ); ?>" style="margin: 8px;">
-                                            <div class="attachment-preview">
-                                                <div class="thumbnail">
-                                                    <div class="inside">
-                                                        <h3 style="margin: 0;color: #7ad03a;"><?php _e( 'This Post\'s Slider', 'soliloquy' ); ?></h3>
-                                                        <code style="color: #7ad03a;">[soliloquy id="<?php echo absint( $post->ID ); ?>"]</code>
-                                                    </div>
-                                                </div>
-                                                <a class="check" href="#"><div class="media-modal-icon"></div></a>
-                                            </div>
-                                        </li>
                                         <?php foreach ( (array) $sliders as $slider ) : if ( $post->ID == $slider['id'] ) continue; ?>
                                         <li class="attachment" data-soliloquy-id="<?php echo absint( $slider['id'] ); ?>" style="margin: 8px;">
                                             <div class="attachment-preview">
