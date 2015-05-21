@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.3.3 =
+* Added: RTL support
+
 = 2.3.2 =
 * Fix: Better image grid layout for WordPress 4.0+
 
