@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.3.4 =
+* Fix: Improved CSS reset to prevent border on bottom of sliders in some themes.
+
 = 2.3.3 =
 * Added: RTL support
 
