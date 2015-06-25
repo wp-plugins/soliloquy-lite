@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.3.6 =
+* Fix: Sorting slides in a slider and not clicking Update would result in loss of slider configuration
+
 = 2.3.5 =
 * Added: Minified Classic THeme CSS for better performance
 

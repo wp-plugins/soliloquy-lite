@@ -419,7 +419,12 @@ function soliloquy_lite_ajax_sort_images() {
     $order       = explode( ',', $_POST['order'] );
     $post_id     = absint( $_POST['post_id'] );
     $slider_data = get_post_meta( $post_id, '_sol_slider_data', true );
-    $new_order   = array();
+
+    // Copy the slider config, removing the slides
+    // Stops config from getting lost when sorting + not clicking Publish/Update
+    $new_order = $slider_data;
+    unset( $new_order['slider'] );
+    $new_order['slider'] = array();
 
     // Loop through the order and generate a new array based on order received.
     foreach ( $order as $id ) {
