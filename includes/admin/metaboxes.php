@@ -120,7 +120,7 @@ class Soliloquy_Metaboxes_Lite {
 
         // Load necessary metabox scripts.
         wp_enqueue_script( 'plupload-handlers' );
-        wp_register_script( $this->base->plugin_slug . '-metabox-script', plugins_url( 'assets/js/metabox.js', $this->base->file ), array( 'jquery', 'plupload-handlers', 'quicktags', 'jquery-ui-sortable' ), $this->base->version, true );
+        wp_register_script( $this->base->plugin_slug . '-metabox-script', plugins_url( 'assets/js/min/metabox-min.js', $this->base->file ), array( 'jquery', 'plupload-handlers', 'quicktags', 'jquery-ui-sortable' ), $this->base->version, true );
         wp_enqueue_script( $this->base->plugin_slug . '-metabox-script' );
         wp_localize_script(
             $this->base->plugin_slug . '-metabox-script',
@@ -171,7 +171,7 @@ class Soliloquy_Metaboxes_Lite {
         );
 
         // Load necessary HTML slide scripts and styles.
-        wp_register_script( $this->base->plugin_slug . '-codemirror', plugins_url( 'assets/js/codemirror.js', $this->base->file ), array(), $this->base->version, true );
+        wp_register_script( $this->base->plugin_slug . '-codemirror', plugins_url( 'assets/js/min/codemirror-min.js', $this->base->file ), array(), $this->base->version, true );
         wp_register_style( $this->base->plugin_slug . '-codemirror', plugins_url( 'assets/css/codemirror.css', $this->base->file ), array(), $this->base->version );
         wp_enqueue_script( $this->base->plugin_slug . '-codemirror' );
         wp_enqueue_style( $this->base->plugin_slug . '-codemirror' );
@@ -794,6 +794,15 @@ class Soliloquy_Metaboxes_Lite {
                             <p class="description"><?php _e( 'Adds custom CSS classes to this slider. Enter one class per line.', 'soliloquy' ); ?></p>
                         </td>
                     </tr>
+                    <tr id="soliloquy-config-rtl-box">
+                        <th scope="row">
+                            <label for="soliloquy-config-rtl"><?php _e( 'Enable RTL Support?', 'soliloquy' ); ?></label>
+                        </th>
+                        <td>
+                            <input id="soliloquy-config-rtl" type="checkbox" name="_soliloquy[rtl]" value="<?php echo $this->get_config( 'rtl', $this->get_config_default( 'rtl' ) ); ?>" <?php checked( $this->get_config( 'rtl', $this->get_config_default( 'rtl' ) ), 1 ); ?> />
+                            <span class="description"><?php _e( 'Enables or disables RTL support in Soliloquy for right-to-left languages.', 'soliloquy' ); ?></span>
+                        </td>
+                    </tr>
                     <?php do_action( 'soliloquy_misc_box', $post ); ?>
                 </tbody>
             </table>
@@ -871,6 +880,7 @@ class Soliloquy_Metaboxes_Lite {
         $settings['config']['classes']       = explode( "\n", $_POST['_soliloquy']['classes'] );
         $settings['config']['title']         = trim( strip_tags( $_POST['_soliloquy']['title'] ) );
         $settings['config']['slug']          = sanitize_text_field( $_POST['_soliloquy']['slug'] );
+        $settings['config']['rtl']           = ( isset( $_POST['_soliloquy']['rtl'] ) ? 1 : 0 );
 
         // If on an soliloquy post type, map the title and slug of the post object to the custom fields if no value exists yet.
         if ( isset( $post->post_type ) && 'soliloquy' == $post->post_type ) {
@@ -904,22 +914,6 @@ class Soliloquy_Metaboxes_Lite {
                 )
             );
             $this->crop_images( $args, $post_id );
-        }
-
-        // If the mobile option is checked, crop images accordingly.
-        if ( isset( $settings['config']['slider'] ) && $settings['config']['slider'] ) {
-            if ( isset( $settings['config']['mobile'] ) && $settings['config']['mobile'] ) {
-                $args = apply_filters( 'soliloquy_crop_image_args',
-                    array(
-                        'position' => 'c',
-                        'width'    => $this->get_config( 'mobile_width', $this->get_config_default( 'mobile_width' ) ),
-                        'height'   => $this->get_config( 'mobile_height', $this->get_config_default( 'mobile_height' ) ),
-                        'quality'  => 100,
-                        'retina'   => false
-                    )
-                );
-                $this->crop_images( $args, $post_id );
-            }
         }
 
         // Fire a hook for addons that need to utilize the cropping feature.
@@ -1027,6 +1021,7 @@ class Soliloquy_Metaboxes_Lite {
                                                     <p class="description"><?php _e( 'The image alt text is used for SEO. You should probably fill this one out!', 'soliloquy' ); ?></p>
                                                 </td>
                                             </tr>
+
                                             <?php do_action( 'soliloquy_before_image_meta_link', $id, $data, $post_id ); ?>
                                             <tr id="soliloquy-link-box-<?php echo $id; ?>" class="soliloquy-link-cell" valign="middle">
                                                 <th scope="row"><label for="soliloquy-link-<?php echo $id; ?>"><?php _e( 'Image Hyperlink', 'soliloquy' ); ?></label></th>
@@ -1035,11 +1030,21 @@ class Soliloquy_Metaboxes_Lite {
                                                     <p class="description"><?php _e( 'The image hyperlink determines what opens once the image is clicked. If left empty, no link will be added.', 'soliloquy' ); ?></p>
                                                 </td>
                                             </tr>
+
+                                            <?php do_action( 'soliloquy_before_image_meta_tab', $id, $data, $post_id ); ?>
+                                            <tr id="soliloquy-tab-box-<?php echo $id; ?>" class="soliloquy-tab-cell" valign="middle">
+                                                <th scope="row"><label for="soliloquy-link-<?php echo $id; ?>"><?php _e( 'Open Link in New Tab', 'soliloquy' ); ?></label></th>
+                                                <td>
+                                                    <input id="soliloquy-tab-<?php echo $id; ?>" class="soliloquy-tab" type="checkbox" name="_soliloquy[meta_tab]" value="1" <?php checked( ( ! empty( $data['linktab'] ) && $data['linktab'] ? 1 : 0 ), 1 ); ?> data-soliloquy-meta="linktab" />
+                                                    <p class="description"><?php _e( 'If enabled, opens the Image Hyperlink in a new browser window/tab.', 'soliloquy' ); ?></p>
+                                                </td>
+                                            </tr>
+
                                             <?php do_action( 'soliloquy_before_image_meta_caption', $id, $data, $post_id ); ?>
                                             <tr id="soliloquy-caption-box-<?php echo $id; ?>" valign="middle">
                                                 <th scope="row"><label for="soliloquy-caption-<?php echo $id; ?>"><?php _e( 'Image Caption', 'soliloquy' ); ?></label></th>
                                                 <td>
-                                                    <?php wp_editor( ( ! empty( $data['caption'] ) ? $data['caption'] : '' ), 'soliloquy-caption-' . $id, array( 'media_buttons' => false, 'wpautop' => false, 'tinymce' => false, 'textarea_name' => '_soliloquy[meta_caption]', 'quicktags' => array( 'buttons' => 'strong,em,link,ul,ol,li,close' ) ) ); ?>
+                                                    <?php wp_editor( ( ! empty( $data['caption'] ) ? $data['caption'] : '' ), 'soliloquy-caption-' . $id, array( 'textarea_rows' => 5, 'media_buttons' => false, 'wpautop' => false, 'tinymce' => false, 'textarea_name' => '_soliloquy[meta_caption]', 'quicktags' => array( 'buttons' => 'strong,em,link,ul,ol,li,close' ) ) ); ?>
                                                     <p class="description"><?php _e( 'Image captions can take any type of HTML.', 'soliloquy' ); ?></p>
                                                 </td>
                                             </tr>
