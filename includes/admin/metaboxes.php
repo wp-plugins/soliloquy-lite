@@ -862,10 +862,9 @@ class Soliloquy_Metaboxes_Lite {
             $settings = array();
         }
 
-        // If the ID of the slider is not set or is lost, replace it now.
-        if ( empty( $settings['id'] ) || ! $settings['id'] ) {
-            $settings['id'] = $post_id;
-        }
+        // Force slider ID to match Post ID. This is deliberate; if a slider is duplicated (either using a duplication)
+        // plugin or WPML, the ID remains as the original slider ID, which breaks things for translations etc.
+        $settings['id'] = $post_id;
 
         // Save the config settings.
         $settings['config']['type']          = isset( $_POST['_soliloquy']['type'] ) ? $_POST['_soliloquy']['type'] : $this->get_config_default( 'type' );
