@@ -742,6 +742,19 @@ class Soliloquy_Metaboxes_Lite {
                             <span class="description"><?php _e( 'Enables or disables image cropping based on slider dimensions <strong>(recommended)</strong>.', 'soliloquy' ); ?></span>
                         </td>
                     </tr>
+                    <tr id="soliloquy-config-aria-live-box">
+                        <th scope="row">
+                            <label for="soliloquy-config-aria-live"><?php _e( 'ARIA Live Value', 'soliloquy' ); ?></label>
+                        </th>
+                        <td>
+                            <select id="soliloquy-config-aria-live" name="_soliloquy[aria_live]">
+                                <?php foreach ( (array) Soliloquy_Common_Lite::get_instance()->get_aria_live_values() as $i => $data ) : ?>
+                                    <option value="<?php echo $data['value']; ?>"<?php selected( $data['value'], $this->get_config( 'aria_live', $this->get_config_default( 'aria_live' ) ) ); ?>><?php echo $data['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <p class="description"><?php _e( 'Accessibility: Defines the priority with which screen readers should treat updates to this slider.', 'soliloquy' ); ?></p>
+                        </td>
+                    </tr>
                     <?php do_action( 'soliloquy_config_box', $post ); ?>
                 </tbody>
             </table>
@@ -876,6 +889,7 @@ class Soliloquy_Metaboxes_Lite {
         $settings['config']['speed']         = absint( $_POST['_soliloquy']['speed'] );
         $settings['config']['gutter']        = absint( $_POST['_soliloquy']['gutter'] );
         $settings['config']['slider']        = isset( $_POST['_soliloquy']['slider'] ) ? 1 : 0;
+        $settings['config']['aria_live']     = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_soliloquy']['aria_live'] );
         $settings['config']['classes']       = explode( "\n", $_POST['_soliloquy']['classes'] );
         $settings['config']['title']         = trim( strip_tags( $_POST['_soliloquy']['title'] ) );
         $settings['config']['slug']          = sanitize_text_field( $_POST['_soliloquy']['slug'] );

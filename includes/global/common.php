@@ -95,6 +95,34 @@ class Soliloquy_Common_Lite {
     }
 
     /**
+     * Helper method for retrieving aria-live priorities
+     *
+     * @since 2.3.8
+     *
+     * @return array Array of aria-live priorities
+     */
+    public function get_aria_live_values() {
+
+        $values = array(
+            array(
+                'value' => 'off',
+                'name'  => __( 'Off', 'soliloquy' )
+            ),
+            array(
+                'value' => 'polite',
+                'name'  => __( 'Polite', 'soliloquy' )
+            ),
+            array(
+                'value' => 'assertive',
+                'name'  => __( 'Assertive', 'soliloquy' )
+            ),
+        );
+
+        return apply_filters( 'soliloquy_aria_live_values', $values ); 
+
+    }
+
+    /**
      * Helper method for setting default config values.
      *
      * @since 1.0.0
@@ -113,7 +141,7 @@ class Soliloquy_Common_Lite {
             $post_id = absint( $_POST['post_id'] );
         } else {
             $post_id = isset( $post->ID ) ? $post->ID : (int) $id;
-        }
+        } 
 
         // Prepare default values.
         $defaults = $this->get_config_defaults( $post_id );
@@ -143,11 +171,15 @@ class Soliloquy_Common_Lite {
             'speed'         => 400,
             'gutter'        => 20,
             'slider'        => 1,
+            'aria_live'     => 'polite',
+
+            // Misc
             'classes'       => array(),
             'title'         => '',
             'slug'          => '',
             'rtl'           => 0,
         );
+
         return apply_filters( 'soliloquy_defaults', $defaults, $post_id );
 
     }

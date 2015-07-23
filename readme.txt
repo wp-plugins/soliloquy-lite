@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.3.8 =
+* Added: ARIA Profiles support for accessibility and screen readers
+
 = 2.3.7 =
 * Fix: Force slider ID on save, to ensure compat with WPML and duplication plugins
 

@@ -199,7 +199,7 @@ class Soliloquy_Shortcode_Lite {
         $slider = apply_filters( 'soliloquy_output_start', $slider, $data );
 
         // Build out the slider HTML.
-        $slider .= '<div id="soliloquy-container-' . sanitize_html_class( $data['id'] ) . '" class="' . $this->get_slider_classes( $data ) . '" style="max-width:' . $this->get_config( 'slider_width', $data ) . 'px;max-height:' . $this->get_config( 'slider_height', $data ) . 'px;' . apply_filters( 'soliloquy_output_container_style', '', $data ) . '"' . apply_filters( 'soliloquy_output_container_attr', '', $data ) . '>';
+        $slider .= '<div aria-live="' . $this->get_config( 'aria_live', $data ) . '" id="soliloquy-container-' . sanitize_html_class( $data['id'] ) . '" class="' . $this->get_slider_classes( $data ) . '" style="max-width:' . $this->get_config( 'slider_width', $data ) . 'px;max-height:' . $this->get_config( 'slider_height', $data ) . 'px;' . apply_filters( 'soliloquy_output_container_style', '', $data ) . '"' . apply_filters( 'soliloquy_output_container_attr', '', $data ) . '>';
             $slider .= '<ul id="soliloquy-' . sanitize_html_class( $data['id'] ) . '" class="soliloquy-slider soliloquy-slides soliloquy-wrap soliloquy-clear">';
                 $slider = apply_filters( 'soliloquy_output_before_container', $slider, $data );
 
@@ -213,7 +213,7 @@ class Soliloquy_Shortcode_Lite {
                     $item     = apply_filters( 'soliloquy_output_item_data', $item, $id, $data, $i );
 
                     $slider   = apply_filters( 'soliloquy_output_before_item', $slider, $id, $item, $data, $i );
-                    $output   = '<li class="' . $this->get_slider_item_classes( $item, $i, $data ) . '"' . apply_filters( 'soliloquy_output_item_attr', '', $id, $item, $data, $i ) . ' draggable="false" style="list-style:none">';
+                    $output   = '<li aria-hidden="true" class="' . $this->get_slider_item_classes( $item, $i, $data ) . '"' . apply_filters( 'soliloquy_output_item_attr', '', $id, $item, $data, $i ) . ' draggable="false" style="list-style:none">';
                         $output .= $this->get_slide( $id, $item, $data, $i );
                     $output .= '</li>';
                     $output  = apply_filters( 'soliloquy_output_single_item', $output, $id, $item, $data, $i );
@@ -391,19 +391,24 @@ class Soliloquy_Shortcode_Lite {
                         stopText: '<?php echo apply_filters( 'soliloquy_stop_text', '', $data ); ?>',
                         <?php do_action( 'soliloquy_api_config_callback', $data ); ?>
                         onSliderLoad: function(currentIndex){
-                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide').attr('aria-hidden','true');
                             soliloquy_container_<?php echo $data['id']; ?>.css({'height':'auto','background-image':'none'});
                             if ( soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-slider li').size() > 1 ) {
                                 soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls').fadeTo(300, 1);
                             }
-                            soliloquy_<?php echo $data['id']; ?>.find('.soliloquy-item:not(.soliloquy-clone):eq(' + currentIndex + ')').addClass('soliloquy-active-slide');
+                            soliloquy_<?php echo $data['id']; ?>.find('.soliloquy-item:not(.soliloquy-clone):eq(' + currentIndex + ')').addClass('soliloquy-active-slide').attr('aria-hidden','false');
                             // Purge all cloned items of IDs to avoid duplicate ID issues.
                             soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-clone').find('*').removeAttr('id');
+
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls-direction').attr('aria-label','carousel buttons').attr('aria-controls', '<?php echo 'soliloquy-container-' . $data['id']; ?>');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls-direction a.soliloquy-prev').attr('aria-label','previous');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls-direction a.soliloquy-next').attr('aria-label','next');
+
                             <?php do_action( 'soliloquy_api_on_load', $data ); ?>
                         },
                         onSlideBefore: function(element, oldIndex, newIndex){
-                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide');
-                            $(element).addClass('soliloquy-active-slide');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide').attr('aria-hidden','true');
+                            $(element).addClass('soliloquy-active-slide').attr('aria-hidden','false');
                             <?php do_action( 'soliloquy_api_before_transition', $data ); ?>
                         },
                         onSlideAfter: function(element, oldIndex, newIndex){
