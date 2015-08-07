@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.3.9 =
+* Removed unused legacy code
+
 = 2.3.8 =
 * Added: ARIA Profiles support for accessibility and screen readers
 
