@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.4.0 =
+* Fix: 4.3 compatibility for modal close icon
+
 = 2.3.9 =
 * Removed unused legacy code
 
