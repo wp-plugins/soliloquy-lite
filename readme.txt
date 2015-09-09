@@ -87,6 +87,9 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
+= 2.4.0.1 =
+* Fix: Localization support with correct domain
+
 = 2.4.0 =
 * Fix: 4.3 compatibility for modal close icon
 
