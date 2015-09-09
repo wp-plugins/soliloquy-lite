@@ -147,7 +147,7 @@ class Soliloquy_Settings_Lite {
             'soliloquy_settings',
             array(
                 'ajax'          => admin_url( 'admin-ajax.php' ),
-                'redirect'      => add_query_arg( array( 'post_type' => 'soliloquy', 'soliloquy-upgraded' => true ), admin_url( 'edit.php' ) ),
+                'redirect'      => esc_url( add_query_arg( array( 'post_type' => 'soliloquy', 'soliloquy-upgraded' => true ), admin_url( 'edit.php' ) ) ),
                 'upgrade_nonce' => wp_create_nonce( 'soliloquy-upgrade' )
             )
         );
