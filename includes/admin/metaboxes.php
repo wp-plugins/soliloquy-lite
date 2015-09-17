@@ -1164,9 +1164,12 @@ class Soliloquy_Metaboxes_Lite {
 
                 // If there is an error, possibly output error message, otherwise woot!
                 if ( is_wp_error( $cropped_image ) ) {
-                    // If debugging is defined, print out the error.
-                    if ( defined( 'SOLILOQUY_CROP_DEBUG' ) && SOLILOQUY_CROP_DEBUG ) {
-                        echo '<pre>' . var_export( $cropped_image->get_error_message(), true ) . '</pre>';
+                    // If WP_DEBUG is enabled, and we're logged in, output an error to the user
+                    if ( defined( 'WP_DEBUG' ) && WP_DEBUG && is_user_logged_in() ) {
+                        echo '<pre>Soliloquy: Error occured resizing image (these messages are only displayed to logged in WordPress users):<br />';
+                        echo 'Error: ' . $cropped_image->get_error_message() . '<br />';
+                        echo 'Image: ' . $image . '<br />';
+                        echo 'Args: ' . var_export( $args, true ) . '</pre>';
                     }
                 }
             }
