@@ -359,36 +359,6 @@ function soliloquy_lite_ajax_insert_slides() {
         $slider_data = soliloquy_ajax_prepare_slider_data( $slider_data, $id );
     }
 
-    // Loop through the videos and add them to the slider.
-    foreach ( (array) $videos as $i => $data ) {
-        // Pass over if the main items necessary for the video are not set.
-        if ( ! isset( $data['title'] ) || ! isset( $data['url'] ) || ! isset( $data['thumb'] ) ) {
-            continue;
-        }
-
-        // Generate a custom ID for the video.
-        $id = sanitize_title_with_dashes( $slider_data['id'] . '-' . $data['title'] );
-
-        // Now add the image to the slider for this particular post.
-        $in_slider[] = $id;
-        $slider_data = soliloquy_lite_ajax_prepare_slider_data( $slider_data, $id, 'video', $data );
-    }
-
-    // Loop through the videos and add them to the slider.
-    foreach ( (array) $html as $i => $data ) {
-        // Pass over if the main items necessary for the video are not set.
-        if ( empty( $data['title'] ) || empty( $data['code'] ) ) {
-            continue;
-        }
-
-        // Generate a custom ID for the video.
-        $id = sanitize_title_with_dashes( $slider_data['id'] . '-' . $data['title'] );
-
-        // Now add the image to the slider for this particular post.
-        $in_slider[] = $id;
-        $slider_data = soliloquy_lite_ajax_prepare_slider_data( $slider_data, $id, 'html', $data );
-    }
-
     // Update the slider data.
     update_post_meta( $post_id, '_sol_in_slider', $in_slider );
     update_post_meta( $post_id, '_sol_slider_data', $slider_data );
@@ -419,7 +389,12 @@ function soliloquy_lite_ajax_sort_images() {
     $order       = explode( ',', $_POST['order'] );
     $post_id     = absint( $_POST['post_id'] );
     $slider_data = get_post_meta( $post_id, '_sol_slider_data', true );
-    $new_order   = array();
+
+    // Copy the slider config, removing the slides
+    // Stops config from getting lost when sorting + not clicking Publish/Update
+    $new_order = $slider_data;
+    unset( $new_order['slider'] );
+    $new_order['slider'] = array();
 
     // Loop through the order and generate a new array based on order received.
     foreach ( $order as $id ) {
@@ -510,6 +485,12 @@ function soliloquy_lite_ajax_save_meta() {
 
     if ( isset( $meta['link'] ) ) {
         $slider_data['slider'][$attach_id]['link'] = esc_url( $meta['link'] );
+    }
+
+    if ( isset( $meta['linktab'] ) && $meta['linktab'] ) {
+        $slider_data['slider'][ $attach_id ]['linktab'] = 1;
+    } else {
+        $slider_data['slider'][ $attach_id ]['linktab'] = 0;
     }
 
     if ( isset( $meta['caption'] ) ) {
@@ -621,26 +602,6 @@ function soliloquy_lite_ajax_prepare_slider_data( $slider_data, $id, $type = 'im
                 'alt'     => ! empty( $alt_text ) ? $alt_text : get_the_title( $id ),
                 'caption' => ! empty( $attachment->post_excerpt ) ? $attachment->post_excerpt : '',
                 'type'    => $type
-            );
-            break;
-        case 'video' :
-            $slider_data['slider'][$id] = array(
-                'status'  => 'pending',
-                'src'     => esc_url( $data['thumb'] ),
-                'title'   => esc_html( $data['title'] ),
-                'url'     => esc_url( $data['url'] ),
-                'thumb'   => esc_url( $data['thumb'] ),
-                'caption' => trim( $data['caption'] ),
-                'type'    => $type
-            );
-            break;
-        case 'html' :
-            $slider_data['slider'][$id] = array(
-                'status' => 'pending',
-                'src'    => esc_url( $data['thumb'] ),
-                'title'  => esc_html( $data['title'] ),
-                'code'   => trim( $data['code'] ),
-                'type'   => $type
             );
             break;
     }
