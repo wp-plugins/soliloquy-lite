@@ -87,7 +87,10 @@ Soliloquy has many Addons that extend its default functionality to make it do in
 
 == Changelog ==
 
-= 2.4.0.2:
+= 2.4.0.3 =
+* Added: Optimized theme images
+
+= 2.4.0.2 =
 * Added: Better debugging when WP_DEBUG enabled and images do not crop/resize
 
 = 2.4.0.1 =
