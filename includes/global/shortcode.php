@@ -113,7 +113,7 @@ class Soliloquy_Shortcode_Lite {
         wp_register_style( $this->base->plugin_slug . '-style', plugins_url( 'assets/css/soliloquy.css', $this->base->file ), array(), $this->base->version );
 
         // Register main slider script.
-        wp_register_script( $this->base->plugin_slug . '-script', plugins_url( 'assets/js/soliloquy.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
+        wp_register_script( $this->base->plugin_slug . '-script', plugins_url( 'assets/js/min/soliloquy-min.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
 
         // Load hooks and filters.
         add_shortcode( 'soliloquy', array( $this, 'shortcode' ) );
@@ -199,7 +199,7 @@ class Soliloquy_Shortcode_Lite {
         $slider = apply_filters( 'soliloquy_output_start', $slider, $data );
 
         // Build out the slider HTML.
-        $slider .= '<div id="soliloquy-container-' . sanitize_html_class( $data['id'] ) . '" class="' . $this->get_slider_classes( $data ) . '" style="max-width:' . $this->get_config( 'slider_width', $data ) . 'px;max-height:' . $this->get_config( 'slider_height', $data ) . 'px;' . apply_filters( 'soliloquy_output_container_style', '', $data ) . '"' . apply_filters( 'soliloquy_output_container_attr', '', $data ) . '>';
+        $slider .= '<div aria-live="' . $this->get_config( 'aria_live', $data ) . '" id="soliloquy-container-' . sanitize_html_class( $data['id'] ) . '" class="' . $this->get_slider_classes( $data ) . '" style="max-width:' . $this->get_config( 'slider_width', $data ) . 'px;max-height:' . $this->get_config( 'slider_height', $data ) . 'px;' . apply_filters( 'soliloquy_output_container_style', '', $data ) . '"' . apply_filters( 'soliloquy_output_container_attr', '', $data ) . '>';
             $slider .= '<ul id="soliloquy-' . sanitize_html_class( $data['id'] ) . '" class="soliloquy-slider soliloquy-slides soliloquy-wrap soliloquy-clear">';
                 $slider = apply_filters( 'soliloquy_output_before_container', $slider, $data );
 
@@ -213,7 +213,7 @@ class Soliloquy_Shortcode_Lite {
                     $item     = apply_filters( 'soliloquy_output_item_data', $item, $id, $data, $i );
 
                     $slider   = apply_filters( 'soliloquy_output_before_item', $slider, $id, $item, $data, $i );
-                    $output   = '<li class="' . $this->get_slider_item_classes( $item, $i, $data ) . '"' . apply_filters( 'soliloquy_output_item_attr', '', $id, $item, $data, $i ) . ' draggable="false" style="list-style:none">';
+                    $output   = '<li aria-hidden="true" class="' . $this->get_slider_item_classes( $item, $i, $data ) . '"' . apply_filters( 'soliloquy_output_item_attr', '', $id, $item, $data, $i ) . ' draggable="false" style="list-style:none">';
                         $output .= $this->get_slide( $id, $item, $data, $i );
                     $output .= '</li>';
                     $output  = apply_filters( 'soliloquy_output_single_item', $output, $id, $item, $data, $i );
@@ -291,7 +291,11 @@ class Soliloquy_Shortcode_Lite {
         // If our image is linked, link it.
         if ( ! empty( $item['link'] ) ) {
             $output  = apply_filters( 'soliloquy_output_before_link', $output, $id, $item, $data, $i );
-            $output .= '<a href="' . esc_url( $item['link'] ) . '" class="soliloquy-link" title="' . esc_attr( $item['title'] ) . '"' . apply_filters( 'soliloquy_output_link_attr', '', $id, $item, $data, $i ) . '>';
+            if ( ! empty( $item['linktab'] ) && $item['linktab'] ) {
+                $output .= '<a href="' . esc_url( $item['link'] ) . '" class="soliloquy-link" title="' . esc_attr( $item['title'] ) . '" target="_blank"' . apply_filters( 'soliloquy_output_link_attr', '', $id, $item, $data, $i ) . '>';
+            } else {
+                $output .= '<a href="' . esc_url( $item['link'] ) . '" class="soliloquy-link" title="' . esc_attr( $item['title'] ) . '"' . apply_filters( 'soliloquy_output_link_attr', '', $id, $item, $data, $i ) . '>';
+            }
         }
 
         $output  = apply_filters( 'soliloquy_output_before_image', $output, $id, $item, $data, $i );
@@ -387,19 +391,24 @@ class Soliloquy_Shortcode_Lite {
                         stopText: '<?php echo apply_filters( 'soliloquy_stop_text', '', $data ); ?>',
                         <?php do_action( 'soliloquy_api_config_callback', $data ); ?>
                         onSliderLoad: function(currentIndex){
-                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide').attr('aria-hidden','true');
                             soliloquy_container_<?php echo $data['id']; ?>.css({'height':'auto','background-image':'none'});
                             if ( soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-slider li').size() > 1 ) {
                                 soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls').fadeTo(300, 1);
                             }
-                            soliloquy_<?php echo $data['id']; ?>.find('.soliloquy-item:not(.soliloquy-clone):eq(' + currentIndex + ')').addClass('soliloquy-active-slide');
+                            soliloquy_<?php echo $data['id']; ?>.find('.soliloquy-item:not(.soliloquy-clone):eq(' + currentIndex + ')').addClass('soliloquy-active-slide').attr('aria-hidden','false');
                             // Purge all cloned items of IDs to avoid duplicate ID issues.
                             soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-clone').find('*').removeAttr('id');
+
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls-direction').attr('aria-label','carousel buttons').attr('aria-controls', '<?php echo 'soliloquy-container-' . $data['id']; ?>');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls-direction a.soliloquy-prev').attr('aria-label','previous');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-controls-direction a.soliloquy-next').attr('aria-label','next');
+
                             <?php do_action( 'soliloquy_api_on_load', $data ); ?>
                         },
                         onSlideBefore: function(element, oldIndex, newIndex){
-                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide');
-                            $(element).addClass('soliloquy-active-slide');
+                            soliloquy_container_<?php echo $data['id']; ?>.find('.soliloquy-active-slide').removeClass('soliloquy-active-slide').attr('aria-hidden','true');
+                            $(element).addClass('soliloquy-active-slide').attr('aria-hidden','false');
                             <?php do_action( 'soliloquy_api_before_transition', $data ); ?>
                         },
                         onSlideAfter: function(element, oldIndex, newIndex){
@@ -468,6 +477,11 @@ class Soliloquy_Shortcode_Lite {
 
         // Add custom class based on the theme.
         $classes[] = 'soliloquy-theme-' . $this->get_config( 'slider_theme', $data );
+
+        // If the slider has RTL support, add a class for it.
+        if ( $this->get_config( 'rtl', $data ) ) {
+            $classes[] = 'soliloquy-rtl';
+        }
 
         return trim( implode( ' ', array_map( 'trim', array_map( 'sanitize_html_class', array_unique( $classes ) ) ) ) );
 
@@ -552,9 +566,12 @@ class Soliloquy_Shortcode_Lite {
 
                 // If there is an error, possibly output error message and return the default image src.
                 if ( is_wp_error( $cropped_image ) ) {
-                    // If debugging is defined, print out the error.
-                    if ( defined( 'SOLILOQUY_CROP_DEBUG' ) && SOLILOQUY_CROP_DEBUG ) {
-                        echo '<pre>' . var_export( $cropped_image->get_error_message(), true ) . '</pre>';
+                    // If WP_DEBUG is enabled, and we're logged in, output an error to the user
+                    if ( defined( 'WP_DEBUG' ) && WP_DEBUG && is_user_logged_in() ) {
+                        echo '<pre>Soliloquy: Error occured resizing image (these messages are only displayed to logged in WordPress users):<br />';
+                        echo 'Error: ' . $cropped_image->get_error_message() . '<br />';
+                        echo 'Image: ' . $image . '<br />';
+                        echo 'Args: ' . var_export( $args, true ) . '</pre>';
                     }
 
                     // Return the non-cropped image as a fallback.
@@ -802,8 +819,8 @@ class Soliloquy_Shortcode_Lite {
             return true;
         }
 
-        // Return false if not a mobile device.
-        return false;
+        // Return wp_is_mobile for the final check.
+        return wp_is_mobile();
 
     }
 

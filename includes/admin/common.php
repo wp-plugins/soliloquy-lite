@@ -88,7 +88,7 @@ class Soliloquy_Common_Admin_Lite {
 
         ?>
         <div class="error">
-            <p><?php printf( __( 'Soliloquy Lite is now rocking v2! <strong>You need to upgrade your legacy v1 sliders to v2.</strong> <a href="%s">Click here to begin the upgrade process.</a>', 'soliloquy' ), add_query_arg( 'page', 'soliloquy-lite-settings', admin_url( 'edit.php?post_type=soliloquy' ) ) ); ?></p>
+            <p><?php printf( __( 'Soliloquy Lite is now rocking v2! <strong>You need to upgrade your legacy v1 sliders to v2.</strong> <a href="%s">Click here to begin the upgrade process.</a>', 'soliloquy' ), esc_url( add_query_arg( 'page', 'soliloquy-lite-settings', admin_url( 'edit.php?post_type=soliloquy' ) ) ) ); ?></p>
         </div>
         <?php
 
